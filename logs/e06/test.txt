@@ -1,0 +1,426 @@
+# E06 autotest 2026-11-26T23:45Z  headless Chromium (Playwright) + SwiftShader (--use-angle=swiftshader --enable-unsafe-swiftshader), url=games/e06/index.html?autotest&q=low, server: python3 -m http.server (root site/), script: logs/e06/run-test.cjs
+# note: the shared ../../gf-playlog.js beacon to an external host is stubbed with HTTP 204 in this sandbox
+## landscape 1024x768
+[1024x768] console: [e06] state READY count=0 stage=1
+[1024x768] console: [e06] ready q=low
+[1024x768] console: [e06] state ROLLING count=0 stage=1
+[1024x768] ready in 3061ms
+[1024x768] t=3.3s ROLLING count=0 stage=1 q=low fps=22.4 cam=30,33,0 roller=512,475 sun=1340,-323
+[1024x768] console: [e06] state POLISHED count=1 stage=1
+[1024x768] t=6.8s POLISHED count=1 stage=1 q=low fps=8.2 cam=30,33,0 roller=512,485 sun=1340,-323
+[1024x768] console: [e06] state NEXT_ZONE count=1 stage=1
+[1024x768] t=7.8s NEXT_ZONE count=1 stage=1 q=low fps=6.8 cam=30,33,0 roller=512,503 sun=1340,-323
+[1024x768] console: [e06] state WAIT_INPUT count=1 stage=1
+[1024x768] t=10.3s WAIT_INPUT count=1 stage=1 q=low fps=4.9 cam=30,33,0 roller=537,546 sun=1340,-323
+[1024x768] console: [e06] state ROLLING count=1 stage=1
+[1024x768] t=11.3s ROLLING count=1 stage=1 q=low fps=4.7 cam=30,33,0 roller=515,505 sun=1340,-323
+[1024x768] console: [e06] state POLISHED count=2 stage=1
+[1024x768] shot Lshot-1.jpg
+[1024x768] t=14.9s POLISHED count=2 stage=1 q=low fps=4.3 cam=30,33,0 roller=512,479 sun=1340,-323
+[1024x768] console: [e06] state NEXT_ZONE count=2 stage=1
+[1024x768] t=16.0s NEXT_ZONE count=2 stage=1 q=low fps=4.2 cam=30,33,0 roller=512,500 sun=1340,-323
+[1024x768] console: [e06] state WAIT_INPUT count=2 stage=1
+[1024x768] t=18.8s WAIT_INPUT count=2 stage=1 q=low fps=4.3 cam=30,33,0 roller=462,549 sun=1340,-323
+[1024x768] console: [e06] state ROLLING count=2 stage=1
+[1024x768] t=20.4s ROLLING count=2 stage=1 q=low fps=4.2 cam=30,33,0 roller=510,494 sun=1340,-323
+[1024x768] console: [e06] state POLISHED count=3 stage=1
+[1024x768] t=23.6s POLISHED count=3 stage=1 q=low fps=4.3 cam=30,33,0 roller=512,462 sun=1340,-323
+[1024x768] console: [e06] state NEXT_ZONE count=3 stage=1
+[1024x768] t=25.1s NEXT_ZONE count=3 stage=1 q=low fps=4.3 cam=30,33,0 roller=512,502 sun=1340,-323
+[1024x768] console: [e06] state WAIT_INPUT count=3 stage=1
+[1024x768] t=28.5s WAIT_INPUT count=3 stage=1 q=low fps=4.1 cam=30,33,0 roller=539,521 sun=1340,-323
+[1024x768] console: [e06] state ROLLING count=3 stage=1
+[1024x768] t=29.5s ROLLING count=3 stage=1 q=low fps=4.1 cam=30,33,0 roller=515,496 sun=1340,-323
+[1024x768] console: [e06] state POLISHED count=4 stage=1
+[1024x768] t=32.9s POLISHED count=4 stage=1 q=low fps=4.2 cam=30,33,0 roller=512,467 sun=1340,-323
+[1024x768] console: [e06] state NEXT_ZONE count=4 stage=1
+[1024x768] t=34.4s NEXT_ZONE count=4 stage=1 q=low fps=4.1 cam=30,33,0 roller=511,508 sun=1340,-323
+[1024x768] console: [e06] state WAIT_INPUT count=4 stage=1
+[1024x768] t=38.1s WAIT_INPUT count=4 stage=1 q=low fps=3.9 cam=30,33,0 roller=478,522 sun=1340,-323
+[1024x768] console: [e06] state ROLLING count=4 stage=1
+[1024x768] t=39.1s ROLLING count=4 stage=1 q=low fps=4 cam=30,33,0 roller=508,502 sun=1340,-323
+[1024x768] console: [e06] state POLISHED count=5 stage=1
+[1024x768] t=42.9s POLISHED count=5 stage=1 q=low fps=4.2 cam=30,33,0 roller=512,484 sun=1340,-323
+[1024x768] console: [e06] state NEXT_ZONE count=5 stage=1
+[1024x768] t=43.9s NEXT_ZONE count=5 stage=1 q=low fps=4.1 cam=30,33,0 roller=512,501 sun=1340,-323
+[1024x768] console: [e06] state WAIT_INPUT count=5 stage=1
+[1024x768] t=48.2s WAIT_INPUT count=5 stage=1 q=low fps=4.1 cam=30,33,0 roller=552,524 sun=1340,-323
+[1024x768] console: [e06] state ROLLING count=5 stage=1
+[1024x768] t=49.6s ROLLING count=5 stage=1 q=low fps=4.2 cam=30,33,0 roller=514,474 sun=1340,-323
+[1024x768] console: [e06] state POLISHED count=6 stage=1
+[1024x768] t=52.9s POLISHED count=6 stage=1 q=low fps=4.2 cam=30,33,0 roller=512,478 sun=1340,-323
+[1024x768] console: [e06] state STAGE_UP count=6 stage=1
+[1024x768] t=55.3s STAGE_UP count=6 stage=1 q=low fps=4.3 cam=44,32.1,1.2 roller=637,440 sun=1294,-300
+[1024x768] console: [e06] state NEXT_ZONE count=6 stage=2
+[1024x768] t=66.9s NEXT_ZONE count=6 stage=2 q=low fps=3.7 cam=93,29.1,5.4 roller=748,378 sun=1166,-277
+[1024x768] console: [e06] state WAIT_INPUT count=6 stage=2
+[1024x768] t=67.4s WAIT_INPUT count=6 stage=2 q=low fps=3.5 cam=48,32,1.4 roller=647,434 sun=1308,-357
+[1024x768] console: [e06] state ROLLING count=6 stage=2
+[1024x768] t=68.9s ROLLING count=6 stage=2 q=low fps=3.8 cam=32,33,0.1 roller=521,482 sun=1362,-387
+[1024x768] console: [e06] state POLISHED count=7 stage=2
+[1024x768] t=72.0s POLISHED count=7 stage=2 q=low fps=4.1 cam=32,33,0 roller=512,462 sun=1365,-388
+[1024x768] console: [e06] state NEXT_ZONE count=7 stage=2
+[1024x768] t=73.5s NEXT_ZONE count=7 stage=2 q=low fps=4.1 cam=32,33,0 roller=509,516 sun=1365,-388
+[1024x768] console: [e06] state WAIT_INPUT count=7 stage=2
+[1024x768] t=75.6s WAIT_INPUT count=7 stage=2 q=low fps=3.9 cam=32,33,0 roller=477,557 sun=1365,-388
+[1024x768] console: [e06] state ROLLING count=7 stage=2
+[1024x768] t=77.0s ROLLING count=7 stage=2 q=low fps=4.1 cam=32,33,0 roller=511,467 sun=1365,-388
+[1024x768] console: [e06] state POLISHED count=8 stage=2
+[1024x768] t=80.2s POLISHED count=8 stage=2 q=low fps=4.1 cam=32,33,0 roller=512,478 sun=1365,-388
+[1024x768] console: [e06] state NEXT_ZONE count=8 stage=2
+[1024x768] t=81.2s NEXT_ZONE count=8 stage=2 q=low fps=4.1 cam=32,33,0 roller=512,494 sun=1365,-388
+[1024x768] console: [e06] state WAIT_INPUT count=8 stage=2
+[1024x768] t=83.7s WAIT_INPUT count=8 stage=2 q=low fps=4.1 cam=32,33,0 roller=478,554 sun=1365,-388
+[1024x768] console: [e06] state ROLLING count=8 stage=2
+[1024x768] t=85.1s ROLLING count=8 stage=2 q=low fps=4.1 cam=32,33,0 roller=511,469 sun=1365,-388
+[1024x768] console: [e06] state POLISHED count=9 stage=2
+[1024x768] t=88.0s POLISHED count=9 stage=2 q=low fps=4.1 cam=32,33,0 roller=512,462 sun=1365,-388
+[1024x768] console: [e06] state NEXT_ZONE count=9 stage=2
+[1024x768] t=89.5s NEXT_ZONE count=9 stage=2 q=low fps=4.1 cam=32,33,0 roller=508,518 sun=1365,-388
+[1024x768] console: [e06] state WAIT_INPUT count=9 stage=2
+[1024x768] t=91.7s WAIT_INPUT count=9 stage=2 q=low fps=3.9 cam=32,33,0 roller=479,553 sun=1365,-388
+[1024x768] console: [e06] state ROLLING count=9 stage=2
+[1024x768] t=93.0s ROLLING count=9 stage=2 q=low fps=4.1 cam=32,33,0 roller=511,473 sun=1365,-388
+[1024x768] console: [e06] state POLISHED count=10 stage=2
+[1024x768] t=95.9s POLISHED count=10 stage=2 q=low fps=4.2 cam=32,33,0 roller=512,452 sun=1365,-388
+[1024x768] console: [e06] state NEXT_ZONE count=10 stage=2
+[1024x768] t=97.4s NEXT_ZONE count=10 stage=2 q=low fps=4.1 cam=32,33,0 roller=511,504 sun=1365,-388
+[1024x768] console: [e06] state WAIT_INPUT count=10 stage=2
+[1024x768] t=99.8s WAIT_INPUT count=10 stage=2 q=low fps=4.1 cam=32,33,0 roller=490,533 sun=1365,-388
+[1024x768] console: [e06] state ROLLING count=10 stage=2
+[1024x768] t=101.2s ROLLING count=10 stage=2 q=low fps=4.2 cam=32,33,0 roller=511,479 sun=1365,-388
+[1024x768] console: [e06] state POLISHED count=11 stage=2
+[1024x768] t=104.1s POLISHED count=11 stage=2 q=low fps=4.2 cam=32,33,0 roller=512,453 sun=1365,-388
+[1024x768] console: [e06] state NEXT_ZONE count=11 stage=2
+[1024x768] t=105.6s NEXT_ZONE count=11 stage=2 q=low fps=4.2 cam=32,33,0 roller=511,504 sun=1365,-388
+[1024x768] console: [e06] state WAIT_INPUT count=11 stage=2
+[1024x768] t=108.1s WAIT_INPUT count=11 stage=2 q=low fps=4.1 cam=32,33,0 roller=491,532 sun=1365,-388
+[1024x768] console: [e06] state ROLLING count=11 stage=2
+[1024x768] t=109.1s ROLLING count=11 stage=2 q=low fps=4.1 cam=32,33,0 roller=510,490 sun=1365,-388
+[1024x768] console: [e06] state POLISHED count=12 stage=2
+[1024x768] t=112.5s POLISHED count=12 stage=2 q=low fps=4.2 cam=32,33,0 roller=512,475 sun=1365,-388
+[1024x768] console: [e06] state STAGE_UP count=12 stage=2
+[1024x768] t=114.6s STAGE_UP count=12 stage=2 q=low fps=4.1 cam=49,30.2,3.4 roller=408,413 sun=1230,-307
+[1024x768] shot Lshot-2.jpg
+[1024x768] console: [e06] state NEXT_ZONE count=12 stage=3
+[1024x768] t=126.0s NEXT_ZONE count=12 stage=3 q=low fps=3.4 cam=131,17,19.5 roller=280,381 sun=800,-55
+[1024x768] console: [e06] state WAIT_INPUT count=12 stage=3
+[1024x768] t=126.9s WAIT_INPUT count=12 stage=3 q=low fps=3.5 cam=43,31.3,2 roller=441,434 sun=1310,-421
+[1024x768] console: [e06] state ROLLING count=12 stage=3
+[1024x768] t=127.8s ROLLING count=12 stage=3 q=low fps=3.8 cam=34,32.8,0.3 roller=500,472 sun=1386,-468
+[1024x768] console: [e06] state POLISHED count=13 stage=3
+[1024x768] t=131.2s POLISHED count=13 stage=3 q=low fps=4.1 cam=33,33,0 roller=512,472 sun=1398,-476
+[1024x768] console: [e06] state NEXT_ZONE count=13 stage=3
+[1024x768] t=132.1s NEXT_ZONE count=13 stage=3 q=low fps=4.2 cam=33,33,0 roller=512,487 sun=1398,-476
+[1024x768] console: [e06] state WAIT_INPUT count=13 stage=3
+[1024x768] t=134.6s WAIT_INPUT count=13 stage=3 q=low fps=4 cam=33,33,0 roller=541,540 sun=1398,-476
+[1024x768] console: [e06] state ROLLING count=13 stage=3
+[1024x768] t=135.6s ROLLING count=13 stage=3 q=low fps=4 cam=33,33,0 roller=515,492 sun=1398,-476
+[1024x768] console: [e06] state POLISHED count=14 stage=3
+[1024x768] t=138.9s POLISHED count=14 stage=3 q=low fps=4.2 cam=33,33,0 roller=512,464 sun=1398,-476
+[1024x768] console: [e06] state NEXT_ZONE count=14 stage=3
+[1024x768] t=140.4s NEXT_ZONE count=14 stage=3 q=low fps=4.2 cam=33,33,0 roller=515,511 sun=1398,-476
+[1024x768] console: [e06] state WAIT_INPUT count=14 stage=3
+[1024x768] t=142.8s WAIT_INPUT count=14 stage=3 q=low fps=4.2 cam=33,33,0 roller=529,519 sun=1398,-476
+[1024x768] console: [e06] state ROLLING count=14 stage=3
+[1024x768] t=144.4s ROLLING count=14 stage=3 q=low fps=4 cam=33,33,0 roller=512,455 sun=1398,-476
+[1024x768] console: [e06] state POLISHED count=15 stage=3
+[1024x768] t=147.2s POLISHED count=15 stage=3 q=low fps=4.2 cam=33,33,0 roller=512,462 sun=1398,-476
+[1024x768] console: [e06] state NEXT_ZONE count=15 stage=3
+[1024x768] t=148.7s NEXT_ZONE count=15 stage=3 q=low fps=4.1 cam=33,33,0 roller=513,500 sun=1398,-476
+[1024x768] console: [e06] state WAIT_INPUT count=15 stage=3
+[1024x768] t=151.3s WAIT_INPUT count=15 stage=3 q=low fps=4 cam=33,33,0 roller=527,516 sun=1398,-476
+[1024x768] console: [e06] state ROLLING count=15 stage=3
+[1024x768] t=152.3s ROLLING count=15 stage=3 q=low fps=4 cam=33,33,0 roller=514,483 sun=1398,-476
+[1024x768] console: [e06] state POLISHED count=16 stage=3
+[1024x768] t=155.3s POLISHED count=16 stage=3 q=low fps=4 cam=33,33,0 roller=512,449 sun=1398,-476
+[1024x768] console: [e06] state NEXT_ZONE count=16 stage=3
+[1024x768] t=156.8s NEXT_ZONE count=16 stage=3 q=low fps=4.1 cam=33,33,0 roller=512,497 sun=1398,-476
+[1024x768] console: [e06] state WAIT_INPUT count=16 stage=3
+[1024x768] t=159.3s WAIT_INPUT count=16 stage=3 q=low fps=4 cam=33,33,0 roller=532,524 sun=1398,-476
+[1024x768] console: [e06] state ROLLING count=16 stage=3
+[1024x768] t=160.2s ROLLING count=16 stage=3 q=low fps=4.1 cam=33,33,0 roller=514,484 sun=1398,-476
+[1024x768] console: [e06] state POLISHED count=17 stage=3
+[1024x768] t=163.7s POLISHED count=17 stage=3 q=low fps=4.1 cam=33,33,0 roller=512,474 sun=1398,-476
+[1024x768] console: [e06] state NEXT_ZONE count=17 stage=3
+[1024x768] t=164.6s NEXT_ZONE count=17 stage=3 q=low fps=4.1 cam=33,33,0 roller=512,488 sun=1398,-476
+[1024x768] console: [e06] state WAIT_INPUT count=17 stage=3
+[1024x768] t=167.1s WAIT_INPUT count=17 stage=3 q=low fps=4 cam=33,33,0 roller=541,540 sun=1398,-476
+[1024x768] console: [e06] state ROLLING count=17 stage=3
+[1024x768] t=168.6s ROLLING count=17 stage=3 q=low fps=4.1 cam=33,33,0 roller=513,461 sun=1398,-476
+[1024x768] console: [e06] state POLISHED count=18 stage=3
+[1024x768] t=171.4s POLISHED count=18 stage=3 q=low fps=4.1 cam=33,33,0 roller=512,447 sun=1398,-476
+[1024x768] console: [e06] state STAGE_UP count=18 stage=3
+[1024x768] t=173.9s STAGE_UP count=18 stage=3 q=low fps=4.1 cam=73,29.8,4.1 roller=637,349 sun=1230,-372
+[1024x768] console: [e06] state NEXT_ZONE count=18 stage=4
+[1024x768] t=186.0s NEXT_ZONE count=18 stage=4 q=low fps=3.5 cam=120,25.9,9 roller=650,321 sun=1082,-333
+[1024x768] console: [e06] state WAIT_INPUT count=18 stage=4
+[1024x768] t=186.5s WAIT_INPUT count=18 stage=4 q=low fps=3.3 cam=58,31.1,2.5 roller=614,376 sun=1322,-499
+[1024x768] console: [e06] state ROLLING count=18 stage=4
+[1024x768] t=188.0s ROLLING count=18 stage=4 q=low fps=3.6 cam=35,32.9,0.1 roller=518,460 sun=1431,-569
+[1024x768] console: [e06] state POLISHED count=19 stage=4
+[1024x768] t=191.0s POLISHED count=19 stage=4 q=low fps=4 cam=35,33,0 roller=512,457 sun=1434,-571
+[1024x768] console: [e06] state NEXT_ZONE count=19 stage=4
+[1024x768] t=192.5s NEXT_ZONE count=19 stage=4 q=low fps=4 cam=35,33,0 roller=508,506 sun=1434,-571
+[1024x768] console: [e06] state WAIT_INPUT count=19 stage=4
+[1024x768] t=195.0s WAIT_INPUT count=19 stage=4 q=low fps=3.9 cam=35,33,0 roller=502,502 sun=1434,-571
+[1024x768] console: [e06] state ROLLING count=19 stage=4
+[1024x768] t=196.0s ROLLING count=19 stage=4 q=low fps=4 cam=35,33,0 roller=511,468 sun=1434,-571
+[1024x768] console: [e06] state POLISHED count=20 stage=4
+[1024x768] t=198.8s POLISHED count=20 stage=4 q=low fps=4.3 cam=35,33,0 roller=512,445 sun=1434,-571
+[1024x768] console: [e06] state NEXT_ZONE count=20 stage=4
+[1024x768] t=200.2s NEXT_ZONE count=20 stage=4 q=low fps=4.2 cam=35,33,0 roller=512,487 sun=1434,-571
+[1024x768] console: [e06] state WAIT_INPUT count=20 stage=4
+[1024x768] t=204.2s WAIT_INPUT count=20 stage=4 q=low fps=4.1 cam=35,33,0 roller=494,495 sun=1434,-571
+[1024x768] console: [e06] state ROLLING count=20 stage=4
+[1024x768] t=205.2s ROLLING count=20 stage=4 q=low fps=4.1 cam=35,33,0 roller=510,477 sun=1434,-571
+[1024x768] console: [e06] state POLISHED count=21 stage=4
+[1024x768] t=208.5s POLISHED count=21 stage=4 q=low fps=4 cam=35,33,0 roller=512,466 sun=1434,-571
+[1024x768] console: [e06] state NEXT_ZONE count=21 stage=4
+[1024x768] t=209.7s NEXT_ZONE count=21 stage=4 q=low fps=3.8 cam=35,33,0 roller=512,487 sun=1434,-571
+[1024x768] console: [e06] state WAIT_INPUT count=21 stage=4
+[1024x768] t=212.1s WAIT_INPUT count=21 stage=4 q=low fps=4.1 cam=35,33,0 roller=535,524 sun=1434,-571
+[1024x768] console: [e06] state ROLLING count=21 stage=4
+[1024x768] t=213.0s ROLLING count=21 stage=4 q=low fps=4.1 cam=35,33,0 roller=514,486 sun=1434,-571
+[1024x768] console: [e06] state POLISHED count=22 stage=4
+[1024x768] t=216.3s POLISHED count=22 stage=4 q=low fps=4.2 cam=35,33,0 roller=512,464 sun=1434,-571
+[1024x768] console: [e06] state NEXT_ZONE count=22 stage=4
+[1024x768] t=217.8s NEXT_ZONE count=22 stage=4 q=low fps=4.2 cam=35,33,0 roller=516,499 sun=1434,-571
+[1024x768] console: [e06] state WAIT_INPUT count=22 stage=4
+[1024x768] t=220.2s WAIT_INPUT count=22 stage=4 q=low fps=4.2 cam=35,33,0 roller=561,530 sun=1434,-571
+[1024x768] console: [e06] state ROLLING count=22 stage=4
+[1024x768] t=221.7s ROLLING count=22 stage=4 q=low fps=4.2 cam=35,33,0 roller=514,479 sun=1434,-571
+[1024x768] console: [e06] state POLISHED count=23 stage=4
+[1024x768] t=224.7s POLISHED count=23 stage=4 q=low fps=4.1 cam=35,33,0 roller=512,448 sun=1434,-571
+[1024x768] console: [e06] state NEXT_ZONE count=23 stage=4
+[1024x768] t=226.1s NEXT_ZONE count=23 stage=4 q=low fps=4.1 cam=35,33,0 roller=512,491 sun=1434,-571
+[1024x768] console: [e06] state WAIT_INPUT count=23 stage=4
+[1024x768] t=228.5s WAIT_INPUT count=23 stage=4 q=low fps=4.1 cam=35,33,0 roller=490,522 sun=1434,-571
+[1024x768] console: [e06] state ROLLING count=23 stage=4
+[1024x768] t=229.9s ROLLING count=23 stage=4 q=low fps=4.2 cam=35,33,0 roller=511,467 sun=1434,-571
+[1024x768] console: [e06] state POLISHED count=24 stage=4
+[1024x768] t=232.8s POLISHED count=24 stage=4 q=low fps=4.3 cam=35,33,0 roller=512,450 sun=1434,-571
+[1024x768] console: [e06] state CLIMAX count=24 stage=4
+[1024x768] t=234.2s CLIMAX count=24 stage=4 q=low fps=4.3 cam=50,32.5,0.9 roller=494,356 sun=1394,-551
+[1024x768] shot Lshot-3.jpg (sun=512,146 roller=526,380)
+[1024x768] console: [e06] state AFTERGLOW count=24 stage=4
+[1024x768] t=246.6s AFTERGLOW count=24 stage=4 q=low fps=5.6 cam=38,4.1,35 roller=527,380 sun=512,146
+[1024x768] console: [e06] state RESET count=24 stage=4
+[1024x768] console: [e06] state READY count=0 stage=1
+[1024x768] t=260.4s READY count=0 stage=1 q=low fps=5.6 cam=38,4.1,35 roller=-772,259 sun=512,266
+[1024x768] console: [e06] autotest done
+[1024x768] final {"ready":true,"errors":[],"test":{"state":"READY","count":0,"stage":1,"stageF":0,"climaxReached":true,"climaxT":0,"cam":[30,33,0],"afterglowReached":true,"resetCount":1,"done":true,"q":"low","fps":4.9,"roller":[512,502],"sun":[1340,-323]}}
+[1024x768] consoleErrors=[]
+[1024x768] RESULT PASS (elapsed 261s)
+## portrait 768x1024
+[768x1024] console: [e06] state READY count=0 stage=1
+[768x1024] console: [e06] ready q=low
+[768x1024] console: [e06] state ROLLING count=0 stage=1
+[768x1024] ready in 3155ms
+[768x1024] t=3.4s ROLLING count=0 stage=1 q=low fps=22.1 cam=34,33,0 roller=384,612 sun=1386,-344
+[768x1024] console: [e06] state POLISHED count=1 stage=1
+[768x1024] t=6.9s POLISHED count=1 stage=1 q=low fps=8.1 cam=34,33,0 roller=384,618 sun=1386,-344
+[768x1024] console: [e06] state NEXT_ZONE count=1 stage=1
+[768x1024] t=7.9s NEXT_ZONE count=1 stage=1 q=low fps=6.8 cam=34,33,0 roller=384,633 sun=1386,-344
+[768x1024] console: [e06] state WAIT_INPUT count=1 stage=1
+[768x1024] t=10.4s WAIT_INPUT count=1 stage=1 q=low fps=5 cam=34,33,0 roller=421,698 sun=1386,-344
+[768x1024] console: [e06] state ROLLING count=1 stage=1
+[768x1024] t=11.9s ROLLING count=1 stage=1 q=low fps=4.5 cam=34,33,0 roller=385,604 sun=1386,-344
+[768x1024] console: [e06] state POLISHED count=2 stage=1
+[768x1024] shot Pshot-1.jpg
+[768x1024] t=15.6s POLISHED count=2 stage=1 q=low fps=4.1 cam=34,33,0 roller=384,626 sun=1386,-344
+[768x1024] console: [e06] state NEXT_ZONE count=2 stage=1
+[768x1024] t=16.6s NEXT_ZONE count=2 stage=1 q=low fps=4 cam=34,33,0 roller=379,655 sun=1386,-344
+[768x1024] console: [e06] state WAIT_INPUT count=2 stage=1
+[768x1024] t=19.1s WAIT_INPUT count=2 stage=1 q=low fps=4 cam=34,33,0 roller=331,684 sun=1386,-344
+[768x1024] console: [e06] state ROLLING count=2 stage=1
+[768x1024] t=20.5s ROLLING count=2 stage=1 q=low fps=4.2 cam=34,33,0 roller=382,635 sun=1386,-344
+[768x1024] console: [e06] state POLISHED count=3 stage=1
+[768x1024] t=24.3s POLISHED count=3 stage=1 q=low fps=4.2 cam=34,33,0 roller=384,616 sun=1386,-344
+[768x1024] console: [e06] state NEXT_ZONE count=3 stage=1
+[768x1024] t=25.3s NEXT_ZONE count=3 stage=1 q=low fps=4.2 cam=34,33,0 roller=384,635 sun=1386,-344
+[768x1024] console: [e06] state WAIT_INPUT count=3 stage=1
+[768x1024] t=28.8s WAIT_INPUT count=3 stage=1 q=low fps=4.1 cam=34,33,0 roller=415,656 sun=1386,-344
+[768x1024] console: [e06] state ROLLING count=3 stage=1
+[768x1024] t=29.7s ROLLING count=3 stage=1 q=low fps=4.1 cam=34,33,0 roller=387,628 sun=1386,-344
+[768x1024] console: [e06] state POLISHED count=4 stage=1
+[768x1024] t=33.3s POLISHED count=4 stage=1 q=low fps=4 cam=34,33,0 roller=384,614 sun=1386,-344
+[768x1024] console: [e06] state NEXT_ZONE count=4 stage=1
+[768x1024] t=34.8s NEXT_ZONE count=4 stage=1 q=low fps=4 cam=34,33,0 roller=380,647 sun=1386,-344
+[768x1024] console: [e06] state WAIT_INPUT count=4 stage=1
+[768x1024] t=38.5s WAIT_INPUT count=4 stage=1 q=low fps=3.9 cam=34,33,0 roller=349,655 sun=1386,-344
+[768x1024] console: [e06] state ROLLING count=4 stage=1
+[768x1024] t=39.4s ROLLING count=4 stage=1 q=low fps=4 cam=34,33,0 roller=380,635 sun=1386,-344
+[768x1024] console: [e06] state POLISHED count=5 stage=1
+[768x1024] t=42.9s POLISHED count=5 stage=1 q=low fps=4 cam=34,33,0 roller=384,594 sun=1386,-344
+[768x1024] console: [e06] state NEXT_ZONE count=5 stage=1
+[768x1024] t=44.3s NEXT_ZONE count=5 stage=1 q=low fps=4 cam=34,33,0 roller=384,638 sun=1386,-344
+[768x1024] console: [e06] state WAIT_INPUT count=5 stage=1
+[768x1024] t=48.7s WAIT_INPUT count=5 stage=1 q=low fps=4.1 cam=34,33,0 roller=412,650 sun=1386,-344
+[768x1024] console: [e06] state ROLLING count=5 stage=1
+[768x1024] t=49.6s ROLLING count=5 stage=1 q=low fps=4.1 cam=34,33,0 roller=387,616 sun=1386,-344
+[768x1024] console: [e06] state POLISHED count=6 stage=1
+[768x1024] t=52.9s POLISHED count=6 stage=1 q=low fps=4.3 cam=34,33,0 roller=384,595 sun=1386,-344
+[768x1024] console: [e06] state STAGE_UP count=6 stage=1
+[768x1024] t=55.5s STAGE_UP count=6 stage=1 q=low fps=4.2 cam=76,31.4,2.2 roller=536,539 sun=1286,-292
+[768x1024] console: [e06] state NEXT_ZONE count=6 stage=2
+[768x1024] t=67.5s NEXT_ZONE count=6 stage=2 q=low fps=3.5 cam=128,29.4,4.9 roller=575,510 sun=1195,-299
+[768x1024] console: [e06] state WAIT_INPUT count=6 stage=2
+[768x1024] t=68.0s WAIT_INPUT count=6 stage=2 q=low fps=3.4 cam=61,32,1.3 roller=503,559 sun=1350,-387
+[768x1024] console: [e06] state ROLLING count=6 stage=2
+[768x1024] t=69.4s ROLLING count=6 stage=2 q=low fps=3.8 cam=37,33,0.1 roller=393,612 sun=1413,-421
+[768x1024] console: [e06] state POLISHED count=7 stage=2
+[768x1024] t=72.4s POLISHED count=7 stage=2 q=low fps=4 cam=36,33,0 roller=384,586 sun=1416,-422
+[768x1024] console: [e06] state NEXT_ZONE count=7 stage=2
+[768x1024] t=74.0s NEXT_ZONE count=7 stage=2 q=low fps=4 cam=36,33,0 roller=383,638 sun=1416,-422
+[768x1024] console: [e06] state WAIT_INPUT count=7 stage=2
+[768x1024] t=76.2s WAIT_INPUT count=7 stage=2 q=low fps=3.8 cam=36,33,0 roller=352,682 sun=1416,-422
+[768x1024] console: [e06] state ROLLING count=7 stage=2
+[768x1024] t=77.7s ROLLING count=7 stage=2 q=low fps=3.8 cam=36,33,0 roller=383,594 sun=1416,-422
+[768x1024] console: [e06] state POLISHED count=8 stage=2
+[768x1024] t=80.5s POLISHED count=8 stage=2 q=low fps=4.2 cam=36,33,0 roller=384,587 sun=1416,-422
+[768x1024] console: [e06] state NEXT_ZONE count=8 stage=2
+[768x1024] t=82.0s NEXT_ZONE count=8 stage=2 q=low fps=4.2 cam=36,33,0 roller=383,637 sun=1416,-422
+[768x1024] console: [e06] state WAIT_INPUT count=8 stage=2
+[768x1024] t=84.5s WAIT_INPUT count=8 stage=2 q=low fps=4 cam=36,33,0 roller=367,658 sun=1416,-422
+[768x1024] console: [e06] state ROLLING count=8 stage=2
+[768x1024] t=85.6s ROLLING count=8 stage=2 q=low fps=4 cam=36,33,0 roller=382,619 sun=1416,-422
+[768x1024] console: [e06] state POLISHED count=9 stage=2
+[768x1024] t=88.7s POLISHED count=9 stage=2 q=low fps=4 cam=36,33,0 roller=384,596 sun=1416,-422
+[768x1024] console: [e06] state NEXT_ZONE count=9 stage=2
+[768x1024] t=90.1s NEXT_ZONE count=9 stage=2 q=low fps=4 cam=36,33,0 roller=380,651 sun=1416,-422
+[768x1024] console: [e06] state WAIT_INPUT count=9 stage=2
+[768x1024] t=92.5s WAIT_INPUT count=9 stage=2 q=low fps=3.9 cam=36,33,0 roller=363,664 sun=1416,-422
+[768x1024] console: [e06] state ROLLING count=9 stage=2
+[768x1024] t=93.5s ROLLING count=9 stage=2 q=low fps=3.9 cam=36,33,0 roller=382,609 sun=1416,-422
+[768x1024] console: [e06] state POLISHED count=10 stage=2
+[768x1024] t=96.8s POLISHED count=10 stage=2 q=low fps=3.9 cam=36,33,0 roller=384,611 sun=1416,-422
+[768x1024] console: [e06] state NEXT_ZONE count=10 stage=2
+[768x1024] t=97.8s NEXT_ZONE count=10 stage=2 q=low fps=3.9 cam=36,33,0 roller=384,630 sun=1416,-422
+[768x1024] console: [e06] state WAIT_INPUT count=10 stage=2
+[768x1024] t=100.3s WAIT_INPUT count=10 stage=2 q=low fps=4 cam=36,33,0 roller=358,672 sun=1416,-422
+[768x1024] console: [e06] state ROLLING count=10 stage=2
+[768x1024] t=101.7s ROLLING count=10 stage=2 q=low fps=4.1 cam=36,33,0 roller=383,619 sun=1416,-422
+[768x1024] console: [e06] state POLISHED count=11 stage=2
+[768x1024] t=105.1s POLISHED count=11 stage=2 q=low fps=4.1 cam=36,33,0 roller=384,610 sun=1416,-422
+[768x1024] console: [e06] state NEXT_ZONE count=11 stage=2
+[768x1024] t=106.1s NEXT_ZONE count=11 stage=2 q=low fps=4.1 cam=36,33,0 roller=384,626 sun=1416,-422
+[768x1024] console: [e06] state WAIT_INPUT count=11 stage=2
+[768x1024] t=108.7s WAIT_INPUT count=11 stage=2 q=low fps=4 cam=36,33,0 roller=357,675 sun=1416,-422
+[768x1024] console: [e06] state ROLLING count=11 stage=2
+[768x1024] t=109.7s ROLLING count=11 stage=2 q=low fps=4 cam=36,33,0 roller=381,631 sun=1416,-422
+[768x1024] console: [e06] state POLISHED count=12 stage=2
+[768x1024] t=113.1s POLISHED count=12 stage=2 q=low fps=4.1 cam=36,33,0 roller=384,606 sun=1416,-422
+[768x1024] console: [e06] state STAGE_UP count=12 stage=2
+[768x1024] t=115.4s STAGE_UP count=12 stage=2 q=low fps=4.2 cam=66,30,3.7 roller=286,536 sun=1243,-319
+[768x1024] shot Pshot-2.jpg
+[768x1024] console: [e06] state NEXT_ZONE count=12 stage=3
+[768x1024] t=126.5s NEXT_ZONE count=12 stage=3 q=low fps=3.9 cam=198,17,19.5 roller=196,510 sun=733,-19
+[768x1024] console: [e06] state WAIT_INPUT count=12 stage=3
+[768x1024] t=127.5s WAIT_INPUT count=12 stage=3 q=low fps=3.7 cam=51,31.6,1.7 roller=325,566 sun=1367,-472
+[768x1024] console: [e06] state ROLLING count=12 stage=3
+[768x1024] t=128.5s ROLLING count=12 stage=3 q=low fps=3.8 cam=39,32.9,0.2 roller=376,593 sun=1446,-522
+[768x1024] console: [e06] state POLISHED count=13 stage=3
+[768x1024] t=131.5s POLISHED count=13 stage=3 q=low fps=4 cam=38,33,0 roller=384,591 sun=1456,-528
+[768x1024] console: [e06] state NEXT_ZONE count=13 stage=3
+[768x1024] t=133.0s NEXT_ZONE count=13 stage=3 q=low fps=4 cam=38,33,0 roller=387,641 sun=1456,-528
+[768x1024] console: [e06] state WAIT_INPUT count=13 stage=3
+[768x1024] t=135.6s WAIT_INPUT count=13 stage=3 q=low fps=4 cam=38,33,0 roller=397,644 sun=1456,-528
+[768x1024] console: [e06] state ROLLING count=13 stage=3
+[768x1024] t=136.5s ROLLING count=13 stage=3 q=low fps=4.1 cam=38,33,0 roller=386,607 sun=1456,-528
+[768x1024] console: [e06] state POLISHED count=14 stage=3
+[768x1024] t=139.5s POLISHED count=14 stage=3 q=low fps=4.1 cam=38,33,0 roller=384,585 sun=1456,-528
+[768x1024] console: [e06] state NEXT_ZONE count=14 stage=3
+[768x1024] t=140.9s NEXT_ZONE count=14 stage=3 q=low fps=4.1 cam=38,33,0 roller=385,632 sun=1456,-528
+[768x1024] console: [e06] state WAIT_INPUT count=14 stage=3
+[768x1024] t=143.4s WAIT_INPUT count=14 stage=3 q=low fps=4 cam=38,33,0 roller=403,655 sun=1456,-528
+[768x1024] console: [e06] state ROLLING count=14 stage=3
+[768x1024] t=145.1s ROLLING count=14 stage=3 q=low fps=3.9 cam=38,33,0 roller=385,589 sun=1456,-528
+[768x1024] console: [e06] state POLISHED count=15 stage=3
+[768x1024] t=148.0s POLISHED count=15 stage=3 q=low fps=4 cam=38,33,0 roller=384,600 sun=1456,-528
+[768x1024] console: [e06] state NEXT_ZONE count=15 stage=3
+[768x1024] t=149.0s NEXT_ZONE count=15 stage=3 q=low fps=4 cam=38,33,0 roller=384,620 sun=1456,-528
+[768x1024] console: [e06] state WAIT_INPUT count=15 stage=3
+[768x1024] t=151.6s WAIT_INPUT count=15 stage=3 q=low fps=3.9 cam=38,33,0 roller=412,669 sun=1456,-528
+[768x1024] console: [e06] state ROLLING count=15 stage=3
+[768x1024] t=152.6s ROLLING count=15 stage=3 q=low fps=4 cam=38,33,0 roller=387,625 sun=1456,-528
+[768x1024] console: [e06] state POLISHED count=16 stage=3
+[768x1024] t=155.9s POLISHED count=16 stage=3 q=low fps=4.2 cam=38,33,0 roller=384,596 sun=1456,-528
+[768x1024] console: [e06] state NEXT_ZONE count=16 stage=3
+[768x1024] t=157.0s NEXT_ZONE count=16 stage=3 q=low fps=4 cam=38,33,0 roller=384,623 sun=1456,-528
+[768x1024] console: [e06] state WAIT_INPUT count=16 stage=3
+[768x1024] t=159.5s WAIT_INPUT count=16 stage=3 q=low fps=4 cam=38,33,0 roller=411,667 sun=1456,-528
+[768x1024] console: [e06] state ROLLING count=16 stage=3
+[768x1024] t=160.4s ROLLING count=16 stage=3 q=low fps=4 cam=38,33,0 roller=387,624 sun=1456,-528
+[768x1024] console: [e06] state POLISHED count=17 stage=3
+[768x1024] t=163.8s POLISHED count=17 stage=3 q=low fps=4.2 cam=38,33,0 roller=384,595 sun=1456,-528
+[768x1024] console: [e06] state NEXT_ZONE count=17 stage=3
+[768x1024] t=165.3s NEXT_ZONE count=17 stage=3 q=low fps=4.1 cam=38,33,0 roller=388,644 sun=1456,-528
+[768x1024] console: [e06] state WAIT_INPUT count=17 stage=3
+[768x1024] t=167.6s WAIT_INPUT count=17 stage=3 q=low fps=3.9 cam=38,33,0 roller=401,651 sun=1456,-528
+[768x1024] console: [e06] state ROLLING count=17 stage=3
+[768x1024] t=168.6s ROLLING count=17 stage=3 q=low fps=4.1 cam=38,33,0 roller=386,624 sun=1456,-528
+[768x1024] console: [e06] state POLISHED count=18 stage=3
+[768x1024] t=172.0s POLISHED count=18 stage=3 q=low fps=4.2 cam=38,33,0 roller=384,598 sun=1456,-528
+[768x1024] console: [e06] state STAGE_UP count=18 stage=3
+[768x1024] t=174.2s STAGE_UP count=18 stage=3 q=low fps=4.2 cam=68,31.4,2 roller=473,514 sun=1351,-464
+[768x1024] console: [e06] state NEXT_ZONE count=18 stage=4
+[768x1024] t=186.3s NEXT_ZONE count=18 stage=4 q=low fps=3.8 cam=208,24,11.5 roller=503,453 sun=984,-290
+[768x1024] console: [e06] state WAIT_INPUT count=18 stage=4
+[768x1024] t=187.2s WAIT_INPUT count=18 stage=4 q=low fps=3.7 cam=55,32.2,1.1 roller=446,546 sun=1439,-605
+[768x1024] console: [e06] state ROLLING count=18 stage=4
+[768x1024] t=188.3s ROLLING count=18 stage=4 q=low fps=3.7 cam=41,32.9,0.1 roller=392,597 sun=1494,-640
+[768x1024] console: [e06] state POLISHED count=19 stage=4
+[768x1024] t=191.3s POLISHED count=19 stage=4 q=low fps=3.9 cam=39,33,0 roller=384,588 sun=1500,-644
+[768x1024] console: [e06] state NEXT_ZONE count=19 stage=4
+[768x1024] t=192.8s NEXT_ZONE count=19 stage=4 q=low fps=4.1 cam=39,33,0 roller=382,631 sun=1500,-644
+[768x1024] console: [e06] state WAIT_INPUT count=19 stage=4
+[768x1024] t=195.2s WAIT_INPUT count=19 stage=4 q=low fps=4.1 cam=39,33,0 roller=369,642 sun=1500,-644
+[768x1024] console: [e06] state ROLLING count=19 stage=4
+[768x1024] t=196.2s ROLLING count=19 stage=4 q=low fps=4 cam=39,33,0 roller=382,609 sun=1500,-644
+[768x1024] console: [e06] state POLISHED count=20 stage=4
+[768x1024] t=199.3s POLISHED count=20 stage=4 q=low fps=4 cam=39,33,0 roller=384,585 sun=1500,-644
+[768x1024] console: [e06] state NEXT_ZONE count=20 stage=4
+[768x1024] t=200.3s NEXT_ZONE count=20 stage=4 q=low fps=3.9 cam=39,33,0 roller=384,614 sun=1500,-644
+[768x1024] console: [e06] state WAIT_INPUT count=20 stage=4
+[768x1024] t=204.5s WAIT_INPUT count=20 stage=4 q=low fps=3.7 cam=39,33,0 roller=362,630 sun=1500,-644
+[768x1024] console: [e06] state ROLLING count=20 stage=4
+[768x1024] t=205.4s ROLLING count=20 stage=4 q=low fps=3.9 cam=39,33,0 roller=381,610 sun=1500,-644
+[768x1024] console: [e06] state POLISHED count=21 stage=4
+[768x1024] t=208.7s POLISHED count=21 stage=4 q=low fps=4.1 cam=39,33,0 roller=384,601 sun=1500,-644
+[768x1024] console: [e06] state NEXT_ZONE count=21 stage=4
+[768x1024] t=209.7s NEXT_ZONE count=21 stage=4 q=low fps=4.2 cam=39,33,0 roller=384,615 sun=1500,-644
+[768x1024] console: [e06] state WAIT_INPUT count=21 stage=4
+[768x1024] t=212.5s WAIT_INPUT count=21 stage=4 q=low fps=4.2 cam=39,33,0 roller=397,639 sun=1500,-644
+[768x1024] console: [e06] state ROLLING count=21 stage=4
+[768x1024] t=213.5s ROLLING count=21 stage=4 q=low fps=4.2 cam=39,33,0 roller=385,600 sun=1500,-644
+[768x1024] console: [e06] state POLISHED count=22 stage=4
+[768x1024] t=216.4s POLISHED count=22 stage=4 q=low fps=4.2 cam=39,33,0 roller=384,583 sun=1500,-644
+[768x1024] console: [e06] state NEXT_ZONE count=22 stage=4
+[768x1024] t=217.7s NEXT_ZONE count=22 stage=4 q=low fps=4.4 cam=39,33,0 roller=384,620 sun=1500,-644
+[768x1024] console: [e06] state WAIT_INPUT count=22 stage=4
+[768x1024] t=220.5s WAIT_INPUT count=22 stage=4 q=low fps=4.2 cam=39,33,0 roller=423,652 sun=1500,-644
+[768x1024] console: [e06] state ROLLING count=22 stage=4
+[768x1024] t=221.9s ROLLING count=22 stage=4 q=low fps=4.2 cam=39,33,0 roller=385,602 sun=1500,-644
+[768x1024] console: [e06] state POLISHED count=23 stage=4
+[768x1024] t=225.2s POLISHED count=23 stage=4 q=low fps=4.3 cam=39,33,0 roller=384,602 sun=1500,-644
+[768x1024] console: [e06] state NEXT_ZONE count=23 stage=4
+[768x1024] t=226.2s NEXT_ZONE count=23 stage=4 q=low fps=4.2 cam=39,33,0 roller=384,618 sun=1500,-644
+[768x1024] console: [e06] state WAIT_INPUT count=23 stage=4
+[768x1024] t=228.7s WAIT_INPUT count=23 stage=4 q=low fps=4.1 cam=39,33,0 roller=361,656 sun=1500,-644
+[768x1024] console: [e06] state ROLLING count=23 stage=4
+[768x1024] t=229.6s ROLLING count=23 stage=4 q=low fps=4.1 cam=39,33,0 roller=381,619 sun=1500,-644
+[768x1024] console: [e06] state POLISHED count=24 stage=4
+[768x1024] t=233.0s POLISHED count=24 stage=4 q=low fps=4.1 cam=39,33,0 roller=384,598 sun=1500,-644
+[768x1024] console: [e06] state CLIMAX count=24 stage=4
+[768x1024] t=233.9s CLIMAX count=24 stage=4 q=low fps=4.2 cam=39,33,0 roller=384,615 sun=1500,-644
+[768x1024] shot Pshot-3.jpg (sun=384,224 roller=401,508)
+[768x1024] console: [e06] state AFTERGLOW count=24 stage=4
+[768x1024] t=246.6s AFTERGLOW count=24 stage=4 q=low fps=5.7 cam=38,4.1,35 roller=402,508 sun=384,224
+[768x1024] console: [e06] state RESET count=24 stage=4
+[768x1024] console: [e06] state READY count=0 stage=1
+[768x1024] t=260.3s READY count=0 stage=1 q=low fps=5.9 cam=38,4.1,35 roller=-1170,360 sun=384,369
+[768x1024] console: [e06] autotest done
+[768x1024] final {"ready":true,"errors":[],"test":{"state":"READY","count":0,"stage":1,"stageF":0,"climaxReached":true,"climaxT":0,"cam":[34,33,0],"afterglowReached":true,"resetCount":1,"done":true,"q":"low","fps":5.2,"roller":[384,635],"sun":[1386,-344]}}
+[768x1024] consoleErrors=[]
+[768x1024] RESULT PASS (elapsed 261s)
