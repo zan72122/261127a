@@ -1598,7 +1598,18 @@ function onMove(e) {
 function endDrag(release) {
   if (!drag) return;
   const snapR = clamp(Math.min(W, H) * 0.075, 45, 70);
-  if (release && drag.s !== undefined && drag.s < snapR * 1.5) { beginAttach(); return; }
+  if (release && cur) {
+    // re-evaluate with the final pointer position (frames can be slow)
+    raycaster.setFromCamera(ndc.set(drag.x / W * 2 - 1, -(drag.y / H) * 2 + 1), camera);
+    const hit = raycaster.ray.intersectPlane(drag.plane, new THREE.Vector3());
+    let sFin = drag.s === undefined ? 1e9 : drag.s;
+    if (hit) {
+      const p = hit.add(drag.off); p.y += 0.08;
+      const hs = toScreen(targetHookWorld(_hw)), ls = toScreen(p);
+      sFin = Math.min(sFin, Math.hypot(hs.x - ls.x, hs.y - ls.y));
+    }
+    if (sFin < snapR * 1.5) { beginAttach(); return; }
+  }
   if (cur) cur.ret = { t: 0, from: cur.g.position.clone(), rz: cur.g.rotation.z };
   drag = null; setState('IDLE'); idleT = 0;
 }
@@ -1651,7 +1662,10 @@ function autotest(dt) {
     if (state !== 'DRAGGING') { fire('pointerup', AT.dest.x, AT.dest.y); AT.phase = 'wait'; AT.t = 0; return; }
     const x = lerp(AT.p0.x, AT.dest.x, f), y = lerp(AT.p0.y, AT.dest.y, f);
     fire('pointermove', x, y);
-    if (f >= 1) { fire('pointerup', x, y); AT.phase = 'wait'; AT.t = 0; }
+    if (f >= 1) { AT.phase = 'hold'; AT.t = 0; AT.last = { x, y }; }
+  } else if (AT.phase === 'hold') {
+    if (state === 'DRAGGING') fire('pointerup', AT.last.x, AT.last.y);
+    AT.phase = 'wait'; AT.t = 0;
   } else if (state === 'FREE_PLAY') {
     AT.free += dt;
     if (AT.free > 1.5 && !AT.h) { AT.h = true; const hk = toScreen(handleKnob.localToWorld(V3(0.3, 0.3, 0))); fire('pointerdown', hk.x, hk.y); fire('pointerup', hk.x, hk.y); }

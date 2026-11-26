@@ -6,3 +6,4 @@
 [1024x768] shot shot-1.jpg
 [1024x768] mid {"state":"IDLE","count":13,"stage":2,"q":"low","finaleT":0,"lantern":{"x":513,"y":578},"hook":{"x":512,"y":286},"axisTop":{"x":512,"y":61},"axisBottom":{"y":486},"ringL":254,"ringR":770,"errors":[]} t=108s
 [1024x768] shot shot-2.jpg
+TEST FAILED: page.waitForFunction: Timeout 900000ms exceeded.
