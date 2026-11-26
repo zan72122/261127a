@@ -183,7 +183,7 @@ const NL = 24;
 const lampU = {
   uLP: { value: Array.from({ length: NL }, () => new THREE.Vector4(0, -50, 0, 0)) },
   uLC: { value: Array.from({ length: NL }, () => new THREE.Vector3()) },
-  uLampGain: { value: 0.6 },
+  uLampGain: { value: 1.3 },
   uTime: { value: 0 }
 };
 const LAMP_GLSL = `
@@ -922,7 +922,7 @@ function makeGlassMats(tint) {
     emissive: t, emissiveIntensity: 0, depthWrite: false, flatShading: false
   });
   const simple = new THREE.MeshPhysicalMaterial({
-    color: t.clone().lerp(new THREE.Color(1, 1, 1), 0.2), metalness: 0, roughness: 0.08, transparent: true, opacity: 0.42,
+    color: t.clone().lerp(new THREE.Color(1, 1, 1), 0.2), metalness: 0, roughness: 0.08, transparent: true, opacity: 0.58,
     envMapIntensity: 1.4, emissive: t, emissiveIntensity: 0, depthWrite: false, side: THREE.DoubleSide, clearcoat: 0.6
   });
   return { phys, simple };
@@ -1463,10 +1463,10 @@ function updateLanterns(dt) {
     const lit = L.ign;
     L.fu.uIgn.value = lit; L.fu.uBoost.value = L.boost * 0.8;
     const fb = finBoost * 0.25;
-    L.glass.material.emissiveIntensity = lit * (0.2 + L.boost * 0.45 + fb);
+    L.glass.material.emissiveIntensity = lit * (0.42 + L.boost * 0.5 + fb);
     L.candle.material.emissiveIntensity = lit * 0.35;
-    L.haloM.opacity = lit * ((qName === 'low' ? 0.42 : 0.26) + L.boost * 0.35 + fb * 0.6);
-    L.halo.scale.setScalar(0.55 + L.boost * 0.15);
+    L.haloM.opacity = lit * ((qName === 'low' ? 0.55 : 0.34) + L.boost * 0.35 + fb * 0.4);
+    L.halo.scale.setScalar(0.85 + L.boost * 0.25);
     L.gleam = Math.max(0, (L.gleam || 0) - dt * 0.1);
     L.bm.emissiveIntensity = L.gleam * 0.55 + lit * 0.04;
     // light into the garden
@@ -1479,7 +1479,7 @@ function updateLanterns(dt) {
       if (L.attached) ringSum[L.ring] += lit * (1 + L.boost);
     } else u.w = 0;
   }
-  lampU.uLampGain.value = 0.55 + 0.3 * finBoost;
+  lampU.uLampGain.value = 1.3 + 0.5 * finBoost;
   // a few real point lights for brass highlights
   const nL = PRESET[qName].lights;
   const total = ringSum.reduce((a, b) => a + b, 0);
