@@ -1454,8 +1454,13 @@ function updateLanterns(dt) {
       const ro = ringObjs[L.ring];
       const k = 110, c = 5.0;
       const acc = -(ro.alpha || 0) * RINGS[L.ring].r / 9.8 * 0.15;
-      L.swzv += (-k * (L.swz - acc) - c * L.swzv) * dt; L.swz += L.swzv * dt;
-      L.swxv += (-k * L.swx - c * L.swxv) * dt; L.swx += L.swxv * dt;
+      const nSub = Math.max(1, Math.ceil(dt / 0.008)); const h = dt / nSub;
+      for (let si = 0; si < nSub; si++) {
+        L.swzv += (-k * (L.swz - acc) - c * L.swzv) * h; L.swz += L.swzv * h;
+        L.swxv += (-k * L.swx - c * L.swxv) * h; L.swx += L.swxv * h;
+      }
+      if (!Number.isFinite(L.swz) || !Number.isFinite(L.swx)) { L.swz = L.swzv = L.swx = L.swxv = 0; }
+      L.swz = clamp(L.swz, -0.3, 0.3); L.swx = clamp(L.swx, -0.3, 0.3);
       L.pivot.sw.rotation.z = L.swz; L.pivot.sw.rotation.x = L.swx;
     }
     // glow
@@ -1629,6 +1634,7 @@ window.addEventListener('resize', onResize);
 // ===========================================================================
 const AT = { phase: 'wait', t: 0, p0: null, dest: null, free: 0 };
 function fire(type, x, y) {
+  if (!Number.isFinite(x) || !Number.isFinite(y)) return;
   canvas.dispatchEvent(new PointerEvent(type, { pointerId: 7, clientX: x, clientY: y, bubbles: true, cancelable: true, pointerType: 'touch', isPrimary: true, button: 0, buttons: type === 'pointerup' ? 0 : 1 }));
 }
 function autotest(dt) {
@@ -1652,6 +1658,7 @@ function autotest(dt) {
     if (AT.free > 3.0 && !AT.l) { AT.l = true; const s = bodyScreen(lanterns[2]); fire('pointerdown', s.x, s.y); fire('pointerup', s.x, s.y); window.__game.freeplay = true; }
   }
 }
+window.__dbg = () => ({ crownA, speedMul, thetas: ringObjs.map((r) => r.theta), spins: ringObjs.map((r) => r.spin), hk: handleKnob.localToWorld(V3(0.3, 0.3, 0)), l2: lanterns[2].g.position, sv: sunOrn.userData.v, cam: camera.position });
 window.__game = {
   get state() { return state; }, get count() { return count; }, get stage() { return Math.min(3, Math.floor(count / 6)); },
   get q() { return qName; }, get finaleT() { return fin ? fin.t : 0; }, climax: false, freeplay: false,
