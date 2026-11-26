@@ -1,25 +1,7 @@
-# E04 headless autotest 2026-11-26T22:36Z
+# E04 headless autotest 2026-11-26T22:57Z
 # chromium (playwright, headless) --use-angle=swiftshader --enable-unsafe-swiftshader; server: python3 -m http.server (root site/)
 # url: games/e04/index.html?autotest&q=low ; gf-playlog external beacon answered locally with 204 (no outbound network in sandbox)
 # screen coords: lantern=bench lantern body, hook=target hook, axisTop/axisBottom=device axis (sun ornament incl. unfolded rays / pedestal), ringL/ringR=bottom ring x extents
-[1024x768] ready=true after 4.5s
+[1024x768] ready=true after 4.4s
 [1024x768] early {"state":"IDLE","count":1,"stage":0,"q":"low","finaleT":0,"lantern":{"x":513,"y":579},"hook":{"x":512,"y":450},"axisTop":{"x":512,"y":61},"axisBottom":{"y":486},"ringL":254,"ringR":770,"errors":[]}
 [1024x768] shot shot-1.jpg
-[1024x768] mid {"state":"IDLE","count":13,"stage":2,"q":"low","finaleT":0,"lantern":{"x":513,"y":578},"hook":{"x":512,"y":286},"axisTop":{"x":512,"y":61},"axisBottom":{"y":486},"ringL":254,"ringR":770,"errors":[]} t=113s
-[1024x768] shot shot-2.jpg
-[1024x768] climax reached after 230s
-[1024x768] climax {"state":"FINALE","count":24,"stage":3,"q":"low","finaleT":14,"axisTop":{"x":512,"y":61},"axisBottom":{"y":486},"ringL":254,"ringR":770,"errors":[]}
-[1024x768] shot shot-3.jpg
-[1024x768] freeplay {"state":"FREE_PLAY","count":24,"stage":3,"q":"low","finaleT":18.3,"axisTop":{"x":512,"y":61},"axisBottom":{"y":486},"ringL":254,"ringR":770,"errors":[]}
-[1024x768] __ready=true __errors=[] consoleErrors=[] externalRequests=["https://gf-playlog.zan72122.workers.dev/log"]
-[768x1024] ready=true after 4.5s
-[768x1024] early {"state":"IDLE","count":1,"stage":0,"q":"low","finaleT":0,"lantern":{"x":385,"y":746},"hook":{"x":384,"y":593},"axisTop":{"x":384,"y":124},"axisBottom":{"y":637},"ringL":72,"ringR":696,"errors":[]}
-[768x1024] shot shot-1-portrait.jpg
-[768x1024] mid {"state":"IDLE","count":13,"stage":2,"q":"low","finaleT":0,"lantern":{"x":384,"y":747},"hook":{"x":384,"y":396},"axisTop":{"x":384,"y":124},"axisBottom":{"y":637},"ringL":72,"ringR":696,"errors":[]} t=108s
-[768x1024] shot shot-2-portrait.jpg
-[768x1024] climax reached after 219s
-[768x1024] climax {"state":"FINALE","count":24,"stage":3,"q":"low","finaleT":13.8,"axisTop":{"x":384,"y":124},"axisBottom":{"y":637},"ringL":72,"ringR":696,"errors":[]}
-[768x1024] shot shot-3-portrait.jpg
-[768x1024] freeplay {"state":"FREE_PLAY","count":24,"stage":3,"q":"low","finaleT":18.3,"axisTop":{"x":384,"y":124},"axisBottom":{"y":637},"ringL":72,"ringR":696,"errors":[]}
-[768x1024] __ready=true __errors=[] consoleErrors=[] externalRequests=["https://gf-playlog.zan72122.workers.dev/log"]
-[640x480 q=mid thumbnail run] climax+freeplay reached in 338s __ready=true q=mid __errors=[] consoleErrors=[]
