@@ -22,3 +22,4 @@
 [768x1024] shot shot-3-portrait.jpg
 [768x1024] freeplay {"state":"FREE_PLAY","count":24,"stage":3,"q":"low","finaleT":18.3,"axisTop":{"x":384,"y":124},"axisBottom":{"y":637},"ringL":72,"ringR":696,"errors":[]}
 [768x1024] __ready=true __errors=[] consoleErrors=[] externalRequests=["https://gf-playlog.zan72122.workers.dev/log"]
+[640x480 q=mid thumbnail run] climax+freeplay reached in 338s __ready=true q=mid __errors=[] consoleErrors=[]
