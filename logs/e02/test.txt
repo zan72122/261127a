@@ -1,0 +1,25 @@
+# E02 headless test 2026-11-26T20:44Z
+# chromium (playwright, headless) --use-angle=swiftshader --enable-unsafe-swiftshader; server: python3 -m http.server (root site/)
+# url: games/e02/index.html?autotest&q=low  (last run: q=high at 640x480 for the thumbnail)
+# note: gf-playlog.zan72122.workers.dev is answered locally (204) because this sandbox has no outbound network
+[1024x768] ready after 3.5s
+[1024x768] early {"state":"ready","stage":0,"pulls":0,"total":0,"open":0.04,"q":"low","climax":false,"grip":{"x":512,"y":496.6179174136367},"errors":[]}
+[1024x768] mid {"state":"gate","stage":1,"pulls":3,"total":9,"open":0.316,"q":"low","climax":false,"grip":{"x":512,"y":561.4872547038658},"errors":[]}
+[1024x768] climax reached after 134.3s
+[1024x768] climax {"state":"climax","stage":2,"pulls":6,"total":18,"open":0.78,"q":"low","climax":true,"grip":{"x":512,"y":496.6179174136367},"errors":[]}
+[1024x768] after replay drag {"state":"resetting","stage":2,"pulls":6,"total":18,"open":0.645,"q":"low","climax":true,"grip":{"x":511.87969459608433,"y":551.6693687338309},"errors":[]}
+[1024x768] replay reset complete {"state":"ready","stage":0,"pulls":0,"total":0,"open":0.04,"q":"low","climax":true,"grip":{"x":512,"y":496.6179174136367},"errors":[]}
+[1024x768] after touch tap {"state":"gate","stage":0,"pulls":1,"total":1,"open":0.053,"q":"low","climax":true,"grip":{"x":512,"y":562.9491497320382},"errors":[]}
+[1024x768] __ready=true __errors=[] consoleErrors=[]
+[768x1024] ready after 3.6s
+[768x1024] early {"state":"ready","stage":0,"pulls":0,"total":0,"open":0.04,"q":"low","climax":false,"grip":{"x":384,"y":593.92},"errors":[]}
+[768x1024] mid {"state":"gate","stage":1,"pulls":3,"total":9,"open":0.316,"q":"low","climax":false,"grip":{"x":384,"y":663.6493421876776},"errors":[]}
+[768x1024] climax reached after 132.6s
+[768x1024] climax {"state":"climax","stage":2,"pulls":6,"total":18,"open":0.78,"q":"low","climax":true,"grip":{"x":384,"y":593.92},"errors":[]}
+[768x1024] __ready=true __errors=[] consoleErrors=[]
+[640x480] ready after 4.6s
+[640x480] early {"state":"ready","stage":0,"pulls":0,"total":0,"open":0.04,"q":"high","climax":false,"grip":{"x":320,"y":310.3861983835229},"errors":[]}
+[640x480] mid {"state":"gate","stage":1,"pulls":3,"total":9,"open":0.308,"q":"high","climax":false,"grip":{"x":320,"y":351.84321858252383},"errors":[]}
+[640x480] climax reached after 194.5s
+[640x480] climax {"state":"climax","stage":2,"pulls":6,"total":18,"open":0.78,"q":"high","climax":true,"grip":{"x":320,"y":310.3861983835229},"errors":[]}
+[640x480] __ready=true __errors=[] consoleErrors=[]
