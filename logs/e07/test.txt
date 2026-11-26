@@ -1,2 +1,80 @@
 # E07 autotest 2026-11-26T23:49Z  headless Chromium (Playwright) + SwiftShader (--use-angle=swiftshader --enable-unsafe-swiftshader), url=games/e07/index.html?autotest&q=low, server: python3 -m http.server (root site/)
 # note: the shared ../../gf-playlog.js beacon to an external host is stubbed with HTTP 204 in this sandbox (no outbound access)
+[1024x768] ready in 7301ms url=games/e07/index.html?autotest&q=low
+[1024x768] t=8.7s STAGE_1 done=0/28 climaxT=0 fps=2.2 q=low particles=237 errors=0
+[1024x768] t=12.3s STAGE_1 done=1/28 climaxT=0 fps=2.5 q=low particles=175 errors=0
+[1024x768] t=15.8s STAGE_1 done=2/28 climaxT=0 fps=2 q=low particles=389 errors=0
+[1024x768] t=19.4s STAGE_1 done=3/28 climaxT=0 fps=2.5 q=low particles=384 errors=0
+[1024x768] shot shot-1.jpg (state=STAGE_1 done=3 climaxT=0)
+[1024x768] t=25.5s STAGE_1 done=4/28 climaxT=0 fps=2.2 q=low particles=373 errors=0
+[1024x768] t=31.0s STAGE_1 done=5/28 climaxT=0 fps=2.5 q=low particles=329 errors=0
+[1024x768] t=37.7s STAGE_1 done=6/28 climaxT=0 fps=2.1 q=low particles=192 errors=0
+[1024x768] t=41.5s STAGE_1 done=7/28 climaxT=0 fps=2.3 q=low particles=387 errors=0
+[1024x768] t=42.7s STAGE_2 done=7/28 climaxT=0 fps=2.2 q=low particles=118 errors=0
+[1024x768] t=50.0s STAGE_2 done=8/28 climaxT=0 fps=2.5 q=low particles=356 errors=0
+[1024x768] t=54.7s STAGE_2 done=9/28 climaxT=0 fps=2.4 q=low particles=338 errors=0
+[1024x768] t=59.9s STAGE_2 done=10/28 climaxT=0 fps=2.6 q=low particles=358 errors=0
+[1024x768] t=63.2s STAGE_2 done=11/28 climaxT=0 fps=2.7 q=low particles=413 errors=0
+[1024x768] t=67.8s STAGE_2 done=12/28 climaxT=0 fps=2.8 q=low particles=339 errors=0
+[1024x768] t=72.8s STAGE_2 done=13/28 climaxT=0 fps=2.9 q=low particles=404 errors=0
+[1024x768] t=78.3s STAGE_2 done=14/28 climaxT=0 fps=2.5 q=low particles=235 errors=0
+[1024x768] t=79.4s STAGE_3 done=14/28 climaxT=0 fps=2.6 q=low particles=217 errors=0
+[1024x768] t=84.2s STAGE_3 done=15/28 climaxT=0 fps=2.7 q=low particles=256 errors=0
+[1024x768] shot shot-2.jpg (state=STAGE_3 done=15 climaxT=0)
+[1024x768] t=88.6s STAGE_3 done=16/28 climaxT=0 fps=2.7 q=low particles=231 errors=0
+[1024x768] t=93.0s STAGE_3 done=17/28 climaxT=0 fps=2.3 q=low particles=238 errors=0
+[1024x768] t=99.0s STAGE_3 done=18/28 climaxT=0 fps=2.7 q=low particles=267 errors=0
+[1024x768] t=104.5s STAGE_3 done=19/28 climaxT=0 fps=2.4 q=low particles=274 errors=0
+[1024x768] t=109.1s STAGE_3 done=20/28 climaxT=0 fps=2.7 q=low particles=317 errors=0
+[1024x768] t=114.7s STAGE_3 done=21/28 climaxT=0 fps=2.8 q=low particles=426 errors=0
+[1024x768] t=118.0s STAGE_4 done=22/28 climaxT=0 fps=0.9 q=low particles=331 errors=0
+[1024x768] t=119.2s STAGE_4 done=25/28 climaxT=0 fps=2.9 q=low particles=337 errors=0
+[1024x768] t=122.1s STAGE_4 done=26/28 climaxT=0 fps=0.5 q=low particles=310 errors=0
+[1024x768] t=126.9s STAGE_4 done=28/28 climaxT=0 fps=2.7 q=low particles=238 errors=0
+[1024x768] t=128.2s STAGE_5 done=28/28 climaxT=0 fps=1.1 q=low particles=95 errors=0
+[1024x768] t=129.4s CLIMAX done=28/28 climaxT=0.75 fps=2.4 q=low particles=61 errors=0
+[1024x768] shot shot-3.jpg (state=CLIMAX done=28 climaxT=9)
+[1024x768] t=147.5s FREE_PLAY done=28/28 climaxT=12 fps=2.3 q=low particles=13 errors=0
+[1024x768] t=166.7s RESET done=28/28 climaxT=12 fps=2.9 q=low particles=4 errors=0
+[1024x768] t=192.4s INTRO done=0/28 climaxT=12 fps=2.3 q=low particles=2 errors=0
+[1024x768] RESULT PASS __ready=true __errors=[] consoleErrors=[] climax=true peak=true freePlay=true reset=true backToIntro=true elapsed=194s
+ALL PASS
+[768x1024] ready in 6145ms url=games/e07/index.html?autotest&q=low
+[768x1024] t=7.4s STAGE_1 done=0/28 climaxT=0 fps=2.3 q=low particles=237 errors=0
+[768x1024] t=11.1s STAGE_1 done=1/28 climaxT=0 fps=2.6 q=low particles=175 errors=0
+[768x1024] t=14.6s STAGE_1 done=2/28 climaxT=0 fps=2.5 q=low particles=360 errors=0
+[768x1024] t=18.1s STAGE_1 done=3/28 climaxT=0 fps=1.9 q=low particles=383 errors=0
+[768x1024] shot p-shot-1.jpg (state=STAGE_1 done=3 climaxT=0)
+[768x1024] t=23.7s STAGE_1 done=4/28 climaxT=0 fps=2.4 q=low particles=380 errors=0
+[768x1024] t=28.5s STAGE_1 done=5/28 climaxT=0 fps=2.6 q=low particles=336 errors=0
+[768x1024] t=34.9s STAGE_1 done=6/28 climaxT=0 fps=2.4 q=low particles=189 errors=0
+[768x1024] t=38.7s STAGE_1 done=7/28 climaxT=0 fps=2.5 q=low particles=400 errors=0
+[768x1024] t=39.9s STAGE_2 done=7/28 climaxT=0 fps=2.3 q=low particles=113 errors=0
+[768x1024] t=47.1s STAGE_2 done=8/28 climaxT=0 fps=2.6 q=low particles=339 errors=0
+[768x1024] t=53.1s STAGE_2 done=9/28 climaxT=0 fps=2.5 q=low particles=206 errors=0
+[768x1024] t=56.5s STAGE_2 done=10/28 climaxT=0 fps=2.6 q=low particles=355 errors=0
+[768x1024] t=59.8s STAGE_2 done=11/28 climaxT=0 fps=2.8 q=low particles=406 errors=0
+[768x1024] t=64.2s STAGE_2 done=12/28 climaxT=0 fps=2.7 q=low particles=325 errors=0
+[768x1024] t=69.6s STAGE_2 done=13/28 climaxT=0 fps=2.3 q=low particles=404 errors=0
+[768x1024] t=75.2s STAGE_2 done=14/28 climaxT=0 fps=2.7 q=low particles=241 errors=0
+[768x1024] t=76.5s STAGE_3 done=14/28 climaxT=0 fps=2.7 q=low particles=218 errors=0
+[768x1024] t=81.4s STAGE_3 done=15/28 climaxT=0 fps=2.6 q=low particles=254 errors=0
+[768x1024] shot p-shot-2.jpg (state=STAGE_3 done=15 climaxT=0)
+[768x1024] t=85.9s STAGE_3 done=16/28 climaxT=0 fps=2.7 q=low particles=231 errors=0
+[768x1024] t=90.2s STAGE_3 done=17/28 climaxT=0 fps=2.7 q=low particles=230 errors=0
+[768x1024] t=96.1s STAGE_3 done=18/28 climaxT=0 fps=2.9 q=low particles=260 errors=0
+[768x1024] t=101.5s STAGE_3 done=19/28 climaxT=0 fps=2.9 q=low particles=279 errors=0
+[768x1024] t=106.1s STAGE_3 done=20/28 climaxT=0 fps=2.4 q=low particles=325 errors=0
+[768x1024] t=111.7s STAGE_3 done=21/28 climaxT=0 fps=2.7 q=low particles=421 errors=0
+[768x1024] t=114.8s STAGE_4 done=22/28 climaxT=0 fps=1 q=low particles=328 errors=0
+[768x1024] t=116.1s STAGE_4 done=25/28 climaxT=0 fps=2.9 q=low particles=331 errors=0
+[768x1024] t=119.3s STAGE_4 done=26/28 climaxT=0 fps=0.5 q=low particles=311 errors=0
+[768x1024] t=124.1s STAGE_4 done=28/28 climaxT=0 fps=2.5 q=low particles=241 errors=0
+[768x1024] t=125.2s STAGE_5 done=28/28 climaxT=0 fps=1.3 q=low particles=97 errors=0
+[768x1024] t=126.3s CLIMAX done=28/28 climaxT=0.75 fps=2.9 q=low particles=62 errors=0
+[768x1024] shot p-shot-3.jpg (state=CLIMAX done=28 climaxT=9)
+[768x1024] t=143.9s FREE_PLAY done=28/28 climaxT=12 fps=2.6 q=low particles=13 errors=0
+[768x1024] t=163.4s RESET done=28/28 climaxT=12 fps=2.8 q=low particles=4 errors=0
+[768x1024] t=189.7s INTRO done=0/28 climaxT=12 fps=2.3 q=low particles=2 errors=0
+[768x1024] RESULT PASS __ready=true __errors=[] consoleErrors=[] climax=true peak=true freePlay=true reset=true backToIntro=true elapsed=191s
+ALL PASS
