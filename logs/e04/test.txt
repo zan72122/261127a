@@ -15,3 +15,10 @@
 [768x1024] ready=true after 4.5s
 [768x1024] early {"state":"IDLE","count":1,"stage":0,"q":"low","finaleT":0,"lantern":{"x":385,"y":746},"hook":{"x":384,"y":593},"axisTop":{"x":384,"y":124},"axisBottom":{"y":637},"ringL":72,"ringR":696,"errors":[]}
 [768x1024] shot shot-1-portrait.jpg
+[768x1024] mid {"state":"IDLE","count":13,"stage":2,"q":"low","finaleT":0,"lantern":{"x":384,"y":747},"hook":{"x":384,"y":396},"axisTop":{"x":384,"y":124},"axisBottom":{"y":637},"ringL":72,"ringR":696,"errors":[]} t=108s
+[768x1024] shot shot-2-portrait.jpg
+[768x1024] climax reached after 219s
+[768x1024] climax {"state":"FINALE","count":24,"stage":3,"q":"low","finaleT":13.8,"axisTop":{"x":384,"y":124},"axisBottom":{"y":637},"ringL":72,"ringR":696,"errors":[]}
+[768x1024] shot shot-3-portrait.jpg
+[768x1024] freeplay {"state":"FREE_PLAY","count":24,"stage":3,"q":"low","finaleT":18.3,"axisTop":{"x":384,"y":124},"axisBottom":{"y":637},"ringL":72,"ringR":696,"errors":[]}
+[768x1024] __ready=true __errors=[] consoleErrors=[] externalRequests=["https://gf-playlog.zan72122.workers.dev/log"]
