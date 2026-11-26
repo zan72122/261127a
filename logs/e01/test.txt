@@ -1,0 +1,147 @@
+# E01 autotest 2026-11-26T20:55Z  headless Chromium (Playwright) + SwiftShader (--use-angle=swiftshader --enable-unsafe-swiftshader), url=games/e01/index.html?autotest&q=low
+# note: the shared ../../gf-playlog.js beacon to an external host is stubbed with HTTP 204 in this sandbox (no outbound access)
+[1024x768] ready in 3701ms
+[1024x768] t=3.9s LOADING st=0 att=0 fps=60 q=low
+[1024x768] t=4.6s WAIT_START st=0 att=0 fps=60 q=low
+[1024x768] t=5.5s DRAGGING st=0 att=0 fps=4.4 q=low
+[1024x768] t=5.9s SUCCESS_EFFECT st=0 att=1 fps=4.4 q=low
+[1024x768] t=8.6s WAIT_INPUT st=0 att=1 fps=4.2 q=low
+[1024x768] t=9.6s DRAGGING st=0 att=1 fps=4.2 q=low
+[1024x768] t=10.5s WAIT_INPUT st=0 att=1 fps=4.3 q=low
+[1024x768] t=11.3s SNAPPING st=0 att=1 fps=4.3 q=low
+[1024x768] t=11.8s SUCCESS_EFFECT st=0 att=2 fps=4.2 q=low
+[1024x768] t=14.5s WAIT_INPUT st=0 att=2 fps=4.4 q=low
+[1024x768] t=14.9s DRAGGING st=0 att=2 fps=4.3 q=low
+[1024x768] t=15.4s SUCCESS_EFFECT st=0 att=3 fps=4.3 q=low
+[1024x768] t=17.9s WAIT_INPUT st=0 att=3 fps=4.6 q=low
+[1024x768] t=18.9s SNAPPING st=0 att=3 fps=4.6 q=low
+[1024x768] t=19.4s SUCCESS_EFFECT st=0 att=4 fps=4.3 q=low
+[1024x768] t=22.1s WAIT_INPUT st=0 att=4 fps=4.2 q=low
+[1024x768] shot shot-1.jpg
+[1024x768] t=24.3s SUCCESS_EFFECT st=0 att=5 fps=4.2 q=low
+[1024x768] t=25.6s WAIT_INPUT st=0 att=5 fps=4.5 q=low
+[1024x768] t=26.6s SNAPPING st=0 att=5 fps=4.5 q=low
+[1024x768] t=27.0s SUCCESS_EFFECT st=0 att=6 fps=4.3 q=low
+[1024x768] t=28.3s STAGE_TRANSITION st=0 att=6 fps=4.4 q=low
+[1024x768] t=30.4s STAGE_TRANSITION st=1 att=6 fps=4.7 q=low
+[1024x768] t=32.6s WAIT_INPUT st=1 att=6 fps=4.4 q=low
+[1024x768] t=33.5s SNAPPING st=1 att=6 fps=4.2 q=low
+[1024x768] t=34.0s SUCCESS_EFFECT st=1 att=7 fps=4.2 q=low
+[1024x768] t=37.7s WAIT_INPUT st=1 att=7 fps=4.3 q=low
+[1024x768] t=38.7s SNAPPING st=1 att=7 fps=4.3 q=low
+[1024x768] t=39.2s SUCCESS_EFFECT st=1 att=8 fps=4.2 q=low
+[1024x768] t=41.3s WAIT_INPUT st=1 att=8 fps=4.6 q=low
+[1024x768] t=42.3s SNAPPING st=1 att=8 fps=4.3 q=low
+[1024x768] t=42.7s SUCCESS_EFFECT st=1 att=9 fps=4.3 q=low
+[1024x768] t=45.0s WAIT_INPUT st=1 att=9 fps=4.3 q=low
+[1024x768] t=45.5s DRAGGING st=1 att=9 fps=4.3 q=low
+[1024x768] t=45.8s SNAPPING st=1 att=9 fps=4.3 q=low
+[1024x768] t=46.3s SUCCESS_EFFECT st=1 att=10 fps=4.3 q=low
+[1024x768] t=48.6s WAIT_INPUT st=1 att=10 fps=4.3 q=low
+[1024x768] t=49.1s DRAGGING st=1 att=10 fps=4.4 q=low
+[1024x768] t=49.6s SUCCESS_EFFECT st=1 att=11 fps=4.4 q=low
+[1024x768] t=52.0s WAIT_INPUT st=1 att=11 fps=4.5 q=low
+[1024x768] t=52.5s DRAGGING st=1 att=11 fps=4.5 q=low
+[1024x768] t=52.9s SUCCESS_EFFECT st=1 att=12 fps=4.6 q=low
+[1024x768] t=54.3s STAGE_TRANSITION st=1 att=12 fps=4.3 q=low
+[1024x768] t=56.1s STAGE_TRANSITION st=2 att=12 fps=4.5 q=low
+[1024x768] t=58.5s WAIT_INPUT st=2 att=12 fps=4.2 q=low
+[1024x768] t=59.3s DRAGGING st=2 att=12 fps=4.2 q=low
+[1024x768] t=59.5s SNAPPING st=2 att=12 fps=4.2 q=low
+[1024x768] t=59.8s SUCCESS_EFFECT st=2 att=13 fps=4.2 q=low
+[1024x768] t=63.9s WAIT_INPUT st=2 att=13 fps=4.2 q=low
+[1024x768] t=64.3s DRAGGING st=2 att=13 fps=4.2 q=low
+[1024x768] t=64.7s SNAPPING st=2 att=13 fps=4.2 q=low
+[1024x768] t=65.1s SUCCESS_EFFECT st=2 att=14 fps=4.2 q=low
+[1024x768] t=67.3s WAIT_INPUT st=2 att=14 fps=4.2 q=low
+[1024x768] shot shot-2.jpg
+[1024x768] t=69.2s SUCCESS_EFFECT st=2 att=15 fps=4.1 q=low
+[1024x768] t=71.1s WAIT_INPUT st=2 att=15 fps=4.3 q=low
+[1024x768] t=71.6s DRAGGING st=2 att=15 fps=4.3 q=low
+[1024x768] t=71.9s SNAPPING st=2 att=15 fps=4.3 q=low
+[1024x768] t=72.4s SUCCESS_EFFECT st=2 att=16 fps=4.3 q=low
+[1024x768] t=74.5s WAIT_INPUT st=2 att=16 fps=4.3 q=low
+[1024x768] t=75.5s SNAPPING st=2 att=16 fps=4.2 q=low
+[1024x768] t=75.9s SUCCESS_EFFECT st=2 att=17 fps=4.2 q=low
+[1024x768] t=78.3s WAIT_INPUT st=2 att=17 fps=4.3 q=low
+[1024x768] t=79.1s SNAPPING st=2 att=17 fps=4.3 q=low
+[1024x768] t=79.6s SUCCESS_EFFECT st=2 att=18 fps=4.3 q=low
+[1024x768] t=80.5s CLIMAX st=2 att=18 fps=4.3 q=low
+[1024x768] shot shot-3.jpg
+[1024x768] t=109.2s AFTERGLOW st=2 att=18 fps=4.2 q=low
+[1024x768] t=121.7s FREE_PLAY st=2 att=18 fps=4.1 q=low
+[1024x768] t=134.5s RESETTING st=2 att=18 fps=4.1 q=low
+[1024x768] t=137.9s STAGE_TRANSITION st=0 att=0 fps=4.7 q=low
+[1024x768] t=141.5s WAIT_START st=0 att=0 fps=4.8 q=low
+[1024x768] RESULT ready=true errors=[] console=[] climax=true freePlay=true freeTaps=4 returns=1 resets=1 done=true fps=4.8 q=low elapsed=142.0s => PASS
+[768x1024] ready in 3218ms
+[768x1024] t=3.4s LOADING st=0 att=0 fps=60 q=low
+[768x1024] t=4.2s WAIT_START st=0 att=0 fps=5 q=low
+[768x1024] t=4.6s DRAGGING st=0 att=0 fps=5 q=low
+[768x1024] t=5.0s SUCCESS_EFFECT st=0 att=1 fps=5.1 q=low
+[768x1024] t=7.3s WAIT_INPUT st=0 att=1 fps=5.1 q=low
+[768x1024] t=7.7s DRAGGING st=0 att=1 fps=5.1 q=low
+[768x1024] t=8.5s WAIT_INPUT st=0 att=1 fps=4.9 q=low
+[768x1024] t=9.3s SNAPPING st=0 att=1 fps=5.3 q=low
+[768x1024] t=9.6s SUCCESS_EFFECT st=0 att=2 fps=5.3 q=low
+[768x1024] t=11.6s WAIT_INPUT st=0 att=2 fps=5 q=low
+[768x1024] t=12.4s SNAPPING st=0 att=2 fps=5 q=low
+[768x1024] t=12.8s SUCCESS_EFFECT st=0 att=3 fps=4.8 q=low
+[768x1024] t=14.9s WAIT_INPUT st=0 att=3 fps=5.1 q=low
+[768x1024] t=15.7s SNAPPING st=0 att=3 fps=5.1 q=low
+[768x1024] t=16.1s SUCCESS_EFFECT st=0 att=4 fps=5.1 q=low
+[768x1024] t=18.4s WAIT_INPUT st=0 att=4 fps=5.1 q=low
+[768x1024] shot p-shot-1.jpg
+[768x1024] t=20.0s SUCCESS_EFFECT st=0 att=5 fps=5.2 q=low
+[768x1024] t=21.5s WAIT_INPUT st=0 att=5 fps=5.7 q=low
+[768x1024] t=21.8s DRAGGING st=0 att=5 fps=5.5 q=low
+[768x1024] t=22.2s SUCCESS_EFFECT st=0 att=6 fps=5.5 q=low
+[768x1024] t=23.2s STAGE_TRANSITION st=0 att=6 fps=5.6 q=low
+[768x1024] t=25.2s STAGE_TRANSITION st=1 att=6 fps=5.5 q=low
+[768x1024] t=27.2s WAIT_INPUT st=1 att=6 fps=4.9 q=low
+[768x1024] t=28.0s SNAPPING st=1 att=6 fps=5.1 q=low
+[768x1024] t=28.4s SUCCESS_EFFECT st=1 att=7 fps=5.1 q=low
+[768x1024] t=31.4s WAIT_INPUT st=1 att=7 fps=5.1 q=low
+[768x1024] t=32.2s SNAPPING st=1 att=7 fps=5.1 q=low
+[768x1024] t=32.6s SUCCESS_EFFECT st=1 att=8 fps=5.3 q=low
+[768x1024] t=34.9s WAIT_INPUT st=1 att=8 fps=5.1 q=low
+[768x1024] t=35.4s DRAGGING st=1 att=8 fps=5.1 q=low
+[768x1024] t=35.8s SUCCESS_EFFECT st=1 att=9 fps=5.1 q=low
+[768x1024] t=37.7s WAIT_INPUT st=1 att=9 fps=4.9 q=low
+[768x1024] t=38.6s SNAPPING st=1 att=9 fps=5 q=low
+[768x1024] t=39.0s SUCCESS_EFFECT st=1 att=10 fps=5 q=low
+[768x1024] t=41.1s WAIT_INPUT st=1 att=10 fps=4.9 q=low
+[768x1024] t=41.5s DRAGGING st=1 att=10 fps=4.9 q=low
+[768x1024] t=41.9s SUCCESS_EFFECT st=1 att=11 fps=4.7 q=low
+[768x1024] t=43.9s WAIT_INPUT st=1 att=11 fps=5 q=low
+[768x1024] t=44.8s SNAPPING st=1 att=11 fps=5 q=low
+[768x1024] t=45.2s SUCCESS_EFFECT st=1 att=12 fps=4.6 q=low
+[768x1024] t=46.1s STAGE_TRANSITION st=1 att=12 fps=4.5 q=low
+[768x1024] t=48.3s STAGE_TRANSITION st=2 att=12 fps=4.8 q=low
+[768x1024] t=50.5s WAIT_INPUT st=2 att=12 fps=4.6 q=low
+[768x1024] t=50.9s DRAGGING st=2 att=12 fps=4.6 q=low
+[768x1024] t=51.4s SUCCESS_EFFECT st=2 att=13 fps=4.6 q=low
+[768x1024] t=55.4s WAIT_INPUT st=2 att=13 fps=4.7 q=low
+[768x1024] t=55.8s DRAGGING st=2 att=13 fps=4.7 q=low
+[768x1024] t=56.2s SUCCESS_EFFECT st=2 att=14 fps=4.7 q=low
+[768x1024] t=58.3s WAIT_INPUT st=2 att=14 fps=5 q=low
+[768x1024] shot p-shot-2.jpg
+[768x1024] t=60.0s SUCCESS_EFFECT st=2 att=15 fps=4.8 q=low
+[768x1024] t=61.8s WAIT_INPUT st=2 att=15 fps=4.5 q=low
+[768x1024] t=62.2s DRAGGING st=2 att=15 fps=4.5 q=low
+[768x1024] t=62.6s SUCCESS_EFFECT st=2 att=16 fps=4.8 q=low
+[768x1024] t=64.7s WAIT_INPUT st=2 att=16 fps=4.7 q=low
+[768x1024] t=65.6s SNAPPING st=2 att=16 fps=4.7 q=low
+[768x1024] t=66.0s SUCCESS_EFFECT st=2 att=17 fps=4.8 q=low
+[768x1024] t=68.2s WAIT_INPUT st=2 att=17 fps=4.5 q=low
+[768x1024] t=68.6s DRAGGING st=2 att=17 fps=4.5 q=low
+[768x1024] t=69.1s SUCCESS_EFFECT st=2 att=18 fps=4.5 q=low
+[768x1024] t=70.3s CLIMAX st=2 att=18 fps=4.8 q=low
+[768x1024] shot p-shot-3.jpg
+[768x1024] t=93.3s AFTERGLOW st=2 att=18 fps=4.7 q=low
+[768x1024] t=104.9s FREE_PLAY st=2 att=18 fps=4.4 q=low
+[768x1024] t=116.0s RESETTING st=2 att=18 fps=4.5 q=low
+[768x1024] t=119.2s STAGE_TRANSITION st=0 att=0 fps=5.2 q=low
+[768x1024] t=122.6s WAIT_START st=0 att=0 fps=5.5 q=low
+[768x1024] RESULT ready=true errors=[] console=[] climax=true freePlay=true freeTaps=4 returns=1 resets=1 done=true fps=5.5 q=low elapsed=123.0s => PASS
+ALL PASS
