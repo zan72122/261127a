@@ -1,0 +1,140 @@
+# E05 autotest 2026-11-26T22:49Z  headless Chromium (Playwright) + SwiftShader (--use-angle=swiftshader --enable-unsafe-swiftshader), url=games/e05/index.html?autotest&q=low, server: python3 -m http.server (root site/)
+# note: the shared ../../gf-playlog.js beacon to an external host is stubbed with HTTP 204 in this sandbox (no outbound access)
+[1024x768] ready in 4566ms
+[1024x768] t=4.9s READY st=0 placed=0 tod=0 cT=0 fps=2.6 q=low
+[1024x768] t=7.5s DRAG st=0 placed=0 tod=0 cT=0 fps=2.4 q=low
+[1024x768] t=8.4s CELEBRATE st=0 placed=1 tod=0 cT=0 fps=2.1 q=low
+[1024x768] t=11.4s SELECT st=0 placed=1 tod=0 cT=0 fps=2.3 q=low
+[1024x768] t=16.4s DRAG st=0 placed=1 tod=0 cT=0 fps=2.3 q=low
+[1024x768] t=17.2s CELEBRATE st=0 placed=2 tod=0 cT=0 fps=2.3 q=low
+[1024x768] t=20.0s SELECT st=0 placed=2 tod=0 cT=0 fps=2.7 q=low
+[1024x768] shot shot-1.jpg
+[1024x768] t=26.4s CELEBRATE st=0 placed=3 tod=0 cT=0 fps=2.2 q=low
+[1024x768] t=28.6s SELECT st=0 placed=3 tod=0 cT=0 fps=2.4 q=low
+[1024x768] t=35.0s CELEBRATE st=0 placed=4 tod=0 cT=0 fps=2.1 q=low
+[1024x768] t=38.1s SELECT st=0 placed=4 tod=0 cT=0 fps=2.3 q=low
+[1024x768] t=43.4s DRAG st=0 placed=4 tod=0 cT=0 fps=1.9 q=low
+[1024x768] t=44.4s CELEBRATE st=0 placed=5 tod=0 cT=0 fps=2 q=low
+[1024x768] t=47.6s TRANSITION st=1 placed=5 tod=0 cT=0 fps=2.4 q=low
+[1024x768] t=63.1s SELECT st=1 placed=5 tod=1 cT=0 fps=1 q=low
+[1024x768] t=68.6s DRAG st=1 placed=5 tod=1 cT=0 fps=2.1 q=low
+[1024x768] t=69.5s CELEBRATE st=1 placed=6 tod=1 cT=0 fps=2.2 q=low
+[1024x768] t=72.5s SELECT st=1 placed=6 tod=1 cT=0 fps=2.3 q=low
+[1024x768] t=78.2s DRAG st=1 placed=6 tod=1 cT=0 fps=2 q=low
+[1024x768] t=79.2s CELEBRATE st=1 placed=7 tod=1 cT=0 fps=1.8 q=low
+[1024x768] t=82.5s SELECT st=1 placed=7 tod=1 cT=0 fps=2 q=low
+[1024x768] t=89.7s CELEBRATE st=1 placed=8 tod=1 cT=0 fps=1.9 q=low
+[1024x768] t=93.0s SELECT st=1 placed=8 tod=1 cT=0 fps=2.1 q=low
+[1024x768] t=98.5s DRAG st=1 placed=8 tod=1 cT=0 fps=2 q=low
+[1024x768] t=99.5s CELEBRATE st=1 placed=9 tod=1 cT=0 fps=2 q=low
+[1024x768] t=102.9s SELECT st=1 placed=9 tod=1 cT=0 fps=2.1 q=low
+[1024x768] t=108.4s DRAG st=1 placed=9 tod=1 cT=0 fps=2 q=low
+[1024x768] t=109.4s CELEBRATE st=1 placed=10 tod=1 cT=0 fps=1.9 q=low
+[1024x768] t=112.8s TRANSITION st=2 placed=10 tod=1 cT=0 fps=2.1 q=low
+[1024x768] t=128.9s SELECT st=2 placed=10 tod=2 cT=0 fps=0.5 q=low
+[1024x768] t=134.6s DRAG st=2 placed=10 tod=2 cT=0 fps=1.9 q=low
+[1024x768] t=135.6s CELEBRATE st=2 placed=11 tod=2 cT=0 fps=1.9 q=low
+[1024x768] t=139.0s SELECT st=2 placed=11 tod=2 cT=0 fps=2.1 q=low
+[1024x768] t=146.3s CELEBRATE st=2 placed=12 tod=2 cT=0 fps=1.8 q=low
+[1024x768] t=149.8s SELECT st=2 placed=12 tod=2 cT=0 fps=2.1 q=low
+[1024x768] shot shot-2.jpg
+[1024x768] t=157.3s CELEBRATE st=2 placed=13 tod=2 cT=0 fps=1.9 q=low
+[1024x768] t=160.4s SELECT st=2 placed=13 tod=2 cT=0 fps=1.9 q=low
+[1024x768] t=166.3s DRAG st=2 placed=13 tod=2 cT=0 fps=1.9 q=low
+[1024x768] t=167.4s CELEBRATE st=2 placed=14 tod=2 cT=0 fps=1.9 q=low
+[1024x768] t=171.0s SELECT st=2 placed=14 tod=2 cT=0 fps=1.9 q=low
+[1024x768] t=177.1s DRAG st=2 placed=14 tod=2 cT=0 fps=1.8 q=low
+[1024x768] t=178.1s CELEBRATE st=2 placed=15 tod=2 cT=0 fps=1.8 q=low
+[1024x768] t=181.8s TRANSITION st=3 placed=15 tod=2 cT=0 fps=2 q=low
+[1024x768] t=200.0s SELECT st=3 placed=15 tod=3 cT=0 fps=1.7 q=low
+[1024x768] t=208.4s CELEBRATE st=3 placed=16 tod=3 cT=0 fps=1.8 q=low
+[1024x768] t=212.3s SELECT st=3 placed=16 tod=3 cT=0 fps=1.8 q=low
+[1024x768] t=219.0s DRAG st=3 placed=16 tod=3 cT=0 fps=1.7 q=low
+[1024x768] t=220.1s CELEBRATE st=3 placed=17 tod=3 cT=0 fps=1.7 q=low
+[1024x768] t=224.1s SELECT st=3 placed=17 tod=3 cT=0 fps=1.8 q=low
+[1024x768] t=230.7s DRAG st=3 placed=17 tod=3 cT=0 fps=1.6 q=low
+[1024x768] t=231.9s CELEBRATE st=3 placed=18 tod=3 cT=0 fps=1.7 q=low
+[1024x768] t=235.9s SELECT st=3 placed=18 tod=3 cT=0 fps=1.8 q=low
+[1024x768] t=242.8s DRAG st=3 placed=18 tod=3 cT=0 fps=1.6 q=low
+[1024x768] t=244.1s CELEBRATE st=3 placed=19 tod=3 cT=0 fps=1.6 q=low
+[1024x768] t=248.3s SELECT st=3 placed=19 tod=3 cT=0 fps=1.6 q=low
+[1024x768] t=257.1s CELEBRATE st=3 placed=20 tod=3 cT=0 fps=1.6 q=low
+[1024x768] t=261.2s CLIMAX st=3 placed=20 tod=3 cT=0 fps=1.7 q=low
+[1024x768] shot shot-3.jpg
+[1024x768] t=323.2s AFTERGLOW st=3 placed=20 tod=3 cT=24 fps=1.5 q=low
+[1024x768] t=350.0s FREEPLAY st=3 placed=20 tod=3 cT=24 fps=1.6 q=low
+[1024x768] t=356.9s CELEBRATE st=3 placed=20 tod=3 cT=24 fps=1.4 q=low
+[1024x768] t=361.7s FREEPLAY st=3 placed=20 tod=3 cT=24 fps=1.5 q=low
+[1024x768] RESULT PASS ready=true climax=true afterglow=true freeplay=true replaced=1 wheel=1 done=true __errors=[] console_errors=[] elapsed=380s
+[768x1024] ready in 4878ms
+[768x1024] t=5.3s READY st=0 placed=0 tod=0 cT=0 fps=2.6 q=low
+[768x1024] t=7.5s DRAG st=0 placed=0 tod=0 cT=0 fps=2.8 q=low
+[768x1024] t=8.2s CELEBRATE st=0 placed=1 tod=0 cT=0 fps=2.6 q=low
+[768x1024] t=10.8s SELECT st=0 placed=1 tod=0 cT=0 fps=2.8 q=low
+[768x1024] t=15.5s DRAG st=0 placed=1 tod=0 cT=0 fps=2.3 q=low
+[768x1024] t=16.3s CELEBRATE st=0 placed=2 tod=0 cT=0 fps=2.3 q=low
+[768x1024] t=19.1s SELECT st=0 placed=2 tod=0 cT=0 fps=2.5 q=low
+[768x1024] shot p-shot-1.jpg
+[768x1024] t=25.5s CELEBRATE st=0 placed=3 tod=0 cT=0 fps=2.4 q=low
+[768x1024] t=27.5s SELECT st=0 placed=3 tod=0 cT=0 fps=2.6 q=low
+[768x1024] t=33.5s CELEBRATE st=0 placed=4 tod=0 cT=0 fps=2.3 q=low
+[768x1024] t=36.3s SELECT st=0 placed=4 tod=0 cT=0 fps=2.6 q=low
+[768x1024] t=41.0s DRAG st=0 placed=4 tod=0 cT=0 fps=2.3 q=low
+[768x1024] t=41.9s CELEBRATE st=0 placed=5 tod=0 cT=0 fps=2.3 q=low
+[768x1024] t=44.7s TRANSITION st=1 placed=5 tod=0 cT=0 fps=2.5 q=low
+[768x1024] t=58.4s SELECT st=1 placed=5 tod=1 cT=0 fps=0.6 q=low
+[768x1024] t=63.7s DRAG st=1 placed=5 tod=1 cT=0 fps=2.1 q=low
+[768x1024] t=64.6s CELEBRATE st=1 placed=6 tod=1 cT=0 fps=2 q=low
+[768x1024] t=67.7s SELECT st=1 placed=6 tod=1 cT=0 fps=2.3 q=low
+[768x1024] t=73.2s DRAG st=1 placed=6 tod=1 cT=0 fps=2 q=low
+[768x1024] t=74.1s CELEBRATE st=1 placed=7 tod=1 cT=0 fps=1.9 q=low
+[768x1024] t=77.3s SELECT st=1 placed=7 tod=1 cT=0 fps=2.2 q=low
+[768x1024] t=84.5s CELEBRATE st=1 placed=8 tod=1 cT=0 fps=1.9 q=low
+[768x1024] t=87.9s SELECT st=1 placed=8 tod=1 cT=0 fps=2 q=low
+[768x1024] t=93.8s DRAG st=1 placed=8 tod=1 cT=0 fps=1.8 q=low
+[768x1024] t=94.9s CELEBRATE st=1 placed=9 tod=1 cT=0 fps=1.9 q=low
+[768x1024] t=98.2s SELECT st=1 placed=9 tod=1 cT=0 fps=2.2 q=low
+[768x1024] t=103.9s DRAG st=1 placed=9 tod=1 cT=0 fps=1.9 q=low
+[768x1024] t=104.9s CELEBRATE st=1 placed=10 tod=1 cT=0 fps=2 q=low
+[768x1024] t=108.2s TRANSITION st=2 placed=10 tod=1 cT=0 fps=2.1 q=low
+[768x1024] t=123.8s SELECT st=2 placed=10 tod=2 cT=0 fps=1.1 q=low
+[768x1024] t=129.5s DRAG st=2 placed=10 tod=2 cT=0 fps=1.9 q=low
+[768x1024] t=130.5s CELEBRATE st=2 placed=11 tod=2 cT=0 fps=2 q=low
+[768x1024] t=133.8s SELECT st=2 placed=11 tod=2 cT=0 fps=2.2 q=low
+[768x1024] t=141.3s CELEBRATE st=2 placed=12 tod=2 cT=0 fps=1.8 q=low
+[768x1024] t=144.8s SELECT st=2 placed=12 tod=2 cT=0 fps=2 q=low
+[768x1024] shot p-shot-2.jpg
+[768x1024] t=152.5s CELEBRATE st=2 placed=13 tod=2 cT=0 fps=1.8 q=low
+[768x1024] t=155.7s SELECT st=2 placed=13 tod=2 cT=0 fps=2 q=low
+[768x1024] t=162.0s DRAG st=2 placed=13 tod=2 cT=0 fps=1.8 q=low
+[768x1024] t=163.1s CELEBRATE st=2 placed=14 tod=2 cT=0 fps=1.8 q=low
+[768x1024] t=166.9s SELECT st=2 placed=14 tod=2 cT=0 fps=1.9 q=low
+[768x1024] t=173.0s DRAG st=2 placed=14 tod=2 cT=0 fps=1.7 q=low
+[768x1024] t=174.1s CELEBRATE st=2 placed=15 tod=2 cT=0 fps=1.8 q=low
+[768x1024] t=177.7s TRANSITION st=3 placed=15 tod=2 cT=0 fps=2 q=low
+[768x1024] t=195.3s SELECT st=3 placed=15 tod=3 cT=0 fps=1.7 q=low
+[768x1024] t=203.6s CELEBRATE st=3 placed=16 tod=3 cT=0 fps=1.7 q=low
+[768x1024] t=207.5s SELECT st=3 placed=16 tod=3 cT=0 fps=1.9 q=low
+[768x1024] t=214.2s DRAG st=3 placed=16 tod=3 cT=0 fps=1.7 q=low
+[768x1024] t=215.4s CELEBRATE st=3 placed=17 tod=3 cT=0 fps=1.7 q=low
+[768x1024] t=219.4s SELECT st=3 placed=17 tod=3 cT=0 fps=1.8 q=low
+[768x1024] t=226.5s DRAG st=3 placed=17 tod=3 cT=0 fps=1.5 q=low
+[768x1024] t=227.8s CELEBRATE st=3 placed=18 tod=3 cT=0 fps=1.6 q=low
+[768x1024] t=232.0s SELECT st=3 placed=18 tod=3 cT=0 fps=1.8 q=low
+[768x1024] t=239.3s DRAG st=3 placed=18 tod=3 cT=0 fps=1.6 q=low
+[768x1024] t=240.7s CELEBRATE st=3 placed=19 tod=3 cT=0 fps=1.4 q=low
+[768x1024] t=245.0s SELECT st=3 placed=19 tod=3 cT=0 fps=1.6 q=low
+[768x1024] t=254.5s CELEBRATE st=3 placed=20 tod=3 cT=0 fps=1.5 q=low
+[768x1024] t=259.0s CLIMAX st=3 placed=20 tod=3 cT=0 fps=1.5 q=low
+[768x1024] shot p-shot-3.jpg
+[768x1024] t=318.8s AFTERGLOW st=3 placed=20 tod=3 cT=24 fps=1.6 q=low
+[768x1024] t=344.1s FREEPLAY st=3 placed=20 tod=3 cT=24 fps=1.6 q=low
+[768x1024] t=350.8s CELEBRATE st=3 placed=20 tod=3 cT=24 fps=1.5 q=low
+[768x1024] t=355.5s FREEPLAY st=3 placed=20 tod=3 cT=24 fps=1.5 q=low
+[768x1024] RESULT PASS ready=true climax=true afterglow=true freeplay=true replaced=1 wheel=1 done=true __errors=[] console_errors=[] elapsed=373s
+ALL PASS
+# quick checks (start -> first glass placed, same harness, QUICK mode):
+[q=mid] [1024x768] ready in 5196ms
+[q=mid] [1024x768] RESULT(quick: first glass placed, not a full run) ready=true climax=false afterglow=false freeplay=false replaced=0 wheel=0 done=false __errors=[] console_errors=[] elapsed=16s
+[q=high] [1024x768] ready in 9476ms
+[q=high] [1024x768] RESULT(quick: first glass placed, not a full run) ready=true climax=false afterglow=false freeplay=false replaced=0 wheel=0 done=false __errors=[] console_errors=[] elapsed=36s
