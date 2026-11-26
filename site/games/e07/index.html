@@ -93,7 +93,7 @@ const scene = new THREE.Scene();
 const cam = new THREE.PerspectiveCamera(44, W / H, 0.3, 5200);
 cam.rotation.order = 'YXZ';
 scene.add(cam);
-scene.fog = new THREE.FogExp2(0xc2e8f5, 0.0021);
+scene.fog = new THREE.FogExp2(0xc2e8f5, 0.0026);
 
 // ---------------------------------------------------------------- time of day keys
 const KEYS = [
@@ -134,14 +134,14 @@ float vn(vec2 p){ vec2 i=floor(p), f=fract(p); f=f*f*(3.0-2.0*f);
 // ---------------------------------------------------------------- sky dome
 const skyUniforms = {
   uZen: { value: new THREE.Color() }, uHor: { value: new THREE.Color() }, uSunDir: { value: sunDir }, uSunCol: { value: new THREE.Color() },
-  uMul: { value: SKY_MUL }, uDrop: { value: 0.24 },
+  uMul: { value: SKY_MUL }, uDrop: { value: 0.3 },
 };
 const skyMat = new THREE.ShaderMaterial({
   uniforms: skyUniforms, side: THREE.BackSide, depthWrite: false, fog: false,
   vertexShader: `varying vec3 vDir; void main(){ vDir = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }`,
   fragmentShader: `uniform vec3 uZen,uHor,uSunDir,uSunCol; uniform float uMul,uDrop; varying vec3 vDir;
   void main(){ vec3 d = normalize(vDir); float e = d.y + uDrop; vec3 col;
-    if(e > 0.0){ float t = pow(clamp(e/(1.0+uDrop),0.0,1.0), 0.5); col = mix(uHor, uZen, t); }
+    if(e > 0.0){ float t = pow(clamp(e/(1.0+uDrop),0.0,1.0), 0.32); col = mix(uHor, uZen, t); }
     else { col = mix(uHor, uHor*vec3(0.92,0.86,0.80), clamp(-e*3.0,0.0,1.0)); }
     float s = max(dot(d, uSunDir), 0.0);
     col += uSunCol * (pow(s, 6.0) * 0.16 + pow(s, 80.0) * 0.45);
@@ -281,13 +281,13 @@ terrain.receiveShadow = true;
 scene.add(terrain);
 
 // ---------------------------------------------------------------- mesas (eroded sedimentary rock)
-const mesaMat = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.95, metalness: 0 });
+const mesaMat = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.95, metalness: 0, flatShading: true });
 function buildMesa(R, Hh, seed) {
   let g = new THREE.CylinderGeometry(R * 0.82, R * 1.28, Hh, 56, 30, false);
   g.deleteAttribute('normal'); g.deleteAttribute('uv');
   g = mergeVertices(g);
   const p = g.attributes.position, cols = [];
-  const c1 = new THREE.Color(0xBD7950), c2 = new THREE.Color(0xA2593A), c3 = new THREE.Color(0xD9A274), c4 = new THREE.Color(0x8E4B33);
+  const c1 = new THREE.Color(0xB07250), c2 = new THREE.Color(0x96583C), c3 = new THREE.Color(0xC99A72), c4 = new THREE.Color(0x8E4B33);
   const tc = new THREE.Color();
   for (let i = 0; i < p.count; i++) {
     let x = p.getX(i), y = p.getY(i), z = p.getZ(i);
