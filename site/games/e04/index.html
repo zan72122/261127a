@@ -497,10 +497,10 @@ let waterMat;
         vec4 lp = uLP[i]; if (lp.w <= 0.0) continue;
         vec3 D = lp.xyz - vPw; float dl = length(D); D /= dl;
         float s = max(dot(R, D), 0.0);
-        lr += uLC[i] * lp.w * (pow(s, 260.0) * 2.4 + pow(s, 26.0) * 0.12);
+        lr += uLC[i] * lp.w * (pow(s, 260.0) * 1.1 + pow(s, 26.0) * 0.1);
         ld += uLC[i] * lp.w / (1.0 + dl * dl * 1.3);
       }
-      lr *= uLampGain; ld *= uLampGain;
+      lr *= uLampGain; ld *= uLampGain; lr = lr / (1.0 + 0.6 * dot(lr, vec3(0.3333)));
       vec2 cell = floor(p * 3.0); float st = hh(cell);
       vec3 bottom = vec3(0.36, 0.38, 0.36) * (0.75 + 0.35 * st);
       vec3 waterCol = vec3(0.087, 0.212, 0.352);
