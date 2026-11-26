@@ -45,13 +45,13 @@ async function run(vw, vh, tag, shots) {
   if (which !== 'portrait') ok = await run(1024, 768, '1024x768', mode === 'smoke' ? [{ name: 'smoke-L.jpg', when: T => T.frames > 20 }] : [
     { name: 'shot-1.jpg', when: T => T.done >= 3 },
     { name: 'shot-2.jpg', when: T => T.done >= 15 },
-    { name: 'shot-3.jpg', when: T => T.state === 'CLIMAX' && T.climaxT >= 9.4 },
+    { name: 'shot-3.jpg', when: T => T.state === 'CLIMAX' && T.climaxT >= 9.1 },
     
   ]) && ok;
   if (which !== 'landscape') ok = await run(768, 1024, '768x1024', mode === 'smoke' ? [{ name: 'smoke-P.jpg', when: T => T.frames > 20 }] : [
     { name: 'p-shot-1.jpg', when: T => T.done >= 3 },
     { name: 'p-shot-2.jpg', when: T => T.done >= 15 },
-    { name: 'p-shot-3.jpg', when: T => T.state === 'CLIMAX' && T.climaxT >= 9.4 },
+    { name: 'p-shot-3.jpg', when: T => T.state === 'CLIMAX' && T.climaxT >= 9.1 },
   ]) && ok;
   console.log(ok ? 'ALL PASS' : 'SOME FAILED');
 })();
