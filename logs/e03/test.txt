@@ -1,0 +1,45 @@
+# E03 headless test 2026-11-26T21:36Z
+# chromium (playwright, headless) --use-angle=swiftshader --enable-unsafe-swiftshader; server: python3 -m http.server (root site/)
+# url: games/e03/index.html?autotest&q=low (1024x768, 768x1024) and q=mid (640x480, thumbnail)
+# note: gf-playlog.zan72122.workers.dev is answered locally (204) because this sandbox has no outbound network
+[1024x768 low] ready after 4.6s
+[1024x768 low] early {"state":"CHARGING","stage":0,"count":0,"target":2,"p":0.84,"climax":false,"climaxT":0,"resets":0,"q":"low","pump":{"x":512,"y":457},"errors":[]}
+[1024x768 low] shot early
+[1024x768 low] mid {"state":"ERUPTION","stage":1,"count":7,"target":3,"p":0,"climax":false,"climaxT":0,"resets":0,"q":"low","pump":{"x":584,"y":613},"errors":[]}
+[1024x768 low] shot mid
+[1024x768 low] climax reached after 146.4s
+[1024x768 low] climax12 {"state":"CLIMAX","stage":2,"count":15,"target":2,"p":0,"climax":true,"climaxT":12.1,"resets":0,"q":"low","pump":{"x":543,"y":570},"errors":[]}
+[1024x768 low] shot climax-a
+[1024x768 low] climax24 {"state":"CLIMAX","stage":2,"count":15,"target":2,"p":0,"climax":true,"climaxT":23.8,"resets":0,"q":"low","pump":{"x":543,"y":570},"errors":[]}
+[1024x768 low] shot climax
+[1024x768 low] reset complete {"state":"READY","stage":0,"count":0,"target":2,"p":0,"climax":true,"climaxT":30,"resets":1,"q":"low","pump":{"x":512,"y":457},"errors":[]}
+[1024x768 low] __ready=true __errors=[] consoleErrors=[] eruptions=66 autotest=["partial release p=0.49"]
+[1024x768 low] total 193.2s
+[768x1024 low] ready after 3.8s
+[768x1024 low] early {"state":"CHARGING","stage":0,"count":0,"target":2,"p":0.62,"climax":false,"climaxT":0,"resets":0,"q":"low","pump":{"x":384,"y":625},"errors":[]}
+[768x1024 low] shot early
+[768x1024 low] mid {"state":"ERUPTION","stage":1,"count":7,"target":3,"p":0,"climax":false,"climaxT":0,"resets":0,"q":"low","pump":{"x":479,"y":817},"errors":[]}
+[768x1024 low] shot mid
+[768x1024 low] climax reached after 146.8s
+[768x1024 low] climax12 {"state":"CLIMAX","stage":2,"count":15,"target":2,"p":0,"climax":true,"climaxT":12.3,"resets":0,"q":"low","pump":{"x":409,"y":659},"errors":[]}
+[768x1024 low] shot climax-a
+[768x1024 low] climax24 {"state":"CLIMAX","stage":2,"count":15,"target":2,"p":0,"climax":true,"climaxT":23.9,"resets":0,"q":"low","pump":{"x":409,"y":659},"errors":[]}
+[768x1024 low] shot climax
+[768x1024 low] reset complete {"state":"READY","stage":0,"count":0,"target":2,"p":0,"climax":true,"climaxT":30,"resets":1,"q":"low","pump":{"x":384,"y":625},"errors":[]}
+[768x1024 low] __ready=true __errors=[] consoleErrors=[] eruptions=66 autotest=["partial release p=0.52"]
+[768x1024 low] total 193.1s
+[640x480 mid] ready after 4.6s
+[640x480 mid] early {"state":"CHARGING","stage":0,"count":0,"target":2,"p":0.61,"climax":false,"climaxT":0,"resets":0,"q":"mid","pump":{"x":320,"y":286},"errors":[]}
+[640x480 mid] shot early
+[640x480 mid] mid {"state":"ERUPTION","stage":1,"count":7,"target":3,"p":0,"climax":false,"climaxT":0,"resets":0,"q":"mid","pump":{"x":366,"y":385},"errors":[]}
+[640x480 mid] shot mid
+[640x480 mid] climax reached after 138.6s
+[640x480 mid] climax12 {"state":"CLIMAX","stage":2,"count":15,"target":2,"p":0,"climax":true,"climaxT":12.3,"resets":0,"q":"mid","pump":{"x":339,"y":356},"errors":[]}
+[640x480 mid] shot climax-a
+[640x480 mid] climax24 {"state":"CLIMAX","stage":2,"count":15,"target":2,"p":0,"climax":true,"climaxT":23.9,"resets":0,"q":"mid","pump":{"x":339,"y":356},"errors":[]}
+[640x480 mid] shot climax
+[640x480 mid] reset complete {"state":"READY","stage":0,"count":0,"target":2,"p":0,"climax":true,"climaxT":29.9,"resets":1,"q":"mid","pump":{"x":320,"y":286},"errors":[]}
+[640x480 mid] __ready=true __errors=[] consoleErrors=[] eruptions=66 autotest=["partial release p=0.47"]
+[640x480 mid] total 184.1s
+# banned-word grep (site/games/e03/index.html):
+0
