@@ -2,3 +2,46 @@
 # note: the shared ../../gf-playlog.js beacon to an external host is stubbed with HTTP 204 in this sandbox
 [1024x768] ready in 5643ms url=games/e07/index.html?autotest&q=low
 [1024x768] t=6.9s STAGE_1 done=0/28 climaxT=0 fps=2.4 q=low particles=237 errors=0
+[1024x768] t=10.7s STAGE_1 done=1/28 climaxT=0 fps=2.3 q=low particles=175 errors=0
+[1024x768] t=14.4s STAGE_1 done=2/28 climaxT=0 fps=2.4 q=low particles=355 errors=0
+[1024x768] t=17.9s STAGE_1 done=3/28 climaxT=0 fps=2.6 q=low particles=337 errors=0
+[1024x768] shot shot-1.jpg (state=STAGE_1 done=3 climaxT=0)
+[1024x768] t=23.4s STAGE_1 done=4/28 climaxT=0 fps=2.4 q=low particles=346 errors=0
+[1024x768] t=27.9s STAGE_1 done=5/28 climaxT=0 fps=2.6 q=low particles=172 errors=0
+[1024x768] t=31.7s STAGE_1 done=6/28 climaxT=0 fps=2.4 q=low particles=389 errors=0
+[1024x768] t=37.7s STAGE_1 done=7/28 climaxT=0 fps=2.5 q=low particles=387 errors=0
+[1024x768] t=38.9s STAGE_2 done=7/28 climaxT=0 fps=2.4 q=low particles=118 errors=0
+[1024x768] t=45.3s STAGE_2 done=8/28 climaxT=0 fps=2.7 q=low particles=342 errors=0
+[1024x768] t=50.8s STAGE_2 done=9/28 climaxT=0 fps=2.9 q=low particles=193 errors=0
+[1024x768] t=54.1s STAGE_2 done=10/28 climaxT=0 fps=2.8 q=low particles=358 errors=0
+[1024x768] t=57.2s STAGE_2 done=11/28 climaxT=0 fps=2.9 q=low particles=413 errors=0
+[1024x768] t=61.6s STAGE_2 done=12/28 climaxT=0 fps=2.8 q=low particles=339 errors=0
+[1024x768] t=66.4s STAGE_2 done=13/28 climaxT=0 fps=3 q=low particles=404 errors=0
+[1024x768] t=71.8s STAGE_2 done=14/28 climaxT=0 fps=2.7 q=low particles=235 errors=0
+[1024x768] t=73.0s STAGE_3 done=14/28 climaxT=0 fps=2.9 q=low particles=217 errors=0
+[1024x768] t=77.4s STAGE_3 done=15/28 climaxT=0 fps=2.8 q=low particles=256 errors=0
+[1024x768] shot shot-2.jpg (state=STAGE_3 done=15 climaxT=0)
+[1024x768] t=80.8s STAGE_3 done=16/28 climaxT=0 fps=3 q=low particles=368 errors=0
+[1024x768] t=85.2s STAGE_3 done=17/28 climaxT=0 fps=2.6 q=low particles=373 errors=0
+[1024x768] t=89.5s STAGE_3 done=18/28 climaxT=0 fps=2.8 q=low particles=383 errors=0
+[1024x768] t=96.1s STAGE_3 done=19/28 climaxT=0 fps=2.8 q=low particles=384 errors=0
+[1024x768] t=100.7s STAGE_3 done=20/28 climaxT=0 fps=2.6 q=low particles=366 errors=0
+[1024x768] t=108.9s STAGE_3 done=21/28 climaxT=0 fps=2.5 q=low particles=310 errors=0
+[1024x768] t=109.9s STAGE_4 done=22/28 climaxT=0 fps=0.6 q=low particles=331 errors=0
+[1024x768] t=112.5s STAGE_4 done=25/28 climaxT=0 fps=3 q=low particles=207 errors=0
+[1024x768] t=113.5s STAGE_4 done=26/28 climaxT=0 fps=0.6 q=low particles=310 errors=0
+[1024x768] t=115.9s STAGE_4 done=28/28 climaxT=0 fps=2.9 q=low particles=461 errors=0
+[1024x768] t=119.3s CLIMAX done=28/28 climaxT=0.25 fps=1 q=low particles=85 errors=0
+[1024x768] shot shot-3.jpg (state=CLIMAX done=28 climaxT=9.25)
+[1024x768] t=136.6s FREE_PLAY done=28/28 climaxT=12 fps=2.8 q=low particles=19 errors=0
+node:internal/process/promises:394
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+page.waitForTimeout: Target page, context or browser has been closed
+    at run (/home/user/261127a/logs/e07/run-test.js:25:16)
+    at async /home/user/261127a/logs/e07/run-test.js:45:34 {
+  log: []
+}
+
+Node.js v22.23.5
