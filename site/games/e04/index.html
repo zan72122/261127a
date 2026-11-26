@@ -1,0 +1,1725 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#3a62a8">
+<title>おひさま ランタンのメリーゴーラウンド</title>
+<style>
+html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#3a62a8;
+  touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;overscroll-behavior:none;-webkit-tap-highlight-color:transparent}
+canvas{position:fixed;left:0;top:0;width:100vw;height:100vh;display:block;touch-action:none;outline:none;
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-user-drag:none}
+</style>
+<script>
+window.__ready = false;
+window.__errors = [];
+window.addEventListener('error', function (e) { window.__errors.push('error: ' + String((e && e.message) || e)); });
+window.addEventListener('unhandledrejection', function (e) { var r = e && e.reason; window.__errors.push('rejection: ' + String((r && r.message) || r)); });
+</script>
+<script type="importmap">{"imports":{"three":"../../vendor/three/build/three.module.min.js","three/addons/":"../../vendor/three/examples/jsm/"}}</script>
+</head>
+<body>
+<script type="module">
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+
+const ERR = (m) => { try { window.__errors.push(String(m)); } catch (e) { /* ignore */ } };
+
+try {
+// ===========================================================================
+// parameters
+// ===========================================================================
+const QS = new URLSearchParams(location.search);
+const AUTOTEST = QS.has('autotest');
+const QF = (QS.get('q') || '').toLowerCase();
+const FORCED = ['low', 'mid', 'high'].includes(QF) ? QF : null;
+const LV = ['low', 'mid', 'high'];
+const PRESET = {
+  low:  { pr: 1.0,  bloom: 0, shadow: 0,    glass: 0, parts: 60,  lights: 1, leaves: 1500, flowers: 600,  envStep: 0.5 },
+  mid:  { pr: 1.25, bloom: 1, shadow: 1024, glass: 1, parts: 180, lights: 2, leaves: 3000, flowers: 1100, envStep: 0.12 },
+  high: { pr: 1.75, bloom: 2, shadow: 2048, glass: 2, parts: 400, lights: 4, leaves: 4600, flowers: 1800, envStep: 0.08 }
+};
+let qName = FORCED || 'mid';
+const MAXDT = AUTOTEST ? 0.25 : 0.1;
+
+const TAU = Math.PI * 2;
+const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, t) => a + (b - a) * t;
+const smooth = (a, b, x) => { const t = clamp((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); };
+const easeIO = (t) => t <= 0 ? 0 : t >= 1 ? 1 : 0.5 - 0.5 * Math.cos(Math.PI * t);
+const easeOut = (t) => t <= 0 ? 0 : t >= 1 ? 1 : 1 - Math.pow(1 - t, 3);
+const easeBack = (t) => { if (t <= 0) return 0; if (t >= 1) return 1; const c = 1.5; return 1 + (c + 1) * Math.pow(t - 1, 3) + c * Math.pow(t - 1, 2); };
+function mulberry32(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const rnd = mulberry32(40421);
+const V3 = (x, y, z) => new THREE.Vector3(x, y, z);
+const C = (s) => new THREE.Color(s);
+
+// scene layout (1 unit = 1 m)
+const RINGS = [
+  { r: 3.0, y: 1.60, dir: +1, rpm: 0.7 },
+  { r: 2.5, y: 2.35, dir: -1, rpm: 1.1 },
+  { r: 2.0, y: 3.10, dir: +1, rpm: 1.6 },
+  { r: 1.4, y: 3.85, dir: -1, rpm: 2.0 }
+];
+const HOOK_DROP = 0.13;
+const BENCH_Z = 5.3, BENCH_TOP = 0.75;
+const SUN_Y = 4.55;
+const DIAL_POS = V3(1.0, 0.84, 5.22);
+
+// stage colors (from the brief)
+const SKY = {
+  zen:   [C('#416BB2'), C('#3159A2'), C('#23478F'), C('#244695')],
+  hor:   [C('#FFD69A'), C('#FFC58A'), C('#B5B7E7'), C('#A9B9EF')],
+  cloud: [C('#FFE5BB'), C('#FFD5A7'), C('#EAC4CF'), C('#D6D7F5')],
+  amb:   [1.3, 1.2, 1.1, 1.1],
+  sun:   [2.0, 1.5, 0.9, 0.5],
+  moon:  [0.2, 0.4, 0.7, 1.0]
+};
+function lerpCols(arr, t, out) { const i = Math.min(arr.length - 2, Math.floor(t)); return out.copy(arr[i]).lerp(arr[i + 1], clamp(t - i, 0, 1)); }
+function lerpNums(arr, t) { const i = Math.min(arr.length - 2, Math.floor(t)); return lerp(arr[i], arr[i + 1], clamp(t - i, 0, 1)); }
+
+// lantern glass colors: 4 stages x 6
+const GLASS = [
+  '#FFC45A', '#FF9F3A', '#FF9DB6', '#FFD27A', '#FFB060', '#FF8FAE',
+  '#FF5A4C', '#4E7BFF', '#68DDF2', '#A66BFF', '#FF6F62', '#5AA8FF',
+  '#6FE08A', '#FFF4E2', '#FFCB5C', '#B88BFF', '#8EF0B0', '#FFE7A8',
+  '#FF6A5A', '#FFAA4A', '#FFE45C', '#6BE08C', '#5C8CFF', '#FFB43C'
+];
+const SHAPES = [0, 1, 2, 3, 4];
+
+// ===========================================================================
+// renderer / scene / camera
+// ===========================================================================
+let W = innerWidth, H = innerHeight;
+const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, PRESET[qName].pr));
+renderer.setSize(W, H);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.1;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFShadowMap;
+document.body.appendChild(renderer.domElement);
+const canvas = renderer.domElement;
+
+const scene = new THREE.Scene();
+scene.fog = new THREE.Fog(0xffd69a, 25, 110);
+const camera = new THREE.PerspectiveCamera(40, W / H, 0.1, 200);
+
+// ===========================================================================
+// procedural textures
+// ===========================================================================
+function canvasTex(size, draw, color) {
+  const c = document.createElement('canvas'); c.width = c.height = size;
+  const g = c.getContext('2d'); draw(g, size);
+  const t = new THREE.CanvasTexture(c);
+  t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  t.colorSpace = color ? THREE.SRGBColorSpace : THREE.NoColorSpace;
+  t.anisotropy = 4;
+  return t;
+}
+// polishing scratches (roughness)
+const brassRough = canvasTex(512, (g, s) => {
+  g.fillStyle = 'rgb(214,214,214)'; g.fillRect(0, 0, s, s);
+  const img = g.getImageData(0, 0, s, s); const d = img.data;
+  for (let i = 0; i < d.length; i += 4) { const v = 200 + rnd() * 34; d[i] = d[i + 1] = d[i + 2] = v; }
+  g.putImageData(img, 0, 0);
+  for (let i = 0; i < 900; i++) {
+    const x = rnd() * s, y = rnd() * s, len = 20 + rnd() * 160, ang = (rnd() - 0.5) * 0.35;
+    const v = rnd() < 0.5 ? 150 : 255;
+    g.strokeStyle = `rgba(${v},${v},${v},${0.05 + rnd() * 0.12})`; g.lineWidth = 0.5 + rnd() * 1.1;
+    g.beginPath(); g.moveTo(x, y); g.lineTo(x + Math.cos(ang) * len, y + Math.sin(ang) * len); g.stroke();
+  }
+  for (let i = 0; i < 70; i++) {
+    const x = rnd() * s, y = rnd() * s, r = 8 + rnd() * 40;
+    const gr = g.createRadialGradient(x, y, 0, x, y, r);
+    gr.addColorStop(0, 'rgba(255,255,255,0.12)'); gr.addColorStop(1, 'rgba(255,255,255,0)');
+    g.fillStyle = gr; g.fillRect(x - r, y - r, r * 2, r * 2);
+  }
+}, false);
+brassRough.repeat.set(3, 1);
+// subtle tone variation and aged spots (color)
+const brassColor = canvasTex(256, (g, s) => {
+  g.fillStyle = '#ffffff'; g.fillRect(0, 0, s, s);
+  for (let i = 0; i < 160; i++) {
+    const x = rnd() * s, y = rnd() * s, r = 4 + rnd() * 26;
+    const gr = g.createRadialGradient(x, y, 0, x, y, r);
+    const dark = rnd() < 0.6;
+    gr.addColorStop(0, dark ? 'rgba(120,96,60,0.16)' : 'rgba(255,240,210,0.2)'); gr.addColorStop(1, 'rgba(0,0,0,0)');
+    g.fillStyle = gr; g.fillRect(x - r, y - r, r * 2, r * 2);
+  }
+}, true);
+brassColor.repeat.set(2, 1);
+const stoneTex = canvasTex(256, (g, s) => {
+  const img = g.createImageData(s, s); const d = img.data;
+  for (let i = 0; i < d.length; i += 4) { const v = 222 + rnd() * 33; d[i] = v; d[i + 1] = v - 3; d[i + 2] = v - 8; d[i + 3] = 255; }
+  g.putImageData(img, 0, 0);
+  for (let i = 0; i < 120; i++) {
+    const x = rnd() * s, y = rnd() * s, r = 3 + rnd() * 18;
+    const gr = g.createRadialGradient(x, y, 0, x, y, r);
+    gr.addColorStop(0, rnd() < 0.5 ? 'rgba(150,140,120,0.15)' : 'rgba(255,250,240,0.15)'); gr.addColorStop(1, 'rgba(0,0,0,0)');
+    g.fillStyle = gr; g.fillRect(x - r, y - r, r * 2, r * 2);
+  }
+}, true);
+const glowTex = canvasTex(128, (g, s) => {
+  const gr = g.createRadialGradient(s / 2, s / 2, 0, s / 2, s / 2, s / 2);
+  gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(0.18, 'rgba(255,255,255,0.55)');
+  gr.addColorStop(0.45, 'rgba(255,255,255,0.14)'); gr.addColorStop(1, 'rgba(255,255,255,0)');
+  g.fillStyle = gr; g.fillRect(0, 0, s, s);
+}, true);
+glowTex.wrapS = glowTex.wrapT = THREE.ClampToEdgeWrapping;
+
+// ===========================================================================
+// lantern light injected into stone, plants and water (24 lights, cheap, no shadows)
+// ===========================================================================
+const NL = 24;
+const lampU = {
+  uLP: { value: Array.from({ length: NL }, () => new THREE.Vector4(0, -50, 0, 0)) },
+  uLC: { value: Array.from({ length: NL }, () => new THREE.Vector3()) },
+  uLampGain: { value: 1.3 },
+  uTime: { value: 0 }
+};
+const LAMP_GLSL = `
+uniform vec4 uLP[${NL}]; uniform vec3 uLC[${NL}]; uniform float uLampGain;
+vec3 lampLight(vec3 p, vec3 n){
+  vec3 s = vec3(0.0);
+  for (int i = 0; i < ${NL}; i++) {
+    vec4 lp = uLP[i];
+    if (lp.w <= 0.0) continue;
+    vec3 L = lp.xyz - p; float d2 = dot(L, L) + 0.05;
+    float nd = max(dot(n, L * inversesqrt(d2)), 0.0) * 0.72 + 0.28;
+    s += uLC[i] * (lp.w * nd / (1.0 + d2 * 1.3));
+  }
+  s *= uLampGain;
+  return s / (1.0 + 0.45 * dot(s, vec3(0.3333)));
+}`;
+const PAVE_GLSL = `
+float ph(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+float pvn(vec2 p){ vec2 i = floor(p), f = fract(p); f = f*f*(3.0-2.0*f);
+  return mix(mix(ph(i), ph(i+vec2(1.0,0.0)), f.x), mix(ph(i+vec2(0.0,1.0)), ph(i+vec2(1.0,1.0)), f.x), f.y); }
+vec4 paving(vec3 p){
+  float r = length(p.xz); float a = atan(p.z, p.x);
+  float inner = step(r, 3.62);
+  float bw = mix(0.62, 0.44, inner);
+  float rr = r / bw; float ri = floor(rr); float fr = fract(rr);
+  float circ = 6.2831 * max(r, 0.3);
+  float n = max(5.0, floor(circ / mix(0.78, 0.5, inner)));
+  float s = (a / 6.2831 + 0.5) * n + ph(vec2(ri, 3.1)) * n; float si = floor(s); float fs = fract(s);
+  float m = min(min(fr, 1.0 - fr) * bw, min(fs, 1.0 - fs) * circ / n);
+  float joint = smoothstep(0.006, 0.022, m);
+  float h = ph(vec2(ri, si)); float h2 = ph(vec2(si + 3.7, ri + 7.0));
+  vec3 tint = mix(vec3(1.0, 0.97, 0.92), vec3(0.92, 0.9, 0.87), h) * (0.86 + 0.2 * h2);
+  float grain = pvn(p.xz * 23.0) * 0.5 + pvn(p.xz * 61.0) * 0.5;
+  tint *= 0.9 + 0.16 * grain;
+  tint *= mix(0.5, 1.0, joint) * mix(0.92, 1.0, smoothstep(0.022, 0.07, m));
+  float rough = mix(0.96, 0.6 + 0.28 * h, joint);
+  return vec4(tint, rough);
+}`;
+function patchLamp(mat, opt) {
+  const paving = !!(opt && opt.paving); const sway = (opt && opt.sway) || 0;
+  mat.onBeforeCompile = (sh) => {
+    sh.uniforms.uLP = lampU.uLP; sh.uniforms.uLC = lampU.uLC; sh.uniforms.uLampGain = lampU.uLampGain; sh.uniforms.uTime = lampU.uTime;
+    sh.vertexShader = sh.vertexShader
+      .replace('#include <common>', '#include <common>\nvarying vec3 vPw; varying vec3 vNw; uniform float uTime;')
+      .replace('#include <begin_vertex>', `#include <begin_vertex>
+      ${sway ? `{ vec3 ip = vec3(0.0);
+      #ifdef USE_INSTANCING
+        ip = instanceMatrix[3].xyz;
+      #endif
+        float sw = (sin(uTime * 1.6 + ip.x * 1.7 + ip.z * 1.3) + 0.5 * sin(uTime * 2.7 + ip.z * 2.1 + ip.x)) * ${sway.toFixed(3)} * max(transformed.y + 0.02, 0.0);
+        transformed.x += sw; transformed.z += sw * 0.6; }` : ''}
+      vec4 pw4 = vec4(transformed, 1.0); vec3 nw3 = objectNormal;
+      #ifdef USE_INSTANCING
+        pw4 = instanceMatrix * pw4; nw3 = mat3(instanceMatrix) * nw3;
+      #endif
+      vPw = (modelMatrix * pw4).xyz; vNw = normalize(mat3(modelMatrix) * nw3);`);
+    let fs = sh.fragmentShader
+      .replace('#include <common>', '#include <common>\nvarying vec3 vPw; varying vec3 vNw;\n' + LAMP_GLSL + (paving ? PAVE_GLSL : ''));
+    if (paving) {
+      fs = fs.replace('#include <color_fragment>', '#include <color_fragment>\nvec4 pv = paving(vPw); diffuseColor.rgb *= pv.rgb;')
+        .replace('#include <roughnessmap_fragment>', '#include <roughnessmap_fragment>\nroughnessFactor = pv.a;');
+    }
+    fs = fs.replace('#include <lights_fragment_end>', '#include <lights_fragment_end>\nreflectedLight.indirectDiffuse += diffuseColor.rgb * lampLight(vPw, normalize(vNw));');
+    sh.fragmentShader = fs;
+  };
+  mat.customProgramCacheKey = () => 'lamp' + (paving ? 'P' : '') + sway;
+  return mat;
+}
+
+// ===========================================================================
+// materials
+// ===========================================================================
+function brassMat(extra) {
+  return new THREE.MeshPhysicalMaterial(Object.assign({
+    color: 0xC9A35C, metalness: 0.93, roughness: 0.34, roughnessMap: brassRough, map: brassColor,
+    envMapIntensity: 1.15, clearcoat: 0.0
+  }, extra || {}));
+}
+const mBrass = brassMat();
+const mBrassDark = brassMat({ color: 0x9c7a40, roughness: 0.42 });
+const mStone = patchLamp(new THREE.MeshStandardMaterial({ color: 0xE3D9C6, roughness: 0.82, map: stoneTex }));
+const mStoneWarm = patchLamp(new THREE.MeshStandardMaterial({ color: 0xD8CBB2, roughness: 0.86, map: stoneTex }));
+const mPave = patchLamp(new THREE.MeshStandardMaterial({ color: 0xD9CDB7, roughness: 0.8 }), { paving: true });
+const mSoil = patchLamp(new THREE.MeshStandardMaterial({ color: 0x4a3626, roughness: 1.0 }));
+const mLeaf = patchLamp(new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.7, side: THREE.DoubleSide }), { sway: 0.35 });
+const mFlower = patchLamp(new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.55, vertexColors: true, side: THREE.DoubleSide }), { sway: 0.22 });
+const mLawn = patchLamp(new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.95, vertexColors: true }));
+const mTree = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.85 });
+const mCandle = new THREE.MeshStandardMaterial({ color: 0xF3E7CF, roughness: 0.6, emissive: 0xFFB860, emissiveIntensity: 0 });
+
+// ring materials with a light that runs along the ring
+function ringMat() {
+  const U = { uFlowA: { value: 0 }, uFlowR: { value: 0 }, uFlowAmt: { value: 0 }, uGlow: { value: 0 } };
+  const m = brassMat();
+  m.onBeforeCompile = (sh) => {
+    Object.assign(sh.uniforms, U);
+    sh.vertexShader = sh.vertexShader.replace('#include <common>', '#include <common>\nvarying vec3 vLoc;')
+      .replace('#include <begin_vertex>', '#include <begin_vertex>\nvLoc = transformed;');
+    sh.fragmentShader = sh.fragmentShader.replace('#include <common>', '#include <common>\nvarying vec3 vLoc; uniform float uFlowA, uFlowR, uFlowAmt, uGlow;')
+      .replace('#include <emissivemap_fragment>', `#include <emissivemap_fragment>
+      { float aa = atan(vLoc.x, vLoc.z); float da = abs(mod(aa - uFlowA + 3.14159265, 6.2831853) - 3.14159265);
+        float rr = length(vLoc.xz);
+        float band = exp(-pow((da - uFlowR) * 5.0, 2.0)) * uFlowAmt * smoothstep(0.25, 0.6, rr);
+        float shimmer = 0.6 + 0.4 * sin(aa * 6.0 + uFlowR * 3.0);
+        totalEmissiveRadiance += vec3(1.0, 0.70, 0.30) * (band * 1.5 + uGlow * 0.16 * shimmer * smoothstep(0.25, 0.6, rr)); }`);
+  };
+  m.customProgramCacheKey = () => 'ringflow';
+  m.userData.U = U;
+  return m;
+}
+// pole with a rising light
+const poleU = { uRise: { value: 0 }, uPoleGlow: { value: 0 } };
+const mPole = brassMat();
+mPole.onBeforeCompile = (sh) => {
+  Object.assign(sh.uniforms, poleU);
+  sh.vertexShader = sh.vertexShader.replace('#include <common>', '#include <common>\nvarying vec3 vLoc;')
+    .replace('#include <begin_vertex>', '#include <begin_vertex>\nvLoc = transformed;');
+  sh.fragmentShader = sh.fragmentShader.replace('#include <common>', '#include <common>\nvarying vec3 vLoc; uniform float uRise, uPoleGlow;')
+    .replace('#include <emissivemap_fragment>', `#include <emissivemap_fragment>
+    { float head = exp(-pow((vLoc.y - uRise) * 3.2, 2.0)) * step(0.05, uRise) * step(uRise, 4.6);
+      float trail = (1.0 - smoothstep(uRise - 0.02, uRise + 0.05, vLoc.y)) * step(0.05, uRise);
+      float flute = 0.55 + 0.45 * sin(atan(vLoc.x, vLoc.z) * 12.0);
+      totalEmissiveRadiance += vec3(1.0, 0.72, 0.32) * (head * 1.25 + trail * (0.1 + uPoleGlow * 0.12) * flute); }`);
+};
+mPole.customProgramCacheKey = () => 'pole';
+
+// ===========================================================================
+// geometry helpers
+// ===========================================================================
+function merge(list) {
+  const arr = list.map((g) => {
+    const x = g.index ? g.toNonIndexed() : g;
+    for (const k of Object.keys(x.attributes)) if (!['position', 'normal', 'uv'].includes(k)) x.deleteAttribute(k);
+    if (!x.attributes.uv) x.setAttribute('uv', new THREE.BufferAttribute(new Float32Array(x.attributes.position.count * 2), 2));
+    return x;
+  });
+  const m = mergeGeometries(arr, false);
+  arr.forEach((g) => g.dispose());
+  return m;
+}
+const cyl = (rt, rb, h, s = 16, open = false) => new THREE.CylinderGeometry(rt, rb, h, s, 1, open);
+const tor = (r, t, rs = 8, ts = 32, arc = TAU) => new THREE.TorusGeometry(r, t, rs, ts, arc);
+const sph = (r, ws = 16, hs = 12) => new THREE.SphereGeometry(r, ws, hs);
+function rod(a, b, r, seg = 8) {
+  const d = new THREE.Vector3().subVectors(b, a); const len = d.length();
+  const g = cyl(r, r, len, seg);
+  g.applyQuaternion(new THREE.Quaternion().setFromUnitVectors(V3(0, 1, 0), d.normalize()));
+  const m = a.clone().add(b).multiplyScalar(0.5); g.translate(m.x, m.y, m.z);
+  return g;
+}
+function lathe(pts, seg = 24, ps = 0, pl = TAU) { return new THREE.LatheGeometry(pts.map((p) => new THREE.Vector2(p[0], p[1])), seg, ps, pl); }
+function gearGeo(R, teeth, depth, hole, windows) {
+  const s = new THREE.Shape(); const td = Math.min(0.055, R * 0.13); const rr = R - td; const w = TAU / teeth;
+  for (let i = 0; i < teeth; i++) {
+    const a0 = i * w;
+    const pts = [[rr, a0], [rr, a0 + w * 0.12], [R, a0 + w * 0.3], [R, a0 + w * 0.55], [rr, a0 + w * 0.73]];
+    pts.forEach(([r, a], j) => { const x = Math.cos(a) * r, y = Math.sin(a) * r; if (i === 0 && j === 0) s.moveTo(x, y); else s.lineTo(x, y); });
+  }
+  s.closePath();
+  const hp = new THREE.Path(); hp.absarc(0, 0, hole, 0, TAU, true); s.holes.push(hp);
+  if (windows) {
+    for (let k = 0; k < windows; k++) {
+      const a = k / windows * TAU; const cr = (rr + hole) * 0.5; const wr = (rr - hole) * 0.28;
+      const p = new THREE.Path(); p.absarc(Math.cos(a) * cr, Math.sin(a) * cr, wr, 0, TAU, true); s.holes.push(p);
+    }
+  }
+  const g = new THREE.ExtrudeGeometry(s, { depth, bevelEnabled: true, bevelThickness: 0.008, bevelSize: 0.006, bevelSegments: 1, curveSegments: 10 });
+  g.translate(0, 0, -depth / 2); g.rotateX(-Math.PI / 2);
+  return g;
+}
+
+// ===========================================================================
+// sky
+// ===========================================================================
+const skyU = {
+  uZen: { value: SKY.zen[0].clone() }, uHor: { value: SKY.hor[0].clone() }, uCloud: { value: SKY.cloud[0].clone() },
+  uSunCol: { value: C('#FFD3A0') }, uSunDir: { value: V3(-0.86, 0.2, -0.48).normalize() }, uSunAmt: { value: 1 },
+  uMoonDir: { value: V3(0.52, 0.42, -0.74).normalize() }, uMoon: { value: 0 }, uT: { value: 0 }
+};
+const SKY_VS = `varying vec3 vDir; void main(){ vDir = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`;
+const SKY_FS = `
+uniform vec3 uZen, uHor, uCloud, uSunCol, uSunDir, uMoonDir; uniform float uMoon, uT, uSunAmt;
+varying vec3 vDir;
+float h21(vec2 p){ p = fract(p * vec2(123.34, 456.21)); p += dot(p, p + 45.32); return fract(p.x * p.y); }
+float vn(vec2 p){ vec2 i = floor(p), f = fract(p); f = f*f*(3.0-2.0*f);
+  return mix(mix(h21(i), h21(i+vec2(1.0,0.0)), f.x), mix(h21(i+vec2(0.0,1.0)), h21(i+vec2(1.0,1.0)), f.x), f.y); }
+float fbm(vec2 p){ float s = 0.0, a = 0.5; for (int i = 0; i < 5; i++){ s += a * vn(p); p = p * 2.03 + vec2(1.7, 9.2); a *= 0.5; } return s; }
+void main(){
+  vec3 d = normalize(vDir); float h = d.y;
+  float g = pow(smoothstep(-0.03, 0.2, h), 0.7);
+  vec3 col = mix(uHor, uZen, g);
+  if (h < 0.0) col = mix(uHor, uHor * 0.82 + vec3(0.02, 0.03, 0.05), clamp(-h * 4.0, 0.0, 1.0));
+  float sd = max(dot(d, uSunDir), 0.0);
+  col += uSunCol * (pow(sd, 6.0) * 0.32 + pow(sd, 60.0) * 0.45) * uSunAmt;
+  col += uSunCol * smoothstep(0.9993, 0.9997, sd) * 1.4 * uSunAmt;
+  if (h > 0.005) {
+    vec2 uv = d.xz / (h + 0.16) * 1.1 + vec2(uT * 0.004, uT * 0.0016);
+    float n = fbm(uv * 1.25);
+    float m = smoothstep(0.5, 0.78, n) * smoothstep(0.01, 0.16, h) * (1.0 - smoothstep(0.5, 0.88, h));
+    float lit = pow(max(dot(normalize(vec3(d.x, 0.0, d.z) + 1e-4), normalize(vec3(uSunDir.x, 0.0, uSunDir.z))), 0.0), 2.0);
+    float edge = smoothstep(0.55, 0.8, n);
+    vec3 cshade = mix(uZen * 0.85 + vec3(0.1, 0.06, 0.14), uHor * 0.75, 0.35);
+    vec3 cc = mix(cshade, uCloud, 0.32 + 0.68 * lit * (1.0 - edge * 0.45));
+    col = mix(col, cc, m * 0.86);
+  }
+  float md = dot(d, uMoonDir);
+  col += vec3(0.86, 0.9, 1.0) * (smoothstep(0.99955, 0.9997, md) * 1.2 + pow(max(md, 0.0), 260.0) * 0.22) * uMoon;
+  gl_FragColor = vec4(col, 1.0);
+  #include <tonemapping_fragment>
+  #include <colorspace_fragment>
+}`;
+const skyMat = new THREE.ShaderMaterial({ uniforms: skyU, vertexShader: SKY_VS, fragmentShader: SKY_FS, side: THREE.BackSide, depthWrite: false, fog: false });
+const sky = new THREE.Mesh(new THREE.SphereGeometry(180, 48, 24), skyMat);
+sky.renderOrder = -10; sky.frustumCulled = false;
+sky.onBeforeRender = (r, s, cam) => { sky.position.copy(cam.position); sky.updateMatrixWorld(); };
+scene.add(sky);
+
+// ===========================================================================
+// lights
+// ===========================================================================
+const hemi = new THREE.HemisphereLight(0xA9C7FF, 0xB8A17B, 0.9);
+scene.add(hemi);
+const sun = new THREE.DirectionalLight(0xFFD3A0, 2.0);
+sun.shadow.camera.left = -9; sun.shadow.camera.right = 9; sun.shadow.camera.top = 9; sun.shadow.camera.bottom = -9;
+sun.shadow.camera.near = 2; sun.shadow.camera.far = 80; sun.shadow.bias = -0.0005; sun.shadow.normalBias = 0.03;
+scene.add(sun); scene.add(sun.target);
+const moon = new THREE.DirectionalLight(0xB9D5FF, 0.2);
+scene.add(moon); scene.add(moon.target);
+const pLights = [];
+for (let k = 0; k < 4; k++) {
+  const pl = new THREE.PointLight(0xFFB347, 0, 16, 2);
+  pl.position.set(0, RINGS[k].y - 0.35, 0);
+  scene.add(pl); pLights.push(pl);
+}
+
+// environment map: same sky + ground + lantern glow bands, filtered by PMREM
+const pmrem = new THREE.PMREMGenerator(renderer);
+const envScene = new THREE.Scene();
+envScene.add(new THREE.Mesh(new THREE.SphereGeometry(50, 32, 16), new THREE.ShaderMaterial({ uniforms: skyU, vertexShader: SKY_VS, fragmentShader: SKY_FS, side: THREE.BackSide, depthWrite: false })));
+const envGroundMat = new THREE.MeshBasicMaterial({ color: 0x8c7b5e, side: THREE.DoubleSide });
+envScene.add(new THREE.Mesh(new THREE.CircleGeometry(45, 32).rotateX(-Math.PI / 2).translate(0, -2.4, 0), envGroundMat));
+const envGlow = [];
+for (let k = 0; k < 4; k++) {
+  const m = new THREE.MeshBasicMaterial({ color: 0x000000, side: THREE.DoubleSide });
+  const t = new THREE.Mesh(new THREE.TorusGeometry(6 + k * 1.5, 0.9, 8, 48).rotateX(Math.PI / 2), m);
+  t.position.y = -1.2 + k * 0.9; envScene.add(t); envGlow.push(m);
+}
+let envRT = null, envT = -99, envGlowSum = -1;
+function updateEnv() {
+  const rt = pmrem.fromScene(envScene, 0.035, 0.1, 120);
+  scene.environment = rt.texture;
+  if (envRT) envRT.dispose();
+  envRT = rt;
+}
+scene.environmentIntensity = 0.85;
+
+// ===========================================================================
+// garden
+// ===========================================================================
+const garden = new THREE.Group(); scene.add(garden);
+// paved floor
+{
+  const floor = new THREE.Mesh(new THREE.CircleGeometry(12, 128).rotateX(-Math.PI / 2), mPave);
+  floor.receiveShadow = true; garden.add(floor);
+  // outer step
+  const step = new THREE.Mesh(lathe([[11.98, 0.002], [12.25, 0.002], [12.28, -0.03], [12.28, -0.16], [12.55, -0.17], [12.58, -0.2], [12.58, -0.34]], 128), mStoneWarm);
+  step.receiveShadow = true; garden.add(step);
+  // inner platform under the device
+  const plat = new THREE.Mesh(lathe([[0, 0.16], [3.5, 0.16], [3.54, 0.14], [3.56, 0.0]], 96), mPave);
+  plat.receiveShadow = true; plat.castShadow = false; garden.add(plat);
+  const platRim = new THREE.Mesh(lathe([[3.46, 0.165], [3.58, 0.165], [3.6, 0.12], [3.6, 0.0]], 96), mStone);
+  platRim.receiveShadow = true; garden.add(platRim);
+}
+// water channel with curbs (gap in front for the path)
+const WATER_GAP = 0.34;
+let waterMat;
+{
+  const ps = WATER_GAP, pl = TAU - WATER_GAP * 2;
+  const curbIn = new THREE.Mesh(lathe([[3.84, 0.0], [3.84, 0.13], [3.87, 0.15], [3.95, 0.15], [3.97, 0.12], [3.97, -0.1]], 128, ps, pl), mStone);
+  const curbOut = new THREE.Mesh(lathe([[4.83, -0.1], [4.83, 0.12], [4.85, 0.15], [4.94, 0.15], [4.97, 0.13], [4.97, 0.0]], 128, ps, pl), mStone);
+  curbIn.receiveShadow = curbOut.receiveShadow = true;
+  garden.add(curbIn, curbOut);
+  for (const s of [-1, 1]) {
+    const a = s * WATER_GAP;
+    const cap = new THREE.Mesh(new THREE.BoxGeometry(1.13, 0.15, 0.12), mStone);
+    cap.position.set(Math.sin(a) * 4.405, 0.075, Math.cos(a) * 4.405); cap.rotation.y = a + Math.PI / 2;
+    garden.add(cap);
+  }
+  waterMat = new THREE.ShaderMaterial({
+    uniforms: { uT: lampU.uTime, uZen: skyU.uZen, uHor: skyU.uHor, uSunCol: skyU.uSunCol, uSunDir: skyU.uSunDir, uLP: lampU.uLP, uLC: lampU.uLC, uLampGain: lampU.uLampGain },
+    vertexShader: `varying vec3 vPw; void main(){ vec4 w = modelMatrix * vec4(position, 1.0); vPw = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }`,
+    fragmentShader: `
+    uniform float uT; uniform vec3 uZen, uHor, uSunCol, uSunDir; uniform vec4 uLP[${NL}]; uniform vec3 uLC[${NL}]; uniform float uLampGain;
+    varying vec3 vPw;
+    float hh(vec2 p){ return fract(sin(dot(p, vec2(41.3, 289.1))) * 43758.5453); }
+    vec2 wv(vec2 p, vec2 d, float L, float A, float sp){ float k = 6.2831853 / L; float ph = dot(d, p) * k - uT * sp; return d * (A * k * cos(ph)); }
+    void main(){
+      vec2 p = vPw.xz; vec2 g = vec2(0.0);
+      g += wv(p, normalize(vec2(1.0, 0.35)), 0.55, 0.010, 1.3);
+      g += wv(p, normalize(vec2(-0.4, 1.0)), 0.37, 0.007, 1.9);
+      g += wv(p, normalize(vec2(0.8, -0.9)), 0.23, 0.005, 2.6);
+      g += wv(p, normalize(vec2(-1.0, -0.2)), 0.16, 0.004, 3.3);
+      vec3 N = normalize(vec3(-g.x, 1.0, -g.y));
+      vec3 V = normalize(cameraPosition - vPw);
+      float fr = 0.02 + 0.98 * pow(1.0 - max(dot(N, V), 0.0), 5.0);
+      vec3 R = reflect(-V, N);
+      vec3 skyc = mix(uHor, uZen, pow(clamp(R.y, 0.0, 1.0), 0.5));
+      skyc += uSunCol * pow(max(dot(R, uSunDir), 0.0), 180.0) * 1.5;
+      vec3 lr = vec3(0.0), ld = vec3(0.0);
+      for (int i = 0; i < ${NL}; i++){
+        vec4 lp = uLP[i]; if (lp.w <= 0.0) continue;
+        vec3 D = lp.xyz - vPw; float dl = length(D); D /= dl;
+        float s = max(dot(R, D), 0.0);
+        lr += uLC[i] * lp.w * (pow(s, 260.0) * 1.1 + pow(s, 26.0) * 0.1);
+        ld += uLC[i] * lp.w / (1.0 + dl * dl * 1.3);
+      }
+      lr *= uLampGain; ld *= uLampGain; lr = lr / (1.0 + 0.6 * dot(lr, vec3(0.3333)));
+      vec2 cell = floor(p * 3.0); float st = hh(cell);
+      vec3 bottom = vec3(0.36, 0.38, 0.36) * (0.75 + 0.35 * st);
+      vec3 waterCol = vec3(0.087, 0.212, 0.352);
+      vec3 body = mix(bottom * 0.55, waterCol, 0.62) * (0.55 + 0.45 * max(uSunDir.y * 3.0, 0.35));
+      body += ld * 0.35 * vec3(0.9, 1.0, 1.0);
+      vec3 col = mix(body, skyc * 0.92, fr) + lr;
+      gl_FragColor = vec4(col, 1.0);
+      #include <tonemapping_fragment>
+      #include <colorspace_fragment>
+    }`
+  });
+  const wg = new THREE.RingGeometry(3.96, 4.84, 160, 3, -Math.PI / 2 + WATER_GAP, TAU - WATER_GAP * 2).rotateX(-Math.PI / 2);
+  const water = new THREE.Mesh(wg, waterMat); water.position.y = 0.09;
+  garden.add(water);
+}
+// flower beds
+const BED_IN = 6.3, BED_OUT = 7.5, BED_H = 0.32, BED_HALF = 0.39;
+const bedCenters = [];
+{
+  for (let k = 0; k < 6; k++) {
+    const c = (30 + k * 60) * Math.PI / 180; bedCenters.push(c);
+    const a0 = c - BED_HALF, a1 = c + BED_HALF;
+    const sh = new THREE.Shape();
+    // shape in XY where we later map (x, y) -> (x, ?, -y); use angle convention x = r sin a, z = r cos a  => y = -z
+    const P = (r, a) => [r * Math.sin(a), -r * Math.cos(a)];
+    sh.moveTo(...P(BED_OUT, a0));
+    for (let i = 1; i <= 24; i++) sh.lineTo(...P(BED_OUT, a0 + (a1 - a0) * i / 24));
+    for (let i = 24; i >= 0; i--) sh.lineTo(...P(BED_IN, a0 + (a1 - a0) * i / 24));
+    const g = new THREE.ExtrudeGeometry(sh, { depth: BED_H, bevelEnabled: true, bevelThickness: 0.03, bevelSize: 0.03, bevelSegments: 2, curveSegments: 4 });
+    g.rotateX(-Math.PI / 2);
+    const bed = new THREE.Mesh(g, mStone); bed.receiveShadow = true; bed.castShadow = true; garden.add(bed);
+    const sh2 = new THREE.Shape(); const ri = BED_IN + 0.1, ro = BED_OUT - 0.1, b0 = a0 + 0.02, b1 = a1 - 0.02;
+    sh2.moveTo(...P(ro, b0));
+    for (let i = 1; i <= 24; i++) sh2.lineTo(...P(ro, b0 + (b1 - b0) * i / 24));
+    for (let i = 24; i >= 0; i--) sh2.lineTo(...P(ri, b0 + (b1 - b0) * i / 24));
+    const sg = new THREE.ShapeGeometry(sh2, 4).rotateX(-Math.PI / 2);
+    const soil = new THREE.Mesh(sg, mSoil); soil.position.y = BED_H + 0.035; soil.receiveShadow = true; garden.add(soil);
+  }
+}
+// plants (instanced leaves and flowers)
+let leafMesh, flowerMesh;
+{
+  const ls = new THREE.Shape(); ls.moveTo(0, 0); ls.quadraticCurveTo(0.035, 0.05, 0, 0.13); ls.quadraticCurveTo(-0.035, 0.05, 0, 0);
+  const lg = new THREE.ShapeGeometry(ls, 5); const lp = lg.attributes.position;
+  for (let i = 0; i < lp.count; i++) { const y = lp.getY(i); lp.setZ(i, y * y * 1.6); }
+  lg.computeVertexNormals();
+  const NLEAF = PRESET.high.leaves;
+  leafMesh = new THREE.InstancedMesh(lg, mLeaf, NLEAF);
+  const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), s = new THREE.Vector3(), p = new THREE.Vector3(), col = new THREE.Color();
+  const bedPoint = (out) => {
+    const k = Math.floor(rnd() * 6); const a = bedCenters[k] + (rnd() * 2 - 1) * (BED_HALF - 0.04);
+    const r = BED_IN + 0.14 + rnd() * (BED_OUT - BED_IN - 0.28);
+    return out.set(r * Math.sin(a), BED_H + 0.035, r * Math.cos(a));
+  };
+  for (let i = 0; i < NLEAF; i++) {
+    bedPoint(p);
+    e.set(-0.25 - rnd() * 0.9, rnd() * TAU, 0, 'YXZ'); q.setFromEuler(e);
+    const sc = 0.8 + rnd() * 1.4; s.set(sc, sc, sc);
+    m4.compose(p, q, s); leafMesh.setMatrixAt(i, m4);
+    col.setHSL(0.24 + rnd() * 0.08, 0.45 + rnd() * 0.2, 0.2 + rnd() * 0.12); leafMesh.setColorAt(i, col);
+  }
+  leafMesh.receiveShadow = true;
+  garden.add(leafMesh);
+  // flower: five petals + center + stem, vertex colored
+  const parts = [];
+  for (let k = 0; k < 5; k++) {
+    const pg = new THREE.CircleGeometry(0.024, 7); pg.scale(1, 0.58, 1); pg.translate(0.024, 0, 0); pg.rotateZ(k * TAU / 5); pg.rotateX(-Math.PI / 2 + 0.25);
+    parts.push([pg, [1, 1, 1]]);
+  }
+  parts.push([sph(0.011, 8, 6).translate(0, 0.005, 0), [1.0, 0.82, 0.35]]);
+  parts.push([cyl(0.0035, 0.004, 0.16, 4).translate(0, -0.08, 0), [0.22, 0.42, 0.16]]);
+  const geos = parts.map(([g, c]) => { const x = g.index ? g.toNonIndexed() : g; const n = x.attributes.position.count; const ca = new Float32Array(n * 3); for (let i = 0; i < n; i++) { ca[i * 3] = c[0]; ca[i * 3 + 1] = c[1]; ca[i * 3 + 2] = c[2]; } x.setAttribute('color', new THREE.BufferAttribute(ca, 3)); for (const k of Object.keys(x.attributes)) if (!['position', 'normal', 'color'].includes(k)) x.deleteAttribute(k); return x; });
+  const fg = mergeGeometries(geos, false);
+  const NF = PRESET.high.flowers;
+  flowerMesh = new THREE.InstancedMesh(fg, mFlower, NF);
+  const FC = [C('#FFFFFF'), C('#FFC2D6'), C('#D9C2FF'), C('#FFE3EE'), C('#F2E9FF')];
+  for (let i = 0; i < NF; i++) {
+    bedPoint(p); p.y += 0.1 + rnd() * 0.16;
+    e.set((rnd() - 0.5) * 0.5, rnd() * TAU, (rnd() - 0.5) * 0.5); q.setFromEuler(e);
+    const sc = 0.8 + rnd() * 0.7; s.set(sc, sc, sc);
+    m4.compose(p, q, s); flowerMesh.setMatrixAt(i, m4);
+    flowerMesh.setColorAt(i, FC[Math.floor(rnd() * FC.length)]);
+  }
+  garden.add(flowerMesh);
+}
+// balustrade
+{
+  const R = 11.4, GAP = 0.17;
+  const base = new THREE.Mesh(lathe([[R - 0.2, 0.0], [R - 0.2, 0.14], [R - 0.17, 0.17], [R + 0.17, 0.17], [R + 0.2, 0.14], [R + 0.2, 0.0]], 160, GAP, TAU - GAP * 2), mStone);
+  const rail = new THREE.Mesh(lathe([[R - 0.15, 0.8], [R - 0.15, 0.86], [R - 0.19, 0.89], [R - 0.17, 0.93], [R + 0.17, 0.93], [R + 0.19, 0.89], [R + 0.15, 0.86], [R + 0.15, 0.8]], 160, GAP, TAU - GAP * 2), mStone);
+  base.receiveShadow = rail.receiveShadow = true; rail.castShadow = true;
+  garden.add(base, rail);
+  const bal = lathe([[0, 0.17], [0.055, 0.17], [0.055, 0.21], [0.04, 0.24], [0.075, 0.38], [0.07, 0.5], [0.035, 0.62], [0.03, 0.7], [0.05, 0.74], [0.06, 0.8], [0, 0.8]], 10);
+  const n = 190; const balM = new THREE.InstancedMesh(bal, mStone, n);
+  const m4 = new THREE.Matrix4(); let c = 0;
+  for (let i = 0; i < n; i++) {
+    const a = GAP + 0.03 + (TAU - GAP * 2 - 0.06) * i / (n - 1);
+    m4.makeTranslation(R * Math.sin(a), 0, R * Math.cos(a)); balM.setMatrixAt(c++, m4);
+  }
+  balM.count = c; garden.add(balM);
+  const post = merge([new THREE.BoxGeometry(0.36, 1.0, 0.36).translate(0, 0.5, 0), new THREE.BoxGeometry(0.44, 0.08, 0.44).translate(0, 1.04, 0), lathe([[0, 1.08], [0.12, 1.08], [0.15, 1.16], [0.1, 1.26], [0.03, 1.32], [0, 1.34]], 12)]);
+  const posts = [];
+  for (let k = 0; k < 12; k++) { const a = (15 + k * 30) * Math.PI / 180; posts.push(a); }
+  posts.push(GAP, TAU - GAP);
+  const postM = new THREE.InstancedMesh(post, mStone, posts.length);
+  posts.forEach((a, i) => { m4.makeRotationY(a); m4.setPosition(R * Math.sin(a), 0, R * Math.cos(a)); postM.setMatrixAt(i, m4); });
+  postM.castShadow = true; postM.receiveShadow = true; garden.add(postM);
+}
+// lawn, hillside and distant hills
+function terrainH(x, z) {
+  const r = Math.hypot(x, z); const a = Math.atan2(z, x);
+  if (r < 12.6) return -0.34;
+  const fall = -smooth(12.6, 48, r) * 10;
+  const hills = smooth(38, 105, r) * (8 + 5 * Math.sin(a * 3 + 1.3) + 3 * Math.sin(a * 7 + 0.4) + 1.6 * Math.sin(a * 13 + 2.1));
+  return -0.34 + fall + hills + Math.sin(x * 0.21) * Math.cos(z * 0.17) * 0.6 * smooth(14, 30, r);
+}
+{
+  const rings = 44, segs = 128; const pos = [], colA = [], idx = [];
+  const col = new THREE.Color();
+  for (let i = 0; i <= rings; i++) {
+    const r = 12.5 + Math.pow(i / rings, 1.7) * 180;
+    for (let j = 0; j <= segs; j++) {
+      const a = j / segs * TAU; const x = r * Math.sin(a), z = r * Math.cos(a);
+      pos.push(x, terrainH(x, z), z);
+      const v = 0.5 + 0.5 * Math.sin(x * 0.13 + z * 0.07) * Math.cos(z * 0.11);
+      col.setHSL(0.22 + v * 0.06, 0.38 + v * 0.12, 0.22 + v * 0.06 - smooth(30, 160, r) * 0.05);
+      colA.push(col.r, col.g, col.b);
+    }
+  }
+  for (let i = 0; i < rings; i++) for (let j = 0; j < segs; j++) {
+    const a = i * (segs + 1) + j, b = a + segs + 1;
+    idx.push(a, b, a + 1, b, b + 1, a + 1);
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  g.setAttribute('color', new THREE.Float32BufferAttribute(colA, 3));
+  g.setIndex(idx); g.computeVertexNormals();
+  const land = new THREE.Mesh(g, mLawn); land.receiveShadow = true; scene.add(land);
+  // trees
+  const tg = new THREE.IcosahedronGeometry(1, 4); const tp = tg.attributes.position;
+  for (let i = 0; i < tp.count; i++) { const v = V3(tp.getX(i), tp.getY(i), tp.getZ(i)); const n = 1 + 0.09 * Math.sin(v.x * 5.1 + v.y * 3.3) * Math.cos(v.z * 4.7 - v.y * 2.1) + 0.05 * Math.sin(v.x * 11.0 - v.z * 9.0 + v.y * 7.0); v.multiplyScalar(n); tp.setXYZ(i, v.x, v.y, v.z); }
+  tg.computeVertexNormals();
+  const NT = 170; const trees = new THREE.InstancedMesh(tg, mTree, NT);
+  const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), sc = new THREE.Vector3(), p = new THREE.Vector3();
+  for (let i = 0; i < NT; i++) {
+    let a = rnd() * TAU; const r = 36 + Math.pow(rnd(), 0.8) * 60;
+    if (Math.abs(Math.atan2(Math.sin(a), Math.cos(a))) < 0.5 && r < 40) a += 1.2;
+    const x = r * Math.sin(a), z = r * Math.cos(a);
+    const tall = rnd() < 0.3; const s = 1.5 + rnd() * 1.8;
+    sc.set(s * (tall ? 0.5 : 1), s * (tall ? 1.9 : 0.85), s * (tall ? 0.5 : 1));
+    p.set(x, terrainH(x, z) + sc.y * 0.75, z);
+    q.setFromAxisAngle(V3(0, 1, 0), rnd() * TAU);
+    m4.compose(p, q, sc); trees.setMatrixAt(i, m4);
+    trees.setColorAt(i, new THREE.Color().setHSL(0.27 + rnd() * 0.08, 0.35 + rnd() * 0.15, 0.13 + rnd() * 0.08));
+  }
+  scene.add(trees);
+}
+// work bench and the reset dial post
+let benchGroup, dial, dialDisc;
+{
+  benchGroup = new THREE.Group(); benchGroup.position.set(0, 0, BENCH_Z); garden.add(benchGroup);
+  const col = new THREE.Mesh(lathe([[0, 0], [0.32, 0], [0.32, 0.06], [0.26, 0.1], [0.2, 0.16], [0.16, 0.3], [0.14, 0.46], [0.17, 0.55], [0.26, 0.6], [0.3, 0.64], [0, 0.64]], 28), mStone);
+  col.castShadow = col.receiveShadow = true; benchGroup.add(col);
+  const top = new THREE.Shape(); const w = 0.52, d = 0.36, rr = 0.08;
+  top.moveTo(-w + rr, -d); top.lineTo(w - rr, -d); top.quadraticCurveTo(w, -d, w, -d + rr); top.lineTo(w, d - rr); top.quadraticCurveTo(w, d, w - rr, d);
+  top.lineTo(-w + rr, d); top.quadraticCurveTo(-w, d, -w, d - rr); top.lineTo(-w, -d + rr); top.quadraticCurveTo(-w, -d, -w + rr, -d);
+  const tgeo = new THREE.ExtrudeGeometry(top, { depth: 0.08, bevelEnabled: true, bevelThickness: 0.02, bevelSize: 0.02, bevelSegments: 2 });
+  tgeo.rotateX(-Math.PI / 2); tgeo.translate(0, 0.65, 0);
+  const slab = new THREE.Mesh(tgeo, mStone); slab.castShadow = slab.receiveShadow = true; benchGroup.add(slab);
+  // brass inlay ring where the lantern stands
+  const inlay = new THREE.Mesh(tor(0.2, 0.012, 6, 48).rotateX(Math.PI / 2), mBrass); inlay.position.y = BENCH_TOP + 0.004; benchGroup.add(inlay);
+  // dial post
+  dial = new THREE.Group(); dial.position.set(DIAL_POS.x, 0, DIAL_POS.z); garden.add(dial);
+  const dp = new THREE.Mesh(lathe([[0, 0], [0.17, 0], [0.17, 0.05], [0.11, 0.1], [0.09, 0.5], [0.13, 0.6], [0.13, 0.64], [0, 0.64]], 20), mStone);
+  dp.castShadow = true; dial.add(dp);
+  dialDisc = new THREE.Group(); dialDisc.position.y = DIAL_POS.y; dial.add(dialDisc);
+  const dg = merge([
+    cyl(0.17, 0.17, 0.04, 48).rotateX(Math.PI / 2),
+    tor(0.17, 0.014, 6, 48),
+    cyl(0.05, 0.05, 0.05, 20).rotateX(Math.PI / 2).translate(0, 0, 0.03),
+    ...[0, 1, 2, 3, 4, 5].map((k) => { const a = k * TAU / 6; return rod(V3(Math.cos(a) * 0.05, Math.sin(a) * 0.05, 0.022), V3(Math.cos(a) * 0.15, Math.sin(a) * 0.15, 0.022), 0.008, 5); }),
+    ...Array.from({ length: 24 }, (_, k) => { const a = k * TAU / 24; return sph(0.012, 6, 4).translate(Math.cos(a) * 0.17, Math.sin(a) * 0.17, 0.016); })
+  ]);
+  const dmat = brassMat({ emissive: 0xFFC060, emissiveIntensity: 0 });
+  const dm = new THREE.Mesh(dg, dmat); dm.castShadow = true; dialDisc.add(dm); dialDisc.userData.mat = dmat;
+  const dstem = new THREE.Mesh(cyl(0.025, 0.025, 0.12, 10), mBrassDark); dstem.position.y = -0.1; dialDisc.add(dstem);
+  dialDisc.scale.setScalar(0.001);
+}
+
+// ===========================================================================
+// the rotating device
+// ===========================================================================
+const device = new THREE.Group(); scene.add(device);
+function castAll(o) { o.traverse((c) => { if (c.isMesh) { c.castShadow = true; c.receiveShadow = true; } }); }
+// pedestal: stone plinth, brass drum, crown gear and pinions
+let crownGear, pinions = [], handle, handleKnob;
+{
+  const plinth = new THREE.Mesh(merge([cyl(1.62, 1.72, 0.3, 8).translate(0, 0.15 + 0.16, 0), cyl(1.42, 1.5, 0.14, 8).translate(0, 0.53, 0)]), mStone);
+  plinth.rotation.y = Math.PI / 8; device.add(plinth);
+  const drum = new THREE.Mesh(merge([
+    cyl(1.08, 1.12, 0.3, 64).translate(0, 0.75, 0),
+    tor(1.1, 0.025, 8, 96).rotateX(Math.PI / 2).translate(0, 0.62, 0),
+    tor(1.08, 0.022, 8, 96).rotateX(Math.PI / 2).translate(0, 0.88, 0),
+    ...Array.from({ length: 16 }, (_, k) => { const a = k * TAU / 16; return sph(0.025, 8, 6).translate(Math.sin(a) * 1.1, 0.75, Math.cos(a) * 1.1); })
+  ]), mBrassDark);
+  device.add(drum);
+  crownGear = new THREE.Mesh(gearGeo(1.0, 48, 0.06, 0.2, 6), mBrass);
+  crownGear.position.y = 0.93; device.add(crownGear);
+  const cap = new THREE.Mesh(merge([cyl(0.28, 0.46, 0.22, 32).translate(0, 1.07, 0), tor(0.3, 0.03, 8, 40).rotateX(Math.PI / 2).translate(0, 1.18, 0)]), mBrass);
+  device.add(cap);
+  const pinAng = [40, -40, 180].map((d) => d * Math.PI / 180);
+  for (const a of pinAng) {
+    const pr = 0.32, pd = 1.0 + pr - 0.05;
+    const grp = new THREE.Group(); grp.position.set(Math.sin(a) * pd, 0.93, Math.cos(a) * pd); device.add(grp);
+    const post = new THREE.Mesh(merge([cyl(0.05, 0.07, 0.36, 12).translate(0, -0.2, 0), cyl(0.09, 0.09, 0.05, 16).translate(0, 0.05, 0)]), mBrassDark);
+    grp.add(post);
+    const pg = new THREE.Mesh(gearGeo(pr, 16, 0.06, 0.05, 0), mBrass); grp.add(pg);
+    pinions.push(pg);
+    if (a === pinAng[0]) {
+      handle = new THREE.Group(); pg.add(handle);
+      const arm = new THREE.Mesh(merge([rod(V3(0, 0.05, 0), V3(0.3, 0.12, 0), 0.022, 10), cyl(0.032, 0.032, 0.05, 12).translate(0.3, 0.12, 0)]), mBrass);
+      handle.add(arm);
+      handleKnob = new THREE.Mesh(merge([cyl(0.035, 0.04, 0.16, 14).translate(0.3, 0.22, 0), sph(0.05, 14, 10).translate(0.3, 0.32, 0)]), brassMat({ emissive: 0xFFC060, emissiveIntensity: 0, roughness: 0.26 }));
+      handle.add(handleKnob);
+    }
+  }
+}
+// pole
+{
+  const pole = new THREE.Mesh(merge([
+    cyl(0.11, 0.13, 3.25, 36).translate(0, 1.15 + 1.625, 0),
+    ...RINGS.map((R) => tor(0.135, 0.028, 8, 32).rotateX(Math.PI / 2).translate(0, R.y - 0.62, 0)),
+    ...RINGS.map((R) => cyl(0.15, 0.15, 0.05, 24).translate(0, R.y - 0.58, 0)),
+    lathe([[0.0, 4.4], [0.13, 4.4], [0.16, 4.27], [0.12, 4.18], [0.11, 4.1]], 24)
+  ]), mPole);
+  device.add(pole);
+}
+// rings with hooks
+const ringObjs = [];
+const hookGeo = merge([
+  cyl(0.008, 0.008, 0.1, 6).translate(0, HOOK_DROP - 0.05, 0),
+  sph(0.016, 8, 6).translate(0, HOOK_DROP - 0.1, 0),
+  tor(0.022, 0.0065, 6, 16, Math.PI * 1.45).rotateZ(-Math.PI * 0.95).rotateY(Math.PI / 2).translate(0, 0.022, 0),
+  sph(0.009, 6, 4).translate(0, 0.04, 0.018)
+]);
+for (let k = 0; k < 4; k++) {
+  const R = RINGS[k].r;
+  const grp = new THREE.Group(); grp.position.y = RINGS[k].y; device.add(grp);
+  const L = [];
+  L.push(tor(R, 0.045, 10, 180).rotateX(Math.PI / 2));
+  L.push(tor(R - 0.13, 0.02, 8, 160).rotateX(Math.PI / 2).translate(0, 0.045, 0));
+  L.push(tor(R, 0.017, 6, 180).rotateX(Math.PI / 2).translate(0, 0.058, 0));
+  for (let j = 0; j < 36; j++) { const a = (j + 0.5) * TAU / 36; L.push(sph(0.02, 8, 6).translate((R - 0.065) * Math.sin(a), 0.025, (R - 0.065) * Math.cos(a))); }
+  for (let j = 0; j < 6; j++) {
+    const a = (j * 60 + 30) * Math.PI / 180; const sa = Math.sin(a), ca = Math.cos(a);
+    L.push(rod(V3(sa * 0.22, 0, ca * 0.22), V3(sa * (R - 0.03), 0, ca * (R - 0.03)), 0.022, 8));
+    L.push(rod(V3(sa * 0.17, -0.5, ca * 0.17), V3(sa * R * 0.56, 0, ca * R * 0.56), 0.016, 6));
+    const mr = (0.22 + R) * 0.5;
+    L.push(tor(0.09, 0.009, 6, 20).rotateY(a + Math.PI / 2).translate(sa * mr, 0.0, ca * mr));
+    const b = j * 60 * Math.PI / 180;
+    L.push(sph(0.038, 12, 8).translate(Math.sin(b) * R, 0.07, Math.cos(b) * R));
+    L.push(cyl(0.022, 0.03, 0.04, 10).translate(Math.sin(b) * R, -0.045, Math.cos(b) * R));
+  }
+  L.push(cyl(0.23, 0.23, 0.16, 28));
+  L.push(tor(0.23, 0.02, 8, 32).rotateX(Math.PI / 2).translate(0, 0.08, 0));
+  L.push(tor(0.23, 0.02, 8, 32).rotateX(Math.PI / 2).translate(0, -0.08, 0));
+  L.push(cyl(0.16, 0.16, 0.5, 24).translate(0, -0.25, 0));
+  L.push(cyl(0.19, 0.19, 0.07, 24).translate(0, -0.5, 0));
+  const mat = ringMat();
+  const mesh = new THREE.Mesh(merge(L), mat); grp.add(mesh);
+  const pivots = [];
+  for (let j = 0; j < 6; j++) {
+    const a = j * Math.PI / 3;
+    const pv = new THREE.Group(); pv.position.set(R * Math.sin(a), -HOOK_DROP, R * Math.cos(a)); pv.rotation.y = a;
+    const hm = new THREE.Mesh(hookGeo, mBrass); hm.castShadow = true; pv.add(hm);
+    const sw = new THREE.Group(); pv.add(sw); // swing holder
+    grp.add(pv); pivots.push({ pv, sw, hm });
+  }
+  ringObjs.push({ grp, mat, pivots, theta: 0, spin: 0, spinTarget: 0, step: null, omega: 0, flowT: 9 });
+}
+// sun ornament on the top
+let sunOrn, sunGlassMat, sunHaloM, sunRays = [];
+{
+  sunOrn = new THREE.Group(); sunOrn.position.y = SUN_Y; device.add(sunOrn);
+  const finial = new THREE.Mesh(merge([cyl(0.05, 0.08, 0.18, 16).translate(0, -0.27, 0), tor(0.33, 0.035, 10, 64), tor(0.25, 0.016, 8, 56).translate(0, 0, 0.03), tor(0.25, 0.016, 8, 56).translate(0, 0, -0.03),
+    ...Array.from({ length: 12 }, (_, k) => { const a = k * TAU / 12; return rod(V3(Math.cos(a) * 0.06, Math.sin(a) * 0.06, 0.07), V3(Math.cos(a) * 0.31, Math.sin(a) * 0.31, 0.035), 0.008, 5); }),
+    ...Array.from({ length: 12 }, (_, k) => { const a = k * TAU / 12; return rod(V3(Math.cos(a) * 0.06, Math.sin(a) * 0.06, -0.07), V3(Math.cos(a) * 0.31, Math.sin(a) * 0.31, -0.035), 0.008, 5); }),
+    cyl(0.07, 0.07, 0.18, 20).rotateX(Math.PI / 2), sph(0.06, 14, 10).translate(0, 0, 0.09), sph(0.06, 14, 10).translate(0, 0, -0.09)
+  ]), mBrass);
+  sunOrn.add(finial);
+  sunGlassMat = new THREE.MeshPhysicalMaterial({ color: 0xFFB347, roughness: 0.12, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.08, emissive: 0xFF9A2E, emissiveIntensity: 0.05, transparent: true, opacity: 0.88, envMapIntensity: 1.2 });
+  const lens = new THREE.Mesh(sph(0.31, 40, 20).scale(1, 1, 0.26), sunGlassMat); sunOrn.add(lens);
+  sunHaloM = new THREE.SpriteMaterial({ map: glowTex, color: C('#FFB24A'), blending: THREE.AdditiveBlending, depthWrite: false, transparent: true, opacity: 0, fog: false });
+  const sh = new THREE.Sprite(sunHaloM); sh.scale.setScalar(1.5); sh.position.z = -0.08; sh.renderOrder = 4; sunOrn.add(sh);
+  const rayShape = (len, w) => { const s = new THREE.Shape(); s.moveTo(-w, 0); s.quadraticCurveTo(-w * 0.6, len * 0.55, 0, len); s.quadraticCurveTo(w * 0.6, len * 0.55, w, 0); s.lineTo(-w, 0); return s; };
+  const rayLong = new THREE.ExtrudeGeometry(rayShape(0.52, 0.075), { depth: 0.025, bevelEnabled: true, bevelThickness: 0.008, bevelSize: 0.007, bevelSegments: 1, curveSegments: 8 });
+  rayLong.translate(0, 0, -0.0125);
+  const rayShort = new THREE.ExtrudeGeometry(rayShape(0.34, 0.06), { depth: 0.025, bevelEnabled: true, bevelThickness: 0.008, bevelSize: 0.007, bevelSegments: 1, curveSegments: 8 });
+  rayShort.translate(0, 0, -0.0125);
+  const gemG = sph(0.035, 14, 10);
+  for (let k = 0; k < 12; k++) {
+    const a = k * TAU / 12;
+    const piv = new THREE.Group(); piv.rotation.z = a - Math.PI / 2; sunOrn.add(piv);
+    const arm = new THREE.Group(); arm.position.y = 0.34; piv.add(arm);
+    const long = k % 2 === 0;
+    const rm = new THREE.Mesh(long ? rayLong : rayShort, mBrass); arm.add(rm);
+    const gem = new THREE.Mesh(gemG, sunGlassMat); gem.position.y = long ? 0.2 : 0.14; gem.scale.z = 0.5; arm.add(gem);
+    sunRays.push({ arm, long });
+  }
+}
+castAll(device);
+
+// ===========================================================================
+// lanterns
+// ===========================================================================
+const LG = [];
+function buildLanternGeo(shape, special) {
+  const B = []; let G;
+  const R = 0.14, yt = -0.16, yb = -0.52, hh = yt - yb, yc = (yt + yb) / 2;
+  B.push(tor(0.04, 0.008, 8, 28).translate(0, -0.044, 0));
+  B.push(cyl(0.012, 0.015, 0.05, 10).translate(0, -0.105, 0));
+  B.push(cyl(0.045, 0.05, 0.02, 16).translate(0, yb + 0.012, 0));
+  if (shape === 0) { // hexagonal
+    G = cyl(R * 0.92, R, hh, 6, true).translate(0, yc, 0);
+    B.push(cyl(0.035, R * 1.2, 0.08, 6).translate(0, yt + 0.05, 0));
+    B.push(cyl(R * 1.14, R * 1.14, 0.018, 6).translate(0, yt + 0.004, 0));
+    B.push(cyl(R * 1.08, R * 1.08, 0.022, 6).translate(0, yb, 0));
+    B.push(cyl(R * 1.02, R * 0.66, 0.05, 6).translate(0, yb - 0.035, 0));
+    B.push(sph(0.02, 10, 8).translate(0, yb - 0.075, 0));
+    for (let k = 0; k < 6; k++) { const a = k * Math.PI / 3; B.push(rod(V3(Math.sin(a) * R * 0.93, yt, Math.cos(a) * R * 0.93), V3(Math.sin(a) * R * 1.01, yb, Math.cos(a) * R * 1.01), 0.0065, 5)); }
+  } else if (shape === 1) { // cylinder with dome
+    G = cyl(R * 0.95, R * 0.95, hh - 0.02, 28, true).translate(0, yc, 0);
+    B.push(new THREE.SphereGeometry(R * 1.08, 28, 8, 0, TAU, 0, Math.PI / 2).scale(1, 0.55, 1).translate(0, yt, 0));
+    B.push(cyl(0.028, 0.034, 0.06, 12).translate(0, yt + 0.085, 0));
+    B.push(tor(R * 1.0, 0.011, 6, 40).rotateX(Math.PI / 2).translate(0, yt - 0.005, 0));
+    B.push(tor(R * 1.0, 0.011, 6, 40).rotateX(Math.PI / 2).translate(0, yb + 0.01, 0));
+    B.push(tor(R * 0.97, 0.006, 5, 40).rotateX(Math.PI / 2).translate(0, yc, 0));
+    B.push(cyl(R * 1.04, R * 0.8, 0.04, 28).translate(0, yb - 0.01, 0));
+    B.push(cyl(R * 0.5, R * 0.3, 0.03, 16).translate(0, yb - 0.045, 0));
+    for (let k = 0; k < 4; k++) { const a = k * Math.PI / 2 + Math.PI / 4; B.push(rod(V3(Math.sin(a) * R * 0.97, yt, Math.cos(a) * R * 0.97), V3(Math.sin(a) * R * 0.97, yb, Math.cos(a) * R * 0.97), 0.007, 5)); }
+  } else if (shape === 2) { // sphere
+    const cy = -0.345;
+    G = sph(0.16, 28, 18).translate(0, cy, 0);
+    for (let k = 0; k < 3; k++) B.push(tor(0.163, 0.0055, 5, 56).rotateY(k * Math.PI / 3).translate(0, cy, 0));
+    B.push(tor(0.163, 0.007, 5, 56).rotateX(Math.PI / 2).translate(0, cy, 0));
+    B.push(cyl(0.05, 0.065, 0.035, 18).translate(0, -0.18, 0));
+    B.push(new THREE.SphereGeometry(0.07, 18, 6, 0, TAU, 0, Math.PI / 2).scale(1, 0.6, 1).translate(0, -0.165, 0));
+    B.push(cyl(0.065, 0.085, 0.04, 18).translate(0, -0.51, 0));
+    B.push(sph(0.018, 10, 8).translate(0, -0.545, 0));
+  } else if (shape === 3) { // drop
+    const prof = [[0.02, -0.525], [0.09, -0.508], [0.135, -0.465], [0.152, -0.405], [0.142, -0.335], [0.11, -0.265], [0.068, -0.21], [0.034, -0.172]];
+    G = lathe(prof, 30);
+    for (let k = 0; k < 4; k++) {
+      const a = k * Math.PI / 2; const pts = prof.map(([r, y]) => V3(Math.sin(a) * (r + 0.005), y, Math.cos(a) * (r + 0.005)));
+      B.push(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 24, 0.0055, 5, false));
+    }
+    B.push(cyl(0.032, 0.042, 0.04, 14).translate(0, -0.16, 0));
+    for (let k = 0; k < 4; k++) { const a = k * Math.PI / 2 + Math.PI / 4; B.push(sph(0.03, 10, 6).scale(0.5, 0.3, 1).translate(Math.sin(a) * 0.04, -0.18, Math.cos(a) * 0.04)); }
+    B.push(cyl(0.05, 0.075, 0.03, 18).translate(0, -0.53, 0));
+    B.push(new THREE.ConeGeometry(0.02, 0.06, 10).rotateX(Math.PI).translate(0, -0.575, 0));
+  } else { // flower
+    const g = new THREE.CylinderGeometry(R, R, hh, 64, 10, true); const p = g.attributes.position;
+    const rad = (a, y) => R * (0.82 + 0.18 * Math.abs(Math.cos(4 * a))) * (1.0 - Math.pow((y) / (hh * 0.5), 2) * 0.22);
+    for (let i = 0; i < p.count; i++) { const x = p.getX(i), y = p.getY(i), z = p.getZ(i); const a = Math.atan2(x, z); const r = rad(a, y); p.setXYZ(i, Math.sin(a) * r, y, Math.cos(a) * r); }
+    g.computeVertexNormals(); g.translate(0, yc, 0); G = g;
+    for (let k = 0; k < 8; k++) {
+      const a = Math.PI / 8 + k * Math.PI / 4; const pts = [];
+      for (let i = 0; i <= 8; i++) { const y = -hh / 2 + hh * i / 8; const r = rad(a, y) + 0.004; pts.push(V3(Math.sin(a) * r, y + yc, Math.cos(a) * r)); }
+      B.push(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 16, 0.0055, 5, false));
+    }
+    B.push(cyl(0.04, R * 1.02, 0.07, 16).translate(0, yt + 0.04, 0));
+    for (let k = 0; k < 8; k++) { const a = k * Math.PI / 4; B.push(sph(0.022, 10, 6).scale(1, 0.6, 1).translate(Math.sin(a) * R * 0.98, yt + 0.005, Math.cos(a) * R * 0.98)); }
+    B.push(tor(R * 0.86, 0.01, 6, 48).rotateX(Math.PI / 2).translate(0, yb + 0.004, 0));
+    B.push(cyl(R * 0.9, R * 0.55, 0.05, 24).translate(0, yb - 0.028, 0));
+    B.push(sph(0.02, 10, 8).translate(0, yb - 0.065, 0));
+    if (special) {
+      B.push(tor(0.18, 0.009, 6, 48).rotateX(Math.PI / 2).translate(0, yt + 0.015, 0));
+      for (let k = 0; k < 8; k++) { const a = k * Math.PI / 4 + Math.PI / 8; B.push(rod(V3(Math.sin(a) * 0.045, yt + 0.075, Math.cos(a) * 0.045), V3(Math.sin(a) * 0.17, yt + 0.02, Math.cos(a) * 0.17), 0.005, 4)); B.push(sph(0.013, 8, 6).translate(Math.sin(a) * 0.18, yt + 0.035, Math.cos(a) * 0.18)); }
+      B.push(tor(0.05, 0.008, 6, 24).rotateX(Math.PI / 2).translate(0, yt + 0.08, 0));
+      B.push(new THREE.ConeGeometry(0.03, 0.09, 12).rotateX(Math.PI).translate(0, yb - 0.12, 0));
+      B.push(sph(0.025, 12, 8).translate(0, yb - 0.08, 0));
+      for (let k = 0; k < 8; k++) { const a = k * Math.PI / 4; B.push(tor(0.03, 0.005, 5, 14).rotateY(a).translate(Math.sin(a) * (R + 0.02), yc, Math.cos(a) * (R + 0.02))); }
+    }
+  }
+  return { brass: merge(B), glass: G };
+}
+for (let s = 0; s < 5; s++) LG.push(buildLanternGeo(s, false));
+const LG_SPECIAL = buildLanternGeo(4, true);
+const candleGeo = merge([cyl(0.024, 0.026, 0.1, 18).translate(0, -0.47, 0), cyl(0.002, 0.002, 0.012, 4).translate(0, -0.414, 0)]);
+const flameGeo = lathe([[0, 0], [0.011, 0.006], [0.016, 0.02], [0.014, 0.036], [0.008, 0.054], [0.002, 0.07], [0, 0.074]], 18);
+const FLAME_VS = `
+uniform float uT, uIgn, uSeed; varying vec3 vN; varying vec3 vV; varying float vH;
+void main(){
+  vec3 p = position; float h = clamp(p.y / 0.074, 0.0, 1.0); vH = h;
+  float w = sin(uT * 9.0 + uSeed * 7.0 + h * 4.0) * 0.6 + sin(uT * 15.3 + uSeed * 3.0 + h * 7.0) * 0.3 + sin(uT * 23.1 + uSeed) * 0.1;
+  p.x += w * 0.0045 * h * h; p.z += cos(uT * 11.0 + uSeed * 5.0) * 0.003 * h * h;
+  p.y *= 0.9 + 0.1 * sin(uT * 13.0 + uSeed * 2.0);
+  p *= max(uIgn, 0.0001);
+  vec4 mv = modelViewMatrix * vec4(p, 1.0); vN = normalize(normalMatrix * normal); vV = normalize(-mv.xyz);
+  gl_Position = projectionMatrix * mv;
+}`;
+const FLAME_FS = `
+uniform float uIgn, uBoost; varying vec3 vN; varying vec3 vV; varying float vH;
+void main(){
+  float f = abs(dot(normalize(vN), normalize(vV)));
+  vec3 outer = vec3(1.0, 0.62, 0.2); vec3 core = vec3(1.0, 0.94, 0.74); vec3 base = vec3(0.42, 0.55, 1.0);
+  vec3 c = mix(outer, core, smoothstep(0.35, 0.95, f) * (1.0 - vH * 0.55));
+  c = mix(c, base, (1.0 - smoothstep(0.0, 0.2, vH)) * 0.45);
+  float a = pow(f, 1.4) * (1.0 - smoothstep(0.7, 1.0, vH)) * clamp(uIgn, 0.0, 1.0);
+  gl_FragColor = vec4(c * a * (1.5 + uBoost), 1.0);
+  #include <tonemapping_fragment>
+  #include <colorspace_fragment>
+}`;
+
+const lanterns = [];
+function makeGlassMats(tint) {
+  const t = C(tint);
+  const pale = t.clone().lerp(new THREE.Color(1, 1, 1), 0.45);
+  const phys = new THREE.MeshPhysicalMaterial({
+    color: pale, metalness: 0, roughness: 0.09, transmission: 0.93, thickness: 0.025, ior: 1.5,
+    attenuationColor: t, attenuationDistance: 0.5, specularIntensity: 1, envMapIntensity: 1.25,
+    emissive: t, emissiveIntensity: 0, depthWrite: false, flatShading: false
+  });
+  const simple = new THREE.MeshPhysicalMaterial({
+    color: t.clone(), metalness: 0, roughness: 0.08, transparent: true, opacity: 0.6,
+    envMapIntensity: 1.4, emissive: t, emissiveIntensity: 0, depthWrite: false, side: THREE.DoubleSide, clearcoat: 0.6
+  });
+  return { phys, simple };
+}
+for (let i = 0; i < 24; i++) {
+  const special = i === 23;
+  const shape = special ? 4 : SHAPES[i % 5];
+  const geo = special ? LG_SPECIAL : LG[shape];
+  const scale = special ? 1.22 : 1.0;
+  const g = new THREE.Group(); g.visible = false; g.scale.setScalar(scale);
+  const inner = new THREE.Group(); g.add(inner);
+  const bm = brassMat({ emissive: 0xFFC56A, emissiveIntensity: 0 });
+  const brass = new THREE.Mesh(geo.brass, bm); brass.castShadow = true; inner.add(brass);
+  const gm = makeGlassMats(GLASS[i]);
+  const glass = new THREE.Mesh(geo.glass, gm.simple); glass.renderOrder = 1; inner.add(glass);
+  const candle = new THREE.Mesh(candleGeo, mCandle.clone()); inner.add(candle);
+  const fu = { uT: lampU.uTime, uIgn: { value: 0 }, uSeed: { value: rnd() * 10 }, uBoost: { value: 0 } };
+  const fm = new THREE.ShaderMaterial({ uniforms: fu, vertexShader: FLAME_VS, fragmentShader: FLAME_FS, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false });
+  const flame = new THREE.Mesh(flameGeo, fm); flame.position.y = -0.414; flame.renderOrder = 3; inner.add(flame);
+  const tint = C(GLASS[i]);
+  const haloM = new THREE.SpriteMaterial({ map: glowTex, color: tint.clone().lerp(C('#FFC873'), 0.2), blending: THREE.AdditiveBlending, depthWrite: false, transparent: true, opacity: 0, fog: false });
+  const halo = new THREE.Sprite(haloM); halo.position.y = -0.36; halo.scale.setScalar(0.62); halo.renderOrder = 4; inner.add(halo);
+  const L = {
+    i, g, inner, brass, bm, glass, gm, candle, flame, fu, halo, haloM, tint, scale, special,
+    ign: 0, boost: 0, base: 0, attached: false, ring: Math.floor(i / 6), n: i % 6, pivot: null,
+    swz: 0, swzv: 0, swx: 0, swxv: 0, appear: 0, ret: null, fly: null, gleam: 0, hop: 0
+  };
+  lanterns.push(L);
+}
+const benchPos = (L) => V3(0, BENCH_TOP + 0.585 * L.scale, BENCH_Z);
+
+// target hook glow
+const hookGlowM = new THREE.SpriteMaterial({ map: glowTex, color: C('#FFC664'), blending: THREE.AdditiveBlending, depthWrite: false, transparent: true, opacity: 0, fog: false });
+const hookGlow = new THREE.Sprite(hookGlowM); hookGlow.scale.setScalar(0.42); hookGlow.renderOrder = 5; scene.add(hookGlow);
+
+// ===========================================================================
+// particles
+// ===========================================================================
+const PMAX = 400;
+const parts = { pos: new Float32Array(PMAX * 3), col: new Float32Array(PMAX * 3), size: new Float32Array(PMAX), list: [], max: PRESET[qName].parts };
+const pGeo = new THREE.BufferGeometry();
+pGeo.setAttribute('position', new THREE.BufferAttribute(parts.pos, 3).setUsage(THREE.DynamicDrawUsage));
+pGeo.setAttribute('aCol', new THREE.BufferAttribute(parts.col, 3).setUsage(THREE.DynamicDrawUsage));
+pGeo.setAttribute('aSize', new THREE.BufferAttribute(parts.size, 1).setUsage(THREE.DynamicDrawUsage));
+const pMat = new THREE.ShaderMaterial({
+  uniforms: { uScale: { value: 400 } },
+  vertexShader: `attribute float aSize; attribute vec3 aCol; varying vec3 vC; uniform float uScale;
+    void main(){ vC = aCol; vec4 mv = modelViewMatrix * vec4(position, 1.0); gl_PointSize = aSize * uScale / max(-mv.z, 0.1); gl_Position = projectionMatrix * mv; }`,
+  fragmentShader: `varying vec3 vC; void main(){ vec2 c = gl_PointCoord - 0.5; float d = length(c); float a = smoothstep(0.5, 0.0, d); a *= a; gl_FragColor = vec4(vC * a, 1.0);
+    #include <tonemapping_fragment>
+    #include <colorspace_fragment>
+  }`,
+  transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false
+});
+const points = new THREE.Points(pGeo, pMat); points.frustumCulled = false; points.renderOrder = 6; scene.add(points);
+function emit(p, v, life, col, size, grav) {
+  if (parts.list.length >= parts.max) return;
+  parts.list.push({ x: p.x, y: p.y, z: p.z, vx: v.x, vy: v.y, vz: v.z, life, max: life, r: col.r, g: col.g, b: col.b, s: size, grav: grav || 0 });
+}
+function updateParticles(dt) {
+  const L = parts.list; let n = 0;
+  for (let i = L.length - 1; i >= 0; i--) {
+    const q = L[i]; q.life -= dt;
+    if (q.life <= 0) { L.splice(i, 1); continue; }
+    q.vy += q.grav * dt; const dr = Math.exp(-dt * 1.4);
+    q.vx *= dr; q.vy *= dr; q.vz *= dr;
+    q.x += q.vx * dt; q.y += q.vy * dt; q.z += q.vz * dt;
+  }
+  for (const q of L) {
+    const f = q.life / q.max; const a = Math.sin(Math.min(1, f) * Math.PI) * 0.9;
+    parts.pos[n * 3] = q.x; parts.pos[n * 3 + 1] = q.y; parts.pos[n * 3 + 2] = q.z;
+    parts.col[n * 3] = q.r * a; parts.col[n * 3 + 1] = q.g * a; parts.col[n * 3 + 2] = q.b * a;
+    parts.size[n] = q.s; n++;
+  }
+  pGeo.setDrawRange(0, n);
+  pGeo.attributes.position.needsUpdate = true; pGeo.attributes.aCol.needsUpdate = true; pGeo.attributes.aSize.needsUpdate = true;
+}
+
+// ===========================================================================
+// audio (all synthesized)
+// ===========================================================================
+const AU = { ctx: null };
+function audioInit() {
+  try {
+    if (AU.ctx) { if (AU.ctx.state === 'suspended') AU.ctx.resume().catch(() => {}); return; }
+    const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return;
+    const ctx = new AC(); AU.ctx = ctx;
+    const comp = ctx.createDynamicsCompressor();
+    comp.threshold.value = -16; comp.knee.value = 10; comp.ratio.value = 4; comp.attack.value = 0.004; comp.release.value = 0.25;
+    const master = ctx.createGain(); master.gain.value = 0.38; master.connect(comp); comp.connect(ctx.destination);
+    AU.master = master;
+    const len = Math.floor(ctx.sampleRate * 2.8); const ir = ctx.createBuffer(2, len, ctx.sampleRate);
+    for (let c = 0; c < 2; c++) { const d = ir.getChannelData(c); for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 3.2); }
+    const conv = ctx.createConvolver(); conv.buffer = ir; const wet = ctx.createGain(); wet.gain.value = 0.32; conv.connect(wet); wet.connect(master);
+    AU.rev = conv;
+    const nl = ctx.sampleRate * 2; const nb = ctx.createBuffer(1, nl, ctx.sampleRate); const nd = nb.getChannelData(0);
+    let b0 = 0; for (let i = 0; i < nl; i++) { const w = Math.random() * 2 - 1; b0 = 0.97 * b0 + 0.03 * w; nd[i] = w * 0.6 + b0 * 3.0; }
+    AU.noise = nb;
+    // ambience: wind, water, machine hum
+    const wind = ctx.createBufferSource(); wind.buffer = nb; wind.loop = true;
+    const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 380;
+    const wg = ctx.createGain(); wg.gain.value = 0.045;
+    const lfo = ctx.createOscillator(); lfo.frequency.value = 0.07; const lg = ctx.createGain(); lg.gain.value = 0.03; lfo.connect(lg); lg.connect(wg.gain);
+    wind.connect(lp); lp.connect(wg); wg.connect(master); wind.start(); lfo.start();
+    const wat = ctx.createBufferSource(); wat.buffer = nb; wat.loop = true; wat.playbackRate.value = 0.8;
+    const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = 2100; bp.Q.value = 1.1;
+    const wag = ctx.createGain(); wag.gain.value = 0.01;
+    const lfo2 = ctx.createOscillator(); lfo2.frequency.value = 2.3; const lg2 = ctx.createGain(); lg2.gain.value = 0.005; lfo2.connect(lg2); lg2.connect(wag.gain);
+    wat.connect(bp); bp.connect(wag); wag.connect(master); wat.start(); lfo2.start();
+    const hum = ctx.createOscillator(); hum.type = 'sawtooth'; hum.frequency.value = 55;
+    const hlp = ctx.createBiquadFilter(); hlp.type = 'lowpass'; hlp.frequency.value = 170;
+    const hg = ctx.createGain(); hg.gain.value = 0; hum.connect(hlp); hlp.connect(hg); hg.connect(master); hum.start();
+    AU.humG = hg; AU.padT = 0.5; AU.padI = 0;
+    if (ctx.state === 'suspended') ctx.resume().catch(() => {});
+  } catch (e) { ERR('audio: ' + e.message); }
+}
+const auOK = () => AU.ctx && AU.ctx.state === 'running';
+function envG(g, t, a, peak, dec) { g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(Math.max(peak, 0.0002), t + a); g.gain.exponentialRampToValueAtTime(0.0001, t + a + dec); }
+function partial(f, t, peak, dec, type, wet, att) {
+  const c = AU.ctx; const o = c.createOscillator(); o.type = type || 'sine'; o.frequency.value = f;
+  const g = c.createGain(); envG(g, t, att || 0.004, peak, dec); o.connect(g); g.connect(AU.master);
+  if (wet) { const s = c.createGain(); s.gain.value = wet; g.connect(s); s.connect(AU.rev); }
+  o.start(t); o.stop(t + (att || 0.004) + dec + 0.05);
+}
+function noiseB(t, dur, peak, type, freq, q, wet) {
+  const c = AU.ctx; const s = c.createBufferSource(); s.buffer = AU.noise;
+  const f = c.createBiquadFilter(); f.type = type; f.frequency.value = freq; f.Q.value = q || 1;
+  const g = c.createGain(); envG(g, t, 0.002, peak, dur); s.connect(f); f.connect(g); g.connect(AU.master);
+  if (wet) { const w = c.createGain(); w.gain.value = wet; g.connect(w); w.connect(AU.rev); }
+  s.start(t, Math.random() * 1.5); s.stop(t + dur + 0.05);
+}
+function bell(f, peak, dec, dt) {
+  if (!auOK()) return; const t = AU.ctx.currentTime + (dt || 0); peak = peak || 0.1; dec = dec || 2.0;
+  const R = [1, 2.0, 2.76, 4.07, 5.4], G = [1, 0.42, 0.3, 0.14, 0.07], D = [1, 0.7, 0.5, 0.35, 0.25];
+  for (let i = 0; i < R.length; i++) if (f * R[i] < 9000) partial(f * R[i], t, peak * G[i], dec * D[i], 'sine', 0.5);
+}
+function sClick() { if (!auOK()) return; const t = AU.ctx.currentTime; noiseB(t, 0.025, 0.22, 'highpass', 2600, 0.7, 0.1); [2350, 3720, 5130].forEach((f, i) => partial(f, t, 0.05 / (i + 1), 0.05, 'sine', 0.15)); partial(420, t, 0.06, 0.05, 'triangle'); }
+function sGlass() { if (!auOK()) return; const t = AU.ctx.currentTime; [2900, 4420, 6050].forEach((f, i) => partial(f * (0.98 + Math.random() * 0.04), t, 0.035 / (i + 1), 0.28 - i * 0.06, 'sine', 0.35)); }
+function sMagnet() { if (!auOK()) return; const t = AU.ctx.currentTime; partial(1520, t, 0.05, 0.12, 'sine', 0.2); partial(2410, t, 0.03, 0.09, 'sine', 0.2); }
+function sTick() { if (!auOK()) return; const t = AU.ctx.currentTime; noiseB(t, 0.012, 0.05, 'bandpass', 760, 2.5); partial(310, t, 0.018, 0.03, 'triangle'); }
+const PENTA = [523.25, 587.33, 659.25, 783.99, 880.0, 1046.5];
+function sIgnite(stage, n) {
+  if (!auOK()) return; const f = PENTA[n % 6];
+  if (stage === 0) bell(f, 0.1, 1.8);
+  else if (stage === 1) { bell(f, 0.09, 1.8); bell(f * 1.5, 0.05, 1.6, 0.06); }
+  else if (stage === 2) { bell(f, 0.08, 1.8); bell(f * 1.25, 0.05, 1.6, 0.08); bell(f * 1.5, 0.05, 1.6, 0.16); }
+  else { bell(f * 2, 0.06, 2.0); bell(f, 0.07, 2.0); const t = AU.ctx.currentTime; [130.81, 196.0, 261.63].forEach((x) => partial(x, t, 0.035, 2.2, 'triangle', 0.4, 0.05)); }
+}
+function sStage(stage) {
+  if (!auOK()) return;
+  const seq = [[523.25, 659.25, 783.99, 1046.5], [587.33, 783.99, 880, 1174.66], [659.25, 783.99, 1046.5, 1318.5], [783.99, 1046.5, 1318.5, 1567.98]][stage];
+  seq.forEach((f, i) => bell(f, 0.08, 2.2, i * 0.13));
+  const t = AU.ctx.currentTime; [261.63, 329.63, 392.0].forEach((x) => partial(x, t + 0.3, 0.03, 3.0, 'sine', 0.5, 0.4));
+}
+function sFinale(phase) {
+  if (!auOK()) return; const t = AU.ctx.currentTime;
+  if (phase === 0) { [130.81, 196.0, 261.63, 329.63].forEach((x, i) => partial(x, t + i * 0.05, 0.04, 5.0, 'triangle', 0.5, 0.6)); }
+  if (phase === 1) { PENTA.concat([1174.66, 1318.5]).forEach((f, i) => bell(f, 0.06, 2.4, i * 0.33)); }
+  if (phase === 2) { [261.63, 392.0, 523.25, 659.25, 783.99].forEach((x) => partial(x, t, 0.035, 6.0, 'sine', 0.6, 1.2)); bell(1046.5, 0.08, 3.5, 0.2); }
+  if (phase === 3) { [130.81, 392.0, 659.25, 1046.5].forEach((f, i) => bell(f, 0.07, 4.0, i * 0.4)); [65.41, 130.81, 196.0, 329.63].forEach((x) => partial(x, t + 1.6, 0.04, 7.0, 'triangle', 0.5, 1.5)); }
+}
+const PAD = [[130.81, 164.81, 196.0], [110.0, 130.81, 164.81], [87.31, 130.81, 174.61], [98.0, 146.83, 196.0]];
+function updateAudio(dt, drive) {
+  if (!auOK()) return;
+  AU.humG.gain.setTargetAtTime(Math.min(0.03, drive * 0.05), AU.ctx.currentTime, 0.15);
+  AU.padT -= dt;
+  if (AU.padT <= 0) {
+    AU.padT = 6.5; const ch = PAD[AU.padI++ % PAD.length]; const t = AU.ctx.currentTime; const st = Math.min(3, Math.floor(count / 6));
+    ch.forEach((f) => { partial(f, t, 0.014, 6.0, 'sine', 0.6, 2.0); partial(f * 1.003, t, 0.008, 6.0, 'triangle', 0.6, 2.0); });
+    if (st >= 1 || finaleOn) ch.forEach((f) => partial(f * 2, t + 0.4, 0.007, 5.0, 'sine', 0.7, 2.0));
+    if (st >= 2 || finaleOn) partial(ch[2] * 4, t + 1.0, 0.004, 4.0, 'sine', 0.8, 1.5);
+  }
+}
+
+// ===========================================================================
+// camera framing (device center axis kept on the vertical center line)
+// ===========================================================================
+const PITCH = 9.5 * Math.PI / 180;
+const FWD = V3(0, -Math.sin(PITCH), -Math.cos(PITCH));
+const FRAME_PTS = [];
+for (let a = 0; a < 360; a += 20) { const r = a * Math.PI / 180; FRAME_PTS.push(V3(3.22 * Math.sin(r), 0.95, 3.22 * Math.cos(r)), V3(3.22 * Math.sin(r), 1.66, 3.22 * Math.cos(r))); }
+FRAME_PTS.push(V3(0, SUN_Y + 0.92, 0), V3(-0.92, SUN_Y, 0), V3(0.92, SUN_Y, 0), V3(0, 0.3, 1.7), V3(-0.6, 0.15, BENCH_Z + 0.35), V3(0.6, 0.15, BENCH_Z + 0.35), V3(0, BENCH_TOP + 0.75, BENCH_Z), V3(1.2, 0.2, DIAL_POS.z), V3(1.2, 1.05, DIAL_POS.z));
+const camGoal = { pos: V3(0, 5, 15), tgt: V3(0, 2.4, 1), fov: 40 };
+const camCur = { pos: V3(0, 5, 15), tgt: V3(0, 2.4, 1), fov: 40 };
+let camBlend = null;
+const tmpCam = new THREE.PerspectiveCamera(40, 1, 0.1, 200);
+function computeFraming(aspect) {
+  const fov = clamp(2 * Math.atan(Math.tan(16.5 * Math.PI / 180) / aspect) * 180 / Math.PI, 40, 54);
+  tmpCam.fov = fov; tmpCam.aspect = aspect; tmpCam.updateProjectionMatrix();
+  const tgt = V3(0, 2.6, 1.2); const v = new THREE.Vector3();
+  const evalD = (d) => {
+    for (let it = 0; it < 5; it++) {
+      tmpCam.position.copy(tgt).addScaledVector(FWD, -d); tmpCam.lookAt(tgt); tmpCam.updateMatrixWorld();
+      let ymin = 9, ymax = -9, xmax = 0;
+      for (const p of FRAME_PTS) { v.copy(p).project(tmpCam); ymin = Math.min(ymin, v.y); ymax = Math.max(ymax, v.y); xmax = Math.max(xmax, Math.abs(v.x)); }
+      const c = (ymin + ymax) / 2;
+      const halfH = Math.tan(fov * Math.PI / 360) * d;
+      tgt.y += c * halfH * 0.9;
+      if (it === 4) return { ok: xmax <= 0.84 && ymax <= 0.84 && ymin >= -0.84, xmax, ymin, ymax };
+    }
+  };
+  let lo = 7, hi = 40;
+  for (let i = 0; i < 22; i++) { const mid = (lo + hi) / 2; if (evalD(mid).ok) hi = mid; else lo = mid; }
+  const d = Math.max(hi, 10.5); evalD(d);
+  return { pos: tgt.clone().addScaledVector(FWD, -d), tgt: tgt.clone(), fov };
+}
+function setFraming(instant) {
+  const f = computeFraming(W / H);
+  camGoal.pos.copy(f.pos); camGoal.tgt.copy(f.tgt); camGoal.fov = f.fov;
+  if (instant) { camCur.pos.copy(f.pos); camCur.tgt.copy(f.tgt); camCur.fov = f.fov; camBlend = null; }
+  else camBlend = { t: 0, dur: 1.1, p0: camCur.pos.clone(), t0: camCur.tgt.clone(), f0: camCur.fov };
+}
+function updateCamera(dt) {
+  if (camBlend && !drag) {
+    camBlend.t += dt; const f = easeIO(camBlend.t / camBlend.dur);
+    camCur.pos.lerpVectors(camBlend.p0, camGoal.pos, f); camCur.tgt.lerpVectors(camBlend.t0, camGoal.tgt, f); camCur.fov = lerp(camBlend.f0, camGoal.fov, f);
+    if (camBlend.t >= camBlend.dur) camBlend = null;
+  }
+  camera.position.copy(camCur.pos); camera.up.set(0, 1, 0); camera.lookAt(camCur.tgt);
+  if (camera.fov !== camCur.fov || camera.aspect !== W / H) { camera.fov = camCur.fov; camera.aspect = W / H; camera.updateProjectionMatrix(); }
+  camera.updateMatrixWorld();
+}
+const _sv = new THREE.Vector3();
+function toScreen(v) { _sv.copy(v).project(camera); return { x: (_sv.x * 0.5 + 0.5) * W, y: (-_sv.y * 0.5 + 0.5) * H }; }
+
+// ===========================================================================
+// post processing and quality
+// ===========================================================================
+let composer = null, bloom = null, bloomScale = 1, useComposer = false;
+function buildComposer() {
+  const rt = new THREE.WebGLRenderTarget(W, H, { type: THREE.HalfFloatType, samples: 4 });
+  composer = new EffectComposer(renderer, rt);
+  composer.addPass(new RenderPass(scene, camera));
+  bloom = new UnrealBloomPass(new THREE.Vector2(W, H), 0.45, 0.35, 0.9);
+  const orig = bloom.setSize.bind(bloom);
+  bloom.setSize = (w, h) => orig(Math.max(2, Math.round(w * bloomScale)), Math.max(2, Math.round(h * bloomScale)));
+  composer.addPass(bloom);
+  composer.addPass(new OutputPass());
+}
+const shadowCasters = [];
+function applyQuality(name) {
+  qName = name; const P = PRESET[name];
+  const pr = Math.min(window.devicePixelRatio || 1, P.pr);
+  renderer.setPixelRatio(pr); renderer.setSize(W, H);
+  useComposer = P.bloom > 0;
+  if (useComposer) {
+    if (!composer) buildComposer();
+    bloomScale = P.bloom === 1 ? 0.55 : 1.0;
+    composer.setPixelRatio(pr); composer.setSize(W, H);
+  }
+  sun.castShadow = P.shadow > 0;
+  if (P.shadow > 0 && sun.shadow.mapSize.x !== P.shadow) {
+    sun.shadow.mapSize.set(P.shadow, P.shadow);
+    if (sun.shadow.map) { sun.shadow.map.dispose(); sun.shadow.map = null; }
+  }
+  if ('transmissionResolutionScale' in renderer) renderer.transmissionResolutionScale = P.glass === 1 ? 0.5 : 1.0;
+  for (const L of lanterns) L.glass.material = P.glass > 0 ? L.gm.phys : L.gm.simple;
+  parts.max = P.parts;
+  leafMesh.count = P.leaves; flowerMesh.count = P.flowers;
+  pMat.uniforms.uScale.value = H * pr / (2 * Math.tan(camera.fov * Math.PI / 360));
+}
+const fpsHist = []; let fpsN = 0, fpsT = 0, lastSwitch = -5;
+function monitorQuality(rawDt) {
+  fpsN++; fpsT += rawDt;
+  if (fpsT < 1) return;
+  fpsHist.push(fpsN / fpsT); if (fpsHist.length > 12) fpsHist.shift(); fpsN = 0; fpsT = 0;
+  if (FORCED || document.hidden || drag || clock - lastSwitch < 8) return;
+  const qi = LV.indexOf(qName);
+  const avg = (n) => { const a = fpsHist.slice(-n); return a.reduce((s, x) => s + x, 0) / a.length; };
+  if (fpsHist.length >= 3 && avg(3) < 48 && qi > 0) { applyQuality(LV[qi - 1]); lastSwitch = clock; fpsHist.length = 0; }
+  else if (fpsHist.length >= 12 && avg(12) >= 58 && qi < 2) { applyQuality(LV[qi + 1]); lastSwitch = clock; fpsHist.length = 0; }
+}
+
+// ===========================================================================
+// game state
+// ===========================================================================
+let state = 'INIT', stT = 0, clock = 0, count = 0, cur = null, idleT = 0, hookGuide = 0;
+let drag = null, activePointer = null, att = null, finaleOn = false, fin = null, reset = null, dialHold = null;
+let speedMul = 1, speedBoostT = 0, crownA = 0, tickAcc = 0, skyT = 0, freeShown = 0, handleFlash = 0;
+const raycaster = new THREE.Raycaster();
+const ndc = new THREE.Vector2();
+function setState(s) { state = s; stT = 0; }
+function hookIndexFor(k, n) { const j = ((-RINGS[k].dir * n) % 6 + 6) % 6; return j; }
+function targetPivot() { if (count >= 24) return null; const k = Math.floor(count / 6), n = count % 6; return ringObjs[k].pivots[hookIndexFor(k, n)]; }
+const _hw = new THREE.Vector3();
+function targetHookWorld(out) { const p = targetPivot(); if (!p) return out.set(0, 0, 0); return p.pv.getWorldPosition(out); }
+function spawnNext() {
+  if (count >= 24) return;
+  cur = lanterns[count];
+  scene.add(cur.g); cur.g.visible = true;
+  cur.g.position.copy(benchPos(cur)); cur.g.rotation.set(0, 0, 0); cur.inner.rotation.set(0, 0, 0);
+  cur.appear = 0; cur.ret = null; cur.ign = 0; cur.boost = 0; cur.base = 0;
+  hookGuide = 1.0; idleT = 0;
+  // a few sparkles run from the bench to the target hook
+  const hw = targetHookWorld(new THREE.Vector3()); const bp = benchPos(cur);
+  for (let i = 0; i < 10; i++) {
+    const v = hw.clone().sub(bp).multiplyScalar(1.25 + rnd() * 0.3); v.x += (rnd() - 0.5) * 0.3; v.y += 0.5;
+    emit(bp.clone().add(V3(0, -0.2, 0)), v, 0.9 + rnd() * 0.3, C('#FFD27A'), 0.07, -1.0);
+  }
+  setState('IDLE');
+}
+function beginAttach() {
+  if (!cur || state !== 'DRAGGING') return;
+  const pv = targetPivot();
+  att = { L: cur, pv, t: 0, from: cur.g.position.clone(), rz: cur.g.rotation.z, rx: cur.g.rotation.x };
+  drag = null;
+  setState('ATTACHING'); sMagnet();
+}
+function finishAttach() {
+  const L = att.L, pv = att.pv;
+  pv.sw.add(L.g); L.g.position.set(0, 0, 0); L.g.rotation.set(0, 0, 0);
+  L.attached = true; L.pivot = pv;
+  L.swz = clamp(att.rz * 0.8 + 0.06, -0.105, 0.105); L.swzv = 0; L.swx = 0.04; L.swxv = 0;
+  sClick();
+  count++; cur = null; att = null;
+  setState('IGNITING');
+}
+function startFinale() {
+  finaleOn = true; fin = { t: 0, f: [false, false, false, false] };
+  ringObjs[3].spinTarget = RINGS[3].dir * RINGS[3].rpm * TAU / 60;
+  setState('FINALE'); sFinale(0);
+}
+function startReset() {
+  reset = { t: 0, started: new Set(), back: false };
+  count = 0; finaleOn = false; fin = null;
+  for (const r of ringObjs) r.spinTarget = 0;
+  setState('RESETTING');
+}
+
+function updateGame(dt) {
+  stT += dt;
+  const scr = Math.min(W, H);
+  const snapR = clamp(scr * 0.075, 45, 70);
+  if (state === 'IDLE' || state === 'DRAGGING') {
+    if (cur) {
+      cur.appear = Math.min(1, cur.appear + dt / 0.6);
+      const s = easeBack(cur.appear) * cur.scale; cur.g.scale.setScalar(Math.max(0.001, s));
+      if (cur.appear < 1 && rnd() < dt * 18) emit(cur.g.position.clone().add(V3((rnd() - 0.5) * 0.3, -0.3 + rnd() * 0.3, (rnd() - 0.5) * 0.3)), V3(0, 0.25, 0), 0.8, C('#FFE2A0'), 0.05, 0);
+    }
+  }
+  if (state === 'IDLE') {
+    idleT += dt;
+    if (cur) {
+      const bp = benchPos(cur);
+      if (cur.ret) {
+        cur.ret.t += dt; const f = easeOut(cur.ret.t / 0.55);
+        cur.g.position.lerpVectors(cur.ret.from, bp, f); cur.g.rotation.z = cur.ret.rz * (1 - f);
+        if (cur.ret.t >= 0.55) cur.ret = null;
+      } else {
+        // guidance
+        const g = idleT % 7.5;
+        cur.gleam = (g > 2.5 && g < 3.4) ? Math.sin((g - 2.5) / 0.9 * Math.PI) : 0;
+        const hop = (g > 4.0 && g < 4.7) ? Math.sin((g - 4.0) / 0.7 * Math.PI) : 0;
+        cur.g.position.set(bp.x, bp.y + hop * 0.07, bp.z);
+        cur.g.rotation.z = Math.sin(clock * 1.4) * 0.025 + hop * 0.03 * Math.sin(clock * 9);
+        const hg = (g > 6.0 && g < 7.2) ? Math.sin((g - 6.0) / 1.2 * Math.PI) : 0;
+        hookGuide = Math.max(hookGuide, hg);
+        const pv = targetPivot(); if (pv) pv.pv.rotation.z = hg * 0.12 * Math.sin(clock * 12);
+      }
+    }
+  } else if (state === 'DRAGGING' && drag && cur) {
+    raycaster.setFromCamera(ndc.set(drag.x / W * 2 - 1, -(drag.y / H) * 2 + 1), camera);
+    const hit = raycaster.ray.intersectPlane(drag.plane, new THREE.Vector3());
+    if (hit) drag.want.copy(hit).add(drag.off);
+    drag.lift = Math.min(1, drag.lift + dt / 0.12);
+    const desired = drag.want.clone(); desired.y += 0.08 * easeOut(drag.lift);
+    const hw = targetHookWorld(_hw);
+    const hs = toScreen(hw), ls = toScreen(cur.g.position);
+    const s = Math.hypot(hs.x - ls.x, hs.y - ls.y);
+    const zone = snapR * 2.2;
+    const k = s < zone ? Math.pow(1 - s / zone, 2) * 0.55 : 0;
+    desired.lerp(hw, k);
+    cur.g.position.lerp(desired, 1 - Math.exp(-30 * dt));
+    drag.vx *= Math.exp(-dt * 6);
+    const tilt = clamp(-drag.vx / 1400, -1, 1) * 0.15 * (1 - k);
+    cur.g.rotation.z += (tilt - cur.g.rotation.z) * (1 - Math.exp(-dt * 12));
+    cur.gleam = 0;
+    drag.s = s;
+    if (s < snapR) beginAttach();
+  } else if (state === 'ATTACHING') {
+    att.t += dt; const f = easeOut(att.t / 0.18);
+    const hw = att.pv.pv.getWorldPosition(_hw);
+    att.L.g.position.lerpVectors(att.from, hw, f);
+    att.L.g.rotation.z = att.rz * (1 - f); att.L.g.rotation.x = att.rx * (1 - f);
+    if (att.t >= 0.18) finishAttach();
+  } else if (state === 'IGNITING') {
+    const L = lanterns[count - 1]; const k = L.ring;
+    if (stT > 0.12) L.ign = Math.min(1, L.ign + dt / 0.35);
+    if (!L._bell && stT > 0.15) { L._bell = true; sIgnite(k, L.n); }
+    if (!L._burst && stT > 0.18) {
+      L._burst = true; const p = L.g.localToWorld(V3(0, -0.34, 0));
+      const n = Math.min(26, Math.round(parts.max * 0.3));
+      for (let i = 0; i < n; i++) { const a = rnd() * TAU, e = (rnd() - 0.3) * 1.2; emit(p, V3(Math.cos(a) * 0.9, e + 0.4, Math.sin(a) * 0.9).multiplyScalar(0.4 + rnd() * 0.6), 0.9 + rnd() * 0.6, C('#FFD38A').lerp(L.tint, 0.35), 0.05 + rnd() * 0.04, -0.6); }
+      const ro = ringObjs[k]; ro.mat.userData.U.uFlowA.value = L.pivot.pv.rotation.y; ro.flowT = 0;
+    }
+    if (stT > 0.45) {
+      if (count === 24) startFinale();
+      else if (count % 6 === 0) { setState('STAGE_COMPLETE'); sStage(k); }
+      else {
+        const ro = ringObjs[k];
+        ro.step = { from: ro.theta, to: ro.theta + RINGS[k].dir * Math.PI / 3, t: 0, dur: 1.7 };
+        setState('ROTATING');
+      }
+    }
+  } else if (state === 'ROTATING') {
+    const k = Math.floor((count - 1) / 6);
+    if (!ringObjs[k].step) spawnNext();
+  } else if (state === 'STAGE_COMPLETE') {
+    const k = count / 6 - 1; const ro = ringObjs[k];
+    for (let j = 0; j < 6; j++) { const L = lanterns[k * 6 + j]; const t0 = 0.2 + j * 0.18; if (!L._wave && stT > t0) { L._wave = true; L.boost = Math.max(L.boost, 1.0); } }
+    ro.mat.userData.U.uGlow.value = Math.max(ro.mat.userData.U.uGlow.value, Math.sin(clamp(stT / 2.6, 0, 1) * Math.PI) * 1.0 + 0.35 * clamp(stT, 0, 1));
+    if (stT > 0.6) ro.spinTarget = RINGS[k].dir * RINGS[k].rpm * TAU / 60;
+    if (stT > 3.0) { for (let j = 0; j < 6; j++) lanterns[k * 6 + j]._wave = false; spawnNext(); }
+  } else if (state === 'FINALE') {
+    fin.t += dt; const t = fin.t;
+    for (let i = 0; i < 24; i++) { const L = lanterns[i]; const t0 = 2 + i * 0.125; if (!L._wave && t > t0) { L._wave = true; L.boost = Math.max(L.boost, 0.9); L.base = 0.3; } }
+    if (!fin.f[1] && t > 2) { fin.f[1] = true; sFinale(1); }
+    poleU.uRise.value = t < 5 ? 0 : t < 8 ? lerp(0.9, 4.45, easeIO((t - 5) / 3)) : 4.7;
+    poleU.uPoleGlow.value = smooth(7.5, 9, t);
+    if (!fin.f[2] && t > 8) { fin.f[2] = true; sFinale(2); }
+    if (!fin.f[3] && t > 11) { fin.f[3] = true; sFinale(3); }
+    if (t > 11 && t < 15 && rnd() < dt * parts.max * 0.35) {
+      const a = rnd() * TAU, r = 1 + rnd() * 3.4; const col = new THREE.Color().setHSL(rnd(), 0.75, 0.68);
+      emit(V3(Math.sin(a) * r, 0.6 + rnd() * 3.4, Math.cos(a) * r), V3((rnd() - 0.5) * 0.2, 0.25 + rnd() * 0.35, (rnd() - 0.5) * 0.2), 2.4 + rnd() * 1.5, col, 0.06 + rnd() * 0.05, 0);
+    }
+    for (const r of ringObjs) r.mat.userData.U.uGlow.value = Math.max(r.mat.userData.U.uGlow.value, 0.35 + 0.65 * smooth(11, 13, t));
+    if (t > 18) { for (const L of lanterns) L._wave = false; setState('FREE_PLAY'); }
+  } else if (state === 'FREE_PLAY') {
+    freeShown = Math.min(1, freeShown + dt / 0.8);
+    if (dialHold) {
+      dialHold.t += dt;
+      if (dialHold.t >= 1.0) { dialHold = null; startReset(); }
+    }
+    if (rnd() < dt * 3) { const a = rnd() * TAU, r = 1 + rnd() * 3.2; emit(V3(Math.sin(a) * r, 0.8 + rnd() * 3.2, Math.cos(a) * r), V3(0, 0.15 + rnd() * 0.2, 0), 2.5, new THREE.Color().setHSL(rnd(), 0.7, 0.7), 0.05, 0); }
+  } else if (state === 'RESETTING') {
+    reset.t += dt; const t = reset.t;
+    freeShown = Math.max(0, freeShown - dt / 0.6);
+    for (let i = 23; i >= 0; i--) {
+      const L = lanterns[i]; const t0 = (23 - i) * 0.11;
+      if (t > t0 && !reset.started.has(i)) {
+        reset.started.add(i);
+        scene.attach(L.g); L.fly = { t: 0, from: L.g.position.clone(), s0: L.g.scale.x, q0: L.g.quaternion.clone() };
+        L.attached = false; L.pivot = null;
+      }
+      if (L.fly) {
+        L.fly.t += dt; const f = easeIO(L.fly.t / 0.6);
+        const bp = benchPos(L); const p = L.fly.from.clone().lerp(bp, f); p.y += Math.sin(f * Math.PI) * 0.6;
+        L.g.position.copy(p); L.g.scale.setScalar(Math.max(0.001, L.fly.s0 * (1 - f)));
+        L.g.quaternion.slerpQuaternions(L.fly.q0, new THREE.Quaternion(), f);
+        L.ign = Math.min(L.ign, 1 - f); L.boost = 0; L.base = 0;
+        if (L.fly.t >= 0.6) { L.fly = null; L.g.visible = false; scene.remove(L.g); L.ign = 0; L.swz = L.swzv = L.swx = L.swxv = 0; }
+      }
+    }
+    poleU.uRise.value = Math.max(0, poleU.uRise.value - dt * 2); poleU.uPoleGlow.value = Math.max(0, poleU.uPoleGlow.value - dt);
+    for (const r of ringObjs) r.mat.userData.U.uGlow.value = Math.max(0, r.mat.userData.U.uGlow.value - dt * 0.5);
+    if (!reset.back && t > 3.1) {
+      reset.back = true;
+      for (const r of ringObjs) { r.spin = 0; r.spinTarget = 0; const to = Math.round(r.theta / TAU) * TAU; r.step = { from: r.theta, to, t: 0, dur: 1.4 }; }
+    }
+    if (t > 4.9 && ringObjs.every((r) => !r.step)) { for (const r of ringObjs) r.theta = 0; reset = null; spawnNext(); }
+  }
+  // sun ornament (lit only in the finale)
+  const sunGoal = finaleOn ? smooth(8, 11, fin.t) : 0;
+  sunOrn.userData.v = lerp(sunOrn.userData.v || 0, sunGoal, 1 - Math.exp(-dt * (state === 'RESETTING' ? 2.5 : 6)));
+  const sv = sunOrn.userData.v;
+  for (const r of sunRays) { r.arm.scale.set(1, lerp(0.25, 1, sv), 1); r.arm.rotation.x = lerp(r.long ? 1.25 : -1.25, 0, sv); r.arm.position.y = lerp(0.2, 0.34, sv); }
+  sunOrn.rotation.z = finaleOn || state === 'FREE_PLAY' ? sunOrn.rotation.z + dt * 0.06 * sv : sunOrn.rotation.z * Math.exp(-dt);
+  sunHaloM.opacity = sv * (qName === 'low' ? 0.5 : 0.3);
+  sunGlassMat.emissiveIntensity = 0.05 + sv * 0.95 + (finaleOn ? 0.08 * Math.sin(clock * 2.2) * sv : 0);
+  // hook guide
+  hookGuide = Math.max(0, hookGuide - dt * 0.8);
+  const showHook = (state === 'IDLE' || state === 'DRAGGING') && count < 24;
+  if (showHook) {
+    targetHookWorld(hookGlow.position);
+    const near = drag && drag.s !== undefined ? clamp(1 - drag.s / (snapR * 3), 0, 1) : 0;
+    hookGlowM.opacity = clamp(0.32 + 0.16 * Math.sin(clock * 3) + hookGuide * 0.8 + near * 0.5, 0, 1.2);
+    hookGlow.scale.setScalar(0.38 + hookGuide * 0.25 + near * 0.12);
+  } else hookGlowM.opacity = Math.max(0, hookGlowM.opacity - dt * 3);
+  // free-play props
+  const ds = easeBack(freeShown); dialDisc.scale.setScalar(Math.max(0.001, ds));
+  if (dialHold) dialDisc.rotation.z -= dt * 5; else dialDisc.rotation.z *= Math.exp(-dt * 2);
+  dialDisc.userData.mat.emissiveIntensity = freeShown > 0 ? (dialHold ? 0.35 + dialHold.t * 0.5 : 0.08 + 0.08 * Math.sin(clock * 2.5)) : 0;
+  handleFlash = Math.max(0, handleFlash - dt * 1.5);
+  handleKnob.material.emissiveIntensity = (state === 'FREE_PLAY' ? 0.06 + 0.06 * Math.sin(clock * 2.5 + 1) : 0) + handleFlash * 0.5;
+  if (speedBoostT > 0) { speedBoostT -= dt; speedMul += (1.5 - speedMul) * (1 - Math.exp(-dt * 2.2)); }
+  else speedMul += (1 - speedMul) * (1 - Math.exp(-dt * 0.7));
+}
+
+// ===========================================================================
+// rings, gears and lanterns
+// ===========================================================================
+function updateDevice(dt) {
+  let drive = 0;
+  for (let k = 0; k < 4; k++) {
+    const ro = ringObjs[k]; const prev = ro.theta;
+    if (ro.step) {
+      ro.step.t += dt; const f = easeIO(ro.step.t / ro.step.dur);
+      ro.theta = lerp(ro.step.from, ro.step.to, f);
+      if (ro.step.t >= ro.step.dur) { ro.theta = ro.step.to; ro.step = null; }
+    } else {
+      ro.spin += (ro.spinTarget * speedMul - ro.spin) * (1 - Math.exp(-dt * 0.9));
+      ro.theta += ro.spin * dt;
+    }
+    const om = dt > 0 ? (ro.theta - prev) / dt : 0;
+    const alpha = dt > 0 ? (om - ro.omega) / dt : 0; ro.omega = om;
+    ro.alpha = clamp(alpha, -6, 6);
+    drive += Math.abs(om);
+    ro.grp.rotation.y = ro.theta;
+    // light flow along the ring
+    const U = ro.mat.userData.U;
+    if (ro.flowT < 2) { ro.flowT += dt; U.uFlowR.value = Math.min(Math.PI, ro.flowT * 3.6); U.uFlowAmt.value = Math.max(0, 1 - ro.flowT / 1.0); } else U.uFlowAmt.value = 0;
+    if (state !== 'STAGE_COMPLETE' && state !== 'FINALE') {
+      const done = lanterns.slice(k * 6, k * 6 + 6).every((L) => L.attached);
+      const goal = done ? 0.35 : 0; U.uGlow.value += (goal - U.uGlow.value) * (1 - Math.exp(-dt * 1.5));
+    }
+  }
+  const dA = drive * 1.6 * dt;
+  crownA += dA; crownGear.rotation.y = crownA;
+  for (const p of pinions) p.rotation.y = -crownA * 3;
+  if (state === 'ROTATING' || state === 'RESETTING') { tickAcc += dA; if (tickAcc > TAU / 48) { tickAcc = 0; sTick(); } }
+  return drive;
+}
+const _lp = new THREE.Vector3(), _gold = C('#FFC56A');
+function updateLanterns(dt) {
+  const ringSum = [0, 0, 0, 0];
+  let finBoost = finaleOn ? smooth(11, 14, fin.t) : (state === 'FREE_PLAY' ? 1 : 0);
+  for (const L of lanterns) {
+    // swing
+    if (L.attached && L.pivot) {
+      const ro = ringObjs[L.ring];
+      const k = 110, c = 5.0;
+      const acc = -(ro.alpha || 0) * RINGS[L.ring].r / 9.8 * 0.15;
+      const nSub = Math.max(1, Math.ceil(dt / 0.008)); const h = dt / nSub;
+      for (let si = 0; si < nSub; si++) {
+        L.swzv += (-k * (L.swz - acc) - c * L.swzv) * h; L.swz += L.swzv * h;
+        L.swxv += (-k * L.swx - c * L.swxv) * h; L.swx += L.swxv * h;
+      }
+      if (!Number.isFinite(L.swz) || !Number.isFinite(L.swx)) { L.swz = L.swzv = L.swx = L.swxv = 0; }
+      L.swz = clamp(L.swz, -0.3, 0.3); L.swx = clamp(L.swx, -0.3, 0.3);
+      L.pivot.sw.rotation.z = L.swz; L.pivot.sw.rotation.x = L.swx;
+    }
+    // glow
+    L.boost += (L.base - L.boost) * (1 - Math.exp(-dt * 1.6));
+    const lit = L.ign;
+    L.fu.uIgn.value = lit; L.fu.uBoost.value = L.boost * 0.8;
+    const fb = finBoost * 0.12;
+    L.glass.material.emissiveIntensity = lit * (0.42 + L.boost * 0.5 + fb);
+    L.candle.material.emissiveIntensity = lit * 0.35;
+    L.haloM.opacity = lit * ((qName === 'low' ? 0.55 : 0.34) + L.boost * 0.35 + fb * 0.4);
+    L.halo.scale.setScalar(0.85 + L.boost * 0.25);
+    L.gleam = Math.max(0, (L.gleam || 0) - dt * 0.1);
+    L.bm.emissiveIntensity = L.gleam * 0.55 + lit * 0.04;
+    // light into the garden
+    const u = lampU.uLP.value[L.i];
+    if (L.g.visible && lit > 0.001) {
+      L.g.localToWorld(_lp.set(0, -0.34, 0));
+      u.set(_lp.x, _lp.y, _lp.z, lit * (1 + L.boost * 0.9 + finBoost * 0.1));
+      const cc = _gold.clone().lerp(L.tint, 0.78);
+      lampU.uLC.value[L.i].set(cc.r, cc.g, cc.b);
+      if (L.attached) ringSum[L.ring] += lit * (1 + L.boost);
+    } else u.w = 0;
+  }
+  lampU.uLampGain.value = 1.05 + 0.12 * finBoost;
+  // a few real point lights for brass highlights
+  const nL = PRESET[qName].lights;
+  const total = ringSum.reduce((a, b) => a + b, 0);
+  for (let k = 0; k < 4; k++) {
+    const pl = pLights[k];
+    // brass highlights only: kept weak so the floor under the device never blooms
+    const cap = (x) => 2.2 * x / (x + 6);
+    if (nL >= 4) { pl.intensity = cap(ringSum[k]); pl.position.y = RINGS[k].y - 0.35; }
+    else if (nL === 2) { pl.intensity = k < 2 ? cap(ringSum[k * 2] + ringSum[k * 2 + 1]) : 0; pl.position.y = k === 0 ? 1.8 : 3.3; }
+    else { pl.intensity = k === 0 ? cap(total) : 0; pl.position.y = 2.6; }
+  }
+  return total;
+}
+
+// ===========================================================================
+// sky progression, exposure and bloom
+// ===========================================================================
+const _c1 = new THREE.Color();
+function updateSky(dt, total) {
+  const goal = Math.min(3, count / 24 * 3 + (finaleOn ? 0.0 : 0));
+  skyT += (goal - skyT) * (1 - Math.exp(-dt * 0.6));
+  lerpCols(SKY.zen, skyT, skyU.uZen.value); lerpCols(SKY.hor, skyT, skyU.uHor.value); lerpCols(SKY.cloud, skyT, skyU.uCloud.value);
+  skyU.uT.value = clock;
+  const el = lerp(0.2, 0.035, skyT / 3);
+  skyU.uSunDir.value.set(-0.86, el, -0.48).normalize();
+  skyU.uSunCol.value.set('#FFD3A0').lerp(C('#FFB080'), skyT / 3);
+  skyU.uSunAmt.value = lerp(1.0, 0.55, skyT / 3);
+  skyU.uMoon.value = smooth(1.6, 2.4, skyT);
+  scene.fog.color.copy(skyU.uHor.value).lerp(skyU.uZen.value, 0.4);
+  hemi.intensity = lerpNums(SKY.amb, skyT) * 0.62;
+  hemi.color.set('#A9C7FF'); hemi.groundColor.set('#B8A17B');
+  sun.intensity = lerpNums(SKY.sun, skyT) * 1.1;
+  sun.color.copy(skyU.uSunCol.value);
+  sun.position.copy(skyU.uSunDir.value).multiplyScalar(40); sun.position.y = Math.max(sun.position.y, 7);
+  moon.intensity = lerpNums(SKY.moon, skyT) * 0.6;
+  moon.position.copy(skyU.uMoonDir.value).multiplyScalar(40);
+  scene.environmentIntensity = lerp(0.85, 0.72, skyT / 3);
+  // env refresh when the sky or the lantern glow changed enough
+  const gsum = Math.round(total * 2) / 2;
+  if (Math.abs(skyT - envT) > PRESET[qName].envStep || (qName !== 'low' && gsum !== envGlowSum)) {
+    envT = skyT; envGlowSum = gsum;
+    for (let k = 0; k < 4; k++) {
+      const n = lanterns.slice(k * 6, k * 6 + 6).reduce((a, L) => a + L.ign, 0);
+      envGlow[k].color.set('#FFB347').multiplyScalar(n * 0.06);
+    }
+    envGroundMat.color.set('#8c7b5e').lerp(skyU.uHor.value, 0.15);
+    updateEnv();
+  }
+  // exposure and bloom (tone mapped; the brightest moment keeps shapes and sky)
+  const fF = finaleOn ? smooth(2, 12, fin.t) : (state === 'FREE_PLAY' ? 1 : 0);
+  const fS = state === 'FREE_PLAY' ? 0.75 : 1;
+  renderer.toneMappingExposure = lerp(1.1, 1.16, fF);
+  if (bloom) {
+    bloom.strength = clamp(lerp(0.4, 0.85, fF * fS) + 0.04 * Math.min(1, total / 24), 0, 1.0);
+    bloom.threshold = lerp(0.95, 0.9, fF);
+    bloom.radius = lerp(0.35, 0.52, fF);
+  }
+}
+
+// ===========================================================================
+// input
+// ===========================================================================
+function bodyScreen(L) { return toScreen(L.g.localToWorld(V3(0, -0.32, 0))); }
+function onDown(e) {
+  audioInit();
+  if (activePointer !== null) return;
+  if (e.button !== undefined && e.button > 0 && e.pointerType === 'mouse') return;
+  const x = e.clientX, y = e.clientY;
+  const scr = Math.min(W, H);
+  if (state === 'IDLE' && cur && cur.appear > 0.35) {
+    const bs = bodyScreen(cur);
+    const top = toScreen(cur.g.position), bot = toScreen(cur.g.localToWorld(V3(0, -0.6, 0)));
+    const ph = Math.abs(bot.y - top.y);
+    const pick = Math.max(48, ph * 0.85, scr * 0.07);
+    if (Math.hypot(x - bs.x, y - bs.y) <= pick) {
+      activePointer = e.pointerId;
+      try { canvas.setPointerCapture(e.pointerId); } catch (err) { /* synthetic pointer */ }
+      cur.ret = null;
+      const n = camera.getWorldDirection(new THREE.Vector3()).negate();
+      const plane = new THREE.Plane().setFromNormalAndCoplanarPoint(n, cur.g.position);
+      raycaster.setFromCamera(ndc.set(x / W * 2 - 1, -(y / H) * 2 + 1), camera);
+      const hit = raycaster.ray.intersectPlane(plane, new THREE.Vector3()) || cur.g.position.clone();
+      drag = { id: e.pointerId, x, y, lx: x, lt: performance.now(), vx: 0, plane, off: cur.g.position.clone().sub(hit), want: cur.g.position.clone(), lift: 0 };
+      setState('DRAGGING'); sGlass(); idleT = 0;
+      e.preventDefault();
+      return;
+    }
+  }
+  if (state === 'FREE_PLAY') {
+    // dial
+    const dsP = toScreen(dialDisc.getWorldPosition(new THREE.Vector3()));
+    if (freeShown > 0.5 && Math.hypot(x - dsP.x, y - dsP.y) < Math.max(46, scr * 0.065)) {
+      activePointer = e.pointerId; try { canvas.setPointerCapture(e.pointerId); } catch (err) { /* synthetic pointer */ }
+      dialHold = { t: 0 }; sTick(); return;
+    }
+    // handle
+    const hk = toScreen(handleKnob.localToWorld(V3(0.3, 0.3, 0)));
+    if (Math.hypot(x - hk.x, y - hk.y) < Math.max(46, scr * 0.065)) {
+      speedBoostT = 2.2; handleFlash = 1; sClick(); bell(392, 0.05, 1.2); return;
+    }
+    // lanterns
+    let best = null, bd = Math.max(40, scr * 0.055);
+    for (const L of lanterns) { if (!L.attached) continue; const s = bodyScreen(L); const d = Math.hypot(x - s.x, y - s.y); if (d < bd) { bd = d; best = L; } }
+    if (best) { best.boost = Math.max(best.boost, 1.1); bell(PENTA[best.n] * (best.ring >= 2 ? 2 : 1), 0.08, 1.6); const p = best.g.localToWorld(V3(0, -0.34, 0)); for (let i = 0; i < 10; i++) emit(p, V3((rnd() - 0.5) * 0.8, rnd() * 0.6, (rnd() - 0.5) * 0.8), 0.9, C('#FFE0A0').lerp(best.tint, 0.4), 0.05, -0.4); }
+  }
+}
+function onMove(e) {
+  if (!drag || e.pointerId !== drag.id) return;
+  const now = performance.now(); const dtm = Math.max(1, now - drag.lt);
+  const v = (e.clientX - drag.lx) / dtm * 1000; drag.vx = drag.vx * 0.6 + v * 0.4;
+  drag.lx = e.clientX; drag.lt = now; drag.x = e.clientX; drag.y = e.clientY;
+}
+function endDrag(release) {
+  if (!drag) return;
+  const snapR = clamp(Math.min(W, H) * 0.075, 45, 70);
+  if (release && cur) {
+    // re-evaluate with the final pointer position (frames can be slow)
+    raycaster.setFromCamera(ndc.set(drag.x / W * 2 - 1, -(drag.y / H) * 2 + 1), camera);
+    const hit = raycaster.ray.intersectPlane(drag.plane, new THREE.Vector3());
+    let sFin = drag.s === undefined ? 1e9 : drag.s;
+    if (hit) {
+      const p = hit.add(drag.off); p.y += 0.08;
+      const hs = toScreen(targetHookWorld(_hw)), ls = toScreen(p);
+      sFin = Math.min(sFin, Math.hypot(hs.x - ls.x, hs.y - ls.y));
+    }
+    if (sFin < snapR * 1.5) { beginAttach(); return; }
+  }
+  if (cur) cur.ret = { t: 0, from: cur.g.position.clone(), rz: cur.g.rotation.z };
+  drag = null; setState('IDLE'); idleT = 0;
+}
+function onUp(e) {
+  if (activePointer === null || e.pointerId !== activePointer) return;
+  activePointer = null;
+  try { canvas.releasePointerCapture(e.pointerId); } catch (err) { /* synthetic pointer */ }
+  if (dialHold) dialHold = null;
+  endDrag(e.type === 'pointerup');
+}
+function cancelAll() { activePointer = null; dialHold = null; endDrag(false); }
+canvas.addEventListener('pointerdown', onDown, { passive: false });
+window.addEventListener('pointermove', onMove, { passive: true });
+window.addEventListener('pointerup', onUp);
+window.addEventListener('pointercancel', onUp);
+window.addEventListener('blur', cancelAll);
+document.addEventListener('visibilitychange', () => { if (document.hidden) cancelAll(); });
+window.addEventListener('orientationchange', cancelAll);
+for (const ev of ['gesturestart', 'gesturechange', 'gestureend', 'dblclick', 'contextmenu', 'selectstart', 'dragstart']) document.addEventListener(ev, (e) => e.preventDefault(), { passive: false });
+document.addEventListener('touchmove', (e) => e.preventDefault(), { passive: false });
+document.addEventListener('touchstart', (e) => { if (e.touches.length > 1) e.preventDefault(); }, { passive: false });
+function onResize() {
+  W = innerWidth; H = innerHeight;
+  if (drag) cancelAll();
+  renderer.setSize(W, H); if (composer) composer.setSize(W, H);
+  pMat.uniforms.uScale.value = H * renderer.getPixelRatio() / (2 * Math.tan(camGoal.fov * Math.PI / 360));
+  setFraming(false);
+}
+window.addEventListener('resize', onResize);
+
+// ===========================================================================
+// autotest: real pointer events through the same paths as touch play
+// ===========================================================================
+const AT = { phase: 'wait', t: 0, p0: null, dest: null, free: 0 };
+function fire(type, x, y) {
+  if (!Number.isFinite(x) || !Number.isFinite(y)) return;
+  canvas.dispatchEvent(new PointerEvent(type, { pointerId: 7, clientX: x, clientY: y, bubbles: true, cancelable: true, pointerType: 'touch', isPrimary: true, button: 0, buttons: type === 'pointerup' ? 0 : 1 }));
+}
+function autotest(dt) {
+  if (state === 'IDLE' && cur && cur.appear >= 1 && !cur.ret && AT.phase === 'wait') {
+    AT.t += dt;
+    if (AT.t > 0.5) {
+      const bs = bodyScreen(cur), os = toScreen(cur.g.position);
+      const hs = toScreen(targetHookWorld(new THREE.Vector3()));
+      AT.p0 = bs; AT.dest = { x: hs.x + (bs.x - os.x), y: hs.y + (bs.y - os.y) };
+      fire('pointerdown', bs.x, bs.y); AT.phase = 'move'; AT.t = 0;
+    }
+  } else if (AT.phase === 'move') {
+    AT.t += dt; const f = easeIO(Math.min(1, AT.t / 0.8));
+    if (state !== 'DRAGGING') { fire('pointerup', AT.dest.x, AT.dest.y); AT.phase = 'wait'; AT.t = 0; return; }
+    const x = lerp(AT.p0.x, AT.dest.x, f), y = lerp(AT.p0.y, AT.dest.y, f);
+    fire('pointermove', x, y);
+    if (f >= 1) { AT.phase = 'hold'; AT.t = 0; AT.last = { x, y }; }
+  } else if (AT.phase === 'hold') {
+    if (state === 'DRAGGING') fire('pointerup', AT.last.x, AT.last.y);
+    AT.phase = 'wait'; AT.t = 0;
+  } else if (state === 'FREE_PLAY') {
+    AT.free += dt;
+    if (AT.free > 1.5 && !AT.h) { AT.h = true; const hk = toScreen(handleKnob.localToWorld(V3(0.3, 0.3, 0))); fire('pointerdown', hk.x, hk.y); fire('pointerup', hk.x, hk.y); }
+    if (AT.free > 3.0 && !AT.l) { AT.l = true; const s = bodyScreen(lanterns[2]); fire('pointerdown', s.x, s.y); fire('pointerup', s.x, s.y); window.__game.freeplay = true; }
+  }
+}
+window.__dbg = () => ({ crownA, speedMul, thetas: ringObjs.map((r) => r.theta), spins: ringObjs.map((r) => r.spin), hk: handleKnob.localToWorld(V3(0.3, 0.3, 0)), l2: lanterns[2].g.position, sv: sunOrn.userData.v, cam: camera.position });
+window.__game = {
+  get state() { return state; }, get count() { return count; }, get stage() { return Math.min(3, Math.floor(count / 6)); },
+  get q() { return qName; }, get finaleT() { return fin ? fin.t : 0; }, climax: false, freeplay: false,
+  screen() { const out = {}; if (cur) out.lantern = bodyScreen(cur); if (count < 24) out.hook = toScreen(targetHookWorld(new THREE.Vector3())); out.axisTop = toScreen(V3(0, SUN_Y + 0.92, 0)); out.axisBottom = toScreen(V3(0, 0.3, 0)); out.ringL = toScreen(V3(-3.2, 1.6, 0)); out.ringR = toScreen(V3(3.2, 1.6, 0)); out.W = W; out.H = H; return out; }
+};
+
+// ===========================================================================
+// main loop
+// ===========================================================================
+applyQuality(qName);
+setFraming(true);
+updateCamera(0);
+spawnNext();
+let last = performance.now(), frames = 0;
+function frame(now) {
+  requestAnimationFrame(frame);
+  try {
+    const raw = Math.max(0, (now - last) / 1000); last = now;
+    const dt = Math.min(MAXDT, raw);
+    clock += dt; lampU.uTime.value = clock;
+    updateCamera(dt);
+    updateGame(dt);
+    const drive = updateDevice(dt);
+    scene.updateMatrixWorld();
+    const total = updateLanterns(dt);
+    updateSky(dt, total);
+    updateParticles(dt);
+    updateAudio(dt, drive);
+    if (AUTOTEST) autotest(dt);
+    if (state === 'FINALE') window.__game.climax = true;
+    if (useComposer) composer.render(dt); else renderer.render(scene, camera);
+    monitorQuality(raw);
+    frames++;
+    if (frames === 2) window.__ready = true;
+  } catch (e) { ERR('frame: ' + (e && e.message)); }
+}
+requestAnimationFrame(frame);
+} catch (e) {
+  ERR('init: ' + (e && e.stack || e));
+}
+</script>
+<script src="../../gf-playlog.js" defer></script>
+</body>
+</html>
