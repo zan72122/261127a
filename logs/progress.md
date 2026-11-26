@@ -21,3 +21,4 @@
 - 08:10 E05 が 08:03 にゲーム・サムネイル・テスト記録を push（10分新しい push がなければ完了とみなしてマージ）。E04 は 08:06 にも push があり、最終テスト実行中（セッション稼働中）。
 - 08:03 E05 完了（約74分、claude/game-e05-implementation-b6wtd4）/ 08:11 E04 完了（約125分、claude/game-e04-implementation-rwkt9m。白飛び対策の調整と最終テストで長引いた）→ 08:12 main マージ（自動チェック ok）。注: E05 のテスト記録は最初のガラス設置までの短縮確認のみ（全段階の自動テスト結果は記録なし）。
 - 08:13 クラウド起動 E06: session_017tygc5fahxf562cpCNh6As / E07: session_017tygc2wiUSmheFGSAZKCV9。実行中: E06, E07
+- 08:15 公開確認: E04・E05 とも 200、noindex あり、禁止語なし、サムネイル 200。公開済み 5/15。
