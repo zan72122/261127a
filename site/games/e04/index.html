@@ -197,7 +197,8 @@ vec3 lampLight(vec3 p, vec3 n){
     float nd = max(dot(n, L * inversesqrt(d2)), 0.0) * 0.72 + 0.28;
     s += uLC[i] * (lp.w * nd / (1.0 + d2 * 1.3));
   }
-  return s * uLampGain;
+  s *= uLampGain;
+  return s / (1.0 + 0.45 * dot(s, vec3(0.3333)));
 }`;
 const PAVE_GLSL = `
 float ph(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
@@ -1493,9 +1494,11 @@ function updateLanterns(dt) {
   const total = ringSum.reduce((a, b) => a + b, 0);
   for (let k = 0; k < 4; k++) {
     const pl = pLights[k];
-    if (nL >= 4) { pl.intensity = ringSum[k] * 1.1; pl.position.y = RINGS[k].y - 0.35; }
-    else if (nL === 2) { pl.intensity = k < 2 ? (ringSum[k * 2] + ringSum[k * 2 + 1]) * 1.1 : 0; pl.position.y = k === 0 ? 1.8 : 3.3; }
-    else { pl.intensity = k === 0 ? total * 1.1 : 0; pl.position.y = 2.6; }
+    // brass highlights only: kept weak so the floor under the device never blooms
+    const cap = (x) => 2.2 * x / (x + 6);
+    if (nL >= 4) { pl.intensity = cap(ringSum[k]); pl.position.y = RINGS[k].y - 0.35; }
+    else if (nL === 2) { pl.intensity = k < 2 ? cap(ringSum[k * 2] + ringSum[k * 2 + 1]) : 0; pl.position.y = k === 0 ? 1.8 : 3.3; }
+    else { pl.intensity = k === 0 ? cap(total) : 0; pl.position.y = 2.6; }
   }
   return total;
 }
@@ -1539,8 +1542,8 @@ function updateSky(dt, total) {
   const fS = state === 'FREE_PLAY' ? 0.75 : 1;
   renderer.toneMappingExposure = lerp(1.1, 1.16, fF);
   if (bloom) {
-    bloom.strength = clamp(lerp(0.42, 0.92, fF * fS) + 0.05 * Math.min(1, total / 24), 0, 1.1);
-    bloom.threshold = lerp(0.9, 0.86, fF);
+    bloom.strength = clamp(lerp(0.4, 0.85, fF * fS) + 0.04 * Math.min(1, total / 24), 0, 1.0);
+    bloom.threshold = lerp(0.95, 0.9, fF);
     bloom.radius = lerp(0.35, 0.52, fF);
   }
 }
