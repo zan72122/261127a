@@ -17,3 +17,4 @@
 - 06:36 E03 完了（約30分、claude/game-e03-implementation-wtw99g）→ 06:48 main マージ（自動チェック ok）。
 - 06:49 クラウド起動 E05: session_017tygc3dmG4whcvzo8MjMXu（job claude-cloud-20261127-064929-63271）。実行中: E04, E05
 - 06:51 公開確認: E03 200、noindex あり、禁止語なし、サムネイル 200。公開済み 3/15。
+- 07:48 E04（06:06起動）は途中 push を重ね、メモまで届いたがサムネイル未着で作業継続中。E05（06:49起動）は push なし。Mac はオンライン。
