@@ -1,9 +1,5 @@
-# E04 headless autotest 2026-11-26T21:58Z
+# E04 headless autotest 2026-11-26T22:27Z
 # chromium (playwright, headless) --use-angle=swiftshader --enable-unsafe-swiftshader; server: python3 -m http.server (root site/)
 # url: games/e04/index.html?autotest&q=low ; gf-playlog external beacon answered locally with 204 (no outbound network in sandbox)
-[1024x768] ready=true after 4.4s
-[1024x768] early {"state":"IDLE","count":1,"stage":0,"q":"low","finaleT":0,"lantern":{"x":513,"y":579},"hook":{"x":512,"y":450},"axisTop":{"x":512,"y":61},"axisBottom":{"y":486},"ringL":254,"ringR":770,"errors":[]}
-[1024x768] shot shot-1.jpg
-[1024x768] mid {"state":"IDLE","count":13,"stage":2,"q":"low","finaleT":0,"lantern":{"x":513,"y":578},"hook":{"x":512,"y":286},"axisTop":{"x":512,"y":61},"axisBottom":{"y":486},"ringL":254,"ringR":770,"errors":[]} t=108s
-[1024x768] shot shot-2.jpg
-TEST FAILED: page.waitForFunction: Timeout 900000ms exceeded.
+# screen coords: lantern=bench lantern body, hook=target hook, axisTop/axisBottom=device axis (sun ornament incl. unfolded rays / pedestal), ringL/ringR=bottom ring x extents
+[1024x768] ready=true after 4.5s
