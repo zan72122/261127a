@@ -1,0 +1,4 @@
+# E07 autotest 2026-11-26T23:44Z  headless Chromium (Playwright) + SwiftShader (--use-angle=swiftshader --enable-unsafe-swiftshader), url=games/e07/index.html?autotest&q=low, server: python3 -m http.server (root site/)
+# note: the shared ../../gf-playlog.js beacon to an external host is stubbed with HTTP 204 in this sandbox
+[1024x768] ready in 5643ms url=games/e07/index.html?autotest&q=low
+[1024x768] t=6.9s STAGE_1 done=0/28 climaxT=0 fps=2.4 q=low particles=237 errors=0
