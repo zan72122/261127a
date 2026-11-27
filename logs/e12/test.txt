@@ -1,0 +1,397 @@
+[1024x768] console: [e12] state HARVEST_READY loop 0 stage 0
+[1024x768] console: [e12] init done tris-target low bgTrees 38 flags 99 lamps 24
+[1024x768] console: [e12] ready low
+[1024x768] console: [autotest] loop 1/20 harvest (tap)
+[1024x768] ready in 5293ms url=games/e12/index.html?autotest&q=low
+[1024x768] t=6.3s HARVESTING loop=1/20 stage=1 cycle=0 harvested=0 pressed=0 jar=0/115 level=0 centerErr=0px inFrame=true fps=3.7 q=low apples=12 errors=0
+[1024x768] t=8.2s BASKET_READY loop=1/20 stage=1 cycle=0 harvested=4 pressed=0 jar=0/115 level=0 centerErr=0px inFrame=true fps=3.9 q=low apples=12 errors=0
+[1024x768] console: [autotest] loop 1/20 basket tap
+[1024x768] t=9.1s TRANSPORTING loop=1/20 stage=1 cycle=0 harvested=4 pressed=0 jar=0/115 level=0 centerErr=0px inFrame=true fps=4.6 q=low apples=12 errors=0
+[1024x768] t=12.9s PROCESSING loop=1/20 stage=1 cycle=0 harvested=4 pressed=0 jar=0/115 level=0 centerErr=0px inFrame=true fps=3.6 q=low apples=16 errors=0
+[1024x768] t=20.4s FILLING loop=1/20 stage=1 cycle=0 harvested=4 pressed=4 jar=1/115 level=0.007 centerErr=0px inFrame=true fps=4.4 q=low apples=15 errors=0
+[1024x768] console: [e12] state HARVEST_READY loop 1 stage 0
+[1024x768] t=25.2s HARVEST_READY loop=2/20 stage=1 cycle=0 harvested=4 pressed=4 jar=4/115 level=0.035 centerErr=0px inFrame=true fps=4.3 q=low apples=12 errors=0
+[1024x768] console: [autotest] loop 2/20 harvest (drag)
+[1024x768] t=26.2s HARVESTING loop=2/20 stage=1 cycle=0 harvested=4 pressed=4 jar=4/115 level=0.035 centerErr=0px inFrame=true fps=4 q=low apples=12 errors=0
+[1024x768] t=28.1s BASKET_READY loop=2/20 stage=1 cycle=0 harvested=8 pressed=4 jar=4/115 level=0.035 centerErr=0px inFrame=true fps=4.3 q=low apples=12 errors=0
+[1024x768] console: [autotest] loop 2/20 basket tap
+[1024x768] t=29.1s TRANSPORTING loop=2/20 stage=1 cycle=0 harvested=8 pressed=4 jar=4/115 level=0.035 centerErr=0px inFrame=true fps=4.1 q=low apples=12 errors=0
+[1024x768] t=34.1s PROCESSING loop=2/20 stage=1 cycle=0 harvested=8 pressed=4 jar=4/115 level=0.035 centerErr=0px inFrame=true fps=3.1 q=low apples=16 errors=0
+[1024x768] t=42.5s FILLING loop=2/20 stage=1 cycle=0 harvested=8 pressed=8 jar=5.8/115 level=0.049 centerErr=0px inFrame=true fps=4.4 q=low apples=12 errors=0
+[1024x768] console: [e12] state HARVEST_READY loop 2 stage 0
+[1024x768] t=46.4s HARVEST_READY loop=3/20 stage=1 cycle=0 harvested=8 pressed=8 jar=8/115 level=0.07 centerErr=0px inFrame=true fps=4 q=low apples=12 errors=0
+[1024x768] console: [autotest] loop 3/20 harvest (outside+tap)
+[1024x768] t=47.3s HARVESTING loop=3/20 stage=1 cycle=0 harvested=8 pressed=8 jar=8/115 level=0.07 centerErr=0px inFrame=true fps=4.3 q=low apples=12 errors=0
+[1024x768] t=50.1s BASKET_READY loop=3/20 stage=1 cycle=0 harvested=12 pressed=8 jar=8/115 level=0.07 centerErr=0px inFrame=true fps=4.3 q=low apples=12 errors=0
+[1024x768] console: [autotest] loop 3/20 basket tap x3 (rapid)
+[1024x768] t=50.9s TRANSPORTING loop=3/20 stage=1 cycle=0 harvested=12 pressed=8 jar=8/115 level=0.07 centerErr=0px inFrame=true fps=4.9 q=low apples=12 errors=0
+[1024x768] t=55.0s PROCESSING loop=3/20 stage=1 cycle=0 harvested=12 pressed=8 jar=8/115 level=0.07 centerErr=0px inFrame=true fps=4 q=low apples=17 errors=0
+[1024x768] t=62.9s FILLING loop=3/20 stage=1 cycle=0 harvested=12 pressed=12 jar=9.38/115 level=0.08 centerErr=0px inFrame=true fps=4.2 q=low apples=15 errors=0
+[1024x768] console: [e12] state HARVEST_READY loop 3 stage 0
+[1024x768] t=66.9s HARVEST_READY loop=4/20 stage=1 cycle=0 harvested=12 pressed=12 jar=12/115 level=0.104 centerErr=0px inFrame=true fps=4.3 q=low apples=13 errors=0
+[1024x768] console: [autotest] loop 4/20 harvest (hold+second finger)
+[1024x768] t=67.7s HARVESTING loop=4/20 stage=1 cycle=0 harvested=12 pressed=12 jar=12/115 level=0.104 centerErr=0px inFrame=true fps=3.8 q=low apples=13 errors=0
+[1024x768] t=70.6s BASKET_READY loop=4/20 stage=1 cycle=0 harvested=16 pressed=12 jar=12/115 level=0.104 centerErr=0px inFrame=true fps=3.9 q=low apples=13 errors=0
+[1024x768] console: [autotest] loop 4/20 basket tap
+[1024x768] t=71.6s TRANSPORTING loop=4/20 stage=1 cycle=0 harvested=16 pressed=12 jar=12/115 level=0.104 centerErr=0px inFrame=true fps=4.4 q=low apples=13 errors=0
+[1024x768] t=74.9s PROCESSING loop=4/20 stage=1 cycle=0 harvested=16 pressed=12 jar=12/115 level=0.104 centerErr=0px inFrame=true fps=3.5 q=low apples=18 errors=0
+[1024x768] t=83.3s FILLING loop=4/20 stage=1 cycle=0 harvested=16 pressed=16 jar=13.78/115 level=0.118 centerErr=0px inFrame=true fps=4 q=low apples=14 errors=0
+[1024x768] console: [e12] state HARVEST_READY loop 4 stage 0
+[1024x768] t=87.2s HARVEST_READY loop=5/20 stage=1 cycle=0 harvested=16 pressed=16 jar=16/115 level=0.139 centerErr=0px inFrame=true fps=4.3 q=low apples=14 errors=0
+[1024x768] console: [autotest] loop 5/20 harvest (tap)
+[1024x768] t=88.2s HARVESTING loop=5/20 stage=1 cycle=0 harvested=16 pressed=16 jar=16/115 level=0.139 centerErr=0px inFrame=true fps=4 q=low apples=14 errors=0
+[1024x768] console: [autotest] loop 5/20 basket tap
+[1024x768] t=91.0s TRANSPORTING loop=5/20 stage=1 cycle=0 harvested=20 pressed=16 jar=16/115 level=0.139 centerErr=0px inFrame=true fps=4 q=low apples=14 errors=0
+[1024x768] t=96.3s PROCESSING loop=5/20 stage=1 cycle=0 harvested=20 pressed=16 jar=16/115 level=0.139 centerErr=0px inFrame=true fps=2.7 q=low apples=19 errors=0
+[1024x768] t=104.6s FILLING loop=5/20 stage=1 cycle=0 harvested=20 pressed=20 jar=17.59/115 level=0.151 centerErr=0px inFrame=true fps=4.5 q=low apples=15 errors=0
+[1024x768] console: [e12] stage 1 begins
+[1024x768] console: [e12] state HARVEST_READY loop 5 stage 1
+[1024x768] t=108.4s HARVEST_READY loop=6/20 stage=2 cycle=0 harvested=20 pressed=20 jar=20/115 level=0.174 centerErr=0px inFrame=true fps=4.2 q=low apples=15 errors=0
+[1024x768] console: [autotest] loop 6/20 harvest (drag)
+[1024x768] t=109.4s HARVESTING loop=6/20 stage=2 cycle=0 harvested=20 pressed=20 jar=20/115 level=0.174 centerErr=0px inFrame=true fps=4.1 q=low apples=15 errors=0
+[1024x768] t=112.2s BASKET_READY loop=6/20 stage=2 cycle=0 harvested=25 pressed=20 jar=20/115 level=0.174 centerErr=0px inFrame=true fps=4.2 q=low apples=15 errors=0
+[1024x768] console: [autotest] loop 6/20 basket tap
+[1024x768] t=114.5s TRANSPORTING loop=6/20 stage=2 cycle=0 harvested=25 pressed=20 jar=20/115 level=0.174 centerErr=0px inFrame=true fps=4.9 q=low apples=15 errors=0
+[1024x768] t=118.3s PROCESSING loop=6/20 stage=2 cycle=0 harvested=25 pressed=20 jar=20/115 level=0.174 centerErr=0px inFrame=true fps=4 q=low apples=20 errors=0
+[1024x768] t=124.2s FILLING loop=6/20 stage=2 cycle=0 harvested=25 pressed=25 jar=21.37/115 level=0.184 centerErr=0px inFrame=true fps=4.3 q=low apples=17 errors=0
+[1024x768] console: [e12] state HARVEST_READY loop 6 stage 1
+[1024x768] t=128.2s HARVEST_READY loop=7/20 stage=2 cycle=0 harvested=25 pressed=25 jar=25/115 level=0.217 centerErr=0px inFrame=true fps=3.9 q=low apples=15 errors=0
+[1024x768] console: [autotest] loop 7/20 harvest (outside+tap)
+[1024x768] shot shot-1.jpg (state=HARVEST_READY loop=7 finaleT=0)
+[1024x768] t=132.0s BASKET_READY loop=7/20 stage=2 cycle=0 harvested=30 pressed=25 jar=25/115 level=0.217 centerErr=0px inFrame=true fps=3.9 q=low apples=15 errors=0
+[1024x768] console: [autotest] loop 7/20 basket tap
+[1024x768] t=132.9s TRANSPORTING loop=7/20 stage=2 cycle=0 harvested=30 pressed=25 jar=25/115 level=0.217 centerErr=0px inFrame=true fps=3.9 q=low apples=15 errors=0
+[1024x768] t=137.1s PROCESSING loop=7/20 stage=2 cycle=0 harvested=30 pressed=25 jar=25/115 level=0.217 centerErr=0px inFrame=true fps=3.9 q=low apples=20 errors=0
+[1024x768] t=144.6s FILLING loop=7/20 stage=2 cycle=0 harvested=30 pressed=30 jar=28.75/115 level=0.248 centerErr=0px inFrame=true fps=4.1 q=low apples=15 errors=0
+[1024x768] console: [e12] state HARVEST_READY loop 7 stage 1
+[1024x768] t=146.5s HARVEST_READY loop=8/20 stage=2 cycle=0 harvested=30 pressed=30 jar=30/115 level=0.261 centerErr=0px inFrame=true fps=4 q=low apples=15 errors=0
+[1024x768] console: [autotest] loop 8/20 harvest (hold+second finger)
+[1024x768] t=148.5s HARVESTING loop=8/20 stage=2 cycle=0 harvested=30 pressed=30 jar=30/115 level=0.261 centerErr=0px inFrame=true fps=3.9 q=low apples=15 errors=0
+[1024x768] t=150.5s BASKET_READY loop=8/20 stage=2 cycle=0 harvested=35 pressed=30 jar=30/115 level=0.261 centerErr=0px inFrame=true fps=3.9 q=low apples=15 errors=0
+[1024x768] console: [autotest] loop 8/20 basket tap x3 (rapid)
+[1024x768] t=151.3s TRANSPORTING loop=8/20 stage=2 cycle=0 harvested=35 pressed=30 jar=30/115 level=0.261 centerErr=0px inFrame=true fps=4.5 q=low apples=15 errors=0
+[1024x768] t=157.4s PROCESSING loop=8/20 stage=2 cycle=0 harvested=35 pressed=30 jar=30/115 level=0.261 centerErr=0px inFrame=true fps=3.2 q=low apples=21 errors=0
+[1024x768] t=163.2s FILLING loop=8/20 stage=2 cycle=0 harvested=35 pressed=35 jar=31.23/115 level=0.269 centerErr=0px inFrame=true fps=3.9 q=low apples=16 errors=0
+[1024x768] console: [e12] state HARVEST_READY loop 8 stage 1
+[1024x768] t=167.1s HARVEST_READY loop=9/20 stage=2 cycle=0 harvested=35 pressed=35 jar=35/115 level=0.304 centerErr=0px inFrame=true fps=4.1 q=low apples=16 errors=0
+[1024x768] console: [autotest] loop 9/20 harvest (tap)
+[1024x768] t=168.1s HARVESTING loop=9/20 stage=2 cycle=0 harvested=35 pressed=35 jar=35/115 level=0.304 centerErr=0px inFrame=true fps=4.2 q=low apples=16 errors=0
+[1024x768] t=170.8s BASKET_READY loop=9/20 stage=2 cycle=0 harvested=40 pressed=35 jar=35/115 level=0.304 centerErr=0px inFrame=true fps=4.5 q=low apples=16 errors=0
+[1024x768] console: [autotest] loop 9/20 basket tap
+[1024x768] t=171.6s TRANSPORTING loop=9/20 stage=2 cycle=0 harvested=40 pressed=35 jar=35/115 level=0.304 centerErr=0px inFrame=true fps=4.5 q=low apples=16 errors=0
+[1024x768] t=175.6s PROCESSING loop=9/20 stage=2 cycle=0 harvested=40 pressed=35 jar=35/115 level=0.304 centerErr=0px inFrame=true fps=3.6 q=low apples=22 errors=0
+[1024x768] t=181.4s FILLING loop=9/20 stage=2 cycle=0 harvested=40 pressed=40 jar=35.18/115 level=0.305 centerErr=0px inFrame=true fps=4.2 q=low apples=20 errors=0
+[1024x768] console: [e12] state HARVEST_READY loop 9 stage 1
+[1024x768] t=185.2s HARVEST_READY loop=10/20 stage=2 cycle=0 harvested=40 pressed=40 jar=40/115 level=0.348 centerErr=0px inFrame=true fps=3.9 q=low apples=17 errors=0
+[1024x768] console: [autotest] loop 10/20 harvest (drag)
+[1024x768] t=187.1s HARVESTING loop=10/20 stage=2 cycle=0 harvested=40 pressed=40 jar=40/115 level=0.348 centerErr=0px inFrame=true fps=3.2 q=low apples=17 errors=0
+[1024x768] t=189.7s BASKET_READY loop=10/20 stage=2 cycle=0 harvested=45 pressed=40 jar=40/115 level=0.348 centerErr=0px inFrame=true fps=3.4 q=low apples=17 errors=0
+[1024x768] console: [autotest] loop 10/20 basket tap
+[1024x768] t=190.8s TRANSPORTING loop=10/20 stage=2 cycle=0 harvested=45 pressed=40 jar=40/115 level=0.348 centerErr=0px inFrame=true fps=3.9 q=low apples=17 errors=0
+[1024x768] t=195.0s PROCESSING loop=10/20 stage=2 cycle=0 harvested=45 pressed=40 jar=40/115 level=0.348 centerErr=0px inFrame=true fps=3.4 q=low apples=23 errors=0
+[1024x768] t=200.8s FILLING loop=10/20 stage=2 cycle=0 harvested=45 pressed=45 jar=40/115 level=0.348 centerErr=0px inFrame=true fps=3.9 q=low apples=21 errors=0
+[1024x768] console: [e12] stage 2 begins
+[1024x768] console: [e12] state HARVEST_READY loop 10 stage 2
+[1024x768] t=204.8s HARVEST_READY loop=11/20 stage=3 cycle=0 harvested=45 pressed=45 jar=45/115 level=0.391 centerErr=0px inFrame=true fps=4.1 q=low apples=18 errors=0
+[1024x768] console: [autotest] loop 11/20 harvest (outside+tap)
+[1024x768] t=206.8s HARVESTING loop=11/20 stage=3 cycle=0 harvested=45 pressed=45 jar=45/115 level=0.391 centerErr=0px inFrame=true fps=4 q=low apples=18 errors=0
+[1024x768] console: [autotest] loop 11/20 basket tap
+[1024x768] t=211.2s TRANSPORTING loop=11/20 stage=3 cycle=0 harvested=51 pressed=45 jar=45/115 level=0.391 centerErr=0px inFrame=true fps=3.8 q=low apples=18 errors=0
+[1024x768] t=217.6s PROCESSING loop=11/20 stage=3 cycle=0 harvested=51 pressed=45 jar=45/115 level=0.391 centerErr=0px inFrame=true fps=3 q=low apples=24 errors=0
+[1024x768] t=223.3s FILLING loop=11/20 stage=3 cycle=0 harvested=51 pressed=51 jar=48.22/115 level=0.416 centerErr=0px inFrame=true fps=4.2 q=low apples=18 errors=0
+[1024x768] console: [e12] state HARVEST_READY loop 11 stage 2
+[1024x768] t=226.2s HARVEST_READY loop=12/20 stage=3 cycle=0 harvested=51 pressed=51 jar=51/115 level=0.443 centerErr=0px inFrame=true fps=4.1 q=low apples=18 errors=0
+[1024x768] console: [autotest] loop 12/20 harvest (hold+second finger)
+[1024x768] t=227.2s HARVESTING loop=12/20 stage=3 cycle=0 harvested=51 pressed=51 jar=51/115 level=0.443 centerErr=0px inFrame=true fps=4.3 q=low apples=18 errors=0
+[1024x768] t=230.0s BASKET_READY loop=12/20 stage=3 cycle=0 harvested=57 pressed=51 jar=51/115 level=0.443 centerErr=0px inFrame=true fps=4.5 q=low apples=18 errors=0
+[1024x768] console: [autotest] loop 12/20 basket tap
+[1024x768] t=230.8s TRANSPORTING loop=12/20 stage=3 cycle=0 harvested=57 pressed=51 jar=51/115 level=0.443 centerErr=0px inFrame=true fps=4.5 q=low apples=18 errors=0
+[1024x768] t=235.4s PROCESSING loop=12/20 stage=3 cycle=0 harvested=57 pressed=51 jar=51/115 level=0.443 centerErr=0px inFrame=true fps=3.5 q=low apples=24 errors=0
+[1024x768] shot shot-2.jpg (state=PROCESSING loop=12 finaleT=0)
+[1024x768] t=240.9s FILLING loop=12/20 stage=3 cycle=0 harvested=57 pressed=57 jar=54.09/115 level=0.468 centerErr=0px inFrame=true fps=3.8 q=low apples=18 errors=0
+[1024x768] console: [e12] state HARVEST_READY loop 12 stage 2
+[1024x768] t=243.9s HARVEST_READY loop=13/20 stage=3 cycle=0 harvested=57 pressed=57 jar=57/115 level=0.496 centerErr=0px inFrame=true fps=3.9 q=low apples=18 errors=0
+[1024x768] console: [autotest] loop 13/20 harvest (tap)
+[1024x768] t=244.8s HARVESTING loop=13/20 stage=3 cycle=0 harvested=57 pressed=57 jar=57/115 level=0.496 centerErr=0px inFrame=true fps=3.8 q=low apples=18 errors=0
+[1024x768] console: [autotest] loop 13/20 basket tap x3 (rapid)
+[1024x768] t=248.5s TRANSPORTING loop=13/20 stage=3 cycle=0 harvested=63 pressed=57 jar=57/115 level=0.496 centerErr=0px inFrame=true fps=4 q=low apples=18 errors=0
+[1024x768] t=253.4s PROCESSING loop=13/20 stage=3 cycle=0 harvested=63 pressed=57 jar=57/115 level=0.496 centerErr=0px inFrame=true fps=3.6 q=low apples=26 errors=0
+[1024x768] t=259.0s FILLING loop=13/20 stage=3 cycle=0 harvested=63 pressed=63 jar=61.22/115 level=0.529 centerErr=0px inFrame=true fps=3.9 q=low apples=20 errors=0
+[1024x768] console: [e12] state HARVEST_READY loop 13 stage 2
+[1024x768] t=261.0s HARVEST_READY loop=14/20 stage=3 cycle=0 harvested=63 pressed=63 jar=63/115 level=0.548 centerErr=0px inFrame=true fps=4.1 q=low apples=20 errors=0
+[1024x768] console: [autotest] loop 14/20 harvest (drag)
+[1024x768] t=262.8s HARVESTING loop=14/20 stage=3 cycle=0 harvested=63 pressed=63 jar=63/115 level=0.548 centerErr=0px inFrame=true fps=3.9 q=low apples=20 errors=0
+[1024x768] console: [autotest] loop 14/20 basket tap
+[1024x768] t=265.7s TRANSPORTING loop=14/20 stage=3 cycle=0 harvested=69 pressed=63 jar=63/115 level=0.548 centerErr=0px inFrame=true fps=4.3 q=low apples=20 errors=0
+[1024x768] t=272.0s PROCESSING loop=14/20 stage=3 cycle=0 harvested=69 pressed=63 jar=63/115 level=0.548 centerErr=0px inFrame=true fps=3 q=low apples=28 errors=0
+[1024x768] t=277.8s FILLING loop=14/20 stage=3 cycle=0 harvested=69 pressed=69 jar=67.18/115 level=0.581 centerErr=0px inFrame=true fps=4 q=low apples=22 errors=0
+[1024x768] console: [e12] state HARVEST_READY loop 14 stage 2
+[1024x768] t=279.8s HARVEST_READY loop=15/20 stage=3 cycle=0 harvested=69 pressed=69 jar=69/115 level=0.6 centerErr=0px inFrame=true fps=3.9 q=low apples=22 errors=0
+[1024x768] console: [autotest] loop 15/20 harvest (outside+tap)
+[1024x768] t=281.8s HARVESTING loop=15/20 stage=3 cycle=0 harvested=69 pressed=69 jar=69/115 level=0.6 centerErr=0px inFrame=true fps=4.2 q=low apples=22 errors=0
+[1024x768] t=284.5s BASKET_READY loop=15/20 stage=3 cycle=0 harvested=75 pressed=69 jar=69/115 level=0.6 centerErr=0px inFrame=true fps=4.5 q=low apples=22 errors=0
+[1024x768] console: [autotest] loop 15/20 basket tap
+[1024x768] t=285.3s TRANSPORTING loop=15/20 stage=3 cycle=0 harvested=75 pressed=69 jar=69/115 level=0.6 centerErr=0px inFrame=true fps=4.5 q=low apples=22 errors=0
+[1024x768] t=289.5s PROCESSING loop=15/20 stage=3 cycle=0 harvested=75 pressed=69 jar=69/115 level=0.6 centerErr=0px inFrame=true fps=4 q=low apples=30 errors=0
+[1024x768] t=295.2s FILLING loop=15/20 stage=3 cycle=0 harvested=75 pressed=75 jar=71.98/115 level=0.623 centerErr=0px inFrame=true fps=4.1 q=low apples=25 errors=0
+[1024x768] console: [e12] stage 3 begins
+[1024x768] console: [e12] state HARVEST_READY loop 15 stage 3
+[1024x768] t=298.2s HARVEST_READY loop=16/20 stage=4 cycle=0 harvested=75 pressed=75 jar=75/115 level=0.652 centerErr=0px inFrame=true fps=4 q=low apples=24 errors=0
+[1024x768] console: [autotest] loop 16/20 harvest (hold+second finger)
+[1024x768] t=299.3s HARVESTING loop=16/20 stage=4 cycle=0 harvested=75 pressed=75 jar=75/115 level=0.652 centerErr=0px inFrame=true fps=3.9 q=low apples=24 errors=0
+[1024x768] t=302.0s BASKET_READY loop=16/20 stage=4 cycle=0 harvested=83 pressed=75 jar=75/115 level=0.652 centerErr=0px inFrame=true fps=3.5 q=low apples=24 errors=0
+[1024x768] console: [autotest] loop 16/20 basket tap
+[1024x768] t=303.0s TRANSPORTING loop=16/20 stage=4 cycle=0 harvested=83 pressed=75 jar=75/115 level=0.652 centerErr=0px inFrame=true fps=3.9 q=low apples=24 errors=0
+[1024x768] t=309.0s PROCESSING loop=16/20 stage=4 cycle=0 harvested=83 pressed=75 jar=75/115 level=0.652 centerErr=0px inFrame=true fps=3.8 q=low apples=32 errors=0
+[1024x768] t=314.8s FILLING loop=16/20 stage=4 cycle=0 harvested=83 pressed=83 jar=80.55/115 level=0.697 centerErr=0px inFrame=true fps=4.2 q=low apples=24 errors=0
+[1024x768] console: [e12] state HARVEST_READY loop 16 stage 3
+[1024x768] t=317.6s HARVEST_READY loop=17/20 stage=4 cycle=0 harvested=83 pressed=83 jar=83/115 level=0.722 centerErr=0px inFrame=true fps=3.5 q=low apples=24 errors=0
+[1024x768] console: [autotest] loop 17/20 harvest (tap)
+[1024x768] t=318.7s HARVESTING loop=17/20 stage=4 cycle=0 harvested=83 pressed=83 jar=83/115 level=0.722 centerErr=0px inFrame=true fps=3.4 q=low apples=24 errors=0
+[1024x768] t=321.7s BASKET_READY loop=17/20 stage=4 cycle=0 harvested=91 pressed=83 jar=83/115 level=0.722 centerErr=0px inFrame=true fps=3.9 q=low apples=24 errors=0
+[1024x768] console: [autotest] loop 17/20 basket tap
+[1024x768] t=322.6s TRANSPORTING loop=17/20 stage=4 cycle=0 harvested=91 pressed=83 jar=83/115 level=0.722 centerErr=0px inFrame=true fps=4.5 q=low apples=24 errors=0
+[1024x768] t=329.0s PROCESSING loop=17/20 stage=4 cycle=0 harvested=91 pressed=83 jar=83/115 level=0.722 centerErr=0px inFrame=true fps=2.7 q=low apples=32 errors=0
+[1024x768] t=333.8s FILLING loop=17/20 stage=4 cycle=0 harvested=91 pressed=91 jar=86.1/115 level=0.746 centerErr=0px inFrame=true fps=4.3 q=low apples=26 errors=0
+[1024x768] console: [e12] state HARVEST_READY loop 17 stage 3
+[1024x768] t=336.9s HARVEST_READY loop=18/20 stage=4 cycle=0 harvested=91 pressed=91 jar=91/115 level=0.791 centerErr=0px inFrame=true fps=3.9 q=low apples=24 errors=0
+[1024x768] console: [autotest] loop 18/20 harvest (drag)
+[1024x768] t=338.9s HARVESTING loop=18/20 stage=4 cycle=0 harvested=91 pressed=91 jar=91/115 level=0.791 centerErr=0px inFrame=true fps=3.8 q=low apples=24 errors=0
+[1024x768] t=341.8s BASKET_READY loop=18/20 stage=4 cycle=0 harvested=99 pressed=91 jar=91/115 level=0.791 centerErr=0px inFrame=true fps=4.4 q=low apples=24 errors=0
+[1024x768] console: [autotest] loop 18/20 basket tap x3 (rapid)
+[1024x768] t=342.7s TRANSPORTING loop=18/20 stage=4 cycle=0 harvested=99 pressed=91 jar=91/115 level=0.791 centerErr=0px inFrame=true fps=4.7 q=low apples=24 errors=0
+[1024x768] t=346.7s PROCESSING loop=18/20 stage=4 cycle=0 harvested=99 pressed=91 jar=91/115 level=0.791 centerErr=0px inFrame=true fps=3.6 q=low apples=24 errors=0
+[1024x768] t=352.8s FILLING loop=18/20 stage=4 cycle=0 harvested=99 pressed=99 jar=97.03/115 level=0.84 centerErr=0px inFrame=true fps=3.9 q=low apples=16 errors=0
+[1024x768] console: [e12] state HARVEST_READY loop 18 stage 3
+[1024x768] t=355.7s HARVEST_READY loop=19/20 stage=4 cycle=0 harvested=99 pressed=99 jar=99/115 level=0.861 centerErr=0px inFrame=true fps=4.3 q=low apples=16 errors=0
+[1024x768] console: [autotest] loop 19/20 harvest (outside+tap)
+[1024x768] t=357.4s HARVESTING loop=19/20 stage=4 cycle=0 harvested=99 pressed=99 jar=99/115 level=0.861 centerErr=0px inFrame=true fps=3.5 q=low apples=16 errors=0
+[1024x768] t=360.3s BASKET_READY loop=19/20 stage=4 cycle=0 harvested=107 pressed=99 jar=99/115 level=0.861 centerErr=0px inFrame=true fps=3.8 q=low apples=16 errors=0
+[1024x768] console: [autotest] loop 19/20 basket tap
+[1024x768] t=361.3s TRANSPORTING loop=19/20 stage=4 cycle=0 harvested=107 pressed=99 jar=99/115 level=0.861 centerErr=0px inFrame=true fps=4.3 q=low apples=16 errors=0
+[1024x768] t=365.7s PROCESSING loop=19/20 stage=4 cycle=0 harvested=107 pressed=99 jar=99/115 level=0.861 centerErr=0px inFrame=true fps=3.4 q=low apples=16 errors=0
+[1024x768] t=370.7s FILLING loop=19/20 stage=4 cycle=0 harvested=107 pressed=107 jar=102.4/115 level=0.887 centerErr=0px inFrame=true fps=4.2 q=low apples=8 errors=0
+[1024x768] console: [e12] state HARVEST_READY loop 19 stage 3
+[1024x768] t=373.7s HARVEST_READY loop=20/20 stage=4 cycle=0 harvested=107 pressed=107 jar=107/115 level=0.93 centerErr=0px inFrame=true fps=4.3 q=low apples=8 errors=0
+[1024x768] console: [autotest] loop 20/20 harvest (hold+second finger)
+[1024x768] t=375.5s HARVESTING loop=20/20 stage=4 cycle=0 harvested=107 pressed=107 jar=107/115 level=0.93 centerErr=0px inFrame=true fps=3.6 q=low apples=8 errors=0
+[1024x768] t=378.3s BASKET_READY loop=20/20 stage=4 cycle=0 harvested=115 pressed=107 jar=107/115 level=0.93 centerErr=0px inFrame=true fps=4 q=low apples=8 errors=0
+[1024x768] console: [autotest] loop 20/20 basket tap
+[1024x768] t=379.3s TRANSPORTING loop=20/20 stage=4 cycle=0 harvested=115 pressed=107 jar=107/115 level=0.93 centerErr=0px inFrame=true fps=4.6 q=low apples=8 errors=0
+[1024x768] t=385.3s PROCESSING loop=20/20 stage=4 cycle=0 harvested=115 pressed=107 jar=107/115 level=0.93 centerErr=0px inFrame=true fps=3 q=low apples=8 errors=0
+[1024x768] console: [e12] state FINALE loop 19 stage 3
+[1024x768] console: [e12] climax start
+[1024x768] t=390.2s FINALE loop=20/20 stage=4 cycle=0 harvested=115 pressed=115 jar=110.97/115 level=0.961 centerErr=0px inFrame=true fps=4.3 q=low apples=0 errors=0
+[1024x768] console: [e12] jar full
+[1024x768] console: [e12] wave
+[1024x768] console: [e12] climax peak
+[1024x768] shot shot-3.jpg (state=FINALE loop=20 finaleT=9.9)
+[1024x768] console: [e12] state AFTERGLOW loop 19 stage 3
+[1024x768] console: [e12] afterglow
+[1024x768] t=404.5s AFTERGLOW loop=20/20 stage=4 cycle=0 harvested=115 pressed=115 jar=115/115 level=1 centerErr=0px inFrame=true fps=4 q=low apples=0 errors=0
+[1024x768] console: [e12] transfer
+[1024x768] console: [e12] reset
+[1024x768] console: [e12] state HARVEST_READY loop 0 stage 0
+[1024x768] t=421.8s HARVEST_READY loop=1/20 stage=1 cycle=1 harvested=115 pressed=0 jar=0/115 level=0 centerErr=0px inFrame=true fps=3.9 q=low apples=12 errors=0
+[1024x768] console: [autotest] finished: replay ready (cycle 1) ignored=5 outside=5 extraTaps=8 retries=0
+[1024x768] RESULT PASS __ready=true __errors=[] consoleErrors=[] finale=true jarFull=true wavePeak=true afterglow=true reset=true replayReady=true cycle=1 harvestedTotal(last cycle)=115 flags=99/99 lamps=24/24 ignoredPointers=5 outsideTaps=5 extraTaps=8 maxCenterErr(settled)=0px framesOutOfView=0 playFps=3.9 climaxFps=3.8 elapsed=424s
+[768x1024] console: [e12] state HARVEST_READY loop 0 stage 0
+[768x1024] console: [e12] init done tris-target low bgTrees 38 flags 99 lamps 24
+[768x1024] console: [e12] ready low
+[768x1024] console: [autotest] loop 1/20 harvest (tap)
+[768x1024] ready in 5419ms url=games/e12/index.html?autotest&q=low
+[768x1024] t=6.4s HARVESTING loop=1/20 stage=1 cycle=0 harvested=0 pressed=0 jar=0/115 level=0 centerErr=0px inFrame=true fps=4.2 q=low apples=12 errors=0
+[768x1024] console: [autotest] loop 1/20 basket tap
+[768x1024] t=8.3s TRANSPORTING loop=1/20 stage=1 cycle=0 harvested=4 pressed=0 jar=0/115 level=0 centerErr=0px inFrame=true fps=4.3 q=low apples=12 errors=0
+[768x1024] t=12.2s PROCESSING loop=1/20 stage=1 cycle=0 harvested=4 pressed=0 jar=0/115 level=0 centerErr=0px inFrame=true fps=4.4 q=low apples=16 errors=0
+[768x1024] t=20.6s FILLING loop=1/20 stage=1 cycle=0 harvested=4 pressed=4 jar=1.74/115 level=0.013 centerErr=0px inFrame=true fps=4.7 q=low apples=12 errors=0
+[768x1024] console: [e12] state HARVEST_READY loop 1 stage 0
+[768x1024] t=24.4s HARVEST_READY loop=2/20 stage=1 cycle=0 harvested=4 pressed=4 jar=4/115 level=0.035 centerErr=0px inFrame=true fps=4 q=low apples=12 errors=0
+[768x1024] console: [autotest] loop 2/20 harvest (drag)
+[768x1024] t=25.5s HARVESTING loop=2/20 stage=1 cycle=0 harvested=4 pressed=4 jar=4/115 level=0.035 centerErr=0px inFrame=true fps=3.9 q=low apples=12 errors=0
+[768x1024] console: [autotest] loop 2/20 basket tap
+[768x1024] t=28.2s TRANSPORTING loop=2/20 stage=1 cycle=0 harvested=8 pressed=4 jar=4/115 level=0.035 centerErr=0px inFrame=true fps=4.4 q=low apples=12 errors=0
+[768x1024] t=32.9s PROCESSING loop=2/20 stage=1 cycle=0 harvested=8 pressed=4 jar=4/115 level=0.035 centerErr=0px inFrame=true fps=3.9 q=low apples=16 errors=0
+[768x1024] t=40.6s FILLING loop=2/20 stage=1 cycle=0 harvested=8 pressed=8 jar=5.44/115 level=0.045 centerErr=0px inFrame=true fps=4.5 q=low apples=14 errors=0
+[768x1024] console: [e12] state HARVEST_READY loop 2 stage 0
+[768x1024] t=44.3s HARVEST_READY loop=3/20 stage=1 cycle=0 harvested=8 pressed=8 jar=8/115 level=0.07 centerErr=0px inFrame=true fps=3.9 q=low apples=12 errors=0
+[768x1024] console: [autotest] loop 3/20 harvest (outside+tap)
+[768x1024] shot p-shot-1.jpg (state=HARVEST_READY loop=3 finaleT=0)
+[768x1024] t=47.6s HARVESTING loop=3/20 stage=1 cycle=0 harvested=12 pressed=8 jar=8/115 level=0.07 centerErr=0px inFrame=true fps=4.4 q=low apples=12 errors=0
+[768x1024] t=48.5s BASKET_READY loop=3/20 stage=1 cycle=0 harvested=12 pressed=8 jar=8/115 level=0.07 centerErr=0px inFrame=true fps=4.7 q=low apples=12 errors=0
+[768x1024] console: [autotest] loop 3/20 basket tap x3 (rapid)
+[768x1024] t=49.4s TRANSPORTING loop=3/20 stage=1 cycle=0 harvested=12 pressed=8 jar=8/115 level=0.07 centerErr=0px inFrame=true fps=4.7 q=low apples=12 errors=0
+[768x1024] t=53.1s PROCESSING loop=3/20 stage=1 cycle=0 harvested=12 pressed=8 jar=8/115 level=0.07 centerErr=0px inFrame=true fps=4.3 q=low apples=17 errors=0
+[768x1024] t=60.8s FILLING loop=3/20 stage=1 cycle=0 harvested=12 pressed=12 jar=9.79/115 level=0.083 centerErr=0px inFrame=true fps=4.6 q=low apples=13 errors=0
+[768x1024] console: [e12] state HARVEST_READY loop 3 stage 0
+[768x1024] t=64.4s HARVEST_READY loop=4/20 stage=1 cycle=0 harvested=12 pressed=12 jar=12/115 level=0.104 centerErr=0px inFrame=true fps=4.6 q=low apples=13 errors=0
+[768x1024] console: [autotest] loop 4/20 harvest (hold+second finger)
+[768x1024] t=65.3s HARVESTING loop=4/20 stage=1 cycle=0 harvested=12 pressed=12 jar=12/115 level=0.104 centerErr=0px inFrame=true fps=4.9 q=low apples=13 errors=0
+[768x1024] t=68.1s BASKET_READY loop=4/20 stage=1 cycle=0 harvested=16 pressed=12 jar=12/115 level=0.104 centerErr=0px inFrame=true fps=4.2 q=low apples=13 errors=0
+[768x1024] console: [autotest] loop 4/20 basket tap
+[768x1024] t=69.1s TRANSPORTING loop=4/20 stage=1 cycle=0 harvested=16 pressed=12 jar=12/115 level=0.104 centerErr=0px inFrame=true fps=4.3 q=low apples=13 errors=0
+[768x1024] t=72.9s PROCESSING loop=4/20 stage=1 cycle=0 harvested=16 pressed=12 jar=12/115 level=0.104 centerErr=0px inFrame=true fps=4.3 q=low apples=18 errors=0
+[768x1024] t=81.0s FILLING loop=4/20 stage=1 cycle=0 harvested=16 pressed=16 jar=14/115 level=0.121 centerErr=0px inFrame=true fps=4.3 q=low apples=14 errors=0
+[768x1024] console: [e12] state HARVEST_READY loop 4 stage 0
+[768x1024] t=83.9s HARVEST_READY loop=5/20 stage=1 cycle=0 harvested=16 pressed=16 jar=16/115 level=0.139 centerErr=0px inFrame=true fps=3.4 q=low apples=14 errors=0
+[768x1024] console: [autotest] loop 5/20 harvest (tap)
+[768x1024] t=85.5s HARVESTING loop=5/20 stage=1 cycle=0 harvested=16 pressed=16 jar=16/115 level=0.139 centerErr=0px inFrame=true fps=3.8 q=low apples=14 errors=0
+[768x1024] t=88.3s BASKET_READY loop=5/20 stage=1 cycle=0 harvested=20 pressed=16 jar=16/115 level=0.139 centerErr=0px inFrame=true fps=4.4 q=low apples=14 errors=0
+[768x1024] console: [autotest] loop 5/20 basket tap
+[768x1024] t=89.3s TRANSPORTING loop=5/20 stage=1 cycle=0 harvested=20 pressed=16 jar=16/115 level=0.139 centerErr=0px inFrame=true fps=4.1 q=low apples=14 errors=0
+[768x1024] t=94.0s PROCESSING loop=5/20 stage=1 cycle=0 harvested=20 pressed=16 jar=16/115 level=0.139 centerErr=0px inFrame=true fps=3.7 q=low apples=19 errors=0
+[768x1024] t=101.6s FILLING loop=5/20 stage=1 cycle=0 harvested=20 pressed=20 jar=17.37/115 level=0.149 centerErr=0px inFrame=true fps=4.6 q=low apples=17 errors=0
+[768x1024] console: [e12] stage 1 begins
+[768x1024] console: [e12] state HARVEST_READY loop 5 stage 1
+[768x1024] t=105.2s HARVEST_READY loop=6/20 stage=2 cycle=0 harvested=20 pressed=20 jar=20/115 level=0.174 centerErr=0px inFrame=true fps=4.3 q=low apples=15 errors=0
+[768x1024] console: [autotest] loop 6/20 harvest (drag)
+[768x1024] t=106.2s HARVESTING loop=6/20 stage=2 cycle=0 harvested=20 pressed=20 jar=20/115 level=0.174 centerErr=0px inFrame=true fps=4.3 q=low apples=15 errors=0
+[768x1024] t=108.9s BASKET_READY loop=6/20 stage=2 cycle=0 harvested=25 pressed=20 jar=20/115 level=0.174 centerErr=0px inFrame=true fps=4.6 q=low apples=15 errors=0
+[768x1024] console: [autotest] loop 6/20 basket tap
+[768x1024] t=109.7s TRANSPORTING loop=6/20 stage=2 cycle=0 harvested=25 pressed=20 jar=20/115 level=0.174 centerErr=0px inFrame=true fps=4.6 q=low apples=15 errors=0
+[768x1024] t=114.9s PROCESSING loop=6/20 stage=2 cycle=0 harvested=25 pressed=20 jar=20/115 level=0.174 centerErr=0px inFrame=true fps=4.3 q=low apples=20 errors=0
+[768x1024] t=121.2s FILLING loop=6/20 stage=2 cycle=0 harvested=25 pressed=25 jar=21.07/115 level=0.183 centerErr=0px inFrame=true fps=4.7 q=low apples=17 errors=0
+[768x1024] console: [e12] state HARVEST_READY loop 6 stage 1
+[768x1024] t=125.0s HARVEST_READY loop=7/20 stage=2 cycle=0 harvested=25 pressed=25 jar=25/115 level=0.217 centerErr=0px inFrame=true fps=4 q=low apples=15 errors=0
+[768x1024] console: [autotest] loop 7/20 harvest (outside+tap)
+[768x1024] t=125.9s HARVESTING loop=7/20 stage=2 cycle=0 harvested=25 pressed=25 jar=25/115 level=0.217 centerErr=0px inFrame=true fps=4.3 q=low apples=15 errors=0
+[768x1024] t=128.8s BASKET_READY loop=7/20 stage=2 cycle=0 harvested=30 pressed=25 jar=25/115 level=0.217 centerErr=0px inFrame=true fps=3.7 q=low apples=15 errors=0
+[768x1024] console: [autotest] loop 7/20 basket tap
+[768x1024] t=129.7s TRANSPORTING loop=7/20 stage=2 cycle=0 harvested=30 pressed=25 jar=25/115 level=0.217 centerErr=0px inFrame=true fps=4.3 q=low apples=15 errors=0
+[768x1024] t=134.1s PROCESSING loop=7/20 stage=2 cycle=0 harvested=30 pressed=25 jar=25/115 level=0.217 centerErr=0px inFrame=true fps=4.4 q=low apples=20 errors=0
+[768x1024] t=139.4s FILLING loop=7/20 stage=2 cycle=0 harvested=30 pressed=30 jar=25.22/115 level=0.218 centerErr=0px inFrame=true fps=4.5 q=low apples=18 errors=0
+[768x1024] console: [e12] state HARVEST_READY loop 7 stage 1
+[768x1024] t=143.1s HARVEST_READY loop=8/20 stage=2 cycle=0 harvested=30 pressed=30 jar=30/115 level=0.261 centerErr=0px inFrame=true fps=4.3 q=low apples=15 errors=0
+[768x1024] console: [autotest] loop 8/20 harvest (hold+second finger)
+[768x1024] t=144.9s HARVESTING loop=8/20 stage=2 cycle=0 harvested=30 pressed=30 jar=30/115 level=0.261 centerErr=0px inFrame=true fps=4.2 q=low apples=15 errors=0
+[768x1024] t=147.7s BASKET_READY loop=8/20 stage=2 cycle=0 harvested=35 pressed=30 jar=30/115 level=0.261 centerErr=0px inFrame=true fps=4.5 q=low apples=15 errors=0
+[768x1024] console: [autotest] loop 8/20 basket tap x3 (rapid)
+[768x1024] t=148.5s TRANSPORTING loop=8/20 stage=2 cycle=0 harvested=35 pressed=30 jar=30/115 level=0.261 centerErr=0px inFrame=true fps=4.7 q=low apples=15 errors=0
+[768x1024] t=152.5s PROCESSING loop=8/20 stage=2 cycle=0 harvested=35 pressed=30 jar=30/115 level=0.261 centerErr=0px inFrame=true fps=3.8 q=low apples=21 errors=0
+[768x1024] t=158.5s FILLING loop=8/20 stage=2 cycle=0 harvested=35 pressed=35 jar=31.36/115 level=0.27 centerErr=0px inFrame=true fps=4.6 q=low apples=16 errors=0
+[768x1024] console: [e12] state HARVEST_READY loop 8 stage 1
+[768x1024] t=162.3s HARVEST_READY loop=9/20 stage=2 cycle=0 harvested=35 pressed=35 jar=35/115 level=0.304 centerErr=0px inFrame=true fps=3.9 q=low apples=16 errors=0
+[768x1024] console: [autotest] loop 9/20 harvest (tap)
+[768x1024] t=163.2s HARVESTING loop=9/20 stage=2 cycle=0 harvested=35 pressed=35 jar=35/115 level=0.304 centerErr=0px inFrame=true fps=4.3 q=low apples=16 errors=0
+[768x1024] t=165.8s BASKET_READY loop=9/20 stage=2 cycle=0 harvested=40 pressed=35 jar=35/115 level=0.304 centerErr=0px inFrame=true fps=4.5 q=low apples=16 errors=0
+[768x1024] console: [autotest] loop 9/20 basket tap
+[768x1024] t=166.6s TRANSPORTING loop=9/20 stage=2 cycle=0 harvested=40 pressed=35 jar=35/115 level=0.304 centerErr=0px inFrame=true fps=4.9 q=low apples=16 errors=0
+[768x1024] t=170.4s PROCESSING loop=9/20 stage=2 cycle=0 harvested=40 pressed=35 jar=35/115 level=0.304 centerErr=0px inFrame=true fps=4.3 q=low apples=22 errors=0
+[768x1024] t=176.7s FILLING loop=9/20 stage=2 cycle=0 harvested=40 pressed=40 jar=36.85/115 level=0.318 centerErr=0px inFrame=true fps=4.3 q=low apples=17 errors=0
+[768x1024] console: [e12] state HARVEST_READY loop 9 stage 1
+[768x1024] t=180.3s HARVEST_READY loop=10/20 stage=2 cycle=0 harvested=40 pressed=40 jar=40/115 level=0.348 centerErr=0px inFrame=true fps=4.3 q=low apples=17 errors=0
+[768x1024] console: [autotest] loop 10/20 harvest (drag)
+[768x1024] t=181.4s HARVESTING loop=10/20 stage=2 cycle=0 harvested=40 pressed=40 jar=40/115 level=0.348 centerErr=0px inFrame=true fps=4 q=low apples=17 errors=0
+[768x1024] t=184.1s BASKET_READY loop=10/20 stage=2 cycle=0 harvested=45 pressed=40 jar=40/115 level=0.348 centerErr=0px inFrame=true fps=4.5 q=low apples=17 errors=0
+[768x1024] console: [autotest] loop 10/20 basket tap
+[768x1024] t=185.0s TRANSPORTING loop=10/20 stage=2 cycle=0 harvested=45 pressed=40 jar=40/115 level=0.348 centerErr=0px inFrame=true fps=4.7 q=low apples=17 errors=0
+[768x1024] t=188.6s PROCESSING loop=10/20 stage=2 cycle=0 harvested=45 pressed=40 jar=40/115 level=0.348 centerErr=0px inFrame=true fps=4.4 q=low apples=23 errors=0
+[768x1024] t=194.9s FILLING loop=10/20 stage=2 cycle=0 harvested=45 pressed=45 jar=41.63/115 level=0.36 centerErr=0px inFrame=true fps=4.2 q=low apples=18 errors=0
+[768x1024] console: [e12] stage 2 begins
+[768x1024] console: [e12] state HARVEST_READY loop 10 stage 2
+[768x1024] t=197.7s HARVEST_READY loop=11/20 stage=3 cycle=0 harvested=45 pressed=45 jar=45/115 level=0.391 centerErr=0px inFrame=true fps=4.4 q=low apples=18 errors=0
+[768x1024] console: [autotest] loop 11/20 harvest (outside+tap)
+[768x1024] t=199.6s HARVESTING loop=11/20 stage=3 cycle=0 harvested=45 pressed=45 jar=45/115 level=0.391 centerErr=0px inFrame=true fps=4.3 q=low apples=18 errors=0
+[768x1024] t=202.4s BASKET_READY loop=11/20 stage=3 cycle=0 harvested=51 pressed=45 jar=45/115 level=0.391 centerErr=0px inFrame=true fps=4.3 q=low apples=18 errors=0
+[768x1024] console: [autotest] loop 11/20 basket tap
+[768x1024] t=205.1s TRANSPORTING loop=11/20 stage=3 cycle=0 harvested=51 pressed=45 jar=45/115 level=0.391 centerErr=0px inFrame=true fps=4.7 q=low apples=18 errors=0
+[768x1024] t=209.6s PROCESSING loop=11/20 stage=3 cycle=0 harvested=51 pressed=45 jar=45/115 level=0.391 centerErr=0px inFrame=true fps=3.8 q=low apples=24 errors=0
+[768x1024] t=215.0s FILLING loop=11/20 stage=3 cycle=0 harvested=51 pressed=51 jar=47.42/115 level=0.409 centerErr=0px inFrame=true fps=4.5 q=low apples=19 errors=0
+[768x1024] console: [e12] state HARVEST_READY loop 11 stage 2
+[768x1024] t=217.8s HARVEST_READY loop=12/20 stage=3 cycle=0 harvested=51 pressed=51 jar=51/115 level=0.443 centerErr=0px inFrame=true fps=4.2 q=low apples=18 errors=0
+[768x1024] console: [autotest] loop 12/20 harvest (hold+second finger)
+[768x1024] t=219.7s HARVESTING loop=12/20 stage=3 cycle=0 harvested=51 pressed=51 jar=51/115 level=0.443 centerErr=0px inFrame=true fps=4.1 q=low apples=18 errors=0
+[768x1024] t=222.3s BASKET_READY loop=12/20 stage=3 cycle=0 harvested=57 pressed=51 jar=51/115 level=0.443 centerErr=0px inFrame=true fps=4.4 q=low apples=18 errors=0
+[768x1024] console: [autotest] loop 12/20 basket tap
+[768x1024] t=223.3s TRANSPORTING loop=12/20 stage=3 cycle=0 harvested=57 pressed=51 jar=51/115 level=0.443 centerErr=0px inFrame=true fps=4 q=low apples=18 errors=0
+[768x1024] t=227.0s PROCESSING loop=12/20 stage=3 cycle=0 harvested=57 pressed=51 jar=51/115 level=0.443 centerErr=0px inFrame=true fps=4.4 q=low apples=24 errors=0
+[768x1024] shot p-shot-2.jpg (state=PROCESSING loop=12 finaleT=0)
+[768x1024] t=232.7s FILLING loop=12/20 stage=3 cycle=0 harvested=57 pressed=57 jar=54.88/115 level=0.474 centerErr=0px inFrame=true fps=4.7 q=low apples=18 errors=0
+[768x1024] console: [e12] state HARVEST_READY loop 12 stage 2
+[768x1024] t=235.4s HARVEST_READY loop=13/20 stage=3 cycle=0 harvested=57 pressed=57 jar=57/115 level=0.496 centerErr=0px inFrame=true fps=4.6 q=low apples=18 errors=0
+[768x1024] console: [autotest] loop 13/20 harvest (tap)
+[768x1024] t=236.4s HARVESTING loop=13/20 stage=3 cycle=0 harvested=57 pressed=57 jar=57/115 level=0.496 centerErr=0px inFrame=true fps=4.1 q=low apples=18 errors=0
+[768x1024] t=239.2s BASKET_READY loop=13/20 stage=3 cycle=0 harvested=63 pressed=57 jar=57/115 level=0.496 centerErr=0px inFrame=true fps=4.3 q=low apples=18 errors=0
+[768x1024] console: [autotest] loop 13/20 basket tap x3 (rapid)
+[768x1024] t=240.1s TRANSPORTING loop=13/20 stage=3 cycle=0 harvested=63 pressed=57 jar=57/115 level=0.496 centerErr=0px inFrame=true fps=4.2 q=low apples=18 errors=0
+[768x1024] t=243.9s PROCESSING loop=13/20 stage=3 cycle=0 harvested=63 pressed=57 jar=57/115 level=0.496 centerErr=0px inFrame=true fps=4.5 q=low apples=26 errors=0
+[768x1024] t=249.9s FILLING loop=13/20 stage=3 cycle=0 harvested=63 pressed=63 jar=60.81/115 level=0.526 centerErr=0px inFrame=true fps=4.6 q=low apples=20 errors=0
+[768x1024] console: [e12] state HARVEST_READY loop 13 stage 2
+[768x1024] t=252.6s HARVEST_READY loop=14/20 stage=3 cycle=0 harvested=63 pressed=63 jar=63/115 level=0.548 centerErr=0px inFrame=true fps=4.6 q=low apples=20 errors=0
+[768x1024] console: [autotest] loop 14/20 harvest (drag)
+[768x1024] t=253.6s HARVESTING loop=14/20 stage=3 cycle=0 harvested=63 pressed=63 jar=63/115 level=0.548 centerErr=0px inFrame=true fps=3.9 q=low apples=20 errors=0
+[768x1024] t=256.4s BASKET_READY loop=14/20 stage=3 cycle=0 harvested=69 pressed=63 jar=63/115 level=0.548 centerErr=0px inFrame=true fps=4.3 q=low apples=20 errors=0
+[768x1024] console: [autotest] loop 14/20 basket tap
+[768x1024] t=257.3s TRANSPORTING loop=14/20 stage=3 cycle=0 harvested=69 pressed=63 jar=63/115 level=0.548 centerErr=0px inFrame=true fps=4.4 q=low apples=20 errors=0
+[768x1024] t=261.1s PROCESSING loop=14/20 stage=3 cycle=0 harvested=69 pressed=63 jar=63/115 level=0.548 centerErr=0px inFrame=true fps=3.9 q=low apples=28 errors=0
+[768x1024] t=267.3s FILLING loop=14/20 stage=3 cycle=0 harvested=69 pressed=69 jar=67/115 level=0.58 centerErr=0px inFrame=true fps=4.6 q=low apples=22 errors=0
+[768x1024] console: [e12] state HARVEST_READY loop 14 stage 2
+[768x1024] t=270.1s HARVEST_READY loop=15/20 stage=3 cycle=0 harvested=69 pressed=69 jar=69/115 level=0.6 centerErr=0px inFrame=true fps=4.4 q=low apples=22 errors=0
+[768x1024] console: [autotest] loop 15/20 harvest (outside+tap)
+[768x1024] t=270.9s HARVESTING loop=15/20 stage=3 cycle=0 harvested=69 pressed=69 jar=69/115 level=0.6 centerErr=0px inFrame=true fps=4.6 q=low apples=22 errors=0
+[768x1024] t=273.6s BASKET_READY loop=15/20 stage=3 cycle=0 harvested=75 pressed=69 jar=69/115 level=0.6 centerErr=0px inFrame=true fps=4.4 q=low apples=22 errors=0
+[768x1024] console: [autotest] loop 15/20 basket tap
+[768x1024] t=274.6s TRANSPORTING loop=15/20 stage=3 cycle=0 harvested=75 pressed=69 jar=69/115 level=0.6 centerErr=0px inFrame=true fps=3.8 q=low apples=22 errors=0
+[768x1024] t=279.7s PROCESSING loop=15/20 stage=3 cycle=0 harvested=75 pressed=69 jar=69/115 level=0.6 centerErr=0px inFrame=true fps=3.8 q=low apples=30 errors=0
+[768x1024] t=285.0s FILLING loop=15/20 stage=3 cycle=0 harvested=75 pressed=75 jar=73/115 level=0.632 centerErr=0px inFrame=true fps=4.7 q=low apples=24 errors=0
+[768x1024] console: [e12] stage 3 begins
+[768x1024] console: [e12] state HARVEST_READY loop 15 stage 3
+[768x1024] t=287.7s HARVEST_READY loop=16/20 stage=4 cycle=0 harvested=75 pressed=75 jar=75/115 level=0.652 centerErr=0px inFrame=true fps=4.3 q=low apples=24 errors=0
+[768x1024] console: [autotest] loop 16/20 harvest (hold+second finger)
+[768x1024] t=288.8s HARVESTING loop=16/20 stage=4 cycle=0 harvested=75 pressed=75 jar=75/115 level=0.652 centerErr=0px inFrame=true fps=3.6 q=low apples=24 errors=0
+[768x1024] t=291.6s BASKET_READY loop=16/20 stage=4 cycle=0 harvested=83 pressed=75 jar=75/115 level=0.652 centerErr=0px inFrame=true fps=4.3 q=low apples=24 errors=0
+[768x1024] console: [autotest] loop 16/20 basket tap
+[768x1024] t=293.8s TRANSPORTING loop=16/20 stage=4 cycle=0 harvested=83 pressed=75 jar=75/115 level=0.652 centerErr=0px inFrame=true fps=4 q=low apples=24 errors=0
+[768x1024] t=298.5s PROCESSING loop=16/20 stage=4 cycle=0 harvested=83 pressed=75 jar=75/115 level=0.652 centerErr=0px inFrame=true fps=4.4 q=low apples=32 errors=0
+[768x1024] t=303.6s FILLING loop=16/20 stage=4 cycle=0 harvested=83 pressed=83 jar=80.96/115 level=0.701 centerErr=0px inFrame=true fps=4.5 q=low apples=24 errors=0
+[768x1024] console: [e12] state HARVEST_READY loop 16 stage 3
+[768x1024] t=306.4s HARVEST_READY loop=17/20 stage=4 cycle=0 harvested=83 pressed=83 jar=83/115 level=0.722 centerErr=0px inFrame=true fps=4.4 q=low apples=24 errors=0
+[768x1024] console: [autotest] loop 17/20 harvest (tap)
+[768x1024] t=307.4s HARVESTING loop=17/20 stage=4 cycle=0 harvested=83 pressed=83 jar=83/115 level=0.722 centerErr=0px inFrame=true fps=4.5 q=low apples=24 errors=0
+[768x1024] t=310.1s BASKET_READY loop=17/20 stage=4 cycle=0 harvested=91 pressed=83 jar=83/115 level=0.722 centerErr=0px inFrame=true fps=4.3 q=low apples=24 errors=0
+[768x1024] console: [autotest] loop 17/20 basket tap
+[768x1024] t=311.0s TRANSPORTING loop=17/20 stage=4 cycle=0 harvested=91 pressed=83 jar=83/115 level=0.722 centerErr=0px inFrame=true fps=4.5 q=low apples=24 errors=0
+[768x1024] t=315.9s PROCESSING loop=17/20 stage=4 cycle=0 harvested=91 pressed=83 jar=83/115 level=0.722 centerErr=0px inFrame=true fps=3.9 q=low apples=32 errors=0
+[768x1024] t=321.2s FILLING loop=17/20 stage=4 cycle=0 harvested=91 pressed=91 jar=87.71/115 level=0.759 centerErr=0px inFrame=true fps=4.3 q=low apples=24 errors=0
+[768x1024] console: [e12] state HARVEST_READY loop 17 stage 3
+[768x1024] t=324.0s HARVEST_READY loop=18/20 stage=4 cycle=0 harvested=91 pressed=91 jar=91/115 level=0.791 centerErr=0px inFrame=true fps=3.8 q=low apples=24 errors=0
+[768x1024] console: [autotest] loop 18/20 harvest (drag)
+[768x1024] t=324.9s HARVESTING loop=18/20 stage=4 cycle=0 harvested=91 pressed=91 jar=91/115 level=0.791 centerErr=0px inFrame=true fps=4.6 q=low apples=24 errors=0
+[768x1024] t=327.6s BASKET_READY loop=18/20 stage=4 cycle=0 harvested=99 pressed=91 jar=91/115 level=0.791 centerErr=0px inFrame=true fps=4.7 q=low apples=24 errors=0
+[768x1024] console: [autotest] loop 18/20 basket tap x3 (rapid)
+[768x1024] t=328.5s TRANSPORTING loop=18/20 stage=4 cycle=0 harvested=99 pressed=91 jar=91/115 level=0.791 centerErr=0px inFrame=true fps=4.9 q=low apples=24 errors=0
+[768x1024] t=333.2s PROCESSING loop=18/20 stage=4 cycle=0 harvested=99 pressed=91 jar=91/115 level=0.791 centerErr=0px inFrame=true fps=4.4 q=low apples=24 errors=0
+[768x1024] t=337.9s FILLING loop=18/20 stage=4 cycle=0 harvested=99 pressed=99 jar=94.93/115 level=0.822 centerErr=0px inFrame=true fps=4.4 q=low apples=18 errors=0
+[768x1024] console: [e12] state HARVEST_READY loop 18 stage 3
+[768x1024] t=341.5s HARVEST_READY loop=19/20 stage=4 cycle=0 harvested=99 pressed=99 jar=99/115 level=0.861 centerErr=0px inFrame=true fps=4.3 q=low apples=16 errors=0
+[768x1024] console: [autotest] loop 19/20 harvest (outside+tap)
+[768x1024] t=342.5s HARVESTING loop=19/20 stage=4 cycle=0 harvested=99 pressed=99 jar=99/115 level=0.861 centerErr=0px inFrame=true fps=4.3 q=low apples=16 errors=0
+[768x1024] console: [autotest] loop 19/20 basket tap
+[768x1024] t=346.3s TRANSPORTING loop=19/20 stage=4 cycle=0 harvested=107 pressed=99 jar=99/115 level=0.861 centerErr=0px inFrame=true fps=4.3 q=low apples=16 errors=0
+[768x1024] t=351.0s PROCESSING loop=19/20 stage=4 cycle=0 harvested=107 pressed=99 jar=99/115 level=0.861 centerErr=0px inFrame=true fps=4.3 q=low apples=16 errors=0
+[768x1024] t=356.4s FILLING loop=19/20 stage=4 cycle=0 harvested=107 pressed=107 jar=104.93/115 level=0.909 centerErr=0px inFrame=true fps=4.5 q=low apples=8 errors=0
+[768x1024] console: [e12] state HARVEST_READY loop 19 stage 3
+[768x1024] t=358.3s HARVEST_READY loop=20/20 stage=4 cycle=0 harvested=107 pressed=107 jar=107/115 level=0.93 centerErr=0px inFrame=true fps=4.3 q=low apples=8 errors=0
+[768x1024] console: [autotest] loop 20/20 harvest (hold+second finger)
+[768x1024] t=360.1s HARVESTING loop=20/20 stage=4 cycle=0 harvested=107 pressed=107 jar=107/115 level=0.93 centerErr=0px inFrame=true fps=4.2 q=low apples=8 errors=0
+[768x1024] t=363.0s BASKET_READY loop=20/20 stage=4 cycle=0 harvested=115 pressed=107 jar=107/115 level=0.93 centerErr=0px inFrame=true fps=4.5 q=low apples=8 errors=0
+[768x1024] console: [autotest] loop 20/20 basket tap
+[768x1024] t=364.0s TRANSPORTING loop=20/20 stage=4 cycle=0 harvested=115 pressed=107 jar=107/115 level=0.93 centerErr=0px inFrame=true fps=4.6 q=low apples=8 errors=0
+[768x1024] t=369.0s PROCESSING loop=20/20 stage=4 cycle=0 harvested=115 pressed=107 jar=107/115 level=0.93 centerErr=0px inFrame=true fps=3.6 q=low apples=8 errors=0
+[768x1024] console: [e12] state FINALE loop 19 stage 3
+[768x1024] console: [e12] climax start
+[768x1024] t=373.4s FINALE loop=20/20 stage=4 cycle=0 harvested=115 pressed=115 jar=111.41/115 level=0.965 centerErr=0px inFrame=true fps=4.4 q=low apples=0 errors=0
+[768x1024] console: [e12] jar full
+[768x1024] console: [e12] wave
+[768x1024] console: [e12] climax peak
+[768x1024] shot p-shot-3.jpg (state=FINALE loop=20 finaleT=9.6)
+[768x1024] console: [e12] state AFTERGLOW loop 19 stage 3
+[768x1024] console: [e12] afterglow
+[768x1024] t=387.0s AFTERGLOW loop=20/20 stage=4 cycle=0 harvested=115 pressed=115 jar=115/115 level=1 centerErr=0px inFrame=true fps=4.4 q=low apples=0 errors=0
+[768x1024] console: [e12] transfer
+[768x1024] console: [e12] reset
+[768x1024] console: [e12] state HARVEST_READY loop 0 stage 0
+[768x1024] t=403.7s HARVEST_READY loop=1/20 stage=1 cycle=1 harvested=115 pressed=0 jar=0/115 level=0 centerErr=0px inFrame=true fps=4.9 q=low apples=12 errors=0
+[768x1024] console: [autotest] finished: replay ready (cycle 1) ignored=5 outside=5 extraTaps=8 retries=0
+[768x1024] RESULT PASS __ready=true __errors=[] consoleErrors=[] finale=true jarFull=true wavePeak=true afterglow=true reset=true replayReady=true cycle=1 harvestedTotal(last cycle)=115 flags=99/99 lamps=24/24 ignoredPointers=5 outsideTaps=5 extraTaps=8 maxCenterErr(settled)=0px framesOutOfView=0 playFps=4.3 climaxFps=4.3 elapsed=406s
+ALL PASS
