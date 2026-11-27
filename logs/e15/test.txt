@@ -1,0 +1,289 @@
+[1024x768] console: [e15] frame play d=22.7 climax d=32.9
+[1024x768] console: [autotest] start
+[1024x768] ready in 3372ms url=games/e15/index.html?autotest&q=low
+[1024x768] t=4.0s LAUNCH k=1 arrived=0/24 stage=1 stored=0 runners=0 climaxT=0 feederNdc=0.038,0.028 inFrame=true bloom=0 exp=0.86 fps=76 calls=96 q=low errors=0
+[1024x768] t=4.8s ROLLING k=1 arrived=0/24 stage=1 stored=0 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=51.6 calls=96 q=low errors=0
+[1024x768] t=5.6s MECHANISM k=1 arrived=0/24 stage=1 stored=0 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=35.7 calls=96 q=low errors=0
+[1024x768] t=6.3s ROLLING k=1 arrived=0/24 stage=1 stored=0 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=25.3 calls=96 q=low errors=0
+[1024x768] t=7.0s ARRIVE k=1 arrived=1/24 stage=1 stored=1 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=18.5 calls=96 q=low errors=0
+[1024x768] t=7.7s WAITING k=2 arrived=1/24 stage=1 stored=1 runners=0 climaxT=0 feederNdc=0.045,0.061 inFrame=true bloom=0 exp=0.86 fps=14.1 calls=99 q=low errors=0
+[1024x768] t=8.5s LAUNCH k=2 arrived=1/24 stage=1 stored=1 runners=0 climaxT=0 feederNdc=0.038,0.026 inFrame=true bloom=0 exp=0.86 fps=11.2 calls=98 q=low errors=0
+[1024x768] t=9.2s ROLLING k=2 arrived=1/24 stage=1 stored=1 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=9.2 calls=98 q=low errors=0
+[1024x768] t=9.9s MECHANISM k=2 arrived=1/24 stage=1 stored=1 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=7.9 calls=98 q=low errors=0
+[1024x768] t=11.5s ARRIVE k=2 arrived=2/24 stage=1 stored=2 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=6.3 calls=96 q=low errors=0
+[1024x768] t=12.2s WAITING k=3 arrived=2/24 stage=1 stored=2 runners=0 climaxT=0 feederNdc=0.045,0.061 inFrame=true bloom=0 exp=0.86 fps=5.8 calls=99 q=low errors=0
+[1024x768] shot shot-1.jpg (state=WAITING arrived=2 climaxT=0)
+[1024x768] t=14.3s MECHANISM k=3 arrived=2/24 stage=1 stored=2 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=98 q=low errors=0
+[1024x768] t=15.7s ARRIVE k=3 arrived=3/24 stage=1 stored=3 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.5 calls=96 q=low errors=0
+[1024x768] t=16.5s WAITING k=4 arrived=3/24 stage=1 stored=3 runners=0 climaxT=0 feederNdc=0.045,0.061 inFrame=true bloom=0 exp=0.86 fps=5.5 calls=101 q=low errors=0
+[1024x768] t=17.1s LAUNCH k=4 arrived=3/24 stage=1 stored=3 runners=0 climaxT=0 feederNdc=0.045,0.053 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=100 q=low errors=0
+[1024x768] t=17.9s ROLLING k=4 arrived=3/24 stage=1 stored=3 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=100 q=low errors=0
+[1024x768] t=18.6s MECHANISM k=4 arrived=3/24 stage=1 stored=3 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=100 q=low errors=0
+[1024x768] t=20.2s ARRIVE k=4 arrived=4/24 stage=1 stored=4 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=98 q=low errors=0
+[1024x768] t=20.8s WAITING k=5 arrived=4/24 stage=1 stored=4 runners=0 climaxT=0 feederNdc=0.045,0.061 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=101 q=low errors=0
+[1024x768] t=22.1s ROLLING k=5 arrived=4/24 stage=1 stored=4 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5 calls=100 q=low errors=0
+[1024x768] t=23.3s MECHANISM k=5 arrived=4/24 stage=1 stored=4 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5 calls=100 q=low errors=0
+[1024x768] t=24.6s ARRIVE k=5 arrived=5/24 stage=1 stored=5 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=98 q=low errors=0
+[1024x768] t=25.2s WAITING k=6 arrived=5/24 stage=1 stored=5 runners=0 climaxT=0 feederNdc=0.045,0.067 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=101 q=low errors=0
+[1024x768] t=26.4s ROLLING k=6 arrived=5/24 stage=1 stored=5 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.9 calls=100 q=low errors=0
+[1024x768] t=27.2s MECHANISM k=6 arrived=5/24 stage=1 stored=5 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.9 calls=100 q=low errors=0
+[1024x768] t=28.7s ROLLING k=6 arrived=5/24 stage=1 stored=5 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=100 q=low errors=0
+[1024x768] console: [e15] stage 2
+[1024x768] t=29.5s STAGE_UP k=6 arrived=6/24 stage=1 stored=6 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=98 q=low errors=0
+[1024x768] t=31.8s WAITING k=7 arrived=6/24 stage=2 stored=6 runners=0 climaxT=0 feederNdc=0.045,0.083 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=101 q=low errors=0
+[1024x768] t=33.2s ROLLING k=7 arrived=6/24 stage=2 stored=6 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5 calls=100 q=low errors=0
+[1024x768] t=33.9s MECHANISM k=7 arrived=6/24 stage=2 stored=6 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=100 q=low errors=0
+[1024x768] t=34.5s ROLLING k=7 arrived=6/24 stage=2 stored=6 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=100 q=low errors=0
+[1024x768] t=36.1s MECHANISM k=7 arrived=6/24 stage=2 stored=6 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=100 q=low errors=0
+[1024x768] t=36.8s ROLLING k=7 arrived=6/24 stage=2 stored=6 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=100 q=low errors=0
+[1024x768] t=37.6s ARRIVE k=7 arrived=7/24 stage=2 stored=7 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=98 q=low errors=0
+[1024x768] t=38.4s WAITING k=8 arrived=7/24 stage=2 stored=7 runners=0 climaxT=0 feederNdc=0.045,0.061 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=103 q=low errors=0
+[1024x768] t=39.2s LAUNCH k=8 arrived=7/24 stage=2 stored=7 runners=0 climaxT=0 feederNdc=0.038,0.027 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=102 q=low errors=0
+[1024x768] t=39.9s ROLLING k=8 arrived=7/24 stage=2 stored=7 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=102 q=low errors=0
+[1024x768] t=40.7s MECHANISM k=8 arrived=7/24 stage=2 stored=7 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=102 q=low errors=0
+[1024x768] t=42.1s ROLLING k=8 arrived=7/24 stage=2 stored=7 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=102 q=low errors=0
+[1024x768] t=44.4s ARRIVE k=9 arrived=8/24 stage=2 stored=8 runners=0 climaxT=0 feederNdc=0.141,0.493 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=104 q=low errors=0
+[1024x768] t=45.1s WAITING k=9 arrived=8/24 stage=2 stored=8 runners=0 climaxT=0 feederNdc=0.045,0.061 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=105 q=low errors=0
+[1024x768] t=45.9s ROLLING k=9 arrived=8/24 stage=2 stored=8 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=104 q=low errors=0
+[1024x768] t=46.7s MECHANISM k=9 arrived=8/24 stage=2 stored=8 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=104 q=low errors=0
+[1024x768] t=47.5s ROLLING k=9 arrived=8/24 stage=2 stored=8 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=104 q=low errors=0
+[1024x768] t=49.7s MECHANISM k=9 arrived=8/24 stage=2 stored=8 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=104 q=low errors=0
+[1024x768] t=50.4s ARRIVE k=9 arrived=9/24 stage=2 stored=9 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=102 q=low errors=0
+[1024x768] t=51.1s WAITING k=10 arrived=9/24 stage=2 stored=9 runners=0 climaxT=0 feederNdc=0.045,0.061 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=107 q=low errors=0
+[1024x768] t=51.9s LAUNCH k=10 arrived=9/24 stage=2 stored=9 runners=0 climaxT=0 feederNdc=0.028,0.009 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=106 q=low errors=0
+[1024x768] t=52.5s ROLLING k=10 arrived=9/24 stage=2 stored=9 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=106 q=low errors=0
+[1024x768] t=53.2s MECHANISM k=10 arrived=9/24 stage=2 stored=9 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=106 q=low errors=0
+[1024x768] t=53.8s ROLLING k=10 arrived=9/24 stage=2 stored=9 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.9 calls=106 q=low errors=0
+[1024x768] t=55.2s MECHANISM k=10 arrived=9/24 stage=2 stored=9 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=106 q=low errors=0
+[1024x768] t=56.7s ARRIVE k=10 arrived=10/24 stage=2 stored=10 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=104 q=low errors=0
+[1024x768] t=57.5s WAITING k=11 arrived=10/24 stage=2 stored=10 runners=0 climaxT=0 feederNdc=0.045,0.061 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=107 q=low errors=0
+[1024x768] t=58.9s ROLLING k=11 arrived=10/24 stage=2 stored=10 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=106 q=low errors=0
+[1024x768] t=59.6s MECHANISM k=11 arrived=10/24 stage=2 stored=10 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=106 q=low errors=0
+[1024x768] t=60.3s ROLLING k=11 arrived=10/24 stage=2 stored=10 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=106 q=low errors=0
+[1024x768] t=61.8s MECHANISM k=11 arrived=10/24 stage=2 stored=10 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=106 q=low errors=0
+[1024x768] t=63.2s ARRIVE k=11 arrived=11/24 stage=2 stored=11 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=104 q=low errors=0
+[1024x768] t=63.8s WAITING k=12 arrived=11/24 stage=2 stored=11 runners=0 climaxT=0 feederNdc=0.045,0.061 inFrame=true bloom=0 exp=0.86 fps=5 calls=107 q=low errors=0
+[1024x768] t=64.6s LAUNCH k=12 arrived=11/24 stage=2 stored=11 runners=0 climaxT=0 feederNdc=0.041,0.035 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=106 q=low errors=0
+[1024x768] t=65.3s ROLLING k=12 arrived=11/24 stage=2 stored=11 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.9 calls=106 q=low errors=0
+[1024x768] t=65.9s MECHANISM k=12 arrived=11/24 stage=2 stored=11 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5 calls=106 q=low errors=0
+[1024x768] t=66.6s ROLLING k=12 arrived=11/24 stage=2 stored=11 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5 calls=106 q=low errors=0
+[1024x768] t=68.8s MECHANISM k=12 arrived=11/24 stage=2 stored=11 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=106 q=low errors=0
+[1024x768] console: [e15] stage 3
+[1024x768] t=69.6s STAGE_UP k=12 arrived=12/24 stage=2 stored=12 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=106 q=low errors=0
+[1024x768] t=72.2s WAITING k=13 arrived=12/24 stage=3 stored=12 runners=0 climaxT=0 feederNdc=0.045,0.1 inFrame=true bloom=0 exp=0.86 fps=5 calls=111 q=low errors=0
+[1024x768] t=73.6s ROLLING k=13 arrived=12/24 stage=3 stored=12 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.9 calls=110 q=low errors=0
+[1024x768] t=79.2s MECHANISM k=13 arrived=12/24 stage=3 stored=12 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=110 q=low errors=0
+[1024x768] t=79.8s ROLLING k=13 arrived=12/24 stage=3 stored=12 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=110 q=low errors=0
+[1024x768] t=81.7s ARRIVE k=13 arrived=13/24 stage=3 stored=13 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=110 q=low errors=0
+[1024x768] t=82.3s WAITING k=14 arrived=13/24 stage=3 stored=13 runners=0 climaxT=0 feederNdc=0.045,0.061 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=115 q=low errors=0
+[1024x768] t=83.1s LAUNCH k=14 arrived=13/24 stage=3 stored=13 runners=0 climaxT=0 feederNdc=0.039,0.031 inFrame=true bloom=0 exp=0.86 fps=4.9 calls=114 q=low errors=0
+[1024x768] t=83.9s ROLLING k=14 arrived=13/24 stage=3 stored=13 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.9 calls=114 q=low errors=0
+[1024x768] t=89.4s MECHANISM k=14 arrived=13/24 stage=3 stored=13 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.3 calls=114 q=low errors=0
+[1024x768] t=90.0s ROLLING k=14 arrived=13/24 stage=3 stored=13 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.4 calls=114 q=low errors=0
+[1024x768] t=91.9s ARRIVE k=14 arrived=14/24 stage=3 stored=14 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.7 calls=112 q=low errors=0
+[1024x768] t=92.5s WAITING k=15 arrived=14/24 stage=3 stored=14 runners=0 climaxT=0 feederNdc=0.045,0.061 inFrame=true bloom=0 exp=0.86 fps=4.7 calls=117 q=low errors=0
+[1024x768] t=93.3s ROLLING k=15 arrived=14/24 stage=3 stored=14 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=116 q=low errors=0
+[1024x768] shot shot-2.jpg (state=ROLLING arrived=14 climaxT=0)
+[1024x768] t=99.5s MECHANISM k=15 arrived=14/24 stage=3 stored=14 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5 calls=116 q=low errors=0
+[1024x768] t=100.3s ROLLING k=15 arrived=14/24 stage=3 stored=14 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5 calls=116 q=low errors=0
+[1024x768] t=101.9s WAITING k=16 arrived=15/24 stage=3 stored=15 runners=0 climaxT=0 feederNdc=0.045,0.089 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=117 q=low errors=0
+[1024x768] t=103.3s ROLLING k=16 arrived=15/24 stage=3 stored=15 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5 calls=116 q=low errors=0
+[1024x768] t=107.5s MECHANISM k=16 arrived=15/24 stage=3 stored=15 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=116 q=low errors=0
+[1024x768] t=108.8s ROLLING k=16 arrived=15/24 stage=3 stored=15 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=116 q=low errors=0
+[1024x768] t=110.0s WAITING k=17 arrived=16/24 stage=3 stored=16 runners=0 climaxT=0 feederNdc=0.045,0.1 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=117 q=low errors=0
+[1024x768] t=111.3s LAUNCH k=17 arrived=16/24 stage=3 stored=16 runners=0 climaxT=0 feederNdc=0.038,0.027 inFrame=true bloom=0 exp=0.86 fps=4.7 calls=116 q=low errors=0
+[1024x768] t=111.9s ROLLING k=17 arrived=16/24 stage=3 stored=16 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=116 q=low errors=0
+[1024x768] t=117.4s MECHANISM k=17 arrived=16/24 stage=3 stored=16 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5 calls=119 q=low errors=0
+[1024x768] t=118.6s ROLLING k=17 arrived=16/24 stage=3 stored=16 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.9 calls=119 q=low errors=0
+[1024x768] t=120.1s WAITING k=18 arrived=17/24 stage=3 stored=17 runners=0 climaxT=0 feederNdc=0.045,0.066 inFrame=true bloom=0 exp=0.86 fps=4.9 calls=120 q=low errors=0
+[1024x768] t=120.9s LAUNCH k=18 arrived=17/24 stage=3 stored=17 runners=0 climaxT=0 feederNdc=0.044,0.049 inFrame=true bloom=0 exp=0.86 fps=5 calls=119 q=low errors=0
+[1024x768] t=121.5s ROLLING k=18 arrived=17/24 stage=3 stored=17 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5 calls=119 q=low errors=0
+[1024x768] t=126.9s MECHANISM k=18 arrived=17/24 stage=3 stored=17 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=119 q=low errors=0
+[1024x768] t=128.4s ROLLING k=18 arrived=17/24 stage=3 stored=17 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5 calls=119 q=low errors=0
+[1024x768] console: [e15] stage 4
+[1024x768] t=130.0s STAGE_UP k=18 arrived=18/24 stage=3 stored=18 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5 calls=117 q=low errors=0
+[1024x768] t=132.3s WAITING k=19 arrived=18/24 stage=4 stored=18 runners=0 climaxT=0 feederNdc=0.045,0.095 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=120 q=low errors=0
+[1024x768] t=133.5s LAUNCH k=19 arrived=18/24 stage=4 stored=18 runners=0 climaxT=0 feederNdc=0.028,0.008 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=119 q=low errors=0
+[1024x768] t=134.1s ROLLING k=19 arrived=18/24 stage=4 stored=17 runners=2 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=121 q=low errors=0
+[1024x768] t=138.0s MECHANISM k=19 arrived=18/24 stage=4 stored=18 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.9 calls=119 q=low errors=0
+[1024x768] t=139.4s ROLLING k=19 arrived=18/24 stage=4 stored=18 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.9 calls=119 q=low errors=0
+[1024x768] t=140.2s WAITING k=20 arrived=19/24 stage=4 stored=19 runners=0 climaxT=0 feederNdc=0.045,0.078 inFrame=true bloom=0 exp=0.86 fps=5 calls=120 q=low errors=0
+[1024x768] t=141.7s ROLLING k=20 arrived=19/24 stage=4 stored=19 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.9 calls=119 q=low errors=0
+[1024x768] t=142.3s MECHANISM k=20 arrived=19/24 stage=4 stored=18 runners=2 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=121 q=low errors=0
+[1024x768] t=143.6s ROLLING k=20 arrived=19/24 stage=4 stored=18 runners=2 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=121 q=low errors=0
+[1024x768] t=144.2s MECHANISM k=20 arrived=19/24 stage=4 stored=19 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=119 q=low errors=0
+[1024x768] t=145.5s ARRIVE k=20 arrived=20/24 stage=4 stored=20 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=117 q=low errors=0
+[1024x768] t=146.1s WAITING k=21 arrived=20/24 stage=4 stored=20 runners=0 climaxT=0 feederNdc=0.045,0.061 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=120 q=low errors=0
+[1024x768] t=146.9s ROLLING k=21 arrived=20/24 stage=4 stored=20 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.9 calls=119 q=low errors=0
+[1024x768] t=152.4s MECHANISM k=21 arrived=20/24 stage=4 stored=20 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=119 q=low errors=0
+[1024x768] t=154.0s ROLLING k=21 arrived=20/24 stage=4 stored=20 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=119 q=low errors=0
+[1024x768] t=154.6s ARRIVE k=21 arrived=21/24 stage=4 stored=21 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=117 q=low errors=0
+[1024x768] t=155.2s WAITING k=22 arrived=21/24 stage=4 stored=21 runners=0 climaxT=0 feederNdc=0.045,0.061 inFrame=true bloom=0 exp=0.86 fps=5 calls=120 q=low errors=0
+[1024x768] t=155.8s LAUNCH k=22 arrived=21/24 stage=4 stored=21 runners=0 climaxT=0 feederNdc=0.038,0.027 inFrame=true bloom=0 exp=0.86 fps=5 calls=119 q=low errors=0
+[1024x768] t=156.6s MECHANISM k=22 arrived=21/24 stage=4 stored=20 runners=2 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5 calls=121 q=low errors=0
+[1024x768] t=158.2s ARRIVE k=22 arrived=22/24 stage=4 stored=20 runners=2 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5 calls=121 q=low errors=0
+[1024x768] t=158.9s WAITING k=23 arrived=22/24 stage=4 stored=20 runners=2 climaxT=0 feederNdc=0.045,0.061 inFrame=true bloom=0 exp=0.86 fps=4.9 calls=124 q=low errors=0
+[1024x768] t=160.2s ROLLING k=23 arrived=22/24 stage=4 stored=20 runners=3 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=123 q=low errors=0
+[1024x768] t=166.2s MECHANISM k=23 arrived=22/24 stage=4 stored=22 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.9 calls=119 q=low errors=0
+[1024x768] t=167.5s ROLLING k=23 arrived=22/24 stage=4 stored=22 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.7 calls=119 q=low errors=0
+[1024x768] t=168.1s WAITING k=24 arrived=23/24 stage=4 stored=23 runners=0 climaxT=0 feederNdc=0.045,0.09 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=120 q=low errors=0
+[1024x768] console: [e15] climax start
+[1024x768] t=169.4s CLIMAX k=24 arrived=23/24 stage=4 stored=23 runners=1 climaxT=0.2 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.7 calls=119 q=low errors=0
+[1024x768] t=175.4s CLIMAX k=24 arrived=24/24 stage=4 stored=22 runners=2 climaxT=9.7 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=121 q=low errors=0
+[1024x768] console: [e15] climax peak
+[1024x768] shot shot-3.jpg (state=CLIMAX arrived=24 climaxT=13)
+[1024x768] console: [e15] afterglow
+[1024x768] t=180.8s AFTERGLOW k=24 arrived=24/24 stage=4 stored=24 runners=0 climaxT=18.5 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=118 q=low errors=0
+[1024x768] console: [e15] free play
+[1024x768] t=186.9s WAITING k=25 arrived=24/24 stage=4 stored=24 runners=0 climaxT=18.5 feederNdc=0.049,0.088 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=120 q=low errors=0
+[1024x768] console: [autotest] free play launch 1
+[1024x768] t=188.1s ROLLING k=25 arrived=24/24 stage=4 stored=24 runners=1 climaxT=18.5 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5 calls=119 q=low errors=0
+[1024x768] t=193.6s MECHANISM k=25 arrived=24/24 stage=4 stored=24 runners=1 climaxT=18.5 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.9 calls=119 q=low errors=0
+[1024x768] t=195.2s ROLLING k=25 arrived=24/24 stage=4 stored=24 runners=1 climaxT=18.5 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5 calls=119 q=low errors=0
+[1024x768] t=196.0s ARRIVE k=26 arrived=24/24 stage=4 stored=25 runners=0 climaxT=18.5 feederNdc=0.139,0.252 inFrame=true bloom=0 exp=0.86 fps=5 calls=119 q=low errors=0
+[1024x768] t=196.8s WAITING k=26 arrived=24/24 stage=4 stored=25 runners=0 climaxT=18.5 feederNdc=0.045,0.061 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=120 q=low errors=0
+[1024x768] console: [autotest] free play launch 2
+[1024x768] t=197.6s ROLLING k=26 arrived=24/24 stage=4 stored=25 runners=1 climaxT=18.5 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=119 q=low errors=0
+[1024x768] t=200.4s MECHANISM k=26 arrived=24/24 stage=4 stored=24 runners=2 climaxT=18.5 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=121 q=low errors=0
+[1024x768] console: [autotest] finished
+[1024x768] t=201.9s WAITING k=27 arrived=24/24 stage=4 stored=25 runners=1 climaxT=18.5 feederNdc=0.045,0.093 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=122 q=low errors=0
+[1024x768] RESULT PASS __ready=true __errors=[] consoleErrors=[] arrived=24/24 launched=26 stageUps=3 activations=11 bells=193 climax=true peak=true afterglow=true freePlay=true freeArrivals=2 finished=true taps=12 drags=14 ignoredPointers=1 outsideTaps=1 targetRestNdc=0.045,0.061 maxTargetNdcWhileWaiting(incl.drag)=0.049,0.100 maxTowerNdcInClimax=0.047,0.051 framesOutOfView=0 maxBloom=0 minThreshold=9 maxExposure=0.89 maxDrawCalls=135 elapsed=202s
+[768x1024] console: [e15] frame play d=34.3 climax d=36.7
+[768x1024] console: [autotest] start
+[768x1024] ready in 3017ms url=games/e15/index.html?autotest&q=low
+[768x1024] t=3.8s LAUNCH k=1 arrived=0/24 stage=1 stored=0 runners=0 climaxT=0 feederNdc=0.071,0.116 inFrame=true bloom=0 exp=0.86 fps=69.2 calls=95 q=low errors=0
+[768x1024] t=4.5s ROLLING k=1 arrived=0/24 stage=1 stored=0 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=47.3 calls=95 q=low errors=0
+[768x1024] t=5.2s MECHANISM k=1 arrived=0/24 stage=1 stored=0 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=32.9 calls=95 q=low errors=0
+[768x1024] t=5.9s ROLLING k=1 arrived=0/24 stage=1 stored=0 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=23.6 calls=95 q=low errors=0
+[768x1024] t=7.3s WAITING k=2 arrived=1/24 stage=1 stored=1 runners=0 climaxT=0 feederNdc=0.072,0.104 inFrame=true bloom=0 exp=0.86 fps=13.4 calls=98 q=low errors=0
+[768x1024] t=8.8s ROLLING k=2 arrived=1/24 stage=1 stored=1 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=8.9 calls=97 q=low errors=0
+[768x1024] t=11.6s WAITING k=3 arrived=2/24 stage=1 stored=2 runners=0 climaxT=0 feederNdc=0.072,0.084 inFrame=true bloom=0 exp=0.86 fps=6.4 calls=98 q=low errors=0
+[768x1024] shot p-shot-1.jpg (state=WAITING arrived=2 climaxT=0)
+[768x1024] t=13.5s ROLLING k=3 arrived=2/24 stage=1 stored=2 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.8 calls=97 q=low errors=0
+[768x1024] t=14.3s MECHANISM k=3 arrived=2/24 stage=1 stored=2 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.6 calls=97 q=low errors=0
+[768x1024] t=15.7s ARRIVE k=3 arrived=3/24 stage=1 stored=3 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.7 calls=95 q=low errors=0
+[768x1024] t=16.4s WAITING k=4 arrived=3/24 stage=1 stored=3 runners=0 climaxT=0 feederNdc=0.072,0.108 inFrame=true bloom=0 exp=0.86 fps=5.8 calls=100 q=low errors=0
+[768x1024] t=17.8s ROLLING k=4 arrived=3/24 stage=1 stored=3 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.8 calls=99 q=low errors=0
+[768x1024] t=18.6s MECHANISM k=4 arrived=3/24 stage=1 stored=3 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.6 calls=99 q=low errors=0
+[768x1024] t=19.9s ROLLING k=4 arrived=3/24 stage=1 stored=3 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.6 calls=99 q=low errors=0
+[768x1024] t=20.7s WAITING k=5 arrived=4/24 stage=1 stored=4 runners=0 climaxT=0 feederNdc=0.072,0.1 inFrame=true bloom=0 exp=0.86 fps=5.7 calls=100 q=low errors=0
+[768x1024] t=22.1s ROLLING k=5 arrived=4/24 stage=1 stored=4 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.6 calls=99 q=low errors=0
+[768x1024] t=23.6s MECHANISM k=5 arrived=4/24 stage=1 stored=4 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.5 calls=99 q=low errors=0
+[768x1024] t=24.4s ROLLING k=5 arrived=4/24 stage=1 stored=4 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=99 q=low errors=0
+[768x1024] t=25.1s WAITING k=6 arrived=5/24 stage=1 stored=5 runners=0 climaxT=0 feederNdc=0.072,0.089 inFrame=true bloom=0 exp=0.86 fps=5.5 calls=100 q=low errors=0
+[768x1024] t=26.5s ROLLING k=6 arrived=5/24 stage=1 stored=5 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=99 q=low errors=0
+[768x1024] t=27.3s MECHANISM k=6 arrived=5/24 stage=1 stored=5 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=99 q=low errors=0
+[768x1024] t=28.7s ROLLING k=6 arrived=5/24 stage=1 stored=5 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.5 calls=99 q=low errors=0
+[768x1024] console: [e15] stage 2
+[768x1024] t=29.5s STAGE_UP k=6 arrived=6/24 stage=1 stored=6 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.6 calls=97 q=low errors=0
+[768x1024] t=31.7s WAITING k=7 arrived=6/24 stage=2 stored=6 runners=0 climaxT=0 feederNdc=0.072,0.085 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=100 q=low errors=0
+[768x1024] t=33.0s LAUNCH k=7 arrived=6/24 stage=2 stored=6 runners=0 climaxT=0 feederNdc=0.063,0.129 inFrame=true bloom=0 exp=0.86 fps=5 calls=99 q=low errors=0
+[768x1024] t=33.8s ROLLING k=7 arrived=6/24 stage=2 stored=6 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=99 q=low errors=0
+[768x1024] t=35.3s MECHANISM k=7 arrived=6/24 stage=2 stored=6 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=99 q=low errors=0
+[768x1024] t=36.8s ROLLING k=7 arrived=6/24 stage=2 stored=6 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=99 q=low errors=0
+[768x1024] t=38.3s WAITING k=8 arrived=7/24 stage=2 stored=7 runners=0 climaxT=0 feederNdc=0.072,0.097 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=102 q=low errors=0
+[768x1024] t=39.7s ROLLING k=8 arrived=7/24 stage=2 stored=7 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.5 calls=101 q=low errors=0
+[768x1024] t=42.5s MECHANISM k=8 arrived=7/24 stage=2 stored=7 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.7 calls=101 q=low errors=0
+[768x1024] t=43.9s ROLLING k=8 arrived=7/24 stage=2 stored=7 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.7 calls=101 q=low errors=0
+[768x1024] t=44.7s WAITING k=9 arrived=8/24 stage=2 stored=8 runners=0 climaxT=0 feederNdc=0.072,0.091 inFrame=true bloom=0 exp=0.86 fps=5.6 calls=104 q=low errors=0
+[768x1024] t=46.1s ROLLING k=9 arrived=8/24 stage=2 stored=8 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.6 calls=103 q=low errors=0
+[768x1024] t=46.8s MECHANISM k=9 arrived=8/24 stage=2 stored=8 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.6 calls=103 q=low errors=0
+[768x1024] t=47.5s ROLLING k=9 arrived=8/24 stage=2 stored=8 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.7 calls=103 q=low errors=0
+[768x1024] t=49.0s MECHANISM k=9 arrived=8/24 stage=2 stored=8 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.6 calls=103 q=low errors=0
+[768x1024] t=50.4s ROLLING k=9 arrived=8/24 stage=2 stored=8 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.6 calls=103 q=low errors=0
+[768x1024] t=51.1s WAITING k=10 arrived=9/24 stage=2 stored=9 runners=0 climaxT=0 feederNdc=0.072,0.096 inFrame=true bloom=0 exp=0.86 fps=5.7 calls=106 q=low errors=0
+[768x1024] t=52.5s ROLLING k=10 arrived=9/24 stage=2 stored=9 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.7 calls=105 q=low errors=0
+[768x1024] t=54.6s MECHANISM k=10 arrived=9/24 stage=2 stored=9 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.7 calls=105 q=low errors=0
+[768x1024] t=56.8s ROLLING k=10 arrived=9/24 stage=2 stored=9 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.5 calls=105 q=low errors=0
+[768x1024] t=57.6s WAITING k=11 arrived=10/24 stage=2 stored=10 runners=0 climaxT=0 feederNdc=0.072,0.1 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=106 q=low errors=0
+[768x1024] t=59.0s ROLLING k=11 arrived=10/24 stage=2 stored=10 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.5 calls=105 q=low errors=0
+[768x1024] t=61.9s MECHANISM k=11 arrived=10/24 stage=2 stored=10 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.5 calls=105 q=low errors=0
+[768x1024] t=63.3s ROLLING k=11 arrived=10/24 stage=2 stored=10 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=105 q=low errors=0
+[768x1024] t=64.1s WAITING k=12 arrived=11/24 stage=2 stored=11 runners=0 climaxT=0 feederNdc=0.072,0.101 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=106 q=low errors=0
+[768x1024] t=65.6s ROLLING k=12 arrived=11/24 stage=2 stored=11 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=105 q=low errors=0
+[768x1024] t=66.4s MECHANISM k=12 arrived=11/24 stage=2 stored=11 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=105 q=low errors=0
+[768x1024] t=67.8s ROLLING k=12 arrived=11/24 stage=2 stored=11 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=105 q=low errors=0
+[768x1024] t=68.6s MECHANISM k=12 arrived=11/24 stage=2 stored=11 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=105 q=low errors=0
+[768x1024] console: [e15] stage 3
+[768x1024] t=70.1s STAGE_UP k=12 arrived=12/24 stage=2 stored=12 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=105 q=low errors=0
+[768x1024] t=72.6s WAITING k=13 arrived=12/24 stage=3 stored=12 runners=0 climaxT=0 feederNdc=0.072,0.084 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=110 q=low errors=0
+[768x1024] t=74.0s LAUNCH k=13 arrived=12/24 stage=3 stored=12 runners=0 climaxT=0 feederNdc=0.054,0.137 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=109 q=low errors=0
+[768x1024] t=74.7s ROLLING k=13 arrived=12/24 stage=3 stored=12 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=109 q=low errors=0
+[768x1024] t=79.8s MECHANISM k=13 arrived=12/24 stage=3 stored=12 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.5 calls=109 q=low errors=0
+[768x1024] t=80.6s ROLLING k=13 arrived=12/24 stage=3 stored=12 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=109 q=low errors=0
+[768x1024] t=82.8s WAITING k=14 arrived=13/24 stage=3 stored=13 runners=0 climaxT=0 feederNdc=0.072,0.095 inFrame=true bloom=0 exp=0.86 fps=5.5 calls=114 q=low errors=0
+[768x1024] t=84.3s ROLLING k=14 arrived=13/24 stage=3 stored=13 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=113 q=low errors=0
+[768x1024] t=92.6s WAITING k=15 arrived=14/24 stage=3 stored=14 runners=0 climaxT=0 feederNdc=0.072,0.094 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=116 q=low errors=0
+[768x1024] t=94.1s ROLLING k=15 arrived=14/24 stage=3 stored=14 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=115 q=low errors=0
+[768x1024] shot p-shot-2.jpg (state=ROLLING arrived=14 climaxT=0)
+[768x1024] t=99.8s MECHANISM k=15 arrived=14/24 stage=3 stored=14 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=115 q=low errors=0
+[768x1024] t=100.6s ROLLING k=15 arrived=14/24 stage=3 stored=14 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=115 q=low errors=0
+[768x1024] t=102.1s ARRIVE k=15 arrived=15/24 stage=3 stored=15 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=113 q=low errors=0
+[768x1024] t=102.8s WAITING k=16 arrived=15/24 stage=3 stored=15 runners=0 climaxT=0 feederNdc=0.072,0.108 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=116 q=low errors=0
+[768x1024] t=103.6s ROLLING k=16 arrived=15/24 stage=3 stored=15 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=115 q=low errors=0
+[768x1024] t=109.6s MECHANISM k=16 arrived=15/24 stage=3 stored=15 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=115 q=low errors=0
+[768x1024] t=110.3s ROLLING k=16 arrived=15/24 stage=3 stored=15 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=115 q=low errors=0
+[768x1024] t=111.8s ARRIVE k=16 arrived=16/24 stage=3 stored=16 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=113 q=low errors=0
+[768x1024] t=112.6s WAITING k=17 arrived=16/24 stage=3 stored=16 runners=0 climaxT=0 feederNdc=0.072,0.108 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=116 q=low errors=0
+[768x1024] t=113.2s LAUNCH k=17 arrived=16/24 stage=3 stored=16 runners=0 climaxT=0 feederNdc=0.07,0.119 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=115 q=low errors=0
+[768x1024] t=114.0s ROLLING k=17 arrived=16/24 stage=3 stored=16 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=115 q=low errors=0
+[768x1024] t=119.2s MECHANISM k=17 arrived=16/24 stage=3 stored=16 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=115 q=low errors=0
+[768x1024] t=120.8s ROLLING k=17 arrived=16/24 stage=3 stored=16 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=118 q=low errors=0
+[768x1024] t=121.5s ARRIVE k=17 arrived=17/24 stage=3 stored=17 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=116 q=low errors=0
+[768x1024] t=122.3s WAITING k=18 arrived=17/24 stage=3 stored=17 runners=0 climaxT=0 feederNdc=0.072,0.108 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=119 q=low errors=0
+[768x1024] t=123.1s LAUNCH k=18 arrived=17/24 stage=3 stored=17 runners=0 climaxT=0 feederNdc=0.05,0.14 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=118 q=low errors=0
+[768x1024] t=123.7s ROLLING k=18 arrived=17/24 stage=3 stored=17 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=118 q=low errors=0
+[768x1024] t=129.5s MECHANISM k=18 arrived=17/24 stage=3 stored=17 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=118 q=low errors=0
+[768x1024] t=131.0s ROLLING k=18 arrived=17/24 stage=3 stored=17 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=118 q=low errors=0
+[768x1024] console: [e15] stage 4
+[768x1024] t=131.8s STAGE_UP k=18 arrived=18/24 stage=3 stored=18 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=116 q=low errors=0
+[768x1024] t=134.1s WAITING k=19 arrived=18/24 stage=4 stored=18 runners=0 climaxT=0 feederNdc=0.072,0.084 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=119 q=low errors=0
+[768x1024] t=135.6s ROLLING k=19 arrived=18/24 stage=4 stored=18 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=118 q=low errors=0
+[768x1024] t=141.2s MECHANISM k=19 arrived=18/24 stage=4 stored=18 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.5 calls=118 q=low errors=0
+[768x1024] t=142.7s ROLLING k=19 arrived=18/24 stage=4 stored=18 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=118 q=low errors=0
+[768x1024] t=143.5s ARRIVE k=19 arrived=19/24 stage=4 stored=19 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=116 q=low errors=0
+[768x1024] t=144.1s WAITING k=20 arrived=19/24 stage=4 stored=19 runners=0 climaxT=0 feederNdc=0.072,0.108 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=119 q=low errors=0
+[768x1024] t=144.9s LAUNCH k=20 arrived=19/24 stage=4 stored=19 runners=0 climaxT=0 feederNdc=0.07,0.118 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=118 q=low errors=0
+[768x1024] t=145.6s ROLLING k=20 arrived=19/24 stage=4 stored=18 runners=2 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=120 q=low errors=0
+[768x1024] t=147.7s MECHANISM k=20 arrived=19/24 stage=4 stored=19 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5 calls=118 q=low errors=0
+[768x1024] t=149.3s WAITING k=21 arrived=20/24 stage=4 stored=20 runners=0 climaxT=0 feederNdc=0.072,0.084 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=119 q=low errors=0
+[768x1024] t=150.7s ROLLING k=21 arrived=20/24 stage=4 stored=20 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=118 q=low errors=0
+[768x1024] t=156.5s MECHANISM k=21 arrived=20/24 stage=4 stored=20 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=118 q=low errors=0
+[768x1024] t=157.3s ROLLING k=21 arrived=20/24 stage=4 stored=20 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=118 q=low errors=0
+[768x1024] t=158.1s ARRIVE k=21 arrived=21/24 stage=4 stored=21 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=116 q=low errors=0
+[768x1024] t=158.8s WAITING k=22 arrived=21/24 stage=4 stored=21 runners=0 climaxT=0 feederNdc=0.072,0.108 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=119 q=low errors=0
+[768x1024] t=160.3s ROLLING k=22 arrived=21/24 stage=4 stored=20 runners=2 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=120 q=low errors=0
+[768x1024] t=161.1s MECHANISM k=22 arrived=21/24 stage=4 stored=19 runners=3 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=122 q=low errors=0
+[768x1024] t=162.5s WAITING k=23 arrived=22/24 stage=4 stored=20 runners=2 climaxT=0 feederNdc=0.072,0.093 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=123 q=low errors=0
+[768x1024] t=164.0s ROLLING k=23 arrived=22/24 stage=4 stored=20 runners=3 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.1 calls=122 q=low errors=0
+[768x1024] t=169.2s MECHANISM k=23 arrived=22/24 stage=4 stored=22 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.5 calls=118 q=low errors=0
+[768x1024] t=170.7s ROLLING k=23 arrived=22/24 stage=4 stored=22 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=118 q=low errors=0
+[768x1024] t=171.5s ARRIVE k=23 arrived=23/24 stage=4 stored=23 runners=0 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=116 q=low errors=0
+[768x1024] t=172.1s WAITING k=24 arrived=23/24 stage=4 stored=23 runners=0 climaxT=0 feederNdc=0.072,0.108 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=119 q=low errors=0
+[768x1024] console: [e15] climax start
+[768x1024] t=172.9s CLIMAX k=24 arrived=23/24 stage=4 stored=23 runners=1 climaxT=0 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.2 calls=118 q=low errors=0
+[768x1024] t=179.3s CLIMAX k=24 arrived=24/24 stage=4 stored=22 runners=2 climaxT=10.3 feederNdc=0,0 inFrame=true bloom=0 exp=0.863 fps=4.9 calls=120 q=low errors=0
+[768x1024] console: [e15] climax peak
+[768x1024] shot p-shot-3.jpg (state=CLIMAX arrived=24 climaxT=13.3)
+[768x1024] console: [e15] afterglow
+[768x1024] t=185.0s AFTERGLOW k=24 arrived=24/24 stage=4 stored=24 runners=0 climaxT=18.5 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=4.8 calls=116 q=low errors=0
+[768x1024] console: [e15] free play
+[768x1024] t=190.2s WAITING k=25 arrived=24/24 stage=4 stored=24 runners=0 climaxT=18.5 feederNdc=0.127,0.02 inFrame=true bloom=0 exp=0.86 fps=5 calls=119 q=low errors=0
+[768x1024] console: [autotest] free play launch 1
+[768x1024] t=191.7s ROLLING k=25 arrived=24/24 stage=4 stored=24 runners=1 climaxT=18.5 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=118 q=low errors=0
+[768x1024] t=197.6s MECHANISM k=25 arrived=24/24 stage=4 stored=24 runners=1 climaxT=18.5 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=118 q=low errors=0
+[768x1024] t=198.3s ROLLING k=25 arrived=24/24 stage=4 stored=24 runners=1 climaxT=18.5 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=118 q=low errors=0
+[768x1024] t=199.7s WAITING k=26 arrived=24/24 stage=4 stored=25 runners=0 climaxT=18.5 feederNdc=0.072,0.089 inFrame=true bloom=0 exp=0.86 fps=5.3 calls=119 q=low errors=0
+[768x1024] console: [autotest] free play launch 2
+[768x1024] t=201.1s ROLLING k=26 arrived=24/24 stage=4 stored=25 runners=1 climaxT=18.5 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.5 calls=118 q=low errors=0
+[768x1024] t=204.0s MECHANISM k=26 arrived=24/24 stage=4 stored=24 runners=2 climaxT=18.5 feederNdc=0,0 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=120 q=low errors=0
+[768x1024] console: [autotest] finished
+[768x1024] t=205.5s WAITING k=27 arrived=24/24 stage=4 stored=25 runners=1 climaxT=18.5 feederNdc=0.072,0.085 inFrame=true bloom=0 exp=0.86 fps=5.4 calls=121 q=low errors=0
+[768x1024] RESULT PASS __ready=true __errors=[] consoleErrors=[] arrived=24/24 launched=26 stageUps=3 activations=11 bells=193 climax=true peak=true afterglow=true freePlay=true freeArrivals=2 finished=true taps=12 drags=14 ignoredPointers=1 outsideTaps=1 targetRestNdc=0.072,0.108 maxTargetNdcWhileWaiting(incl.drag)=0.127,0.108 maxTowerNdcInClimax=0.045,0.059 framesOutOfView=0 maxBloom=0 minThreshold=9 maxExposure=0.89 maxDrawCalls=133 elapsed=206s
+ALL PASS
+
+# smoke (forced quality, 1024x768, first marbles)
+[1024x768] RESULT PASS __ready=true __errors=[] consoleErrors=[] arrived=4/24 launched=5 stageUps=0 activations=2 bells=5 climax=false peak=false afterglow=false freePlay=false freeArrivals=0 finished=false taps=2 drags=3 ignoredPointers=1 outsideTaps=1 targetRestNdc=0.045,0.061 maxTargetNdcWhileWaiting(incl.drag)=0.045,0.100 maxTowerNdcInClimax=0.000,0.000 framesOutOfView=0 maxBloom=0.3 minThreshold=1 maxExposure=0.86 maxDrawCalls=214 elapsed=42s
+[1024x768] RESULT PASS __ready=true __errors=[] consoleErrors=[] arrived=3/24 launched=4 stageUps=0 activations=2 bells=4 climax=false peak=false afterglow=false freePlay=false freeArrivals=0 finished=false taps=1 drags=3 ignoredPointers=0 outsideTaps=1 targetRestNdc=0.045,0.061 maxTargetNdcWhileWaiting(incl.drag)=0.045,0.095 maxTowerNdcInClimax=0.000,0.000 framesOutOfView=0 maxBloom=0.3 minThreshold=1 maxExposure=0.86 maxDrawCalls=214 elapsed=41s
+# smoke (auto quality, no q, 768x1024)
+[768x1024] RESULT PASS __ready=true __errors=[] consoleErrors=[] arrived=7/24 launched=8 stageUps=1 activations=5 bells=9 climax=false peak=false afterglow=false freePlay=false freeArrivals=0 finished=false taps=3 drags=5 ignoredPointers=1 outsideTaps=1 targetRestNdc=0.072,0.108 maxTargetNdcWhileWaiting(incl.drag)=0.072,0.108 maxTowerNdcInClimax=0.000,0.000 framesOutOfView=0 maxBloom=0 minThreshold=9 maxExposure=0.86 maxDrawCalls=102 elapsed=41s
