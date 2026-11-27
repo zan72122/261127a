@@ -1,0 +1,207 @@
+# E09 autotest 2026-11-27T00:48Z  headless Chromium (Playwright) + SwiftShader (--use-angle=swiftshader --enable-unsafe-swiftshader), server: python3 -m http.server (root site/), runner: logs/e09/run-test.js
+# note: the shared ../../gf-playlog.js beacon to an external host is stubbed with HTTP 204 in this sandbox
+## full run q=low, landscape 1024x768
+[1024x768] ready in 6107ms url=games/e09/index.html?autotest&q=low
+[1024x768] t=7.3s start done=0/18 stage=1 climaxT=0 centerErr=0px fps=88.3 q=low errors=0
+[1024x768] t=9.6s idle done=0/18 stage=1 climaxT=0 centerErr=0px fps=58 q=low errors=0
+[1024x768] t=11.8s drag done=0/18 stage=1 climaxT=0 centerErr=0px fps=38.5 q=low errors=0
+[1024x768] t=14.2s lock done=0/18 stage=1 climaxT=0 centerErr=0px fps=25.8 q=low errors=0
+[1024x768] t=15.4s deploy done=0/18 stage=1 climaxT=0 centerErr=0px fps=21.3 q=low errors=0
+[1024x768] t=23.5s settle done=1/18 stage=1 climaxT=0 centerErr=0px fps=6.7 q=low errors=0
+[1024x768] t=24.6s idle done=1/18 stage=1 climaxT=0 centerErr=14px fps=5.8 q=low errors=0
+[1024x768] t=32.2s drag done=1/18 stage=1 climaxT=0 centerErr=1px fps=3.7 q=low errors=0
+[1024x768] t=34.6s deploy done=1/18 stage=1 climaxT=0 centerErr=1px fps=3.3 q=low errors=0
+[1024x768] t=43.2s settle done=2/18 stage=1 climaxT=0 centerErr=1px fps=2.7 q=low errors=0
+[1024x768] t=44.4s idle done=2/18 stage=1 climaxT=0 centerErr=9px fps=2.6 q=low errors=0
+[1024x768] shot shot-1.jpg (state=idle done=2 climaxT=0 centerErr=9px)
+[1024x768] t=51.8s drag done=2/18 stage=1 climaxT=0 centerErr=1px fps=2.6 q=low errors=0
+[1024x768] t=54.1s deploy done=2/18 stage=1 climaxT=0 centerErr=1px fps=2.6 q=low errors=0
+[1024x768] t=63.5s settle done=3/18 stage=1 climaxT=0 centerErr=1px fps=2.6 q=low errors=0
+[1024x768] t=65.4s idle done=3/18 stage=1 climaxT=0 centerErr=12px fps=2.5 q=low errors=0
+[1024x768] t=71.2s drag done=3/18 stage=1 climaxT=0 centerErr=1px fps=2.6 q=low errors=0
+[1024x768] t=76.0s idle done=3/18 stage=1 climaxT=0 centerErr=8px fps=2.5 q=low errors=0
+[1024x768] t=77.2s drag done=3/18 stage=1 climaxT=0 centerErr=8px fps=2.6 q=low errors=0
+[1024x768] t=78.3s deploy done=3/18 stage=1 climaxT=0 centerErr=8px fps=2.5 q=low errors=0
+[1024x768] t=87.9s settle done=4/18 stage=1 climaxT=0 centerErr=8px fps=2.7 q=low errors=0
+[1024x768] t=89.1s idle done=4/18 stage=1 climaxT=0 centerErr=12px fps=2.6 q=low errors=0
+[1024x768] t=96.7s drag done=4/18 stage=1 climaxT=0 centerErr=1px fps=2.6 q=low errors=0
+[1024x768] t=99.1s deploy done=4/18 stage=1 climaxT=0 centerErr=1px fps=2.6 q=low errors=0
+[1024x768] t=108.9s settle done=5/18 stage=1 climaxT=0 centerErr=1px fps=2.5 q=low errors=0
+[1024x768] t=110.0s idle done=5/18 stage=1 climaxT=0 centerErr=7px fps=2.5 q=low errors=0
+[1024x768] t=117.1s drag done=5/18 stage=1 climaxT=0 centerErr=1px fps=2.6 q=low errors=0
+[1024x768] t=120.9s deploy done=5/18 stage=1 climaxT=0 centerErr=1px fps=2.5 q=low errors=0
+[1024x768] t=131.0s stage done=6/18 stage=2 climaxT=0 centerErr=1px fps=2.4 q=low errors=0
+[1024x768] t=136.7s idle done=6/18 stage=2 climaxT=0 centerErr=2px fps=2.7 q=low errors=0
+[1024x768] t=140.4s drag done=6/18 stage=2 climaxT=0 centerErr=0px fps=3 q=low errors=0
+[1024x768] t=142.8s deploy done=6/18 stage=2 climaxT=0 centerErr=0px fps=3.2 q=low errors=0
+[1024x768] t=150.9s settle done=7/18 stage=2 climaxT=0 centerErr=0px fps=3 q=low errors=0
+[1024x768] t=152.0s idle done=7/18 stage=2 climaxT=0 centerErr=9px fps=2.9 q=low errors=0
+[1024x768] t=164.1s drag done=7/18 stage=2 climaxT=0 centerErr=0px fps=3 q=low errors=0
+[1024x768] t=166.3s lock done=7/18 stage=2 climaxT=0 centerErr=0px fps=3 q=low errors=0
+[1024x768] t=167.4s deploy done=7/18 stage=2 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[1024x768] t=174.2s settle done=8/18 stage=2 climaxT=0 centerErr=0px fps=3 q=low errors=0
+[1024x768] t=175.2s idle done=8/18 stage=2 climaxT=0 centerErr=5px fps=2.9 q=low errors=0
+[1024x768] t=181.2s drag done=8/18 stage=2 climaxT=0 centerErr=0px fps=3 q=low errors=0
+[1024x768] t=183.7s deploy done=8/18 stage=2 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[1024x768] t=191.4s settle done=9/18 stage=2 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[1024x768] t=193.2s idle done=9/18 stage=2 climaxT=0 centerErr=7px fps=2.9 q=low errors=0
+[1024x768] t=199.0s drag done=9/18 stage=2 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[1024x768] t=201.3s deploy done=9/18 stage=2 climaxT=0 centerErr=0px fps=3 q=low errors=0
+[1024x768] t=209.8s settle done=10/18 stage=2 climaxT=0 centerErr=0px fps=2.8 q=low errors=0
+[1024x768] t=211.0s idle done=10/18 stage=2 climaxT=0 centerErr=8px fps=2.9 q=low errors=0
+[1024x768] shot shot-2.jpg (state=idle done=10 climaxT=0 centerErr=8px)
+[1024x768] t=218.5s drag done=10/18 stage=2 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[1024x768] t=219.7s lock done=10/18 stage=2 climaxT=0 centerErr=0px fps=2.8 q=low errors=0
+[1024x768] t=220.7s deploy done=10/18 stage=2 climaxT=0 centerErr=0px fps=2.8 q=low errors=0
+[1024x768] t=228.5s settle done=11/18 stage=2 climaxT=0 centerErr=0px fps=2.8 q=low errors=0
+[1024x768] t=229.6s idle done=11/18 stage=2 climaxT=0 centerErr=4px fps=2.8 q=low errors=0
+[1024x768] t=235.5s drag done=11/18 stage=2 climaxT=0 centerErr=0px fps=2.8 q=low errors=0
+[1024x768] t=237.9s lock done=11/18 stage=2 climaxT=0 centerErr=0px fps=2.7 q=low errors=0
+[1024x768] t=239.0s deploy done=11/18 stage=2 climaxT=0 centerErr=0px fps=2.7 q=low errors=0
+[1024x768] t=247.5s stage done=12/18 stage=3 climaxT=0 centerErr=0px fps=2.5 q=low errors=0
+[1024x768] t=252.5s idle done=12/18 stage=3 climaxT=0 centerErr=3px fps=2.7 q=low errors=0
+[1024x768] t=256.9s drag done=12/18 stage=3 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[1024x768] t=259.0s deploy done=12/18 stage=3 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[1024x768] t=267.2s settle done=13/18 stage=3 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[1024x768] t=268.3s idle done=13/18 stage=3 climaxT=0 centerErr=5px fps=2.9 q=low errors=0
+[1024x768] t=275.3s drag done=13/18 stage=3 climaxT=0 centerErr=0px fps=2.8 q=low errors=0
+[1024x768] t=277.5s deploy done=13/18 stage=3 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[1024x768] t=285.3s settle done=14/18 stage=3 climaxT=0 centerErr=0px fps=2.7 q=low errors=0
+[1024x768] t=286.4s idle done=14/18 stage=3 climaxT=0 centerErr=3px fps=2.7 q=low errors=0
+[1024x768] t=292.5s drag done=14/18 stage=3 climaxT=0 centerErr=0px fps=2.8 q=low errors=0
+[1024x768] t=294.9s deploy done=14/18 stage=3 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[1024x768] t=302.5s settle done=15/18 stage=3 climaxT=0 centerErr=0px fps=2.8 q=low errors=0
+[1024x768] t=304.2s idle done=15/18 stage=3 climaxT=0 centerErr=6px fps=2.8 q=low errors=0
+[1024x768] t=309.9s drag done=15/18 stage=3 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[1024x768] t=312.1s deploy done=15/18 stage=3 climaxT=0 centerErr=0px fps=2.8 q=low errors=0
+[1024x768] t=320.5s settle done=16/18 stage=3 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[1024x768] t=321.7s idle done=16/18 stage=3 climaxT=0 centerErr=5px fps=2.8 q=low errors=0
+[1024x768] t=329.1s drag done=16/18 stage=3 climaxT=0 centerErr=0px fps=2.7 q=low errors=0
+[1024x768] t=331.3s deploy done=16/18 stage=3 climaxT=0 centerErr=0px fps=2.7 q=low errors=0
+[1024x768] t=338.6s settle done=17/18 stage=3 climaxT=0 centerErr=0px fps=2.7 q=low errors=0
+[1024x768] t=339.7s idle done=17/18 stage=3 climaxT=0 centerErr=4px fps=2.7 q=low errors=0
+[1024x768] t=346.8s drag done=17/18 stage=3 climaxT=0 centerErr=0px fps=2.7 q=low errors=0
+[1024x768] t=349.2s deploy done=17/18 stage=3 climaxT=0 centerErr=0px fps=2.7 q=low errors=0
+[1024x768] t=357.3s stage done=18/18 stage=3 climaxT=0 centerErr=0px fps=2.6 q=low errors=0
+[1024x768] t=363.7s climax done=18/18 stage=3 climaxT=0.4 centerErr=5px fps=2.6 q=low errors=0
+[1024x768] shot shot-3.jpg (state=climax done=18 climaxT=12.4 centerErr=0px)
+[1024x768] t=396.3s after done=18/18 stage=3 climaxT=15.2 centerErr=0px fps=2.6 q=low errors=0
+[1024x768] t=422.7s free done=18/18 stage=3 climaxT=15.2 centerErr=0px fps=2.6 q=low errors=0
+[1024x768] t=425.1s freedrag done=18/18 stage=3 climaxT=15.2 centerErr=0px fps=2.5 q=low errors=0
+[1024x768] t=427.5s freelock done=18/18 stage=3 climaxT=15.2 centerErr=0px fps=2.6 q=low errors=0
+[1024x768] t=428.7s free done=18/18 stage=3 climaxT=15.2 centerErr=0px fps=2.5 q=low errors=0
+[1024x768] RESULT PASS __ready=true __errors=[] consoleErrors=[] done=18/18 climax=true peak=true freePlay=true freeWaves=1 taps=1 ignoredPointers=1 maxCenterErr=14px elapsed=441s
+ALL PASS
+## full run q=low, portrait 768x1024
+[768x1024] ready in 6361ms url=games/e09/index.html?autotest&q=low
+[768x1024] t=7.4s start done=0/18 stage=1 climaxT=0 centerErr=0px fps=88.3 q=low errors=0
+[768x1024] t=9.8s idle done=0/18 stage=1 climaxT=0 centerErr=0px fps=54.3 q=low errors=0
+[768x1024] t=12.2s drag done=0/18 stage=1 climaxT=0 centerErr=0px fps=33.8 q=low errors=0
+[768x1024] t=14.3s deploy done=0/18 stage=1 climaxT=0 centerErr=0px fps=23 q=low errors=0
+[768x1024] t=23.2s settle done=1/18 stage=1 climaxT=0 centerErr=0px fps=6.2 q=low errors=0
+[768x1024] t=24.2s idle done=1/18 stage=1 climaxT=0 centerErr=8px fps=5.6 q=low errors=0
+[768x1024] t=30.4s drag done=1/18 stage=1 climaxT=0 centerErr=1px fps=3.9 q=low errors=0
+[768x1024] t=32.5s deploy done=1/18 stage=1 climaxT=0 centerErr=1px fps=3.5 q=low errors=0
+[768x1024] t=41.4s settle done=2/18 stage=1 climaxT=0 centerErr=1px fps=2.9 q=low errors=0
+[768x1024] t=42.4s idle done=2/18 stage=1 climaxT=0 centerErr=6px fps=2.9 q=low errors=0
+[768x1024] shot p-shot-1.jpg (state=idle done=2 climaxT=0 centerErr=6px)
+[768x1024] t=48.4s drag done=2/18 stage=1 climaxT=0 centerErr=1px fps=2.9 q=low errors=0
+[768x1024] t=50.6s deploy done=2/18 stage=1 climaxT=0 centerErr=1px fps=2.9 q=low errors=0
+[768x1024] t=59.5s settle done=3/18 stage=1 climaxT=0 centerErr=1px fps=2.8 q=low errors=0
+[768x1024] t=61.2s idle done=3/18 stage=1 climaxT=0 centerErr=12px fps=2.7 q=low errors=0
+[768x1024] t=66.9s drag done=3/18 stage=1 climaxT=0 centerErr=1px fps=2.7 q=low errors=0
+[768x1024] t=71.5s idle done=3/18 stage=1 climaxT=0 centerErr=8px fps=2.7 q=low errors=0
+[768x1024] t=72.7s drag done=3/18 stage=1 climaxT=0 centerErr=8px fps=2.7 q=low errors=0
+[768x1024] t=73.9s deploy done=3/18 stage=1 climaxT=0 centerErr=8px fps=2.6 q=low errors=0
+[768x1024] t=84.0s settle done=4/18 stage=1 climaxT=0 centerErr=8px fps=2.6 q=low errors=0
+[768x1024] t=85.2s idle done=4/18 stage=1 climaxT=0 centerErr=12px fps=2.5 q=low errors=0
+[768x1024] t=92.4s drag done=4/18 stage=1 climaxT=0 centerErr=1px fps=2.6 q=low errors=0
+[768x1024] t=93.8s lock done=4/18 stage=1 climaxT=0 centerErr=1px fps=2.7 q=low errors=0
+[768x1024] t=95.0s deploy done=4/18 stage=1 climaxT=0 centerErr=1px fps=2.7 q=low errors=0
+[768x1024] t=102.7s settle done=5/18 stage=1 climaxT=0 centerErr=1px fps=2.8 q=low errors=0
+[768x1024] t=103.9s idle done=5/18 stage=1 climaxT=0 centerErr=7px fps=2.8 q=low errors=0
+[768x1024] t=110.9s drag done=5/18 stage=1 climaxT=0 centerErr=1px fps=2.8 q=low errors=0
+[768x1024] t=114.3s deploy done=5/18 stage=1 climaxT=0 centerErr=1px fps=2.7 q=low errors=0
+[768x1024] t=123.5s stage done=6/18 stage=2 climaxT=0 centerErr=1px fps=2.8 q=low errors=0
+[768x1024] t=128.3s idle done=6/18 stage=2 climaxT=0 centerErr=2px fps=2.9 q=low errors=0
+[768x1024] t=133.1s drag done=6/18 stage=2 climaxT=0 centerErr=0px fps=3.1 q=low errors=0
+[768x1024] t=134.3s lock done=6/18 stage=2 climaxT=0 centerErr=0px fps=3.3 q=low errors=0
+[768x1024] t=135.6s deploy done=6/18 stage=2 climaxT=0 centerErr=0px fps=3.2 q=low errors=0
+[768x1024] t=142.3s settle done=7/18 stage=2 climaxT=0 centerErr=0px fps=3.2 q=low errors=0
+[768x1024] t=143.6s idle done=7/18 stage=2 climaxT=0 centerErr=7px fps=3.2 q=low errors=0
+[768x1024] t=156.3s drag done=7/18 stage=2 climaxT=0 centerErr=0px fps=3 q=low errors=0
+[768x1024] t=157.7s deploy done=7/18 stage=2 climaxT=0 centerErr=0px fps=3 q=low errors=0
+[768x1024] t=165.0s settle done=8/18 stage=2 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[768x1024] t=166.2s idle done=8/18 stage=2 climaxT=0 centerErr=5px fps=3 q=low errors=0
+[768x1024] t=172.2s drag done=8/18 stage=2 climaxT=0 centerErr=0px fps=3.1 q=low errors=0
+[768x1024] t=174.3s deploy done=8/18 stage=2 climaxT=0 centerErr=0px fps=3 q=low errors=0
+[768x1024] t=182.0s settle done=9/18 stage=2 climaxT=0 centerErr=0px fps=3 q=low errors=0
+[768x1024] t=183.5s idle done=9/18 stage=2 climaxT=0 centerErr=7px fps=3 q=low errors=0
+[768x1024] t=189.2s drag done=9/18 stage=2 climaxT=0 centerErr=0px fps=3 q=low errors=0
+[768x1024] t=190.4s lock done=9/18 stage=2 climaxT=0 centerErr=0px fps=3 q=low errors=0
+[768x1024] t=191.5s deploy done=9/18 stage=2 climaxT=0 centerErr=0px fps=3.1 q=low errors=0
+[768x1024] t=199.1s settle done=10/18 stage=2 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[768x1024] t=200.1s idle done=10/18 stage=2 climaxT=0 centerErr=8px fps=2.9 q=low errors=0
+[768x1024] shot p-shot-2.jpg (state=idle done=10 climaxT=0 centerErr=8px)
+[768x1024] t=207.5s drag done=10/18 stage=2 climaxT=0 centerErr=0px fps=2.8 q=low errors=0
+[768x1024] t=209.8s deploy done=10/18 stage=2 climaxT=0 centerErr=0px fps=2.7 q=low errors=0
+[768x1024] t=217.5s settle done=11/18 stage=2 climaxT=0 centerErr=0px fps=2.7 q=low errors=0
+[768x1024] t=218.6s idle done=11/18 stage=2 climaxT=0 centerErr=5px fps=2.8 q=low errors=0
+[768x1024] t=225.4s drag done=11/18 stage=2 climaxT=0 centerErr=0px fps=2.7 q=low errors=0
+[768x1024] t=227.7s deploy done=11/18 stage=2 climaxT=0 centerErr=0px fps=2.7 q=low errors=0
+[768x1024] t=235.3s stage done=12/18 stage=3 climaxT=0 centerErr=0px fps=2.7 q=low errors=0
+[768x1024] t=241.5s idle done=12/18 stage=3 climaxT=0 centerErr=2px fps=2.8 q=low errors=0
+[768x1024] t=245.7s drag done=12/18 stage=3 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[768x1024] t=247.8s deploy done=12/18 stage=3 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[768x1024] t=255.5s settle done=13/18 stage=3 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[768x1024] t=256.5s idle done=13/18 stage=3 climaxT=0 centerErr=5px fps=2.9 q=low errors=0
+[768x1024] t=263.5s drag done=13/18 stage=3 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[768x1024] t=264.8s lock done=13/18 stage=3 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[768x1024] t=265.9s deploy done=13/18 stage=3 climaxT=0 centerErr=0px fps=3 q=low errors=0
+[768x1024] t=272.8s settle done=14/18 stage=3 climaxT=0 centerErr=0px fps=2.8 q=low errors=0
+[768x1024] t=274.0s idle done=14/18 stage=3 climaxT=0 centerErr=3px fps=2.9 q=low errors=0
+[768x1024] t=279.5s drag done=14/18 stage=3 climaxT=0 centerErr=0px fps=3 q=low errors=0
+[768x1024] t=281.9s deploy done=14/18 stage=3 climaxT=0 centerErr=0px fps=3 q=low errors=0
+[768x1024] t=290.0s settle done=15/18 stage=3 climaxT=0 centerErr=0px fps=2.8 q=low errors=0
+[768x1024] t=291.5s idle done=15/18 stage=3 climaxT=0 centerErr=6px fps=2.8 q=low errors=0
+[768x1024] t=296.8s drag done=15/18 stage=3 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[768x1024] t=298.9s lock done=15/18 stage=3 climaxT=0 centerErr=0px fps=2.8 q=low errors=0
+[768x1024] t=300.1s deploy done=15/18 stage=3 climaxT=0 centerErr=0px fps=2.8 q=low errors=0
+[768x1024] t=307.8s settle done=16/18 stage=3 climaxT=0 centerErr=0px fps=2.8 q=low errors=0
+[768x1024] t=308.8s idle done=16/18 stage=3 climaxT=0 centerErr=5px fps=2.8 q=low errors=0
+[768x1024] t=316.1s drag done=16/18 stage=3 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[768x1024] t=317.1s lock done=16/18 stage=3 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[768x1024] t=318.2s deploy done=16/18 stage=3 climaxT=0 centerErr=0px fps=2.9 q=low errors=0
+[768x1024] t=325.1s settle done=17/18 stage=3 climaxT=0 centerErr=0px fps=2.8 q=low errors=0
+[768x1024] t=326.2s idle done=17/18 stage=3 climaxT=0 centerErr=4px fps=2.8 q=low errors=0
+[768x1024] t=333.3s drag done=17/18 stage=3 climaxT=0 centerErr=0px fps=2.7 q=low errors=0
+[768x1024] t=335.5s deploy done=17/18 stage=3 climaxT=0 centerErr=0px fps=2.7 q=low errors=0
+[768x1024] t=342.7s stage done=18/18 stage=3 climaxT=0 centerErr=0px fps=2.7 q=low errors=0
+[768x1024] t=349.6s climax done=18/18 stage=3 climaxT=0.6 centerErr=7px fps=2.7 q=low errors=0
+[768x1024] shot p-shot-3.jpg (state=climax done=18 climaxT=12.4 centerErr=0px)
+[768x1024] t=377.6s after done=18/18 stage=3 climaxT=15.2 centerErr=0px fps=3 q=low errors=0
+[768x1024] t=399.7s free done=18/18 stage=3 climaxT=15.2 centerErr=0px fps=3.1 q=low errors=0
+[768x1024] t=402.4s freedrag done=18/18 stage=3 climaxT=15.2 centerErr=0px fps=3.1 q=low errors=0
+[768x1024] t=403.6s free done=18/18 stage=3 climaxT=15.2 centerErr=0px fps=3.1 q=low errors=0
+[768x1024] RESULT PASS __ready=true __errors=[] consoleErrors=[] done=18/18 climax=true peak=true freePlay=true freeWaves=1 taps=1 ignoredPointers=1 maxCenterErr=12px elapsed=415s
+ALL PASS
+## smoke q=mid landscape (start + first pulls, ~25s)
+[1024x768] ready in 7522ms url=games/e09/index.html?autotest&q=mid
+[1024x768] t=8.9s start done=0/18 stage=1 climaxT=0 centerErr=0px fps=125.8 q=mid errors=0
+[1024x768] t=12.7s drag done=0/18 stage=1 climaxT=0 centerErr=0px fps=125.8 q=mid errors=0
+[1024x768] t=13.9s idle done=0/18 stage=1 climaxT=0 centerErr=0px fps=125.8 q=mid errors=0
+[1024x768] t=17.9s drag done=0/18 stage=1 climaxT=0 centerErr=0px fps=125.8 q=mid errors=0
+[1024x768] t=21.6s deploy done=0/18 stage=1 climaxT=0 centerErr=0px fps=125.8 q=mid errors=0
+[1024x768] shot smoke-L.jpg (state=deploy done=0 climaxT=0 centerErr=0px)
+[1024x768] RESULT PASS __ready=true __errors=[] consoleErrors=[] done=0/18 climax=false peak=false freePlay=false freeWaves=0 taps=1 ignoredPointers=0 maxCenterErr=0px elapsed=32s
+ALL PASS
+## smoke q=high landscape (start + first pulls, ~25s)
+[1024x768] ready in 8423ms url=games/e09/index.html?autotest&q=high
+[1024x768] t=9.8s start done=0/18 stage=1 climaxT=0 centerErr=0px fps=125.8 q=high errors=0
+[1024x768] t=14.6s drag done=0/18 stage=1 climaxT=0 centerErr=0px fps=125.8 q=high errors=0
+[1024x768] t=16.1s idle done=0/18 stage=1 climaxT=0 centerErr=0px fps=125.8 q=high errors=0
+[1024x768] t=20.8s drag done=0/18 stage=1 climaxT=0 centerErr=0px fps=125.8 q=high errors=0
+[1024x768] t=25.5s deploy done=0/18 stage=1 climaxT=0 centerErr=0px fps=125.8 q=high errors=0
+[1024x768] shot smoke-L.jpg (state=deploy done=0 climaxT=0 centerErr=0px)
+[1024x768] RESULT PASS __ready=true __errors=[] consoleErrors=[] done=0/18 climax=false peak=false freePlay=false freeWaves=0 taps=1 ignoredPointers=0 maxCenterErr=0px elapsed=39s
+ALL PASS
