@@ -35,3 +35,4 @@
 - 10:03 公開確認: E09 200、noindex あり、禁止語なし、サムネイル 200。公開済み 9/15。
 - 10:31 E11 完了（約30分、claude/game-e11-implementation-0vaq5y）→ 10:40 main マージ（自動チェック ok、横縦 20/20・クライマックス・フリープレイまで PASS）。
 - 10:40 クラウド起動 E12: session_017tygc3jU3wFRxMURwBSvRq。実行中: E10, E12
+- 10:42 公開確認: E11 200、noindex・禁止語なしを確認。公開済み 10/15。
