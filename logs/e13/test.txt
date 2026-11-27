@@ -1,0 +1,213 @@
+[1024x768] console: [autotest] start
+[1024x768] ready in 3346ms url=games/e13/index.html?autotest&q=low
+[1024x768] t=4.2s UNFOLDING attached=0/24 stage=0 climaxT=0 centerNdc=0.29 inFrame=true fov=45 bloom=0.3 exp=0.8 fps=6.7 q=low errors=0
+[1024x768] t=6.6s ATTACHING attached=0/24 stage=0 climaxT=0 centerNdc=0.29 inFrame=true fov=44 bloom=0.49 exp=0.8 fps=6.9 q=low errors=0
+[1024x768] t=8.2s WAITING attached=1/24 stage=0 climaxT=0 centerNdc=0.29 inFrame=true fov=44 bloom=0.37 exp=0.8 fps=7.5 q=low errors=0
+[1024x768] t=10.4s UNFOLDING attached=1/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=7.1 q=low errors=0
+[1024x768] t=12.8s ATTACHING attached=1/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.44 exp=0.8 fps=7.1 q=low errors=0
+[1024x768] t=14.3s WAITING attached=2/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.39 exp=0.8 fps=7.1 q=low errors=0
+[1024x768] shot shot-1.jpg (state=WAITING attached=2 climaxT=0)
+[1024x768] t=16.9s UNFOLDING attached=2/24 stage=0 climaxT=0 centerNdc=0.35 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=7.1 q=low errors=0
+[1024x768] t=19.1s ATTACHING attached=2/24 stage=0 climaxT=0 centerNdc=0.35 inFrame=true fov=44 bloom=0.38 exp=0.8 fps=6 q=low errors=0
+[1024x768] t=20.6s WAITING attached=3/24 stage=0 climaxT=0 centerNdc=0.35 inFrame=true fov=44 bloom=0.46 exp=0.8 fps=6.7 q=low errors=0
+[1024x768] t=23.1s DRAGGING attached=3/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=7.5 q=low errors=0
+[1024x768] t=23.8s UNFOLDING attached=3/24 stage=0 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=7.1 q=low errors=0
+[1024x768] t=26.1s ATTACHING attached=3/24 stage=0 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.49 exp=0.8 fps=6.5 q=low errors=0
+[1024x768] t=27.7s WAITING attached=4/24 stage=0 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.39 exp=0.8 fps=6 q=low errors=0
+[1024x768] t=30.1s UNFOLDING attached=4/24 stage=0 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=7.1 q=low errors=0
+[1024x768] t=33.2s ATTACHING attached=4/24 stage=0 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.49 exp=0.8 fps=5.6 q=low errors=0
+[1024x768] t=34.8s WAITING attached=5/24 stage=0 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.39 exp=0.8 fps=6.2 q=low errors=0
+[1024x768] t=37.0s DRAGGING attached=5/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.9 q=low errors=0
+[1024x768] t=37.7s UNFOLDING attached=5/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.9 q=low errors=0
+[1024x768] t=40.1s ATTACHING attached=5/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.52 exp=0.8 fps=6.7 q=low errors=0
+[1024x768] t=41.6s WAITING attached=6/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.37 exp=0.8 fps=6.3 q=low errors=0
+[1024x768] t=44.0s UNFOLDING attached=6/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=7.3 q=low errors=0
+[1024x768] t=46.5s ATTACHING attached=6/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.44 exp=0.8 fps=5.9 q=low errors=0
+[1024x768] t=48.0s WAITING attached=7/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.46 exp=0.8 fps=6 q=low errors=0
+[1024x768] t=51.0s UNFOLDING attached=7/24 stage=0 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.7 q=low errors=0
+[1024x768] t=53.4s ATTACHING attached=7/24 stage=0 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.38 exp=0.8 fps=5.6 q=low errors=0
+[1024x768] t=55.2s STAGE_CELEBRATION attached=8/24 stage=0 climaxT=0 centerNdc=0.34 inFrame=true fov=45 bloom=0.55 exp=0.8 fps=5.6 q=low errors=0
+[1024x768] t=64.1s WAITING attached=8/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=66 bloom=0.38 exp=0.8 fps=6.2 q=low errors=0
+[1024x768] t=66.5s DRAGGING attached=8/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.3 q=low errors=0
+[1024x768] t=67.3s UNFOLDING attached=8/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6 q=low errors=0
+[1024x768] t=69.7s ATTACHING attached=8/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.44 exp=0.8 fps=5.8 q=low errors=0
+[1024x768] t=71.3s WAITING attached=9/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.46 exp=0.8 fps=5.8 q=low errors=0
+[1024x768] t=74.5s UNFOLDING attached=9/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.3 q=low errors=0
+[1024x768] t=76.8s ATTACHING attached=9/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.38 exp=0.8 fps=5.6 q=low errors=0
+[1024x768] t=79.1s WAITING attached=10/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.39 exp=0.8 fps=5.1 q=low errors=0
+[1024x768] t=81.5s DRAGGING attached=10/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.8 q=low errors=0
+[1024x768] t=82.3s UNFOLDING attached=10/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.7 q=low errors=0
+[1024x768] t=84.5s ATTACHING attached=10/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.44 exp=0.8 fps=5.5 q=low errors=0
+[1024x768] t=86.0s WAITING attached=11/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.52 exp=0.8 fps=4.7 q=low errors=0
+[1024x768] t=89.2s DRAGGING attached=11/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.3 q=low errors=0
+[1024x768] t=89.9s UNFOLDING attached=11/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.6 q=low errors=0
+[1024x768] t=92.4s ATTACHING attached=11/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.44 exp=0.8 fps=4.9 q=low errors=0
+[1024x768] t=93.9s WAITING attached=12/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.52 exp=0.8 fps=5.3 q=low errors=0
+[1024x768] t=97.1s DRAGGING attached=12/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.7 q=low errors=0
+[1024x768] t=97.9s UNFOLDING attached=12/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6 q=low errors=0
+[1024x768] shot shot-2.jpg (state=UNFOLDING attached=12 climaxT=0)
+[1024x768] t=99.8s ATTACHING attached=12/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.1 q=low errors=0
+[1024x768] t=102.1s WAITING attached=13/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.42 exp=0.8 fps=4.9 q=low errors=0
+[1024x768] t=105.2s UNFOLDING attached=13/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.2 q=low errors=0
+[1024x768] t=107.6s ATTACHING attached=13/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.3 q=low errors=0
+[1024x768] t=109.9s WAITING attached=14/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.42 exp=0.8 fps=5.5 q=low errors=0
+[1024x768] t=113.2s UNFOLDING attached=14/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6 q=low errors=0
+[1024x768] t=115.6s ATTACHING attached=14/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.1 q=low errors=0
+[1024x768] t=118.1s WAITING attached=15/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.42 exp=0.8 fps=4.7 q=low errors=0
+[1024x768] t=121.2s UNFOLDING attached=15/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.2 q=low errors=0
+[1024x768] t=124.6s ATTACHING attached=15/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.49 exp=0.8 fps=4.3 q=low errors=0
+[1024x768] t=126.2s STAGE_CELEBRATION attached=16/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=45 bloom=0.55 exp=0.8 fps=4.6 q=low errors=0
+[1024x768] t=135.5s WAITING attached=16/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=64 bloom=0.36 exp=0.8 fps=5.3 q=low errors=0
+[1024x768] t=137.9s DRAGGING attached=16/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.3 q=low errors=0
+[1024x768] t=138.7s UNFOLDING attached=16/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.5 q=low errors=0
+[1024x768] t=141.2s ATTACHING attached=16/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=4 q=low errors=0
+[1024x768] t=143.8s WAITING attached=17/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.46 exp=0.8 fps=4.3 q=low errors=0
+[1024x768] t=147.0s DRAGGING attached=17/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=4.9 q=low errors=0
+[1024x768] t=147.7s UNFOLDING attached=17/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.8 q=low errors=0
+[1024x768] t=150.3s ATTACHING attached=17/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.44 exp=0.8 fps=4.2 q=low errors=0
+[1024x768] t=152.5s WAITING attached=18/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.46 exp=0.8 fps=4.2 q=low errors=0
+[1024x768] t=155.7s DRAGGING attached=18/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.3 q=low errors=0
+[1024x768] t=156.5s UNFOLDING attached=18/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.5 q=low errors=0
+[1024x768] t=159.1s ATTACHING attached=18/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=3.4 q=low errors=0
+[1024x768] t=162.1s WAITING attached=19/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.42 exp=0.8 fps=4.3 q=low errors=0
+[1024x768] t=165.3s DRAGGING attached=19/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5 q=low errors=0
+[1024x768] t=166.1s UNFOLDING attached=19/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=4.9 q=low errors=0
+[1024x768] t=168.5s ATTACHING attached=19/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=4.3 q=low errors=0
+[1024x768] t=171.5s WAITING attached=20/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.42 exp=0.8 fps=4 q=low errors=0
+[1024x768] t=174.9s DRAGGING attached=20/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.1 q=low errors=0
+[1024x768] t=175.7s UNFOLDING attached=20/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=4.4 q=low errors=0
+[1024x768] t=178.9s ATTACHING attached=20/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.44 exp=0.8 fps=3.9 q=low errors=0
+[1024x768] t=181.3s WAITING attached=21/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.46 exp=0.8 fps=3.9 q=low errors=0
+[1024x768] t=184.7s DRAGGING attached=21/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6 q=low errors=0
+[1024x768] t=185.4s UNFOLDING attached=21/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.5 q=low errors=0
+[1024x768] t=187.9s ATTACHING attached=21/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.44 exp=0.8 fps=4.1 q=low errors=0
+[1024x768] t=190.4s WAITING attached=22/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.42 exp=0.8 fps=4.2 q=low errors=0
+[1024x768] t=193.6s DRAGGING attached=22/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5 q=low errors=0
+[1024x768] t=194.5s UNFOLDING attached=22/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=4.7 q=low errors=0
+[1024x768] t=197.0s ATTACHING attached=22/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.38 exp=0.8 fps=4.1 q=low errors=0
+[1024x768] t=199.3s WAITING attached=23/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.52 exp=0.8 fps=3.9 q=low errors=0
+[1024x768] t=203.2s DRAGGING attached=23/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.5 q=low errors=0
+[1024x768] t=204.0s UNFOLDING attached=23/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.1 q=low errors=0
+[1024x768] t=207.9s ATTACHING attached=23/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.38 exp=0.8 fps=4.2 q=low errors=0
+[1024x768] console: [e13] climax start
+[1024x768] t=210.3s CLIMAX attached=24/24 stage=2 climaxT=0.1 centerNdc=0.34 inFrame=true fov=44 bloom=0.53 exp=0.8 fps=3.8 q=low errors=0
+[1024x768] shot shot-3.jpg (state=CLIMAX attached=24 climaxT=6)
+[1024x768] console: [e13] free play
+[1024x768] t=241.1s FREE_PLAY attached=24/24 stage=2 climaxT=12.6 centerNdc=0 inFrame=true fov=70 bloom=0.32 exp=0.8 fps=4.4 q=low errors=0
+[1024x768] console: [e13] afterglow done
+[1024x768] console: [autotest] free play touch 1
+[1024x768] console: [autotest] free play touch 2
+[1024x768] console: [autotest] free play touch 3
+[1024x768] console: [autotest] finished
+[1024x768] RESULT PASS __ready=true __errors=[] consoleErrors=[] attached=24/24 stageCelebrations=2 climax=true peak=true afterglow=true freePlay=true freeTouches=3 taps=6 drags=18 ignoredPointers=1 outsideTaps=1 maxTargetNdcWhileWaiting=0.35 framesOutOfView=0 maxBloom=0.82 maxExposure=0.86 elapsed=280s
+ALL PASS
+[768x1024] console: [autotest] start
+[768x1024] ready in 3411ms url=games/e13/index.html?autotest&q=low
+[768x1024] t=4.2s UNFOLDING attached=0/24 stage=0 climaxT=0 centerNdc=0.29 inFrame=true fov=45 bloom=0.3 exp=0.8 fps=7.7 q=low errors=0
+[768x1024] t=6.6s ATTACHING attached=0/24 stage=0 climaxT=0 centerNdc=0.29 inFrame=true fov=44 bloom=0.52 exp=0.8 fps=6.5 q=low errors=0
+[768x1024] t=8.1s WAITING attached=1/24 stage=0 climaxT=0 centerNdc=0.29 inFrame=true fov=44 bloom=0.35 exp=0.8 fps=7.1 q=low errors=0
+[768x1024] t=9.6s DRAGGING attached=1/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=8.6 q=low errors=0
+[768x1024] t=10.4s UNFOLDING attached=1/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=7.7 q=low errors=0
+[768x1024] t=11.9s ATTACHING attached=1/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=7.1 q=low errors=0
+[768x1024] t=13.6s WAITING attached=2/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.42 exp=0.8 fps=7.3 q=low errors=0
+[768x1024] shot p-shot-1.jpg (state=WAITING attached=2 climaxT=0)
+[768x1024] t=16.0s UNFOLDING attached=2/24 stage=0 climaxT=0 centerNdc=0.35 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=8.1 q=low errors=0
+[768x1024] t=18.4s ATTACHING attached=2/24 stage=0 climaxT=0 centerNdc=0.35 inFrame=true fov=44 bloom=0.49 exp=0.8 fps=6.7 q=low errors=0
+[768x1024] t=20.0s WAITING attached=3/24 stage=0 climaxT=0 centerNdc=0.35 inFrame=true fov=44 bloom=0.37 exp=0.8 fps=7.1 q=low errors=0
+[768x1024] t=22.3s UNFOLDING attached=3/24 stage=0 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=7.7 q=low errors=0
+[768x1024] t=24.6s ATTACHING attached=3/24 stage=0 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.49 exp=0.8 fps=7.1 q=low errors=0
+[768x1024] t=26.2s WAITING attached=4/24 stage=0 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.39 exp=0.8 fps=5.8 q=low errors=0
+[768x1024] t=28.6s UNFOLDING attached=4/24 stage=0 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=7.7 q=low errors=0
+[768x1024] t=31.0s ATTACHING attached=4/24 stage=0 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.44 exp=0.8 fps=6.2 q=low errors=0
+[768x1024] t=32.7s WAITING attached=5/24 stage=0 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.42 exp=0.8 fps=6.2 q=low errors=0
+[768x1024] t=35.0s UNFOLDING attached=5/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=8 q=low errors=0
+[768x1024] t=37.4s ATTACHING attached=5/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.38 exp=0.8 fps=6 q=low errors=0
+[768x1024] t=39.1s WAITING attached=6/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.46 exp=0.8 fps=6.2 q=low errors=0
+[768x1024] t=41.6s DRAGGING attached=6/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=7.5 q=low errors=0
+[768x1024] t=42.4s UNFOLDING attached=6/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=7.3 q=low errors=0
+[768x1024] t=44.1s ATTACHING attached=6/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.3 q=low errors=0
+[768x1024] t=46.4s WAITING attached=7/24 stage=0 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.37 exp=0.8 fps=6.5 q=low errors=0
+[768x1024] t=48.6s DRAGGING attached=7/24 stage=0 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.5 q=low errors=0
+[768x1024] t=49.4s UNFOLDING attached=7/24 stage=0 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=7.1 q=low errors=0
+[768x1024] t=52.0s ATTACHING attached=7/24 stage=0 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.52 exp=0.8 fps=5.6 q=low errors=0
+[768x1024] t=53.7s STAGE_CELEBRATION attached=8/24 stage=0 climaxT=0 centerNdc=0.34 inFrame=true fov=54 bloom=0.52 exp=0.8 fps=5.6 q=low errors=0
+[768x1024] t=62.6s WAITING attached=8/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=80 bloom=0.38 exp=0.8 fps=5.6 q=low errors=0
+[768x1024] t=65.6s UNFOLDING attached=8/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.9 q=low errors=0
+[768x1024] t=67.9s ATTACHING attached=8/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.6 q=low errors=0
+[768x1024] t=70.2s WAITING attached=9/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.39 exp=0.8 fps=5.3 q=low errors=0
+[768x1024] t=72.5s DRAGGING attached=9/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.5 q=low errors=0
+[768x1024] t=73.3s UNFOLDING attached=9/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.7 q=low errors=0
+[768x1024] t=75.6s ATTACHING attached=9/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.44 exp=0.8 fps=5.5 q=low errors=0
+[768x1024] t=77.3s WAITING attached=10/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.46 exp=0.8 fps=5.5 q=low errors=0
+[768x1024] t=80.4s UNFOLDING attached=10/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.3 q=low errors=0
+[768x1024] t=82.9s ATTACHING attached=10/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.1 q=low errors=0
+[768x1024] t=85.4s WAITING attached=11/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.42 exp=0.8 fps=5.3 q=low errors=0
+[768x1024] t=87.8s DRAGGING attached=11/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.5 q=low errors=0
+[768x1024] t=88.5s UNFOLDING attached=11/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.5 q=low errors=0
+[768x1024] t=90.9s ATTACHING attached=11/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.38 exp=0.8 fps=5.5 q=low errors=0
+[768x1024] t=93.1s WAITING attached=12/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.39 exp=0.8 fps=5.3 q=low errors=0
+[768x1024] t=95.4s DRAGGING attached=12/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.7 q=low errors=0
+[768x1024] t=96.1s UNFOLDING attached=12/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.5 q=low errors=0
+[768x1024] shot p-shot-2.jpg (state=UNFOLDING attached=12 climaxT=0)
+[768x1024] t=98.7s ATTACHING attached=12/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.44 exp=0.8 fps=5.1 q=low errors=0
+[768x1024] t=100.2s WAITING attached=13/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.52 exp=0.8 fps=5.5 q=low errors=0
+[768x1024] t=103.3s DRAGGING attached=13/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.5 q=low errors=0
+[768x1024] t=104.1s UNFOLDING attached=13/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.3 q=low errors=0
+[768x1024] t=106.6s ATTACHING attached=13/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.44 exp=0.8 fps=4.9 q=low errors=0
+[768x1024] t=108.2s WAITING attached=14/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.52 exp=0.8 fps=5.5 q=low errors=0
+[768x1024] t=111.3s DRAGGING attached=14/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.7 q=low errors=0
+[768x1024] t=112.1s UNFOLDING attached=14/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.3 q=low errors=0
+[768x1024] t=114.5s ATTACHING attached=14/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.44 exp=0.8 fps=4.9 q=low errors=0
+[768x1024] t=116.1s WAITING attached=15/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.52 exp=0.8 fps=4.7 q=low errors=0
+[768x1024] t=119.4s DRAGGING attached=15/24 stage=1 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.8 q=low errors=0
+[768x1024] t=120.2s UNFOLDING attached=15/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6 q=low errors=0
+[768x1024] t=122.7s ATTACHING attached=15/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.38 exp=0.8 fps=4.6 q=low errors=0
+[768x1024] t=125.2s STAGE_CELEBRATION attached=16/24 stage=1 climaxT=0 centerNdc=0.34 inFrame=true fov=51 bloom=0.53 exp=0.8 fps=4.9 q=low errors=0
+[768x1024] t=134.3s WAITING attached=16/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=77 bloom=0.36 exp=0.8 fps=5.1 q=low errors=0
+[768x1024] t=137.6s UNFOLDING attached=16/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.8 q=low errors=0
+[768x1024] t=140.1s ATTACHING attached=16/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.38 exp=0.8 fps=4.7 q=low errors=0
+[768x1024] t=142.7s WAITING attached=17/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.39 exp=0.8 fps=4.7 q=low errors=0
+[768x1024] t=145.8s UNFOLDING attached=17/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.5 q=low errors=0
+[768x1024] t=148.4s ATTACHING attached=17/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.38 exp=0.8 fps=4.6 q=low errors=0
+[768x1024] t=151.1s WAITING attached=18/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.42 exp=0.8 fps=4.3 q=low errors=0
+[768x1024] t=154.4s DRAGGING attached=18/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.6 q=low errors=0
+[768x1024] t=155.2s UNFOLDING attached=18/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.3 q=low errors=0
+[768x1024] t=157.7s ATTACHING attached=18/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.38 exp=0.8 fps=4.4 q=low errors=0
+[768x1024] t=160.0s WAITING attached=19/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.52 exp=0.8 fps=3.9 q=low errors=0
+[768x1024] t=164.0s DRAGGING attached=19/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5 q=low errors=0
+[768x1024] t=164.7s UNFOLDING attached=19/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.1 q=low errors=0
+[768x1024] t=167.0s ATTACHING attached=19/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.38 exp=0.8 fps=4 q=low errors=0
+[768x1024] t=169.3s WAITING attached=20/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.52 exp=0.8 fps=4.1 q=low errors=0
+[768x1024] t=173.5s UNFOLDING attached=20/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=4.9 q=low errors=0
+[768x1024] t=176.6s ATTACHING attached=20/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.38 exp=0.8 fps=3.8 q=low errors=0
+[768x1024] t=178.9s WAITING attached=21/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.52 exp=0.8 fps=3.9 q=low errors=0
+[768x1024] t=182.9s DRAGGING attached=21/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.3 q=low errors=0
+[768x1024] t=183.7s UNFOLDING attached=21/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.5 q=low errors=0
+[768x1024] t=186.1s ATTACHING attached=21/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.38 exp=0.8 fps=4.3 q=low errors=0
+[768x1024] t=188.4s WAITING attached=22/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.52 exp=0.8 fps=3.6 q=low errors=0
+[768x1024] t=191.8s DRAGGING attached=22/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=6.2 q=low errors=0
+[768x1024] t=192.5s UNFOLDING attached=22/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5 q=low errors=0
+[768x1024] t=195.0s ATTACHING attached=22/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=4.1 q=low errors=0
+[768x1024] t=198.1s WAITING attached=23/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.42 exp=0.8 fps=3.5 q=low errors=0
+[768x1024] t=201.2s DRAGGING attached=23/24 stage=2 climaxT=0 centerNdc=0.33 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.6 q=low errors=0
+[768x1024] t=202.0s UNFOLDING attached=23/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=5.3 q=low errors=0
+[768x1024] t=206.2s ATTACHING attached=23/24 stage=2 climaxT=0 centerNdc=0.34 inFrame=true fov=44 bloom=0.3 exp=0.8 fps=3.5 q=low errors=0
+[768x1024] console: [e13] climax start
+[768x1024] t=208.7s CLIMAX attached=24/24 stage=2 climaxT=0.1 centerNdc=0.34 inFrame=true fov=44 bloom=0.53 exp=0.8 fps=3.9 q=low errors=0
+[768x1024] shot p-shot-3.jpg (state=CLIMAX attached=24 climaxT=6.3)
+[768x1024] console: [e13] free play
+[768x1024] t=240.2s FREE_PLAY attached=24/24 stage=2 climaxT=12.6 centerNdc=0 inFrame=true fov=86 bloom=0.32 exp=0.8 fps=4.5 q=low errors=0
+[768x1024] console: [e13] afterglow done
+[768x1024] console: [autotest] free play touch 1
+[768x1024] console: [autotest] free play touch 2
+[768x1024] console: [autotest] free play touch 3
+[768x1024] console: [autotest] finished
+[768x1024] RESULT PASS __ready=true __errors=[] consoleErrors=[] attached=24/24 stageCelebrations=2 climax=true peak=true afterglow=true freePlay=true freeTouches=3 taps=6 drags=18 ignoredPointers=1 outsideTaps=1 maxTargetNdcWhileWaiting=0.35 framesOutOfView=0 maxBloom=0.82 maxExposure=0.86 elapsed=280s
+ALL PASS
+
+# smoke after final tweaks (q=low/mid/high, 1024x768, first panels)
+[1024x768] RESULT PASS __ready=true __errors=[] consoleErrors=[] attached=2/24 stageCelebrations=0 climax=false peak=false afterglow=false freePlay=false freeTouches=0 taps=1 drags=2 ignoredPointers=0 outsideTaps=0 maxTargetNdcWhileWaiting=0.33 framesOutOfView=0 maxBloom=0.58 maxExposure=0.8 elapsed=16s
+[1024x768] RESULT PASS __ready=true __errors=[] consoleErrors=[] attached=1/24 stageCelebrations=0 climax=false peak=false afterglow=false freePlay=false freeTouches=0 taps=1 drags=1 ignoredPointers=0 outsideTaps=0 maxTargetNdcWhileWaiting=0.33 framesOutOfView=0 maxBloom=0.59 maxExposure=0.8 elapsed=16s
+[1024x768] RESULT PASS __ready=true __errors=[] consoleErrors=[] attached=1/24 stageCelebrations=0 climax=false peak=false afterglow=false freePlay=false freeTouches=0 taps=0 drags=1 ignoredPointers=0 outsideTaps=0 maxTargetNdcWhileWaiting=0.29 framesOutOfView=0 maxBloom=0.6 maxExposure=0.8 elapsed=15s
+# reset check (768x1024, q=low, pre=24&ct=12 -> free play -> tap small scroll)
+reset at [ 384, 624 ] {"s":"READY","a":0,"resets":1,"e":[]} consoleErrors []
