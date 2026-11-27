@@ -1,0 +1,116 @@
+[1024x768] ready in 4528ms url=games/e08/index.html?autotest&q=low
+[1024x768] t=5.6s game=2.1s SPIN target=0 spun=1/15 climaxT=0 fps=40.2 q=low waves=1 seeds=23 errors=0
+[1024x768] t=14.0s game=6.9s MOVE target=1 spun=1/15 climaxT=0 fps=13.6 q=low waves=3 seeds=53 errors=0
+[1024x768] t=20.1s game=10.3s WAIT target=1 spun=1/15 climaxT=0 fps=6.8 q=low waves=3 seeds=23 errors=0
+[1024x768] t=32.8s game=17.7s SPIN target=1 spun=2/15 climaxT=0 fps=2.6 q=low waves=1 seeds=22 errors=0
+[1024x768] shot shot-1.jpg (state=SPIN spun=2 climaxT=0)
+[1024x768] t=41.5s game=22.8s MOVE target=2 spun=2/15 climaxT=0 fps=2 q=low waves=2 seeds=34 errors=0
+[1024x768] t=47.5s game=26.2s WAIT target=2 spun=2/15 climaxT=0 fps=1.8 q=low waves=2 seeds=10 errors=0
+[1024x768] t=50.9s game=28.3s SPIN target=2 spun=3/15 climaxT=0 fps=1.8 q=low waves=3 seeds=25 errors=0
+[1024x768] t=61.1s game=33.7s MOVE target=3 spun=3/15 climaxT=0 fps=1.7 q=low waves=3 seeds=48 errors=0
+[1024x768] t=65.9s game=36.4s WAIT target=3 spun=3/15 climaxT=0 fps=1.7 q=low waves=3 seeds=25 errors=0
+[1024x768] t=69.5s game=38.5s SPIN target=3 spun=4/15 climaxT=0 fps=1.7 q=low waves=4 seeds=34 errors=0
+[1024x768] t=79.9s game=43.9s MOVE target=4 spun=4/15 climaxT=0 fps=1.7 q=low waves=3 seeds=31 errors=0
+[1024x768] t=84.8s game=46.6s WAIT target=4 spun=4/15 climaxT=0 fps=1.7 q=low waves=2 seeds=14 errors=0
+[1024x768] t=88.4s game=48.7s SPIN target=4 spun=5/15 climaxT=0 fps=1.7 q=low waves=3 seeds=25 errors=0
+[1024x768] t=106.7s game=57.5s MOVE target=5 spun=5/15 climaxT=0 fps=1.4 q=low waves=8 seeds=55 errors=0
+[1024x768] t=112.6s game=60.2s WAIT target=5 spun=5/15 climaxT=0 fps=1.4 q=low waves=8 seeds=23 errors=0
+[1024x768] t=117.1s game=61.9s SPIN target=5 spun=6/15 climaxT=0 fps=1.4 q=low waves=9 seeds=29 errors=0
+[1024x768] t=127.7s game=67.4s MOVE target=6 spun=6/15 climaxT=0 fps=1.5 q=low waves=4 seeds=44 errors=0
+[1024x768] t=134.5s game=70.8s WAIT target=6 spun=6/15 climaxT=0 fps=1.5 q=low waves=6 seeds=16 errors=0
+[1024x768] t=137.0s game=72.1s SPIN target=6 spun=7/15 climaxT=0 fps=1.5 q=low waves=7 seeds=29 errors=0
+[1024x768] t=149.9s game=77.9s MOVE target=7 spun=7/15 climaxT=0 fps=1.4 q=low waves=9 seeds=64 errors=0
+[1024x768] t=156.1s game=80.6s WAIT target=7 spun=7/15 climaxT=0 fps=1.4 q=low waves=9 seeds=28 errors=0
+[1024x768] t=160.5s game=82.7s SPIN target=7 spun=8/15 climaxT=0 fps=1.4 q=low waves=9 seeds=30 errors=0
+[1024x768] shot shot-2.jpg (state=SPIN spun=8 climaxT=0)
+[1024x768] t=172.4s game=88.1s MOVE target=8 spun=8/15 climaxT=0 fps=1.4 q=low waves=9 seeds=43 errors=0
+[1024x768] t=178.0s game=90.8s WAIT target=8 spun=8/15 climaxT=0 fps=1.4 q=low waves=9 seeds=16 errors=0
+[1024x768] t=181.8s game=92.9s SPIN target=8 spun=9/15 climaxT=0 fps=1.5 q=low waves=8 seeds=27 errors=0
+[1024x768] t=192.9s game=98.3s MOVE target=9 spun=9/15 climaxT=0 fps=1.5 q=low waves=9 seeds=64 errors=0
+[1024x768] t=199.0s game=101s WAIT target=9 spun=9/15 climaxT=0 fps=1.4 q=low waves=10 seeds=30 errors=0
+[1024x768] t=203.6s game=102.7s SPIN target=9 spun=10/15 climaxT=0 fps=1.4 q=low waves=10 seeds=32 errors=0
+[1024x768] t=222.7s game=111.6s MOVE target=10 spun=10/15 climaxT=0 fps=1.3 q=low waves=14 seeds=66 errors=0
+[1024x768] t=230.7s game=115s WAIT target=10 spun=10/15 climaxT=0 fps=1.3 q=low waves=13 seeds=33 errors=0
+[1024x768] t=233.8s game=116.3s SPIN target=10 spun=11/15 climaxT=0 fps=1.3 q=low waves=13 seeds=32 errors=0
+[1024x768] t=246.4s game=121.8s MOVE target=11 spun=11/15 climaxT=0 fps=1.4 q=low waves=11 seeds=61 errors=0
+[1024x768] t=253.3s game=125.2s WAIT target=11 spun=11/15 climaxT=0 fps=1.4 q=low waves=8 seeds=19 errors=0
+[1024x768] t=256.0s game=126.5s SPIN target=11 spun=12/15 climaxT=0 fps=1.4 q=low waves=10 seeds=32 errors=0
+[1024x768] t=269.3s game=132.3s MOVE target=12 spun=12/15 climaxT=0 fps=1.4 q=low waves=12 seeds=33 errors=0
+[1024x768] t=275.1s game=135s WAIT target=12 spun=12/15 climaxT=0 fps=1.4 q=low waves=10 seeds=14 errors=0
+[1024x768] t=279.5s game=137.1s SPIN target=12 spun=13/15 climaxT=0 fps=1.4 q=low waves=12 seeds=25 errors=0
+[1024x768] t=291.1s game=142.5s MOVE target=13 spun=13/15 climaxT=0 fps=1.4 q=low waves=11 seeds=55 errors=0
+[1024x768] t=296.8s game=145.2s WAIT target=13 spun=13/15 climaxT=0 fps=1.4 q=low waves=11 seeds=21 errors=0
+[1024x768] t=301.2s game=146.9s SPIN target=13 spun=14/15 climaxT=0 fps=1.4 q=low waves=12 seeds=26 errors=0
+[1024x768] t=312.1s game=152.4s MOVE target=14 spun=14/15 climaxT=0 fps=1.4 q=low waves=11 seeds=38 errors=0
+[1024x768] t=318.7s game=155.8s WAIT target=14 spun=14/15 climaxT=0 fps=1.5 q=low waves=10 seeds=10 errors=0
+[1024x768] t=321.3s game=157.1s CLIMAX target=14 spun=15/15 climaxT=0.3 fps=1.5 q=low waves=11 seeds=24 errors=0
+[1024x768] shot shot-3.jpg (state=CLIMAX spun=15 climaxT=9.5)
+[1024x768] t=368.6s game=174.8s AFTER target=14 spun=15/15 climaxT=18 fps=1.2 q=low waves=15 seeds=48 errors=0
+[1024x768] t=389.3s game=185s FREE_WAIT target=14 spun=15/15 climaxT=18 fps=1.5 q=low waves=6 seeds=12 errors=0
+[1024x768] shot shot-4.jpg (state=FREE_WAIT spun=15 climaxT=18)
+[1024x768] t=395.1s game=188.4s FREE_SPIN target=14 spun=15/15 climaxT=18 fps=1.6 q=low waves=5 seeds=23 errors=0
+[1024x768] t=402.0s game=192.5s MOVE target=13 spun=15/15 climaxT=18 fps=1.7 q=low waves=7 seeds=31 errors=0
+[1024x768] t=408.2s game=195.9s FREE_WAIT target=13 spun=15/15 climaxT=18 fps=1.7 q=low waves=9 seeds=23 errors=0
+[1024x768] t=410.7s game=197.3s FREE_SPIN target=13 spun=15/15 climaxT=18 fps=1.6 q=low waves=9 seeds=28 errors=0
+[1024x768] t=422.6s game=203.4s MOVE target=12 spun=15/15 climaxT=18 fps=1.5 q=low waves=10 seeds=30 errors=0
+[1024x768] t=427.9s game=206.1s FREE_WAIT target=12 spun=15/15 climaxT=18 fps=1.5 q=low waves=10 seeds=13 errors=0
+[1024x768] RESULT PASS __ready=true __errors=[] consoleErrors=[] spun=15/15 climax=true peak=true freePlay=true freeMoves=2 finished=true
+[1024x768] checks: tap/swipe=true rescue=true boost=true secondFingerIgnored=true backgroundTap=false guide3s=true guide6s=true fpsNormal=1.5 fpsClimax=1.1 elapsed=431s
+[768x1024] ready in 4457ms url=games/e08/index.html?autotest&q=low
+[768x1024] t=5.6s game=2.1s SPIN target=0 spun=1/15 climaxT=0 fps=40.2 q=low waves=1 seeds=23 errors=0
+[768x1024] t=13.8s game=6.9s MOVE target=1 spun=1/15 climaxT=0 fps=13.7 q=low waves=3 seeds=53 errors=0
+[768x1024] t=19.5s game=10.3s WAIT target=1 spun=1/15 climaxT=0 fps=6.9 q=low waves=3 seeds=23 errors=0
+[768x1024] t=32.8s game=18.1s SPIN target=1 spun=2/15 climaxT=0 fps=2.6 q=low waves=1 seeds=23 errors=0
+[768x1024] shot p-shot-1.jpg (state=SPIN spun=2 climaxT=0)
+[768x1024] t=41.0s game=23.2s MOVE target=2 spun=2/15 climaxT=0 fps=2 q=low waves=2 seeds=30 errors=0
+[768x1024] t=45.8s game=25.9s WAIT target=2 spun=2/15 climaxT=0 fps=1.9 q=low waves=2 seeds=12 errors=0
+[768x1024] t=49.2s game=27.9s SPIN target=2 spun=3/15 climaxT=0 fps=1.8 q=low waves=3 seeds=25 errors=0
+[768x1024] t=60.1s game=33.7s MOVE target=3 spun=3/15 climaxT=0 fps=1.7 q=low waves=3 seeds=48 errors=0
+[768x1024] t=64.9s game=36.4s WAIT target=3 spun=3/15 climaxT=0 fps=1.7 q=low waves=3 seeds=25 errors=0
+[768x1024] t=68.6s game=38.5s SPIN target=3 spun=4/15 climaxT=0 fps=1.7 q=low waves=4 seeds=34 errors=0
+[768x1024] t=78.6s game=43.9s MOVE target=4 spun=4/15 climaxT=0 fps=1.7 q=low waves=3 seeds=31 errors=0
+[768x1024] t=83.6s game=46.6s WAIT target=4 spun=4/15 climaxT=0 fps=1.7 q=low waves=2 seeds=14 errors=0
+[768x1024] t=87.4s game=48.7s SPIN target=4 spun=5/15 climaxT=0 fps=1.6 q=low waves=3 seeds=25 errors=0
+[768x1024] t=104.9s game=57.5s MOVE target=5 spun=5/15 climaxT=0 fps=1.5 q=low waves=8 seeds=55 errors=0
+[768x1024] t=110.7s game=60.2s WAIT target=5 spun=5/15 climaxT=0 fps=1.4 q=low waves=8 seeds=23 errors=0
+[768x1024] t=115.6s game=61.9s SPIN target=5 spun=6/15 climaxT=0 fps=1.4 q=low waves=9 seeds=29 errors=0
+[768x1024] t=125.7s game=67.4s MOVE target=6 spun=6/15 climaxT=0 fps=1.6 q=low waves=4 seeds=44 errors=0
+[768x1024] t=132.6s game=70.8s WAIT target=6 spun=6/15 climaxT=0 fps=1.5 q=low waves=6 seeds=16 errors=0
+[768x1024] t=135.4s game=72.1s SPIN target=6 spun=7/15 climaxT=0 fps=1.5 q=low waves=7 seeds=29 errors=0
+[768x1024] t=148.7s game=77.9s MOVE target=7 spun=7/15 climaxT=0 fps=1.4 q=low waves=9 seeds=64 errors=0
+[768x1024] t=154.6s game=80.6s WAIT target=7 spun=7/15 climaxT=0 fps=1.4 q=low waves=9 seeds=28 errors=0
+[768x1024] t=158.7s game=82.7s SPIN target=7 spun=8/15 climaxT=0 fps=1.4 q=low waves=9 seeds=30 errors=0
+[768x1024] shot p-shot-2.jpg (state=SPIN spun=8 climaxT=0)
+[768x1024] t=170.9s game=88.1s MOVE target=8 spun=8/15 climaxT=0 fps=1.4 q=low waves=9 seeds=43 errors=0
+[768x1024] t=176.5s game=90.8s WAIT target=8 spun=8/15 climaxT=0 fps=1.4 q=low waves=9 seeds=16 errors=0
+[768x1024] t=180.3s game=92.9s SPIN target=8 spun=9/15 climaxT=0 fps=1.5 q=low waves=8 seeds=27 errors=0
+[768x1024] t=190.9s game=98.3s MOVE target=9 spun=9/15 climaxT=0 fps=1.5 q=low waves=9 seeds=64 errors=0
+[768x1024] t=196.4s game=101s WAIT target=9 spun=9/15 climaxT=0 fps=1.5 q=low waves=10 seeds=30 errors=0
+[768x1024] t=200.5s game=102.7s SPIN target=9 spun=10/15 climaxT=0 fps=1.5 q=low waves=10 seeds=32 errors=0
+[768x1024] t=218.4s game=111.6s MOVE target=10 spun=10/15 climaxT=0 fps=1.4 q=low waves=14 seeds=66 errors=0
+[768x1024] t=225.7s game=115s WAIT target=10 spun=10/15 climaxT=0 fps=1.4 q=low waves=13 seeds=33 errors=0
+[768x1024] t=228.5s game=116.3s SPIN target=10 spun=11/15 climaxT=0 fps=1.4 q=low waves=13 seeds=32 errors=0
+[768x1024] t=241.2s game=121.8s MOVE target=11 spun=11/15 climaxT=0 fps=1.4 q=low waves=11 seeds=61 errors=0
+[768x1024] t=247.8s game=125.2s WAIT target=11 spun=11/15 climaxT=0 fps=1.5 q=low waves=8 seeds=19 errors=0
+[768x1024] t=250.5s game=126.5s SPIN target=11 spun=12/15 climaxT=0 fps=1.5 q=low waves=10 seeds=32 errors=0
+[768x1024] t=263.8s game=132.3s MOVE target=12 spun=12/15 climaxT=0 fps=1.4 q=low waves=12 seeds=33 errors=0
+[768x1024] t=269.8s game=135s WAIT target=12 spun=12/15 climaxT=0 fps=1.4 q=low waves=10 seeds=14 errors=0
+[768x1024] t=273.9s game=137.1s SPIN target=12 spun=13/15 climaxT=0 fps=1.4 q=low waves=12 seeds=25 errors=0
+[768x1024] t=285.4s game=142.5s MOVE target=13 spun=13/15 climaxT=0 fps=1.4 q=low waves=11 seeds=55 errors=0
+[768x1024] t=291.1s game=145.2s WAIT target=13 spun=13/15 climaxT=0 fps=1.4 q=low waves=11 seeds=21 errors=0
+[768x1024] t=295.3s game=146.9s SPIN target=13 spun=14/15 climaxT=0 fps=1.4 q=low waves=12 seeds=26 errors=0
+[768x1024] t=306.1s game=152.4s MOVE target=14 spun=14/15 climaxT=0 fps=1.4 q=low waves=11 seeds=38 errors=0
+[768x1024] t=312.5s game=155.8s WAIT target=14 spun=14/15 climaxT=0 fps=1.5 q=low waves=10 seeds=10 errors=0
+[768x1024] t=315.1s game=157.1s CLIMAX target=14 spun=15/15 climaxT=0.3 fps=1.5 q=low waves=11 seeds=24 errors=0
+[768x1024] shot p-shot-3.jpg (state=CLIMAX spun=15 climaxT=9.5)
+[768x1024] t=360.8s game=175.2s AFTER target=14 spun=15/15 climaxT=18 fps=1.2 q=low waves=15 seeds=38 errors=0
+[768x1024] t=381.0s game=185.4s FREE_WAIT target=14 spun=15/15 climaxT=18 fps=1.5 q=low waves=5 seeds=10 errors=0
+[768x1024] t=383.5s game=186.7s FREE_SPIN target=14 spun=15/15 climaxT=18 fps=1.6 q=low waves=6 seeds=17 errors=0
+[768x1024] t=393.7s game=192.8s MOVE target=13 spun=15/15 climaxT=18 fps=1.7 q=low waves=8 seeds=29 errors=0
+[768x1024] t=398.6s game=195.6s FREE_WAIT target=13 spun=15/15 climaxT=18 fps=1.7 q=low waves=9 seeds=20 errors=0
+[768x1024] t=402.3s game=197.6s FREE_SPIN target=13 spun=15/15 climaxT=18 fps=1.7 q=low waves=9 seeds=21 errors=0
+[768x1024] t=412.9s game=203s MOVE target=12 spun=15/15 climaxT=18 fps=1.6 q=low waves=11 seeds=33 errors=0
+[768x1024] t=419.6s game=206.4s FREE_WAIT target=12 spun=15/15 climaxT=18 fps=1.5 q=low waves=10 seeds=11 errors=0
+[768x1024] RESULT PASS __ready=true __errors=[] consoleErrors=[] spun=15/15 climax=true peak=true freePlay=true freeMoves=2 finished=true
+[768x1024] checks: tap/swipe=true rescue=true boost=true secondFingerIgnored=true backgroundTap=false guide3s=true guide6s=true fpsNormal=1.5 fpsClimax=1.2 elapsed=423s
+ALL PASS
