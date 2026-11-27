@@ -1,0 +1,2 @@
+[1024x768] RESULT PASS __ready=true __errors=[] consoleErrors=[] feeds=1/18 climaxPeak=false freePlay=false freeCycles=0 finished=false opened=6/431
+[768x1024] RESULT PASS __ready=true __errors=[] consoleErrors=[] feeds=0/18 climaxPeak=false freePlay=false freeCycles=0 finished=false opened=5/561
