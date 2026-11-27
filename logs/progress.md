@@ -23,3 +23,6 @@
 - 08:13 クラウド起動 E06: session_017tygc5fahxf562cpCNh6As / E07: session_017tygc2wiUSmheFGSAZKCV9。実行中: E06, E07
 - 08:15 公開確認: E04・E05 とも 200、noindex あり、禁止語なし、サムネイル 200。公開済み 5/15。
 - 08:16 訂正: E05 の notes.md では横・縦とも全段階〜フリープレイまで PASS と記録（test.txt の末尾は追加の短縮確認）。
+- 08:46 E06 完了（約33分、claude/game-e06-implementation-t4dwtv）/ 08:54 E07 完了（約41分、claude/game-e07-implementation-baqhg5）→ 08:57 main マージ（自動チェック ok、横縦 ALL PASS）。
+- 08:58 E08 の起動コマンドが作業の中断で途中終了（ジョブ記録なし・セッション番号の出力なし）。念のため、E08 のブランチが2本できたら新しい方を採用する。
+- 08:59 クラウド起動 E08: session_017tygc1hhLjA5NKLdcC12fh / E09: session_017tygc3VFnnQZws9S87sBxh。実行中: E08, E09
