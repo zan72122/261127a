@@ -1,0 +1,186 @@
+# E08 autotest 2026-11-27T00:57Z  headless Chromium (Playwright) + SwiftShader (--use-angle=swiftshader --enable-unsafe-swiftshader), url=games/e08/index.html?autotest&q=low, server: python3 -m http.server (root site/)
+# note: the shared ../../gf-playlog.js beacon to an external host is stubbed with HTTP 204 in this sandbox
+[1024x768] ready in 2769ms url=games/e08/index.html?autotest&q=low
+[1024x768] t=3.6s START target=0 done=1/15 climaxT=0 fps=60 q=low waves=1 errors=0
+[1024x768] t=4.3s WAVE target=0 done=1/15 climaxT=0 fps=60 q=low waves=1 errors=0
+[1024x768] t=8.4s MOVE target=1 done=1/15 climaxT=0 fps=3.6 q=low waves=2 errors=0
+[1024x768] t=11.8s WAIT target=1 done=1/15 climaxT=0 fps=3.5 q=low waves=2 errors=0
+[1024x768] t=13.5s START target=1 done=2/15 climaxT=0 fps=3.4 q=low waves=4 errors=0
+[1024x768] t=14.4s WAVE target=1 done=2/15 climaxT=0 fps=3.6 q=low waves=4 errors=0
+[1024x768] shot shot-1.jpg (state=WAVE done=2 climaxT=0)
+[1024x768] t=18.5s MOVE target=2 done=2/15 climaxT=0 fps=3.2 q=low waves=4 errors=0
+[1024x768] t=22.1s WAIT target=2 done=2/15 climaxT=0 fps=3.5 q=low waves=4 errors=0
+[1024x768] t=23.9s START target=2 done=3/15 climaxT=0 fps=3.4 q=low waves=7 errors=0
+[1024x768] t=24.9s WAVE target=2 done=3/15 climaxT=0 fps=3.1 q=low waves=7 errors=0
+[1024x768] t=28.8s MOVE target=3 done=3/15 climaxT=0 fps=3 q=low waves=6 errors=0
+[1024x768] t=31.6s WAIT target=3 done=3/15 climaxT=0 fps=3.3 q=low waves=6 errors=0
+[1024x768] t=34.7s START target=3 done=4/15 climaxT=0 fps=3.2 q=low waves=6 errors=0
+[1024x768] t=35.6s WAVE target=3 done=4/15 climaxT=0 fps=1.7 q=low waves=7 errors=0
+[1024x768] t=39.4s MOVE target=4 done=4/15 climaxT=0 fps=3.2 q=low waves=6 errors=0
+[1024x768] t=42.9s WAIT target=4 done=4/15 climaxT=0 fps=3.2 q=low waves=6 errors=0
+[1024x768] t=44.9s WAVE target=4 done=5/15 climaxT=0 fps=3.1 q=low waves=8 errors=0
+[1024x768] t=50.0s STAGE_END target=4 done=5/15 climaxT=0 fps=2.6 q=low waves=9 errors=0
+[1024x768] t=53.3s MOVE target=5 done=5/15 climaxT=0 fps=2.4 q=low waves=13 errors=0
+[1024x768] t=56.6s WAIT target=5 done=5/15 climaxT=0 fps=2.4 q=low waves=13 errors=0
+[1024x768] t=58.9s START target=5 done=6/15 climaxT=0 fps=2.6 q=low waves=11 errors=0
+[1024x768] t=59.6s WAVE target=5 done=6/15 climaxT=0 fps=2.6 q=low waves=12 errors=0
+[1024x768] t=63.9s MOVE target=6 done=6/15 climaxT=0 fps=2.2 q=low waves=16 errors=0
+[1024x768] t=67.1s WAIT target=6 done=6/15 climaxT=0 fps=2.6 q=low waves=12 errors=0
+[1024x768] t=69.9s START target=6 done=7/15 climaxT=0 fps=2.6 q=low waves=12 errors=0
+[1024x768] t=70.8s WAVE target=6 done=7/15 climaxT=0 fps=1.2 q=low waves=14 errors=0
+[1024x768] t=74.9s MOVE target=7 done=7/15 climaxT=0 fps=1.9 q=low waves=18 errors=0
+[1024x768] t=77.6s WAIT target=7 done=7/15 climaxT=0 fps=2.3 q=low waves=14 errors=0
+[1024x768] t=80.0s START target=7 done=8/15 climaxT=0 fps=2.5 q=low waves=12 errors=0
+[1024x768] t=80.9s WAVE target=7 done=8/15 climaxT=0 fps=2.5 q=low waves=14 errors=0
+[1024x768] t=85.1s MOVE target=8 done=8/15 climaxT=0 fps=1.9 q=low waves=19 errors=0
+[1024x768] t=88.7s WAIT target=8 done=8/15 climaxT=0 fps=2.4 q=low waves=14 errors=0
+[1024x768] t=91.4s WAVE target=8 done=9/15 climaxT=0 fps=2.3 q=low waves=18 errors=0
+[1024x768] shot shot-2.jpg (state=WAVE done=9 climaxT=0)
+[1024x768] t=95.5s MOVE target=9 done=9/15 climaxT=0 fps=1.9 q=low waves=23 errors=0
+[1024x768] t=99.2s WAIT target=9 done=9/15 climaxT=0 fps=2.2 q=low waves=17 errors=0
+[1024x768] t=102.3s START target=9 done=10/15 climaxT=0 fps=2.2 q=low waves=16 errors=0
+[1024x768] t=103.3s WAVE target=9 done=10/15 climaxT=0 fps=1.4 q=low waves=17 errors=0
+[1024x768] t=107.7s STAGE_END target=9 done=10/15 climaxT=0 fps=1.7 q=low waves=22 errors=0
+[1024x768] t=110.8s MOVE target=10 done=10/15 climaxT=0 fps=1.9 q=low waves=22 errors=0
+[1024x768] t=114.6s WAIT target=10 done=10/15 climaxT=0 fps=2.2 q=low waves=21 errors=0
+[1024x768] t=117.5s WAVE target=10 done=11/15 climaxT=0 fps=2.1 q=low waves=21 errors=0
+[1024x768] t=122.5s MOVE target=11 done=11/15 climaxT=0 fps=2.2 q=low waves=20 errors=0
+[1024x768] t=125.4s WAIT target=11 done=11/15 climaxT=0 fps=2.1 q=low waves=23 errors=0
+[1024x768] t=128.3s WAVE target=11 done=12/15 climaxT=0 fps=1.9 q=low waves=20 errors=0
+[1024x768] t=133.2s MOVE target=12 done=12/15 climaxT=0 fps=2 q=low waves=25 errors=0
+[1024x768] t=136.6s WAIT target=12 done=12/15 climaxT=0 fps=1.7 q=low waves=32 errors=0
+[1024x768] t=140.8s WAVE target=12 done=13/15 climaxT=0 fps=1.7 q=low waves=19 errors=0
+[1024x768] t=144.6s MOVE target=13 done=13/15 climaxT=0 fps=2 q=low waves=21 errors=0
+[1024x768] t=149.1s WAIT target=13 done=13/15 climaxT=0 fps=1.7 q=low waves=32 errors=0
+[1024x768] t=151.4s START target=13 done=14/15 climaxT=0 fps=1.5 q=low waves=17 errors=0
+[1024x768] t=152.3s WAVE target=13 done=14/15 climaxT=0 fps=1.5 q=low waves=18 errors=0
+[1024x768] t=157.5s MOVE target=14 done=14/15 climaxT=0 fps=0.7 q=low waves=24 errors=0
+[1024x768] t=160.9s WAIT target=14 done=14/15 climaxT=0 fps=1.8 q=low waves=32 errors=0
+[1024x768] t=163.0s START target=14 done=15/15 climaxT=0 fps=1.7 q=low waves=16 errors=0
+[1024x768] t=163.9s WAVE target=14 done=15/15 climaxT=0 fps=2.1 q=low waves=17 errors=0
+[1024x768] t=167.5s CLIMAX target=14 done=15/15 climaxT=0.27 fps=2.6 q=low waves=6 errors=0
+[1024x768] shot shot-3.jpg (state=CLIMAX done=15 climaxT=9.84)
+[1024x768] t=190.9s AFTER target=14 done=15/15 climaxT=18.24 fps=1.4 q=low waves=32 errors=0
+[1024x768] t=202.5s FREE_MOVE target=14 done=15/15 climaxT=18.24 fps=1.4 q=low waves=30 errors=0
+[1024x768] t=210.3s FREE_WAIT target=14 done=15/15 climaxT=18.24 fps=1.9 q=low waves=22 errors=0
+[1024x768] shot shot-4.jpg (state=FREE_WAIT done=15 climaxT=18.24)
+[1024x768] t=214.2s FREE_WAVE target=14 done=15/15 climaxT=18.24 fps=2 q=low waves=21 errors=0
+[1024x768] t=216.0s FREE_MOVE target=0 done=15/15 climaxT=18.24 fps=2.1 q=low waves=21 errors=0
+[1024x768] t=223.8s FREE_WAIT target=0 done=15/15 climaxT=18.24 fps=2.1 q=low waves=17 errors=0
+[1024x768] RESULT PASS __ready=true __errors=[] consoleErrors=[] done=15/15 climax=true peak=true freePlay=true freeTouches=1 finished=true elapsed=224s
+[768x1024] ready in 2662ms url=games/e08/index.html?autotest&q=low
+[768x1024] t=3.4s START target=0 done=1/15 climaxT=0 fps=60 q=low waves=0 errors=0
+[768x1024] t=4.1s WAVE target=0 done=1/15 climaxT=0 fps=60 q=low waves=1 errors=0
+[768x1024] t=8.0s MOVE target=1 done=1/15 climaxT=0 fps=3.8 q=low waves=2 errors=0
+[768x1024] t=11.2s WAIT target=1 done=1/15 climaxT=0 fps=3.8 q=low waves=2 errors=0
+[768x1024] t=13.6s START target=1 done=2/15 climaxT=0 fps=3.8 q=low waves=4 errors=0
+[768x1024] t=14.5s WAVE target=1 done=2/15 climaxT=0 fps=3.6 q=low waves=4 errors=0
+[768x1024] shot p-shot-1.jpg (state=WAVE done=2 climaxT=0)
+[768x1024] t=18.4s MOVE target=2 done=2/15 climaxT=0 fps=3.3 q=low waves=4 errors=0
+[768x1024] t=21.8s WAIT target=2 done=2/15 climaxT=0 fps=3.4 q=low waves=4 errors=0
+[768x1024] t=24.3s WAVE target=2 done=3/15 climaxT=0 fps=3.5 q=low waves=8 errors=0
+[768x1024] t=28.3s MOVE target=3 done=3/15 climaxT=0 fps=2.9 q=low waves=6 errors=0
+[768x1024] t=31.9s WAIT target=3 done=3/15 climaxT=0 fps=3.3 q=low waves=6 errors=0
+[768x1024] t=34.2s START target=3 done=4/15 climaxT=0 fps=3.2 q=low waves=6 errors=0
+[768x1024] t=35.0s WAVE target=3 done=4/15 climaxT=0 fps=1.4 q=low waves=7 errors=0
+[768x1024] t=38.8s MOVE target=4 done=4/15 climaxT=0 fps=3 q=low waves=6 errors=0
+[768x1024] t=41.7s WAIT target=4 done=4/15 climaxT=0 fps=3.1 q=low waves=6 errors=0
+[768x1024] t=44.7s WAVE target=4 done=5/15 climaxT=0 fps=3.1 q=low waves=8 errors=0
+[768x1024] t=48.8s STAGE_END target=4 done=5/15 climaxT=0 fps=2.6 q=low waves=7 errors=0
+[768x1024] t=52.6s MOVE target=5 done=5/15 climaxT=0 fps=2.7 q=low waves=13 errors=0
+[768x1024] t=55.8s WAIT target=5 done=5/15 climaxT=0 fps=2.6 q=low waves=14 errors=0
+[768x1024] t=58.2s START target=5 done=6/15 climaxT=0 fps=2.6 q=low waves=12 errors=0
+[768x1024] t=59.0s WAVE target=5 done=6/15 climaxT=0 fps=2.5 q=low waves=12 errors=0
+[768x1024] t=62.4s MOVE target=6 done=6/15 climaxT=0 fps=2.2 q=low waves=17 errors=0
+[768x1024] t=65.5s WAIT target=6 done=6/15 climaxT=0 fps=2.6 q=low waves=12 errors=0
+[768x1024] t=68.7s START target=6 done=7/15 climaxT=0 fps=2.7 q=low waves=12 errors=0
+[768x1024] t=69.5s WAVE target=6 done=7/15 climaxT=0 fps=1.2 q=low waves=15 errors=0
+[768x1024] t=73.4s MOVE target=7 done=7/15 climaxT=0 fps=1.9 q=low waves=18 errors=0
+[768x1024] t=77.3s WAIT target=7 done=7/15 climaxT=0 fps=2.2 q=low waves=14 errors=0
+[768x1024] t=79.7s WAVE target=7 done=8/15 climaxT=0 fps=2.5 q=low waves=15 errors=0
+[768x1024] t=85.2s MOVE target=8 done=8/15 climaxT=0 fps=1.9 q=low waves=17 errors=0
+[768x1024] t=87.8s WAIT target=8 done=8/15 climaxT=0 fps=2.3 q=low waves=15 errors=0
+[768x1024] t=90.5s START target=8 done=9/15 climaxT=0 fps=2.3 q=low waves=16 errors=0
+[768x1024] t=91.4s WAVE target=8 done=9/15 climaxT=0 fps=2.3 q=low waves=17 errors=0
+[768x1024] shot p-shot-2.jpg (state=WAVE done=9 climaxT=0)
+[768x1024] t=95.3s MOVE target=9 done=9/15 climaxT=0 fps=1.9 q=low waves=22 errors=0
+[768x1024] t=98.9s WAIT target=9 done=9/15 climaxT=0 fps=2.2 q=low waves=15 errors=0
+[768x1024] t=101.8s START target=9 done=10/15 climaxT=0 fps=2.4 q=low waves=15 errors=0
+[768x1024] t=102.7s WAVE target=9 done=10/15 climaxT=0 fps=1.2 q=low waves=17 errors=0
+[768x1024] t=107.0s STAGE_END target=9 done=10/15 climaxT=0 fps=1.8 q=low waves=24 errors=0
+[768x1024] t=109.8s MOVE target=10 done=10/15 climaxT=0 fps=2.2 q=low waves=21 errors=0
+[768x1024] t=114.4s WAIT target=10 done=10/15 climaxT=0 fps=2.3 q=low waves=22 errors=0
+[768x1024] t=117.3s WAVE target=10 done=11/15 climaxT=0 fps=2 q=low waves=21 errors=0
+[768x1024] t=121.7s MOVE target=11 done=11/15 climaxT=0 fps=2.1 q=low waves=19 errors=0
+[768x1024] t=125.5s WAIT target=11 done=11/15 climaxT=0 fps=2.1 q=low waves=24 errors=0
+[768x1024] t=127.5s START target=11 done=12/15 climaxT=0 fps=1.9 q=low waves=19 errors=0
+[768x1024] t=128.4s WAVE target=11 done=12/15 climaxT=0 fps=2.1 q=low waves=20 errors=0
+[768x1024] t=132.2s MOVE target=12 done=12/15 climaxT=0 fps=2.2 q=low waves=24 errors=0
+[768x1024] t=136.6s WAIT target=12 done=12/15 climaxT=0 fps=1.7 q=low waves=32 errors=0
+[768x1024] t=139.6s START target=12 done=13/15 climaxT=0 fps=1.6 q=low waves=18 errors=0
+[768x1024] t=140.6s WAVE target=12 done=13/15 climaxT=0 fps=1.1 q=low waves=19 errors=0
+[768x1024] t=144.4s MOVE target=13 done=13/15 climaxT=0 fps=2.1 q=low waves=25 errors=0
+[768x1024] t=148.8s WAIT target=13 done=13/15 climaxT=0 fps=1.7 q=low waves=32 errors=0
+[768x1024] t=151.1s START target=13 done=14/15 climaxT=0 fps=1.6 q=low waves=17 errors=0
+[768x1024] t=152.0s WAVE target=13 done=14/15 climaxT=0 fps=1.6 q=low waves=18 errors=0
+[768x1024] t=156.5s MOVE target=14 done=14/15 climaxT=0 fps=2.1 q=low waves=24 errors=0
+[768x1024] t=160.8s WAIT target=14 done=14/15 climaxT=0 fps=1.7 q=low waves=32 errors=0
+[768x1024] t=162.8s START target=14 done=15/15 climaxT=0 fps=1.8 q=low waves=16 errors=0
+[768x1024] t=163.7s WAVE target=14 done=15/15 climaxT=0 fps=1.8 q=low waves=17 errors=0
+[768x1024] t=166.9s CLIMAX target=14 done=15/15 climaxT=0 fps=2.3 q=low waves=4 errors=0
+[768x1024] shot p-shot-3.jpg (state=CLIMAX done=15 climaxT=9.57)
+[768x1024] t=189.7s AFTER target=14 done=15/15 climaxT=18.57 fps=1.4 q=low waves=32 errors=0
+[768x1024] t=200.8s FREE_MOVE target=14 done=15/15 climaxT=18.57 fps=1.4 q=low waves=29 errors=0
+[768x1024] t=208.4s FREE_WAIT target=14 done=15/15 climaxT=18.57 fps=2 q=low waves=25 errors=0
+[768x1024] shot p-shot-4.jpg (state=FREE_WAIT done=15 climaxT=18.57)
+[768x1024] t=212.5s FREE_WAVE target=14 done=15/15 climaxT=18.57 fps=2.1 q=low waves=21 errors=0
+[768x1024] t=214.3s FREE_MOVE target=0 done=15/15 climaxT=18.57 fps=2.1 q=low waves=20 errors=0
+[768x1024] t=221.7s FREE_WAIT target=0 done=15/15 climaxT=18.57 fps=2.2 q=low waves=20 errors=0
+[768x1024] RESULT PASS __ready=true __errors=[] consoleErrors=[] done=15/15 climax=true peak=true freePlay=true freeTouches=1 finished=true elapsed=222s
+ALL PASS
+# extra smoke checks 2026-11-27T01:04Z
+[390x844] ready in 2418ms url=games/e08/index.html?autotest&q=low
+[390x844] t=3.2s START target=0 done=1/15 climaxT=0 fps=60 q=low waves=0 errors=0
+[390x844] t=3.9s WAVE target=0 done=1/15 climaxT=0 fps=60 q=low waves=1 errors=0
+[390x844] shot c-smoke-b.jpg (state=WAVE done=1 climaxT=0)
+[390x844] t=8.3s MOVE target=1 done=1/15 climaxT=0 fps=5.1 q=low waves=2 errors=0
+[390x844] t=11.4s WAIT target=1 done=1/15 climaxT=0 fps=5.1 q=low waves=2 errors=0
+[390x844] shot c-smoke-a.jpg (state=WAIT done=1 climaxT=0)
+[390x844] t=13.5s WAVE target=1 done=2/15 climaxT=0 fps=5 q=low waves=4 errors=0
+[390x844] t=18.4s MOVE target=2 done=2/15 climaxT=0 fps=4.7 q=low waves=4 errors=0
+[390x844] t=21.7s WAIT target=2 done=2/15 climaxT=0 fps=4.4 q=low waves=4 errors=0
+[390x844] t=23.4s START target=2 done=3/15 climaxT=0 fps=4.6 q=low waves=7 errors=0
+[390x844] t=24.2s WAVE target=2 done=3/15 climaxT=0 fps=4 q=low waves=8 errors=0
+[390x844] t=27.9s MOVE target=3 done=3/15 climaxT=0 fps=3.9 q=low waves=6 errors=0
+[390x844] t=31.5s WAIT target=3 done=3/15 climaxT=0 fps=4.5 q=low waves=6 errors=0
+[390x844] t=33.7s START target=3 done=4/15 climaxT=0 fps=4.2 q=low waves=6 errors=0
+[390x844] t=34.5s WAVE target=3 done=4/15 climaxT=0 fps=1 q=low waves=6 errors=0
+[390x844] t=37.8s MOVE target=4 done=4/15 climaxT=0 fps=4.3 q=low waves=6 errors=0
+[390x844] t=41.3s WAIT target=4 done=4/15 climaxT=0 fps=4.4 q=low waves=6 errors=0
+[390x844] t=43.1s START target=4 done=5/15 climaxT=0 fps=4.2 q=low waves=7 errors=0
+[390x844] t=43.9s WAVE target=4 done=5/15 climaxT=0 fps=4.4 q=low waves=8 errors=0
+[390x844] t=48.6s STAGE_END target=4 done=5/15 climaxT=0 fps=3.8 q=low waves=8 errors=0
+[390x844] t=52.0s MOVE target=5 done=5/15 climaxT=0 fps=3.4 q=low waves=13 errors=0
+[390x844] t=55.7s WAIT target=5 done=5/15 climaxT=0 fps=3.3 q=low waves=13 errors=0
+[390x844] t=57.5s START target=5 done=6/15 climaxT=0 fps=3.2 q=low waves=12 errors=0
+[390x844] t=58.4s WAVE target=5 done=6/15 climaxT=0 fps=3.5 q=low waves=13 errors=0
+[390x844] RESULT PASS __ready=true __errors=[] consoleErrors=[] done=6/15 climax=false peak=false freePlay=false freeTouches=0 finished=false elapsed=61s
+ALL PASS
+[1024x768] ready in 5143ms url=games/e08/index.html?autotest&q=high
+[1024x768] t=5.9s START target=0 done=1/15 climaxT=0 fps=60 q=high waves=0 errors=0
+[1024x768] t=6.6s WAVE target=0 done=1/15 climaxT=0 fps=1.4 q=high waves=1 errors=0
+[1024x768] shot c-smoke-b.jpg (state=WAVE done=1 climaxT=0)
+[1024x768] t=12.9s MOVE target=1 done=1/15 climaxT=0 fps=1.3 q=high waves=2 errors=0
+[1024x768] t=17.2s WAIT target=1 done=1/15 climaxT=0 fps=1.1 q=high waves=2 errors=0
+[1024x768] shot c-smoke-a.jpg (state=WAIT done=1 climaxT=0)
+[1024x768] t=23.9s WAVE target=1 done=2/15 climaxT=0 fps=1.2 q=high waves=4 errors=0
+[1024x768] t=28.9s MOVE target=2 done=2/15 climaxT=0 fps=1.2 q=high waves=4 errors=0
+[1024x768] t=34.2s WAIT target=2 done=2/15 climaxT=0 fps=1.2 q=high waves=5 errors=0
+[1024x768] t=39.0s START target=2 done=3/15 climaxT=0 fps=0.9 q=high waves=6 errors=0
+[1024x768] t=40.0s WAVE target=2 done=3/15 climaxT=0 fps=1.1 q=high waves=7 errors=0
+[1024x768] t=46.4s MOVE target=3 done=3/15 climaxT=0 fps=1.1 q=high waves=6 errors=0
+[1024x768] t=51.9s WAIT target=3 done=3/15 climaxT=0 fps=1.1 q=high waves=5 errors=0
+[1024x768] t=57.0s START target=3 done=4/15 climaxT=0 fps=1.2 q=high waves=5 errors=0
+[1024x768] t=57.9s WAVE target=3 done=4/15 climaxT=0 fps=0.6 q=high waves=7 errors=0
+[1024x768] RESULT PASS __ready=true __errors=[] consoleErrors=[] done=4/15 climax=false peak=false freePlay=false freeTouches=0 finished=false elapsed=62s
+ALL PASS
