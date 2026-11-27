@@ -1,0 +1,183 @@
+# E14 autotest 2026-11-27T03:37:22Z  server: python3 -m http.server (root=site/)  browser: headless Chromium (Playwright) + SwiftShader
+# cmd: node logs/e14/run-test.js http://127.0.0.1:8814 full low logs/e14 both
+[1024x768] console: [e14] ready q=low
+[1024x768] ready in 3485ms url=games/e14/index.html?autotest&q=low
+[1024x768] t=4.2s OPENING/opening opened=0/18 free=0 stage=0 climaxT=0 target=0 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=3.6 q=low errors=0
+[1024x768] t=6.4s SPLASH/splash opened=1/18 free=0 stage=0 climaxT=0 target=0 centerNdc=0 inFrame=true flying=64 bloom=0 exp=1 fps=4.3 q=low errors=0
+[1024x768] shot shot-1.jpg (state=SPLASH opened=1 climaxT=0 flying=64)
+[1024x768] t=8.7s NEXT_TARGET/next opened=1/18 free=0 stage=0 climaxT=0 target=1 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.2 q=low errors=0
+[1024x768] t=13.1s TARGET_READY/ready opened=1/18 free=0 stage=0 climaxT=0 target=1 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.7 q=low errors=0
+[1024x768] t=14.4s OPENING/opening opened=1/18 free=0 stage=0 climaxT=0 target=1 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4 q=low errors=0
+[1024x768] t=16.9s SPLASH/splash opened=2/18 free=0 stage=0 climaxT=0 target=1 centerNdc=0 inFrame=true flying=66 bloom=0 exp=1 fps=4 q=low errors=0
+[1024x768] t=19.5s NEXT_TARGET/next opened=2/18 free=0 stage=0 climaxT=0 target=2 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=3.7 q=low errors=0
+[1024x768] t=23.6s TARGET_READY/ready opened=2/18 free=0 stage=0 climaxT=0 target=2 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4 q=low errors=0
+[1024x768] t=25.1s OPENING/opening opened=2/18 free=0 stage=0 climaxT=0 target=2 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.1 q=low errors=0
+[1024x768] t=27.2s SPLASH/splash opened=3/18 free=0 stage=0 climaxT=0 target=2 centerNdc=0 inFrame=true flying=61 bloom=0 exp=1 fps=4.1 q=low errors=0
+[1024x768] t=29.7s NEXT_TARGET/next opened=3/18 free=0 stage=0 climaxT=0 target=3 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=3.7 q=low errors=0
+[1024x768] t=34.3s TARGET_READY/ready opened=3/18 free=0 stage=0 climaxT=0 target=3 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.2 q=low errors=0
+[1024x768] t=35.7s OPENING/opening opened=3/18 free=0 stage=0 climaxT=0 target=3 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.6 q=low errors=0
+[1024x768] t=37.9s SPLASH/splash opened=4/18 free=0 stage=0 climaxT=0 target=3 centerNdc=0 inFrame=true flying=69 bloom=0 exp=1 fps=4 q=low errors=0
+[1024x768] t=40.4s NEXT_TARGET/next opened=4/18 free=0 stage=0 climaxT=0 target=4 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=3.9 q=low errors=0
+[1024x768] t=44.3s TARGET_READY/ready opened=4/18 free=0 stage=0 climaxT=0 target=4 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.3 q=low errors=0
+[1024x768] t=46.4s OPENING/opening opened=4/18 free=0 stage=0 climaxT=0 target=4 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.4 q=low errors=0
+[1024x768] t=47.8s SPLASH/splash opened=5/18 free=0 stage=0 climaxT=0 target=4 centerNdc=0 inFrame=true flying=62 bloom=0 exp=1 fps=4.3 q=low errors=0
+[1024x768] t=51.2s NEXT_TARGET/next opened=5/18 free=0 stage=0 climaxT=0 target=5 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4 q=low errors=0
+[1024x768] t=54.9s TARGET_READY/ready opened=5/18 free=0 stage=0 climaxT=0 target=5 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=3.6 q=low errors=0
+[1024x768] t=56.8s OPENING/opening opened=5/18 free=0 stage=0 climaxT=0 target=5 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.2 q=low errors=0
+[1024x768] t=58.2s SPLASH/splash opened=6/18 free=0 stage=0 climaxT=0 target=5 centerNdc=0 inFrame=true flying=63 bloom=0 exp=1 fps=4.5 q=low errors=0
+[1024x768] t=62.3s NEXT_TARGET/next opened=6/18 free=0 stage=0 climaxT=0 target=6 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.023 fps=0.7 q=low errors=0
+[1024x768] t=69.0s TARGET_READY/ready opened=6/18 free=0 stage=1 climaxT=0 target=6 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4 q=low errors=0
+[1024x768] t=70.5s OPENING/opening opened=6/18 free=0 stage=1 climaxT=0 target=6 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4 q=low errors=0
+[1024x768] t=72.6s SPLASH/splash opened=7/18 free=0 stage=1 climaxT=0 target=6 centerNdc=0 inFrame=true flying=99 bloom=0 exp=1.05 fps=3.6 q=low errors=0
+[1024x768] t=75.3s NEXT_TARGET/next opened=7/18 free=0 stage=1 climaxT=0 target=7 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=5 q=low errors=0
+[1024x768] t=79.4s TARGET_READY/ready opened=7/18 free=0 stage=1 climaxT=0 target=7 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=3.9 q=low errors=0
+[1024x768] t=81.1s OPENING/opening opened=7/18 free=0 stage=1 climaxT=0 target=7 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=3.6 q=low errors=0
+[1024x768] t=83.1s SPLASH/splash opened=8/18 free=0 stage=1 climaxT=0 target=7 centerNdc=0 inFrame=true flying=97 bloom=0 exp=1.05 fps=4.4 q=low errors=0
+[1024x768] t=85.8s NEXT_TARGET/next opened=8/18 free=0 stage=1 climaxT=0 target=8 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=3.9 q=low errors=0
+[1024x768] t=90.0s TARGET_READY/ready opened=8/18 free=0 stage=1 climaxT=0 target=8 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=3.6 q=low errors=0
+[1024x768] t=91.8s OPENING/opening opened=8/18 free=0 stage=1 climaxT=0 target=8 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4 q=low errors=0
+[1024x768] t=93.8s SPLASH/splash opened=9/18 free=0 stage=1 climaxT=0 target=8 centerNdc=0 inFrame=true flying=93 bloom=0 exp=1.05 fps=3.9 q=low errors=0
+[1024x768] shot shot-2.jpg (state=SPLASH opened=9 climaxT=0 flying=93)
+[1024x768] t=97.2s NEXT_TARGET/next opened=9/18 free=0 stage=1 climaxT=0 target=9 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=3.5 q=low errors=0
+[1024x768] t=101.2s TARGET_READY/ready opened=9/18 free=0 stage=1 climaxT=0 target=9 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4.3 q=low errors=0
+[1024x768] t=103.5s OPENING/opening opened=9/18 free=0 stage=1 climaxT=0 target=9 centerNdc=0 inFrame=true flying=1 bloom=0 exp=1.05 fps=3.9 q=low errors=0
+[1024x768] t=104.7s SPLASH/splash opened=10/18 free=0 stage=1 climaxT=0 target=9 centerNdc=0 inFrame=true flying=94 bloom=0 exp=1.05 fps=5.1 q=low errors=0
+[1024x768] t=108.2s NEXT_TARGET/next opened=10/18 free=0 stage=1 climaxT=0 target=10 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4.4 q=low errors=0
+[1024x768] t=112.5s TARGET_READY/ready opened=10/18 free=0 stage=1 climaxT=0 target=10 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=3.9 q=low errors=0
+[1024x768] t=113.9s OPENING/opening opened=10/18 free=0 stage=1 climaxT=0 target=10 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4.1 q=low errors=0
+[1024x768] t=115.9s SPLASH/splash opened=11/18 free=0 stage=1 climaxT=0 target=10 centerNdc=0 inFrame=true flying=91 bloom=0 exp=1.05 fps=4.2 q=low errors=0
+[1024x768] t=118.7s NEXT_TARGET/next opened=11/18 free=0 stage=1 climaxT=0 target=11 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4 q=low errors=0
+[1024x768] t=122.6s TARGET_READY/ready opened=11/18 free=0 stage=1 climaxT=0 target=11 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=3.9 q=low errors=0
+[1024x768] t=124.0s OPENING/opening opened=11/18 free=0 stage=1 climaxT=0 target=11 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4.2 q=low errors=0
+[1024x768] t=126.0s SPLASH/splash opened=12/18 free=0 stage=1 climaxT=0 target=11 centerNdc=0 inFrame=true flying=99 bloom=0 exp=1.052 fps=4.6 q=low errors=0
+[1024x768] t=129.9s NEXT_TARGET/next opened=12/18 free=0 stage=1 climaxT=0 target=12 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.072 fps=1.6 q=low errors=0
+[1024x768] t=136.3s TARGET_READY/ready opened=12/18 free=0 stage=2 climaxT=0 target=12 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=1.2 q=low errors=0
+[1024x768] t=138.1s OPENING/opening opened=12/18 free=0 stage=2 climaxT=0 target=12 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=3.9 q=low errors=0
+[1024x768] t=140.0s SPLASH/splash opened=13/18 free=0 stage=2 climaxT=0 target=12 centerNdc=0 inFrame=true flying=133 bloom=0 exp=1.1 fps=4 q=low errors=0
+[1024x768] t=143.6s NEXT_TARGET/next opened=13/18 free=0 stage=2 climaxT=0 target=13 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=3.9 q=low errors=0
+[1024x768] t=147.9s TARGET_READY/ready opened=13/18 free=0 stage=2 climaxT=0 target=13 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=3.3 q=low errors=0
+[1024x768] t=149.6s OPENING/opening opened=13/18 free=0 stage=2 climaxT=0 target=13 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=3.5 q=low errors=0
+[1024x768] t=152.2s SPLASH/splash opened=14/18 free=0 stage=2 climaxT=0 target=13 centerNdc=0 inFrame=true flying=133 bloom=0 exp=1.1 fps=3.8 q=low errors=0
+[1024x768] t=155.1s NEXT_TARGET/next opened=14/18 free=0 stage=2 climaxT=0 target=14 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4 q=low errors=0
+[1024x768] t=159.6s TARGET_READY/ready opened=14/18 free=0 stage=2 climaxT=0 target=14 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4 q=low errors=0
+[1024x768] t=161.0s OPENING/opening opened=14/18 free=0 stage=2 climaxT=0 target=14 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.3 q=low errors=0
+[1024x768] t=162.8s SPLASH/splash opened=15/18 free=0 stage=2 climaxT=0 target=14 centerNdc=0 inFrame=true flying=130 bloom=0 exp=1.1 fps=3.6 q=low errors=0
+[1024x768] t=166.0s NEXT_TARGET/next opened=15/18 free=0 stage=2 climaxT=0 target=15 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=3.6 q=low errors=0
+[1024x768] t=170.4s TARGET_READY/ready opened=15/18 free=0 stage=2 climaxT=0 target=15 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=3.6 q=low errors=0
+[1024x768] t=171.8s OPENING/opening opened=15/18 free=0 stage=2 climaxT=0 target=15 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.7 q=low errors=0
+[1024x768] t=174.3s SPLASH/splash opened=16/18 free=0 stage=2 climaxT=0 target=15 centerNdc=0 inFrame=true flying=119 bloom=0 exp=1.1 fps=3.2 q=low errors=0
+[1024x768] t=177.4s NEXT_TARGET/next opened=16/18 free=0 stage=2 climaxT=0 target=16 centerNdc=0 inFrame=true flying=11 bloom=0 exp=1.1 fps=3.6 q=low errors=0
+[1024x768] t=181.7s TARGET_READY/ready opened=16/18 free=0 stage=2 climaxT=0 target=16 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.4 q=low errors=0
+[1024x768] t=183.7s OPENING/opening opened=16/18 free=0 stage=2 climaxT=0 target=16 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.2 q=low errors=0
+[1024x768] t=185.6s SPLASH/splash opened=17/18 free=0 stage=2 climaxT=0 target=16 centerNdc=0 inFrame=true flying=134 bloom=0 exp=1.1 fps=4 q=low errors=0
+[1024x768] t=188.5s NEXT_TARGET/next opened=17/18 free=0 stage=2 climaxT=0 target=17 centerNdc=0 inFrame=true flying=22 bloom=0 exp=1.1 fps=3.6 q=low errors=0
+[1024x768] t=192.4s TARGET_READY/ready opened=17/18 free=0 stage=2 climaxT=0 target=17 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.6 q=low errors=0
+[1024x768] t=194.2s OPENING/opening opened=17/18 free=0 stage=2 climaxT=0 target=17 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.6 q=low errors=0
+[1024x768] t=195.3s CLIMAX/opening opened=17/18 free=0 stage=2 climaxT=0.36 target=17 centerNdc=0 inFrame=true flying=16 bloom=0 exp=1.1 fps=5.3 q=low errors=0
+[1024x768] t=195.9s CLIMAX/opening opened=18/18 free=0 stage=2 climaxT=0.72 target=17 centerNdc=0 inFrame=true flying=145 bloom=0 exp=1.1 fps=5.5 q=low errors=0
+[1024x768] shot shot-3.jpg (state=CLIMAX opened=18 climaxT=6 flying=61)
+[1024x768] console: [e14] afterglow
+[1024x768] t=219.2s AFTERGLOW/opening opened=18/18 free=0 stage=2 climaxT=12.12 target=17 centerNdc=0 inFrame=true flying=1 bloom=0 exp=1.1 fps=4.5 q=low errors=0
+[1024x768] console: [e14] free play
+[1024x768] t=249.6s FREE_PLAY/ready opened=18/18 free=0 stage=2 climaxT=12.12 target=17 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.3 q=low errors=0
+[1024x768] t=250.9s FREE_PLAY/opening opened=18/18 free=0 stage=2 climaxT=12.12 target=17 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.6 q=low errors=0
+[1024x768] t=253.0s FREE_PLAY/splash opened=18/18 free=1 stage=2 climaxT=12.12 target=17 centerNdc=0 inFrame=true flying=146 bloom=0 exp=1.1 fps=4.2 q=low errors=0
+[1024x768] t=255.6s FREE_PLAY/next opened=18/18 free=1 stage=2 climaxT=12.12 target=0 centerNdc=0 inFrame=true flying=85 bloom=0 exp=1.1 fps=4.5 q=low errors=0
+[1024x768] t=264.6s FREE_PLAY/ready opened=18/18 free=1 stage=2 climaxT=12.12 target=0 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.4 q=low errors=0
+[1024x768] t=266.7s FREE_PLAY/opening opened=18/18 free=1 stage=2 climaxT=12.12 target=0 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.3 q=low errors=0
+[1024x768] t=268.1s FREE_PLAY/splash opened=18/18 free=2 stage=2 climaxT=12.12 target=0 centerNdc=0 inFrame=true flying=65 bloom=0 exp=1.1 fps=4.3 q=low errors=0
+[1024x768] t=271.1s FREE_PLAY/next opened=18/18 free=2 stage=2 climaxT=12.12 target=1 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.2 q=low errors=0
+[1024x768] t=280.3s FREE_PLAY/ready opened=18/18 free=2 stage=2 climaxT=12.12 target=1 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4 q=low errors=0
+[1024x768] console: [autotest] finished {"opened":18,"freeOpens":2,"state":"FREE_PLAY","fps":3.8,"minFps":0.7,"q":"low","errors":0,"taps":7,"drags":13,"ignored":1,"outside":1,"maxFlying":216,"wallSec":281}
+[1024x768] RESULT PASS __ready=true __errors=[] consoleErrors=[] opened=18/18 stageChanges=2 climax=true peak=true afterglow=true freePlay=true freeOpens=2 taps=7 drags=13 ignoredPointers=1 outsideTaps=1 maxFlyingDrops=216 maxTargetNdc=0 framesOutOfView=0/267 maxBloom=0 maxExposure=1.13 minFps=0.6977393245883282 elapsed=282s
+[768x1024] console: [e14] ready q=low
+[768x1024] ready in 3170ms url=games/e14/index.html?autotest&q=low
+[768x1024] t=3.9s OPENING/opening opened=0/18 free=0 stage=0 climaxT=0 target=0 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.4 q=low errors=0
+[768x1024] t=5.8s SPLASH/splash opened=1/18 free=0 stage=0 climaxT=0 target=0 centerNdc=0 inFrame=true flying=64 bloom=0 exp=1 fps=5.1 q=low errors=0
+[768x1024] shot p-shot-1.jpg (state=SPLASH opened=1 climaxT=0 flying=64)
+[768x1024] t=8.1s NEXT_TARGET/next opened=1/18 free=0 stage=0 climaxT=0 target=1 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.6 q=low errors=0
+[768x1024] t=12.0s TARGET_READY/ready opened=1/18 free=0 stage=0 climaxT=0 target=1 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.6 q=low errors=0
+[768x1024] t=13.4s OPENING/opening opened=1/18 free=0 stage=0 climaxT=0 target=1 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.4 q=low errors=0
+[768x1024] t=15.4s SPLASH/splash opened=2/18 free=0 stage=0 climaxT=0 target=1 centerNdc=0 inFrame=true flying=66 bloom=0 exp=1 fps=4.7 q=low errors=0
+[768x1024] t=18.4s NEXT_TARGET/next opened=2/18 free=0 stage=0 climaxT=0 target=2 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.5 q=low errors=0
+[768x1024] t=21.8s TARGET_READY/ready opened=2/18 free=0 stage=0 climaxT=0 target=2 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.6 q=low errors=0
+[768x1024] t=23.7s OPENING/opening opened=2/18 free=0 stage=0 climaxT=0 target=2 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.4 q=low errors=0
+[768x1024] t=25.0s SPLASH/splash opened=3/18 free=0 stage=0 climaxT=0 target=2 centerNdc=0 inFrame=true flying=61 bloom=0 exp=1 fps=4.4 q=low errors=0
+[768x1024] t=27.8s NEXT_TARGET/next opened=3/18 free=0 stage=0 climaxT=0 target=3 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.5 q=low errors=0
+[768x1024] t=31.7s TARGET_READY/ready opened=3/18 free=0 stage=0 climaxT=0 target=3 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=5.5 q=low errors=0
+[768x1024] t=33.0s OPENING/opening opened=3/18 free=0 stage=0 climaxT=0 target=3 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.9 q=low errors=0
+[768x1024] t=34.2s SPLASH/splash opened=4/18 free=0 stage=0 climaxT=0 target=3 centerNdc=0 inFrame=true flying=69 bloom=0 exp=1 fps=5 q=low errors=0
+[768x1024] t=37.4s NEXT_TARGET/next opened=4/18 free=0 stage=0 climaxT=0 target=4 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.5 q=low errors=0
+[768x1024] t=40.5s TARGET_READY/ready opened=4/18 free=0 stage=0 climaxT=0 target=4 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.6 q=low errors=0
+[768x1024] t=42.5s OPENING/opening opened=4/18 free=0 stage=0 climaxT=0 target=4 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.4 q=low errors=0
+[768x1024] t=44.4s SPLASH/splash opened=5/18 free=0 stage=0 climaxT=0 target=4 centerNdc=0 inFrame=true flying=61 bloom=0 exp=1 fps=4.3 q=low errors=0
+[768x1024] t=46.9s NEXT_TARGET/next opened=5/18 free=0 stage=0 climaxT=0 target=5 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=5 q=low errors=0
+[768x1024] t=50.0s TARGET_READY/ready opened=5/18 free=0 stage=0 climaxT=0 target=5 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1 fps=4.6 q=low errors=0
+[768x1024] t=52.0s OPENING/opening opened=5/18 free=0 stage=0 climaxT=0 target=5 centerNdc=0 inFrame=true flying=1 bloom=0 exp=1 fps=4.4 q=low errors=0
+[768x1024] t=53.1s SPLASH/splash opened=6/18 free=0 stage=0 climaxT=0 target=5 centerNdc=0 inFrame=true flying=63 bloom=0 exp=1 fps=4.7 q=low errors=0
+[768x1024] t=57.1s NEXT_TARGET/next opened=6/18 free=0 stage=0 climaxT=0 target=6 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.023 fps=1.4 q=low errors=0
+[768x1024] t=63.3s TARGET_READY/ready opened=6/18 free=0 stage=1 climaxT=0 target=6 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=1.3 q=low errors=0
+[768x1024] t=64.6s OPENING/opening opened=6/18 free=0 stage=1 climaxT=0 target=6 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4.5 q=low errors=0
+[768x1024] t=66.5s SPLASH/splash opened=7/18 free=0 stage=1 climaxT=0 target=6 centerNdc=0 inFrame=true flying=99 bloom=0 exp=1.05 fps=4.2 q=low errors=0
+[768x1024] t=69.2s NEXT_TARGET/next opened=7/18 free=0 stage=1 climaxT=0 target=7 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4.4 q=low errors=0
+[768x1024] t=72.9s TARGET_READY/ready opened=7/18 free=0 stage=1 climaxT=0 target=7 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=3.9 q=low errors=0
+[768x1024] t=74.8s OPENING/opening opened=7/18 free=0 stage=1 climaxT=0 target=7 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=3.7 q=low errors=0
+[768x1024] t=76.9s SPLASH/splash opened=8/18 free=0 stage=1 climaxT=0 target=7 centerNdc=0 inFrame=true flying=97 bloom=0 exp=1.05 fps=4.4 q=low errors=0
+[768x1024] t=79.3s NEXT_TARGET/next opened=8/18 free=0 stage=1 climaxT=0 target=8 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4.6 q=low errors=0
+[768x1024] t=83.5s TARGET_READY/ready opened=8/18 free=0 stage=1 climaxT=0 target=8 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4 q=low errors=0
+[768x1024] t=84.7s OPENING/opening opened=8/18 free=0 stage=1 climaxT=0 target=8 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4.9 q=low errors=0
+[768x1024] t=86.7s SPLASH/splash opened=9/18 free=0 stage=1 climaxT=0 target=8 centerNdc=0 inFrame=true flying=93 bloom=0 exp=1.05 fps=4.6 q=low errors=0
+[768x1024] shot p-shot-2.jpg (state=SPLASH opened=9 climaxT=0 flying=93)
+[768x1024] t=89.4s NEXT_TARGET/next opened=9/18 free=0 stage=1 climaxT=0 target=9 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4.9 q=low errors=0
+[768x1024] t=93.2s TARGET_READY/ready opened=9/18 free=0 stage=1 climaxT=0 target=9 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4.6 q=low errors=0
+[768x1024] t=94.5s OPENING/opening opened=9/18 free=0 stage=1 climaxT=0 target=9 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4.6 q=low errors=0
+[768x1024] t=96.6s SPLASH/splash opened=10/18 free=0 stage=1 climaxT=0 target=9 centerNdc=0 inFrame=true flying=93 bloom=0 exp=1.05 fps=4.3 q=low errors=0
+[768x1024] t=98.9s NEXT_TARGET/next opened=10/18 free=0 stage=1 climaxT=0 target=10 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=5.1 q=low errors=0
+[768x1024] t=101.8s TARGET_READY/ready opened=10/18 free=0 stage=1 climaxT=0 target=10 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=6.3 q=low errors=0
+[768x1024] t=103.1s OPENING/opening opened=10/18 free=0 stage=1 climaxT=0 target=10 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4.6 q=low errors=0
+[768x1024] t=105.1s SPLASH/splash opened=11/18 free=0 stage=1 climaxT=0 target=10 centerNdc=0 inFrame=true flying=93 bloom=0 exp=1.05 fps=4.6 q=low errors=0
+[768x1024] t=107.7s NEXT_TARGET/next opened=11/18 free=0 stage=1 climaxT=0 target=11 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4.6 q=low errors=0
+[768x1024] t=111.5s TARGET_READY/ready opened=11/18 free=0 stage=1 climaxT=0 target=11 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4.6 q=low errors=0
+[768x1024] t=112.8s OPENING/opening opened=11/18 free=0 stage=1 climaxT=0 target=11 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.05 fps=4.7 q=low errors=0
+[768x1024] t=114.6s SPLASH/splash opened=12/18 free=0 stage=1 climaxT=0 target=11 centerNdc=0 inFrame=true flying=100 bloom=0 exp=1.05 fps=4.4 q=low errors=0
+[768x1024] t=118.7s NEXT_TARGET/next opened=12/18 free=0 stage=1 climaxT=0 target=12 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.073 fps=0.7 q=low errors=0
+[768x1024] t=125.1s TARGET_READY/ready opened=12/18 free=0 stage=2 climaxT=0 target=12 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=1.2 q=low errors=0
+[768x1024] t=126.3s OPENING/opening opened=12/18 free=0 stage=2 climaxT=0 target=12 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.5 q=low errors=0
+[768x1024] t=128.4s SPLASH/splash opened=13/18 free=0 stage=2 climaxT=0 target=12 centerNdc=0 inFrame=true flying=133 bloom=0 exp=1.1 fps=4.2 q=low errors=0
+[768x1024] t=130.9s NEXT_TARGET/next opened=13/18 free=0 stage=2 climaxT=0 target=13 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.3 q=low errors=0
+[768x1024] t=134.8s TARGET_READY/ready opened=13/18 free=0 stage=2 climaxT=0 target=13 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=3.9 q=low errors=0
+[768x1024] t=136.8s OPENING/opening opened=13/18 free=0 stage=2 climaxT=0 target=13 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.4 q=low errors=0
+[768x1024] t=138.9s SPLASH/splash opened=14/18 free=0 stage=2 climaxT=0 target=13 centerNdc=0 inFrame=true flying=133 bloom=0 exp=1.1 fps=4.4 q=low errors=0
+[768x1024] t=141.6s NEXT_TARGET/next opened=14/18 free=0 stage=2 climaxT=0 target=14 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.1 q=low errors=0
+[768x1024] t=145.0s TARGET_READY/ready opened=14/18 free=0 stage=2 climaxT=0 target=14 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.9 q=low errors=0
+[768x1024] t=146.9s OPENING/opening opened=14/18 free=0 stage=2 climaxT=0 target=14 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.6 q=low errors=0
+[768x1024] t=148.3s SPLASH/splash opened=15/18 free=0 stage=2 climaxT=0 target=14 centerNdc=0 inFrame=true flying=130 bloom=0 exp=1.1 fps=4.5 q=low errors=0
+[768x1024] t=151.1s NEXT_TARGET/next opened=15/18 free=0 stage=2 climaxT=0 target=15 centerNdc=0 inFrame=true flying=6 bloom=0 exp=1.1 fps=4.5 q=low errors=0
+[768x1024] t=155.0s TARGET_READY/ready opened=15/18 free=0 stage=2 climaxT=0 target=15 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.7 q=low errors=0
+[768x1024] t=156.3s OPENING/opening opened=15/18 free=0 stage=2 climaxT=0 target=15 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.5 q=low errors=0
+[768x1024] t=158.4s SPLASH/splash opened=16/18 free=0 stage=2 climaxT=0 target=15 centerNdc=0 inFrame=true flying=119 bloom=0 exp=1.1 fps=4.4 q=low errors=0
+[768x1024] t=161.1s NEXT_TARGET/next opened=16/18 free=0 stage=2 climaxT=0 target=16 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.4 q=low errors=0
+[768x1024] t=165.0s TARGET_READY/ready opened=16/18 free=0 stage=2 climaxT=0 target=16 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.9 q=low errors=0
+[768x1024] t=166.2s OPENING/opening opened=16/18 free=0 stage=2 climaxT=0 target=16 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.5 q=low errors=0
+[768x1024] t=168.4s SPLASH/splash opened=17/18 free=0 stage=2 climaxT=0 target=16 centerNdc=0 inFrame=true flying=136 bloom=0 exp=1.1 fps=3.9 q=low errors=0
+[768x1024] t=171.6s NEXT_TARGET/next opened=17/18 free=0 stage=2 climaxT=0 target=17 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.4 q=low errors=0
+[768x1024] t=175.4s TARGET_READY/ready opened=17/18 free=0 stage=2 climaxT=0 target=17 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.7 q=low errors=0
+[768x1024] t=176.6s OPENING/opening opened=17/18 free=0 stage=2 climaxT=0 target=17 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.9 q=low errors=0
+[768x1024] t=177.8s CLIMAX/opening opened=17/18 free=0 stage=2 climaxT=0.24 target=17 centerNdc=0 inFrame=true flying=6 bloom=0 exp=1.1 fps=5.1 q=low errors=0
+[768x1024] t=178.4s CLIMAX/opening opened=18/18 free=0 stage=2 climaxT=0.6 target=17 centerNdc=0 inFrame=true flying=146 bloom=0 exp=1.1 fps=4.7 q=low errors=0
+[768x1024] shot p-shot-3.jpg (state=CLIMAX opened=18 climaxT=6 flying=61)
+[768x1024] console: [e14] afterglow
+[768x1024] t=198.8s AFTERGLOW/opening opened=18/18 free=0 stage=2 climaxT=12.12 target=17 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.9 q=low errors=0
+[768x1024] console: [e14] free play
+[768x1024] t=225.9s FREE_PLAY/ready opened=18/18 free=0 stage=2 climaxT=12.12 target=17 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.7 q=low errors=0
+[768x1024] t=227.1s FREE_PLAY/opening opened=18/18 free=0 stage=2 climaxT=12.12 target=17 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.9 q=low errors=0
+[768x1024] t=228.9s FREE_PLAY/splash opened=18/18 free=1 stage=2 climaxT=12.12 target=17 centerNdc=0 inFrame=true flying=146 bloom=0 exp=1.1 fps=4.9 q=low errors=0
+[768x1024] t=231.3s FREE_PLAY/next opened=18/18 free=1 stage=2 climaxT=12.12 target=0 centerNdc=0 inFrame=true flying=21 bloom=0 exp=1.1 fps=4.9 q=low errors=0
+[768x1024] t=239.7s FREE_PLAY/ready opened=18/18 free=1 stage=2 climaxT=12.12 target=0 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.4 q=low errors=0
+[768x1024] t=240.9s FREE_PLAY/opening opened=18/18 free=1 stage=2 climaxT=12.12 target=0 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.3 q=low errors=0
+[768x1024] t=242.9s FREE_PLAY/splash opened=18/18 free=2 stage=2 climaxT=12.12 target=0 centerNdc=0 inFrame=true flying=64 bloom=0 exp=1.1 fps=4.6 q=low errors=0
+[768x1024] t=245.5s FREE_PLAY/next opened=18/18 free=2 stage=2 climaxT=12.12 target=1 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.3 q=low errors=0
+[768x1024] t=253.9s FREE_PLAY/ready opened=18/18 free=2 stage=2 climaxT=12.12 target=1 centerNdc=0 inFrame=true flying=0 bloom=0 exp=1.1 fps=4.6 q=low errors=0
+[768x1024] console: [autotest] finished {"opened":18,"freeOpens":2,"state":"FREE_PLAY","fps":4.3,"minFps":0.7,"q":"low","errors":0,"taps":7,"drags":13,"ignored":1,"outside":1,"maxFlying":216,"wallSec":255}
+[768x1024] RESULT PASS __ready=true __errors=[] consoleErrors=[] opened=18/18 stageChanges=2 climax=true peak=true afterglow=true freePlay=true freeOpens=2 taps=7 drags=13 ignoredPointers=1 outsideTaps=1 maxFlyingDrops=216 maxTargetNdc=0 framesOutOfView=0/247 maxBloom=0 maxExposure=1.13 minFps=0.7407407407407407 elapsed=255s
+ALL PASS
